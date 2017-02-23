@@ -30,6 +30,7 @@ namespace Swagger\Client\Api;
 
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use Swagger\Client\Auth\AuthClient;
 use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
@@ -51,17 +52,24 @@ class BucketsApi
     protected $apiClient;
 
     /**
+     * @var AuthClient
+     */
+    private $authClient;
+
+    /**
      * Constructor
      *
+     * @param AuthClient $authClient
      * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(AuthClient $authClient, \Swagger\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
         }
 
         $this->apiClient = $apiClient;
+        $this->authClient = $authClient;
     }
 
     /**
@@ -430,8 +438,8 @@ class BucketsApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -456,5 +464,20 @@ class BucketsApi
 
             throw $e;
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthHeader()
+    {
+        $token = $this->authClient->getToken();
+
+        if ($token === null) {
+            // TODO: throw good exception
+            throw new \InvalidArgumentException('token not exists');
+        }
+
+        return 'Bearer ' . $token;
     }
 }

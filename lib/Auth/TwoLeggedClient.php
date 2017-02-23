@@ -3,10 +3,10 @@
 namespace Swagger\Client\Auth;
 
 use Swagger\Client\ApiClient;
+use Swagger\Client\ApiException;
 
 class TwoLeggedClient extends AuthClient
 {
-
     /**
      * TwoLegged constructor.
      * @param $clientId
@@ -20,11 +20,28 @@ class TwoLeggedClient extends AuthClient
 
     /**
      * Returns application token
-     *
-     * @return string
+     * @throws ApiException
      */
     public function fetchToken()
     {
-        return $this->apiClient->callApi('authorize', ApiClient::$POST, [], [], []);
+        $url = 'authentication/v1/authenticate';
+        $headers = [
+            'Content-Type' => 'application/x-www-form-urlencoded',
+        ];
+
+        $body = [
+            'client_id'     => $this->getClientId(),
+            'client_secret' => $this->getClientSecret(),
+            'grant_type'    => 'client_credentials',
+            'scope'         => implode(' ', $this->getScopes())
+        ];
+
+        list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body, $headers);
+
+        if ( ! isset($response->access_token)) {
+            throw new ApiException('Two legged auth response does not contain access_token');
+        }
+
+        $this->setToken($response->access_token);
     }
 }

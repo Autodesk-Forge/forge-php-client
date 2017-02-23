@@ -37,7 +37,7 @@ abstract class AuthClient
      * @param $clientSecret
      * @param ApiClient $apiClient
      */
-    public function __construct($clientId, $clientSecret, ApiClient $apiClient)
+    public function __construct($clientId, $clientSecret, ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -63,14 +63,6 @@ abstract class AuthClient
     public function setToken($token)
     {
         $this->token = $token;
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasToken()
-    {
-        return $this->token !== null;
     }
 
     /**
@@ -101,5 +93,37 @@ abstract class AuthClient
     public function setScopes(array $scopes)
     {
         $this->scopes = $scopes;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientSecret()
+    {
+        return $this->clientSecret;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasAccessToken()
+    {
+        return $this->token !== null;
+    }
+
+    /**
+     * @return array
+     */
+    public function getScopes()
+    {
+        return $this->scopes;
     }
 }

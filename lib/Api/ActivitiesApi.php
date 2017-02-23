@@ -30,6 +30,7 @@ namespace Swagger\Client\Api;
 
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use Swagger\Client\Auth\AuthClient;
 use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
@@ -51,17 +52,24 @@ class ActivitiesApi
     protected $apiClient;
 
     /**
+     * @var AuthClient
+     */
+    private $authClient;
+
+    /**
      * Constructor
      *
+     * @param AuthClient $authClient
      * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(AuthClient $authClient, \Swagger\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
         }
 
         $this->apiClient = $apiClient;
+        $this->authClient = $authClient;
     }
 
     /**
@@ -92,7 +100,7 @@ class ActivitiesApi
      *
      * Creates a new Activity.
      *
-     * @param \Swagger\Client\Model\Activity $activity  (required)
+     * @param \Swagger\Client\Model\Activity $activity (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Activity
      */
@@ -107,7 +115,7 @@ class ActivitiesApi
      *
      * Creates a new Activity.
      *
-     * @param \Swagger\Client\Model\Activity $activity  (required)
+     * @param \Swagger\Client\Model\Activity $activity (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
      */
@@ -146,7 +154,7 @@ class ActivitiesApi
         }
         // this endpoint requires OAuth (access token)
         if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -160,11 +168,17 @@ class ActivitiesApi
                 '/autocad.io/us-east/v2/Activities'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Activity', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Activity',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Activity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Swagger\Client\Model\Activity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -178,7 +192,7 @@ class ActivitiesApi
      *
      * Removes a specific Activity.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
@@ -193,7 +207,7 @@ class ActivitiesApi
      *
      * Removes a specific Activity.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -226,7 +240,7 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -235,7 +249,7 @@ class ActivitiesApi
         }
         // this endpoint requires OAuth (access token)
         if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -263,7 +277,7 @@ class ActivitiesApi
      *
      * Removes the version history of the specified Activity.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
@@ -278,7 +292,7 @@ class ActivitiesApi
      *
      * Removes the version history of the specified Activity.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -311,7 +325,7 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -320,7 +334,7 @@ class ActivitiesApi
         }
         // this endpoint requires OAuth (access token)
         if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -348,7 +362,7 @@ class ActivitiesApi
      *
      * Returns the details of a specific Activity.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Activity
      */
@@ -363,7 +377,7 @@ class ActivitiesApi
      *
      * Returns the details of a specific Activity.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
      */
@@ -396,7 +410,7 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -405,7 +419,7 @@ class ActivitiesApi
         }
         // this endpoint requires OAuth (access token)
         if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -419,11 +433,17 @@ class ActivitiesApi
                 '/autocad.io/us-east/v2/Activities(&#39;{id}&#39;)'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Activity', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Activity',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Activity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Swagger\Client\Model\Activity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -437,7 +457,7 @@ class ActivitiesApi
      *
      * Returns all old versions of a specified Activity.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\DesignAutomationActivities
      */
@@ -452,7 +472,7 @@ class ActivitiesApi
      *
      * Returns all old versions of a specified Activity.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
      */
@@ -485,7 +505,7 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -494,7 +514,7 @@ class ActivitiesApi
         }
         // this endpoint requires OAuth (access token)
         if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -508,11 +528,17 @@ class ActivitiesApi
                 '/autocad.io/us-east/v2/Activities(&#39;{id}&#39;)/Operations.GetVersions'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DesignAutomationActivities', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response,
+                    '\Swagger\Client\Model\DesignAutomationActivities', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Swagger\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -560,7 +586,7 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -568,8 +594,8 @@ class ActivitiesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -583,11 +609,17 @@ class ActivitiesApi
                 '/autocad.io/us-east/v2/Activities'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DesignAutomationActivities', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response,
+                    '\Swagger\Client\Model\DesignAutomationActivities', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Swagger\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -601,8 +633,8 @@ class ActivitiesApi
      *
      * Updates an Activity by specifying only the changed attributes.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\ActivityOptional $activity  (required)
+     * @param string $id (required)
+     * @param \Swagger\Client\Model\ActivityOptional $activity (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
@@ -617,8 +649,8 @@ class ActivitiesApi
      *
      * Updates an Activity by specifying only the changed attributes.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\ActivityOptional $activity  (required)
+     * @param string $id (required)
+     * @param \Swagger\Client\Model\ActivityOptional $activity (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -669,7 +701,7 @@ class ActivitiesApi
         }
         // this endpoint requires OAuth (access token)
         if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -697,8 +729,8 @@ class ActivitiesApi
      *
      * Sets the Activity to the specified version.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\ActivityVersion $activity_version  (required)
+     * @param string $id (required)
+     * @param \Swagger\Client\Model\ActivityVersion $activity_version (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
@@ -713,8 +745,8 @@ class ActivitiesApi
      *
      * Sets the Activity to the specified version.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\ActivityVersion $activity_version  (required)
+     * @param string $id (required)
+     * @param \Swagger\Client\Model\ActivityVersion $activity_version (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -765,7 +797,7 @@ class ActivitiesApi
         }
         // this endpoint requires OAuth (access token)
         if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -786,5 +818,19 @@ class ActivitiesApi
 
             throw $e;
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthHeader()
+    {
+        $token = $this->authClient->getToken();
+
+        if ($token === null) {
+            // throw exception
+        }
+
+        return 'Bearer ' . $token;
     }
 }
