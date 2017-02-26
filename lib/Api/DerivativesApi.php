@@ -41,52 +41,8 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DerivativesApi
+class DerivativesApi extends AbstractApi
 {
-    /**
-     * API Client
-     *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
-     */
-    protected $apiClient;
-
-    /**
-     * Constructor
-     *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
-     */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
-    {
-        if ($apiClient === null) {
-            $apiClient = new ApiClient();
-        }
-
-        $this->apiClient = $apiClient;
-    }
-
-    /**
-     * Get API client
-     *
-     * @return \Swagger\Client\ApiClient get the API client
-     */
-    public function getApiClient()
-    {
-        return $this->apiClient;
-    }
-
-    /**
-     * Set the API client
-     *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
-     *
-     * @return DerivativesApi
-     */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
-    {
-        $this->apiClient = $apiClient;
-        return $this;
-    }
-
     /**
      * Operation deleteManifest
      *
@@ -148,12 +104,8 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -265,12 +217,12 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -352,12 +304,12 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -451,12 +403,12 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -550,12 +502,12 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -663,12 +615,12 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -780,12 +732,12 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -889,12 +841,12 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
@@ -985,12 +937,12 @@ class DerivativesApi
             $httpBody = $formParams; // for HTTP post (form)
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
         }
         // make the API Call
         try {
