@@ -1,8 +1,8 @@
 <?php
 
-namespace Swagger\Client\Auth;
+namespace Autodesk\Client\Auth;
 
-use Swagger\Client\ApiClient;
+use Autodesk\Client\ApiClient;
 
 abstract class AuthClient
 {

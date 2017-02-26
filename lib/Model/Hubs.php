@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Hubs Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class Hubs implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\Hub[]'
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Client\Model\Hub[]'
     ];
 
     public static function swaggerTypes()
@@ -160,7 +160,7 @@ class Hubs implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -169,7 +169,7 @@ class Hubs implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -181,7 +181,7 @@ class Hubs implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\Hub[]
+     * @return \Autodesk\Client\Model\Hub[]
      */
     public function getData()
     {
@@ -190,7 +190,7 @@ class Hubs implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\Hub[] $data
+     * @param \Autodesk\Client\Model\Hub[] $data
      * @return $this
      */
     public function setData($data)
@@ -251,10 +251,10 @@ class Hubs implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

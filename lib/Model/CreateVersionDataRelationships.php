@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateVersionDataRelationships Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class CreateVersionDataRelationships implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'item' => '\Swagger\Client\Model\CreateVersionDataRelationshipsItem',
-        'storage' => '\Swagger\Client\Model\CreateItemRelationshipsStorage'
+        'item' => '\Autodesk\Client\Model\CreateVersionDataRelationshipsItem',
+        'storage' => '\Autodesk\Client\Model\CreateItemRelationshipsStorage'
     ];
 
     public static function swaggerTypes()
@@ -154,7 +154,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
     /**
      * Gets item
-     * @return \Swagger\Client\Model\CreateVersionDataRelationshipsItem
+     * @return \Autodesk\Client\Model\CreateVersionDataRelationshipsItem
      */
     public function getItem()
     {
@@ -163,7 +163,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
     /**
      * Sets item
-     * @param \Swagger\Client\Model\CreateVersionDataRelationshipsItem $item
+     * @param \Autodesk\Client\Model\CreateVersionDataRelationshipsItem $item
      * @return $this
      */
     public function setItem($item)
@@ -175,7 +175,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
     /**
      * Gets storage
-     * @return \Swagger\Client\Model\CreateItemRelationshipsStorage
+     * @return \Autodesk\Client\Model\CreateItemRelationshipsStorage
      */
     public function getStorage()
     {
@@ -184,7 +184,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
     /**
      * Sets storage
-     * @param \Swagger\Client\Model\CreateItemRelationshipsStorage $storage
+     * @param \Autodesk\Client\Model\CreateItemRelationshipsStorage $storage
      * @return $this
      */
     public function setStorage($storage)
@@ -245,10 +245,10 @@ class CreateVersionDataRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

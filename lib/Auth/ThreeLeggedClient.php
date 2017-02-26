@@ -1,9 +1,9 @@
 <?php
 
-namespace Swagger\Client\Auth;
+namespace Autodesk\Client\Auth;
 
-use Swagger\Client\ApiClient;
-use Swagger\Client\ApiException;
+use Autodesk\Client\ApiClient;
+use Autodesk\Client\ApiException;
 
 class ThreeLeggedClient extends AuthClient
 {

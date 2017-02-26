@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,19 +26,19 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Autodesk\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use Swagger\Client\Auth\AuthClient;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Autodesk\Client\ApiClient;
+use \Autodesk\Client\ApiException;
+use Autodesk\Client\Auth\AuthClient;
+use \Autodesk\Client\Configuration;
+use \Autodesk\Client\ObjectSerializer;
 
 /**
  * BucketsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -49,10 +49,10 @@ class BucketsApi extends AbstractApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
+     * @param \Autodesk\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Bucket
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Bucket
      */
     public function createBucket($post_buckets, $x_ads_region = null)
     {
@@ -65,10 +65,10 @@ class BucketsApi extends AbstractApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
+     * @param \Autodesk\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Bucket, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Bucket, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBucketWithHttpInfo($post_buckets, $x_ads_region = null)
     {
@@ -119,19 +119,19 @@ class BucketsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Bucket',
+                '\Autodesk\Client\Model\Bucket',
                 '/oss/v2/buckets'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Bucket', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Bucket', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Bucket', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Bucket', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -146,7 +146,7 @@ class BucketsApi extends AbstractApi
      * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteBucket($bucket_key)
@@ -161,7 +161,7 @@ class BucketsApi extends AbstractApi
      * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBucketWithHttpInfo($bucket_key)
@@ -235,8 +235,8 @@ class BucketsApi extends AbstractApi
      * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Bucket
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Bucket
      */
     public function getBucketDetails($bucket_key)
     {
@@ -250,8 +250,8 @@ class BucketsApi extends AbstractApi
      * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Bucket, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Bucket, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBucketDetailsWithHttpInfo($bucket_key)
     {
@@ -305,15 +305,15 @@ class BucketsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Bucket',
+                '\Autodesk\Client\Model\Bucket',
                 '/oss/v2/buckets/{bucketKey}/details'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Bucket', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Bucket', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Bucket', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Bucket', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -330,8 +330,8 @@ class BucketsApi extends AbstractApi
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
      * @param string $start_at Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Buckets
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Buckets
      */
     public function getBuckets($region = null, $limit = null, $start_at = null)
     {
@@ -347,8 +347,8 @@ class BucketsApi extends AbstractApi
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
      * @param string $start_at Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Buckets, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Buckets, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBucketsWithHttpInfo($region = null, $limit = null, $start_at = null)
     {
@@ -398,15 +398,15 @@ class BucketsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Buckets',
+                '\Autodesk\Client\Model\Buckets',
                 '/oss/v2/buckets'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Buckets', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Buckets', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Buckets', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Buckets', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Autodesk\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Autodesk\Client\ApiClient;
+use \Autodesk\Client\ApiException;
+use \Autodesk\Client\Configuration;
+use \Autodesk\Client\ObjectSerializer;
 
 /**
  * EnginesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -48,8 +48,8 @@ class EnginesApi extends AbstractApi
      *
      * Returns the details of all available AutoCAD core engines.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DesignAutomationEngines
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\DesignAutomationEngines
      */
     public function getAllEngines()
     {
@@ -62,8 +62,8 @@ class EnginesApi extends AbstractApi
      *
      * Returns the details of all available AutoCAD core engines.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DesignAutomationEngines, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\DesignAutomationEngines, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllEnginesWithHttpInfo()
     {
@@ -101,15 +101,15 @@ class EnginesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DesignAutomationEngines',
+                '\Autodesk\Client\Model\DesignAutomationEngines',
                 '/autocad.io/us-east/v2/Engines'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DesignAutomationEngines', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\DesignAutomationEngines', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DesignAutomationEngines', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\DesignAutomationEngines', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -124,8 +124,8 @@ class EnginesApi extends AbstractApi
      * Returns the details of a specific AutoCAD core engine.
      *
      * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Engine
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Engine
      */
     public function getEngine($id)
     {
@@ -139,8 +139,8 @@ class EnginesApi extends AbstractApi
      * Returns the details of a specific AutoCAD core engine.
      *
      * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Engine, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Engine, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEngineWithHttpInfo($id)
     {
@@ -190,15 +190,15 @@ class EnginesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Engine',
+                '\Autodesk\Client\Model\Engine',
                 '/autocad.io/us-east/v2/Engines(&#39;{id}&#39;)'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Engine', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Engine', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Engine', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Engine', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

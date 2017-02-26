@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateRef Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class CreateRef implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\CreateRefData'
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Client\Model\CreateRefData'
     ];
 
     public static function swaggerTypes()
@@ -154,7 +154,7 @@ class CreateRef implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -163,7 +163,7 @@ class CreateRef implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -175,7 +175,7 @@ class CreateRef implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\CreateRefData
+     * @return \Autodesk\Client\Model\CreateRefData
      */
     public function getData()
     {
@@ -184,7 +184,7 @@ class CreateRef implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\CreateRefData $data
+     * @param \Autodesk\Client\Model\CreateRefData $data
      * @return $this
      */
     public function setData($data)
@@ -245,10 +245,10 @@ class CreateRef implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

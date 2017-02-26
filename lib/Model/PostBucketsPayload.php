@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Bucket Payload Body Structure
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class PostBucketsPayload implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'bucket_key' => 'string',
-        'allow' => '\Swagger\Client\Model\PostBucketsPayloadAllow[]',
+        'allow' => '\Autodesk\Client\Model\PostBucketsPayloadAllow[]',
         'policy_key' => 'string'
     ];
 
@@ -218,7 +218,7 @@ class PostBucketsPayload implements ArrayAccess
 
     /**
      * Gets allow
-     * @return \Swagger\Client\Model\PostBucketsPayloadAllow[]
+     * @return \Autodesk\Client\Model\PostBucketsPayloadAllow[]
      */
     public function getAllow()
     {
@@ -227,7 +227,7 @@ class PostBucketsPayload implements ArrayAccess
 
     /**
      * Sets allow
-     * @param \Swagger\Client\Model\PostBucketsPayloadAllow[] $allow 
+     * @param \Autodesk\Client\Model\PostBucketsPayloadAllow[] $allow
      * @return $this
      */
     public function setAllow($allow)
@@ -313,10 +313,10 @@ class PostBucketsPayload implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

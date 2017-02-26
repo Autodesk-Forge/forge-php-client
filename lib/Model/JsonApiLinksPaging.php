@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description provides the links used for paging
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,10 +55,10 @@ class JsonApiLinksPaging implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'first' => '\Swagger\Client\Model\JsonApiLink',
-        'prev' => '\Swagger\Client\Model\JsonApiLink',
-        'next' => '\Swagger\Client\Model\JsonApiLink',
-        'last' => '\Swagger\Client\Model\JsonApiLink'
+        'first' => '\Autodesk\Client\Model\JsonApiLink',
+        'prev' => '\Autodesk\Client\Model\JsonApiLink',
+        'next' => '\Autodesk\Client\Model\JsonApiLink',
+        'last' => '\Autodesk\Client\Model\JsonApiLink'
     ];
 
     public static function swaggerTypes()
@@ -165,7 +165,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Gets first
-     * @return \Swagger\Client\Model\JsonApiLink
+     * @return \Autodesk\Client\Model\JsonApiLink
      */
     public function getFirst()
     {
@@ -174,7 +174,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Sets first
-     * @param \Swagger\Client\Model\JsonApiLink $first
+     * @param \Autodesk\Client\Model\JsonApiLink $first
      * @return $this
      */
     public function setFirst($first)
@@ -186,7 +186,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Gets prev
-     * @return \Swagger\Client\Model\JsonApiLink
+     * @return \Autodesk\Client\Model\JsonApiLink
      */
     public function getPrev()
     {
@@ -195,7 +195,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Sets prev
-     * @param \Swagger\Client\Model\JsonApiLink $prev
+     * @param \Autodesk\Client\Model\JsonApiLink $prev
      * @return $this
      */
     public function setPrev($prev)
@@ -207,7 +207,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Gets next
-     * @return \Swagger\Client\Model\JsonApiLink
+     * @return \Autodesk\Client\Model\JsonApiLink
      */
     public function getNext()
     {
@@ -216,7 +216,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Sets next
-     * @param \Swagger\Client\Model\JsonApiLink $next
+     * @param \Autodesk\Client\Model\JsonApiLink $next
      * @return $this
      */
     public function setNext($next)
@@ -228,7 +228,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Gets last
-     * @return \Swagger\Client\Model\JsonApiLink
+     * @return \Autodesk\Client\Model\JsonApiLink
      */
     public function getLast()
     {
@@ -237,7 +237,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Sets last
-     * @param \Swagger\Client\Model\JsonApiLink $last
+     * @param \Autodesk\Client\Model\JsonApiLink $last
      * @return $this
      */
     public function setLast($last)
@@ -298,10 +298,10 @@ class JsonApiLinksPaging implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

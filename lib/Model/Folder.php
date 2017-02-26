@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Folder Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,15 +54,15 @@ class Folder implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\JsonApiResource',
-        'included' => '\Swagger\Client\Model\JsonApiResource[]',
-        'links' => '\Swagger\Client\Model\JsonApiLinks',
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Client\Model\JsonApiResource',
+        'included' => '\Autodesk\Client\Model\JsonApiResource[]',
+        'links' => '\Autodesk\Client\Model\JsonApiLinks',
         'id' => 'string',
         'type' => 'string',
-        'attributes' => '\Swagger\Client\Model\FolderAttributes',
-        'meta' => '\Swagger\Client\Model\JsonApiMeta',
-        'relationships' => '\Swagger\Client\Model\FolderRelationships'
+        'attributes' => '\Autodesk\Client\Model\FolderAttributes',
+        'meta' => '\Autodesk\Client\Model\JsonApiMeta',
+        'relationships' => '\Autodesk\Client\Model\FolderRelationships'
     ];
 
     public static function swaggerTypes()
@@ -234,7 +234,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -243,7 +243,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -255,7 +255,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\JsonApiResource
+     * @return \Autodesk\Client\Model\JsonApiResource
      */
     public function getData()
     {
@@ -264,7 +264,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\JsonApiResource $data
+     * @param \Autodesk\Client\Model\JsonApiResource $data
      * @return $this
      */
     public function setData($data)
@@ -276,7 +276,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets included
-     * @return \Swagger\Client\Model\JsonApiResource[]
+     * @return \Autodesk\Client\Model\JsonApiResource[]
      */
     public function getIncluded()
     {
@@ -285,7 +285,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets included
-     * @param \Swagger\Client\Model\JsonApiResource[] $included
+     * @param \Autodesk\Client\Model\JsonApiResource[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -297,7 +297,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Swagger\Client\Model\JsonApiLinks
+     * @return \Autodesk\Client\Model\JsonApiLinks
      */
     public function getLinks()
     {
@@ -306,7 +306,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Swagger\Client\Model\JsonApiLinks $links
+     * @param \Autodesk\Client\Model\JsonApiLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -364,7 +364,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Swagger\Client\Model\FolderAttributes
+     * @return \Autodesk\Client\Model\FolderAttributes
      */
     public function getAttributes()
     {
@@ -373,7 +373,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Swagger\Client\Model\FolderAttributes $attributes
+     * @param \Autodesk\Client\Model\FolderAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -385,7 +385,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \Swagger\Client\Model\JsonApiMeta
+     * @return \Autodesk\Client\Model\JsonApiMeta
      */
     public function getMeta()
     {
@@ -394,7 +394,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \Swagger\Client\Model\JsonApiMeta $meta
+     * @param \Autodesk\Client\Model\JsonApiMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -406,7 +406,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Swagger\Client\Model\FolderRelationships
+     * @return \Autodesk\Client\Model\FolderRelationships
      */
     public function getRelationships()
     {
@@ -415,7 +415,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Swagger\Client\Model\FolderRelationships $relationships
+     * @param \Autodesk\Client\Model\FolderRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -476,10 +476,10 @@ class Folder implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

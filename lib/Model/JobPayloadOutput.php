@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Group of outputs
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,7 +55,7 @@ class JobPayloadOutput implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'formats' => '\Swagger\Client\Model\JobPayloadItem[]'
+        'formats' => '\Autodesk\Client\Model\JobPayloadItem[]'
     ];
 
     public static function swaggerTypes()
@@ -156,7 +156,7 @@ class JobPayloadOutput implements ArrayAccess
 
     /**
      * Gets formats
-     * @return \Swagger\Client\Model\JobPayloadItem[]
+     * @return \Autodesk\Client\Model\JobPayloadItem[]
      */
     public function getFormats()
     {
@@ -165,7 +165,7 @@ class JobPayloadOutput implements ArrayAccess
 
     /**
      * Sets formats
-     * @param \Swagger\Client\Model\JobPayloadItem[] $formats Group of requested formats/types. User can request multiple formats.
+     * @param \Autodesk\Client\Model\JobPayloadItem[] $formats Group of requested formats/types. User can request multiple formats.
      * @return $this
      */
     public function setFormats($formats)
@@ -226,10 +226,10 @@ class JobPayloadOutput implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

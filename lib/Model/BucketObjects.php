@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * BucketObjects Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class BucketObjects implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'items' => '\Swagger\Client\Model\ObjectDetails[]',
+        'items' => '\Autodesk\Client\Model\ObjectDetails[]',
         'next' => 'string'
     ];
 
@@ -154,7 +154,7 @@ class BucketObjects implements ArrayAccess
 
     /**
      * Gets items
-     * @return \Swagger\Client\Model\ObjectDetails[]
+     * @return \Autodesk\Client\Model\ObjectDetails[]
      */
     public function getItems()
     {
@@ -163,7 +163,7 @@ class BucketObjects implements ArrayAccess
 
     /**
      * Sets items
-     * @param \Swagger\Client\Model\ObjectDetails[] $items
+     * @param \Autodesk\Client\Model\ObjectDetails[] $items
      * @return $this
      */
     public function setItems($items)
@@ -245,10 +245,10 @@ class BucketObjects implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

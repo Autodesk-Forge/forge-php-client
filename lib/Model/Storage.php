@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Storage Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,10 +56,10 @@ class Storage implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'type' => 'string',
-        'attributes' => '\Swagger\Client\Model\JsonApiAttributes',
-        'meta' => '\Swagger\Client\Model\JsonApiMeta',
-        'relationships' => '\Swagger\Client\Model\StorageRelationships',
-        'links' => '\Swagger\Client\Model\JsonApiLinks'
+        'attributes' => '\Autodesk\Client\Model\JsonApiAttributes',
+        'meta' => '\Autodesk\Client\Model\JsonApiMeta',
+        'relationships' => '\Autodesk\Client\Model\StorageRelationships',
+        'links' => '\Autodesk\Client\Model\JsonApiLinks'
     ];
 
     public static function swaggerTypes()
@@ -253,7 +253,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Swagger\Client\Model\JsonApiAttributes
+     * @return \Autodesk\Client\Model\JsonApiAttributes
      */
     public function getAttributes()
     {
@@ -262,7 +262,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Swagger\Client\Model\JsonApiAttributes $attributes
+     * @param \Autodesk\Client\Model\JsonApiAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -274,7 +274,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \Swagger\Client\Model\JsonApiMeta
+     * @return \Autodesk\Client\Model\JsonApiMeta
      */
     public function getMeta()
     {
@@ -283,7 +283,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \Swagger\Client\Model\JsonApiMeta $meta
+     * @param \Autodesk\Client\Model\JsonApiMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -295,7 +295,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Swagger\Client\Model\StorageRelationships
+     * @return \Autodesk\Client\Model\StorageRelationships
      */
     public function getRelationships()
     {
@@ -304,7 +304,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Swagger\Client\Model\StorageRelationships $relationships
+     * @param \Autodesk\Client\Model\StorageRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -316,7 +316,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Swagger\Client\Model\JsonApiLinks
+     * @return \Autodesk\Client\Model\JsonApiLinks
      */
     public function getLinks()
     {
@@ -325,7 +325,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Swagger\Client\Model\JsonApiLinks $links
+     * @param \Autodesk\Client\Model\JsonApiLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -386,10 +386,10 @@ class Storage implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

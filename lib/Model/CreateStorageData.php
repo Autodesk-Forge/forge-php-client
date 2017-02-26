@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateStorageData Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,8 +55,8 @@ class CreateStorageData implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'attributes' => '\Swagger\Client\Model\CreateStorageDataAttributes',
-        'relationships' => '\Swagger\Client\Model\CreateStorageDataRelationships'
+        'attributes' => '\Autodesk\Client\Model\CreateStorageDataAttributes',
+        'relationships' => '\Autodesk\Client\Model\CreateStorageDataRelationships'
     ];
 
     public static function swaggerTypes()
@@ -211,7 +211,7 @@ class CreateStorageData implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Swagger\Client\Model\CreateStorageDataAttributes
+     * @return \Autodesk\Client\Model\CreateStorageDataAttributes
      */
     public function getAttributes()
     {
@@ -220,7 +220,7 @@ class CreateStorageData implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Swagger\Client\Model\CreateStorageDataAttributes $attributes
+     * @param \Autodesk\Client\Model\CreateStorageDataAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -232,7 +232,7 @@ class CreateStorageData implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Swagger\Client\Model\CreateStorageDataRelationships
+     * @return \Autodesk\Client\Model\CreateStorageDataRelationships
      */
     public function getRelationships()
     {
@@ -241,7 +241,7 @@ class CreateStorageData implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Swagger\Client\Model\CreateStorageDataRelationships $relationships
+     * @param \Autodesk\Client\Model\CreateStorageDataRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -302,10 +302,10 @@ class CreateStorageData implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

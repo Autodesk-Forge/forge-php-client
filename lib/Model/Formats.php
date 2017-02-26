@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Formats Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class Formats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'formats' => '\Swagger\Client\Model\FormatsFormats'
+        'formats' => '\Autodesk\Client\Model\FormatsFormats'
     ];
 
     public static function swaggerTypes()
@@ -149,7 +149,7 @@ class Formats implements ArrayAccess
 
     /**
      * Gets formats
-     * @return \Swagger\Client\Model\FormatsFormats
+     * @return \Autodesk\Client\Model\FormatsFormats
      */
     public function getFormats()
     {
@@ -158,7 +158,7 @@ class Formats implements ArrayAccess
 
     /**
      * Sets formats
-     * @param \Swagger\Client\Model\FormatsFormats $formats
+     * @param \Autodesk\Client\Model\FormatsFormats $formats
      * @return $this
      */
     public function setFormats($formats)
@@ -219,10 +219,10 @@ class Formats implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * FolderRelationships Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,9 +54,9 @@ class FolderRelationships implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'parent' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'contents' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternal',
-        'refs' => '\Swagger\Client\Model\JsonApiRelationshipsLinksRefs'
+        'parent' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'contents' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternal',
+        'refs' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs'
     ];
 
     public static function swaggerTypes()
@@ -171,7 +171,7 @@ class FolderRelationships implements ArrayAccess
 
     /**
      * Gets parent
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getParent()
     {
@@ -180,7 +180,7 @@ class FolderRelationships implements ArrayAccess
 
     /**
      * Sets parent
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource $parent
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource $parent
      * @return $this
      */
     public function setParent($parent)
@@ -192,7 +192,7 @@ class FolderRelationships implements ArrayAccess
 
     /**
      * Gets contents
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternal
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternal
      */
     public function getContents()
     {
@@ -201,7 +201,7 @@ class FolderRelationships implements ArrayAccess
 
     /**
      * Sets contents
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternal $contents
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternal $contents
      * @return $this
      */
     public function setContents($contents)
@@ -213,7 +213,7 @@ class FolderRelationships implements ArrayAccess
 
     /**
      * Gets refs
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksRefs
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksRefs
      */
     public function getRefs()
     {
@@ -222,7 +222,7 @@ class FolderRelationships implements ArrayAccess
 
     /**
      * Sets refs
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksRefs $refs
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksRefs $refs
      * @return $this
      */
     public function setRefs($refs)
@@ -283,10 +283,10 @@ class FolderRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

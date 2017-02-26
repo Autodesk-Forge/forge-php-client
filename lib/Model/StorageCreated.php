@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * StorageCreated Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,9 +54,9 @@ class StorageCreated implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\Storage',
-        'included' => '\Swagger\Client\Model\JsonApiResource[]'
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Client\Model\Storage',
+        'included' => '\Autodesk\Client\Model\JsonApiResource[]'
     ];
 
     public static function swaggerTypes()
@@ -165,7 +165,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -174,7 +174,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -186,7 +186,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\Storage
+     * @return \Autodesk\Client\Model\Storage
      */
     public function getData()
     {
@@ -195,7 +195,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\Storage $data
+     * @param \Autodesk\Client\Model\Storage $data
      * @return $this
      */
     public function setData($data)
@@ -207,7 +207,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Gets included
-     * @return \Swagger\Client\Model\JsonApiResource[]
+     * @return \Autodesk\Client\Model\JsonApiResource[]
      */
     public function getIncluded()
     {
@@ -216,7 +216,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Sets included
-     * @param \Swagger\Client\Model\JsonApiResource[] $included
+     * @param \Autodesk\Client\Model\JsonApiResource[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -277,10 +277,10 @@ class StorageCreated implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

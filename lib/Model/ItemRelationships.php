@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ItemRelationships Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,10 +54,10 @@ class ItemRelationships implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'parent' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'tip' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'versions' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternal',
-        'refs' => '\Swagger\Client\Model\JsonApiRelationshipsLinksRefs'
+        'parent' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'tip' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'versions' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternal',
+        'refs' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs'
     ];
 
     public static function swaggerTypes()
@@ -188,7 +188,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets parent
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getParent()
     {
@@ -197,7 +197,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets parent
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource $parent
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource $parent
      * @return $this
      */
     public function setParent($parent)
@@ -209,7 +209,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets tip
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getTip()
     {
@@ -218,7 +218,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets tip
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource $tip
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource $tip
      * @return $this
      */
     public function setTip($tip)
@@ -230,7 +230,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets versions
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternal
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternal
      */
     public function getVersions()
     {
@@ -239,7 +239,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets versions
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternal $versions
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternal $versions
      * @return $this
      */
     public function setVersions($versions)
@@ -251,7 +251,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets refs
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksRefs
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksRefs
      */
     public function getRefs()
     {
@@ -260,7 +260,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets refs
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksRefs $refs
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksRefs $refs
      * @return $this
      */
     public function setRefs($refs)
@@ -321,10 +321,10 @@ class ItemRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -58,10 +58,10 @@ Please follow the [installation procedure](#installation--usage) and then run th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
-$activity = new \Swagger\Client\Model\Activity(); // \Swagger\Client\Model\Activity | 
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$activity = new \Autodesk\Client\Model\Activity(); // \Autodesk\Client\Model\Activity | 
 
 try {
     $result = $api_instance->createActivity($activity);

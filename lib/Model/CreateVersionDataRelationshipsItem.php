@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateVersionDataRelationshipsItem Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class CreateVersionDataRelationshipsItem implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Swagger\Client\Model\CreateVersionDataRelationshipsItemData'
+        'data' => '\Autodesk\Client\Model\CreateVersionDataRelationshipsItemData'
     ];
 
     public static function swaggerTypes()
@@ -149,7 +149,7 @@ class CreateVersionDataRelationshipsItem implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\CreateVersionDataRelationshipsItemData
+     * @return \Autodesk\Client\Model\CreateVersionDataRelationshipsItemData
      */
     public function getData()
     {
@@ -158,7 +158,7 @@ class CreateVersionDataRelationshipsItem implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\CreateVersionDataRelationshipsItemData $data
+     * @param \Autodesk\Client\Model\CreateVersionDataRelationshipsItemData $data
      * @return $this
      */
     public function setData($data)
@@ -219,10 +219,10 @@ class CreateVersionDataRelationshipsItem implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

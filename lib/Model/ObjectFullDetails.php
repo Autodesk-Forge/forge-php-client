@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Object Details json response
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -63,7 +63,7 @@ class ObjectFullDetails implements ArrayAccess
         'content_type' => 'string',
         'location' => 'string',
         'block_sizes' => 'int[]',
-        'deltas' => '\Swagger\Client\Model\ObjectFullDetailsDeltas[]'
+        'deltas' => '\Autodesk\Client\Model\ObjectFullDetailsDeltas[]'
     ];
 
     public static function swaggerTypes()
@@ -358,7 +358,7 @@ class ObjectFullDetails implements ArrayAccess
 
     /**
      * Gets deltas
-     * @return \Swagger\Client\Model\ObjectFullDetailsDeltas[]
+     * @return \Autodesk\Client\Model\ObjectFullDetailsDeltas[]
      */
     public function getDeltas()
     {
@@ -367,7 +367,7 @@ class ObjectFullDetails implements ArrayAccess
 
     /**
      * Sets deltas
-     * @param \Swagger\Client\Model\ObjectFullDetailsDeltas[] $deltas Patch files available for download related to this object
+     * @param \Autodesk\Client\Model\ObjectFullDetailsDeltas[] $deltas Patch files available for download related to this object
      * @return $this
      */
     public function setDeltas($deltas)
@@ -428,10 +428,10 @@ class ObjectFullDetails implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

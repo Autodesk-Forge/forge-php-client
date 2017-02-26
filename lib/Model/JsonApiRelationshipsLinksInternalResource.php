@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiRelationshipsLinksInternalResource Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\Swagger\Client\Model\JsonApiLinksRelated',
-        'data' => '\Swagger\Client\Model\JsonApiTypeId'
+        'links' => '\Autodesk\Client\Model\JsonApiLinksRelated',
+        'data' => '\Autodesk\Client\Model\JsonApiTypeId'
     ];
 
     public static function swaggerTypes()
@@ -166,7 +166,7 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Swagger\Client\Model\JsonApiLinksRelated
+     * @return \Autodesk\Client\Model\JsonApiLinksRelated
      */
     public function getLinks()
     {
@@ -175,7 +175,7 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Swagger\Client\Model\JsonApiLinksRelated $links
+     * @param \Autodesk\Client\Model\JsonApiLinksRelated $links
      * @return $this
      */
     public function setLinks($links)
@@ -187,7 +187,7 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\JsonApiTypeId
+     * @return \Autodesk\Client\Model\JsonApiTypeId
      */
     public function getData()
     {
@@ -196,7 +196,7 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\JsonApiTypeId $data
+     * @param \Autodesk\Client\Model\JsonApiTypeId $data
      * @return $this
      */
     public function setData($data)
@@ -257,10 +257,10 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

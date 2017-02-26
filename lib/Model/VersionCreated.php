@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * VersionCreated Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,10 +54,10 @@ class VersionCreated implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\Version',
-        'included' => '\Swagger\Client\Model\JsonApiResource[]',
-        'links' => '\Swagger\Client\Model\JsonApiLinksSelf'
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Client\Model\Version',
+        'included' => '\Autodesk\Client\Model\JsonApiResource[]',
+        'links' => '\Autodesk\Client\Model\JsonApiLinksSelf'
     ];
 
     public static function swaggerTypes()
@@ -176,7 +176,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -185,7 +185,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -197,7 +197,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\Version
+     * @return \Autodesk\Client\Model\Version
      */
     public function getData()
     {
@@ -206,7 +206,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\Version $data
+     * @param \Autodesk\Client\Model\Version $data
      * @return $this
      */
     public function setData($data)
@@ -218,7 +218,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Gets included
-     * @return \Swagger\Client\Model\JsonApiResource[]
+     * @return \Autodesk\Client\Model\JsonApiResource[]
      */
     public function getIncluded()
     {
@@ -227,7 +227,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Sets included
-     * @param \Swagger\Client\Model\JsonApiResource[] $included
+     * @param \Autodesk\Client\Model\JsonApiResource[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -239,7 +239,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Swagger\Client\Model\JsonApiLinksSelf
+     * @return \Autodesk\Client\Model\JsonApiLinksSelf
      */
     public function getLinks()
     {
@@ -248,7 +248,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Swagger\Client\Model\JsonApiLinksSelf $links
+     * @param \Autodesk\Client\Model\JsonApiLinksSelf $links
      * @return $this
      */
     public function setLinks($links)
@@ -309,10 +309,10 @@ class VersionCreated implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 
