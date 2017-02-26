@@ -72,4 +72,28 @@ abstract class AbstractApi
 
         return 'Bearer ' . $token;
     }
+
+    /**
+     * Wrapper to the callApi of the ApiClient which adds auth data
+     *
+     * @param string $resourcePath path to method endpoint
+     * @param string $method       method to call
+     * @param array  $queryParams  parameters to be place in query URL
+     * @param array  $postData     parameters to be placed in POST body
+     * @param array  $headerParams parameters to be place in request header
+     * @param string $responseType expected response type of the endpoint
+     * @param string $endpointPath path to method endpoint before expanding parameters
+     *
+     * @throws \Autodesk\Client\ApiException on a non 2xx response
+     * @return mixed
+     */
+    protected function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null)
+    {
+        // this endpoint requires OAuth (access token)
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
+        }
+
+        return $this->apiClient->callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType, $endpointPath);
+    }
 }

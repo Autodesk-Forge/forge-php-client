@@ -100,13 +100,9 @@ class WorkItemsApi extends AbstractApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if ($this->authClient->hasAccessToken()) {
-            $headerParams['Authorization'] = $this->getAuthHeader();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
@@ -189,13 +185,9 @@ class WorkItemsApi extends AbstractApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if ($this->authClient->hasAccessToken()) {
-            $headerParams['Authorization'] = $this->getAuthHeader();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'DELETE',
                 $queryParams,
@@ -266,13 +258,9 @@ class WorkItemsApi extends AbstractApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if ($this->authClient->hasAccessToken()) {
-            $headerParams['Authorization'] = $this->getAuthHeader();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
@@ -355,13 +343,9 @@ class WorkItemsApi extends AbstractApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if ($this->authClient->hasAccessToken()) {
-            $headerParams['Authorization'] = $this->getAuthHeader();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
