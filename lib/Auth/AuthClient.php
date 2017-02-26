@@ -52,7 +52,7 @@ abstract class AuthClient
     /**
      * @return string
      */
-    public function getToken()
+    public function getAccessToken()
     {
         return $this->token;
     }

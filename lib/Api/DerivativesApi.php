@@ -107,6 +107,10 @@ class DerivativesApi extends AbstractApi
         if ($this->authClient->hasAccessToken()) {
             $headerParams['Authorization'] = $this->getAuthHeader();
         }
+        // this endpoint requires OAuth (access token)
+        if ($this->authClient->hasAccessToken()) {
+            $headerParams['Authorization'] = $this->getAuthHeader();
+        }
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(

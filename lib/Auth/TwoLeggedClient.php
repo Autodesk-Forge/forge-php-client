@@ -33,7 +33,7 @@ class TwoLeggedClient extends AuthClient
             'client_id'     => $this->getClientId(),
             'client_secret' => $this->getClientSecret(),
             'grant_type'    => 'client_credentials',
-            'scope'         => implode(' ', $this->getScopes())
+            'scope'         => implode(' ', $this->getScopes()),
         ];
 
         list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body, $headers);
