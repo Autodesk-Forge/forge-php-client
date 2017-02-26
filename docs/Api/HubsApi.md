@@ -1,4 +1,4 @@
-# Swagger\Client\HubsApi
+# Autodesk\Client\HubsApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getHub**
-> \Swagger\Client\Model\Hub getHub($hub_id)
+> \Autodesk\Client\Model\Hub getHub($hub_id)
 
 
 
@@ -21,9 +21,9 @@ Returns data on a specific `hub_id`.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\HubsApi();
+$api_instance = new Autodesk\Client\Api\HubsApi();
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 
 try {
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Hub**](../Model/Hub.md)
+[**\Autodesk\Client\Model\Hub**](../Model/Hub.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getHubs**
-> \Swagger\Client\Model\Hubs getHubs($filter_id, $filter_extension_type)
+> \Autodesk\Client\Model\Hubs getHubs($filter_id, $filter_extension_type)
 
 
 
@@ -69,9 +69,9 @@ Returns a collection of accessible hubs for this member. A Hub represents an A36
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\HubsApi();
+$api_instance = new Autodesk\Client\Api\HubsApi();
 $filter_id = array("filter_id_example"); // string[] | filter by the `id` of the `ref` target
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Hubs**](../Model/Hubs.md)
+[**\Autodesk\Client\Model\Hubs**](../Model/Hubs.md)
 
 ### Authorization
 

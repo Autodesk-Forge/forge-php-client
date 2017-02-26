@@ -1,4 +1,4 @@
-# Swagger\Client\WorkItemsApi
+# Autodesk\Client\WorkItemsApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createWorkItem**
-> \Swagger\Client\Model\WorkItemResp createWorkItem($work_item)
+> \Autodesk\Client\Model\WorkItemResp createWorkItem($work_item)
 
 Creates a new WorkItem.
 
@@ -21,10 +21,10 @@ Creates a new WorkItem.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\WorkItemsApi();
-$work_item = new \Swagger\Client\Model\WorkItem(); // \Swagger\Client\Model\WorkItem | 
+$api_instance = new Autodesk\Client\Api\WorkItemsApi();
+$work_item = new \Autodesk\Client\Model\WorkItem(); // \Autodesk\Client\Model\WorkItem | 
 
 try {
     $result = $api_instance->createWorkItem($work_item);
@@ -39,11 +39,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **work_item** | [**\Swagger\Client\Model\WorkItem**](../Model/\Swagger\Client\Model\WorkItem.md)|  |
+ **work_item** | [**\Autodesk\Client\Model\WorkItem**](../Model/\Autodesk\Client\Model\WorkItem.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\WorkItemResp**](../Model/WorkItemResp.md)
+[**\Autodesk\Client\Model\WorkItemResp**](../Model/WorkItemResp.md)
 
 ### Authorization
 
@@ -67,9 +67,9 @@ Removes a specific WorkItem.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\WorkItemsApi();
+$api_instance = new Autodesk\Client\Api\WorkItemsApi();
 $id = "id_example"; // string | 
 
 try {
@@ -102,7 +102,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllWorkItems**
-> \Swagger\Client\Model\DesignAutomationWorkItems getAllWorkItems($skip)
+> \Autodesk\Client\Model\DesignAutomationWorkItems getAllWorkItems($skip)
 
 Returns the details of all WorkItems.
 
@@ -112,9 +112,9 @@ Returns the details of all WorkItems.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\WorkItemsApi();
+$api_instance = new Autodesk\Client\Api\WorkItemsApi();
 $skip = 56; // int | 
 
 try {
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DesignAutomationWorkItems**](../Model/DesignAutomationWorkItems.md)
+[**\Autodesk\Client\Model\DesignAutomationWorkItems**](../Model/DesignAutomationWorkItems.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWorkItem**
-> \Swagger\Client\Model\WorkItemResp getWorkItem($id)
+> \Autodesk\Client\Model\WorkItemResp getWorkItem($id)
 
 Returns the details of a specific WorkItem.
 
@@ -158,9 +158,9 @@ Returns the details of a specific WorkItem.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\WorkItemsApi();
+$api_instance = new Autodesk\Client\Api\WorkItemsApi();
 $id = "id_example"; // string | 
 
 try {
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\WorkItemResp**](../Model/WorkItemResp.md)
+[**\Autodesk\Client\Model\WorkItemResp**](../Model/WorkItemResp.md)
 
 ### Authorization
 
