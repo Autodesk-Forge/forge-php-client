@@ -28,17 +28,14 @@ class ThreeLeggedClient extends AuthClient
     }
 
     /**
-     * @param $callbackUrl
      * @return string
      */
-    public function createAuthUrl($callbackUrl)
+    public function createAuthUrl()
     {
-        $basePath = $this->apiClient->getConfig()->getHost();
-
         $parameters = [
             'response_type' => 'code',
-            'client_id'     => $this->getClientId(),
-            'redirect_uri'  => $callbackUrl,
+            'client_id'     => $this->configuration->getClientId(),
+            'redirect_uri'  => $this->configuration->getRedirectUrl(),
             'scope'         => implode(' ', $this->getScopes()),
         ];
 
@@ -47,16 +44,15 @@ class ThreeLeggedClient extends AuthClient
             $parametersString[] = "{$key}={$value}";
         }
 
-        return "{$basePath}/authentication/v1/authorize?" . implode('&', $parametersString);
+        return "{$this->configuration->getHost()}/authentication/v1/authorize?" . implode('&', $parametersString);
     }
 
     /**
      * Returns application token
      * @param $authorizationCode
-     * @param $callbackUrl
      * @throws ApiException
      */
-    public function fetchToken($authorizationCode, $callbackUrl)
+    public function fetchToken($authorizationCode)
     {
         $url = 'authentication/v1/gettoken';
         $headers = [
@@ -64,12 +60,12 @@ class ThreeLeggedClient extends AuthClient
         ];
 
         $body = [
-            'client_id'     => $this->getClientId(),
-            'client_secret' => $this->getClientSecret(),
+            'client_id'     => $this->configuration->getClientId(),
+            'client_secret' => $this->configuration->getClientSecret(),
             'grant_type'    => 'authorization_code',
             'scope'         => implode(' ', $this->getScopes()),
             'code'          => $authorizationCode,
-            'redirect_uri'  => $callbackUrl,
+            'redirect_uri'  => $this->configuration->getRedirectUrl(),
         ];
 
         list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body,

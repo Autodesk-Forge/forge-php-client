@@ -30,8 +30,8 @@ class TwoLeggedClient extends AuthClient
         ];
 
         $body = [
-            'client_id'     => $this->getClientId(),
-            'client_secret' => $this->getClientSecret(),
+            'client_id'     => $this->configuration->getClientId(),
+            'client_secret' => $this->configuration->getClientSecret(),
             'grant_type'    => 'client_credentials',
             'scope'         => implode(' ', $this->getScopes()),
         ];

@@ -93,22 +93,6 @@ abstract class AuthClient
     }
 
     /**
-     * @return string
-     */
-    public function getClientId()
-    {
-        return $this->configuration->getClientId();
-    }
-
-    /**
-     * @return string
-     */
-    public function getClientSecret()
-    {
-        return $this->configuration->getClientSecret();
-    }
-
-    /**
      * @return bool
      */
     public function hasAccessToken()

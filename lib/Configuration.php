@@ -197,6 +197,11 @@ class Configuration
     protected $clientSecret;
 
     /**
+     * @var string
+     */
+    protected $redirectUrl;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -769,6 +774,25 @@ class Configuration
     public function setClientSecret($clientSecret)
     {
         $this->clientSecret = $clientSecret;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRedirectUrl()
+    {
+        return $this->redirectUrl;
+    }
+
+    /**
+     * @param string $redirectUrl
+     * @return Configuration
+     */
+    public function setRedirectUrl($redirectUrl)
+    {
+        $this->redirectUrl = $redirectUrl;
 
         return $this;
     }
