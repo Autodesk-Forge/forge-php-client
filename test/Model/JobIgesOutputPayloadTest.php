@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobIgesOutputPayloadTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JobIgesOutputPayload
 /**
  * @package     Autodesk\Client

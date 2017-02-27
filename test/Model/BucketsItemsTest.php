@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * BucketsItemsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description BucketsItems
 /**
  * @package     Autodesk\Client

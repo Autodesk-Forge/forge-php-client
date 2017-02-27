@@ -45,17 +45,17 @@ class JsonApiMeta implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_meta';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        
+
     ];
 
     public static function swaggerTypes()
@@ -68,7 +68,7 @@ class JsonApiMeta implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+
     ];
 
 
@@ -77,7 +77,7 @@ class JsonApiMeta implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+
     ];
 
 
@@ -86,7 +86,7 @@ class JsonApiMeta implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+
     ];
 
     public static function attributeMap()
@@ -104,9 +104,6 @@ class JsonApiMeta implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -169,7 +166,7 @@ class JsonApiMeta implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

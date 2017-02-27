@@ -44,18 +44,18 @@ class Buckets implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'buckets';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'items' => '\Autodesk\Client\Model\BucketsItems[]',
-        'next' => 'string'
+        'next'  => 'string',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class Buckets implements ArrayAccess
      */
     protected static $attributeMap = [
         'items' => 'items',
-        'next' => 'next'
+        'next'  => 'next',
     ];
 
 
@@ -79,7 +79,7 @@ class Buckets implements ArrayAccess
      */
     protected static $setters = [
         'items' => 'setItems',
-        'next' => 'setNext'
+        'next'  => 'setNext',
     ];
 
 
@@ -89,7 +89,7 @@ class Buckets implements ArrayAccess
      */
     protected static $getters = [
         'items' => 'getItems',
-        'next' => 'getNext'
+        'next'  => 'getNext',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class Buckets implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -205,6 +202,7 @@ class Buckets implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -228,7 +226,7 @@ class Buckets implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

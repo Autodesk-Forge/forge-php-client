@@ -58,17 +58,17 @@ class ApiException extends Exception
     /**
      * The deserialized response object
      *
-     * @var $responseObject;
+     * @var $responseObject ;
      */
     protected $responseObject;
 
     /**
      * Constructor
      *
-     * @param string $message         Error message
-     * @param int    $code            HTTP status code
+     * @param string $message Error message
+     * @param int $code HTTP status code
      * @param string $responseHeaders HTTP response header
-     * @param mixed  $responseBody    HTTP body of the server response either as Json or string
+     * @param mixed $responseBody HTTP body of the server response either as Json or string
      */
     public function __construct($message = "", $code = 0, $responseHeaders = null, $responseBody = null)
     {

@@ -44,17 +44,17 @@ class CreateRefDataMeta implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'create_ref_data_meta';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'extension' => '\Autodesk\Client\Model\BaseAttributesExtensionObject'
+        'extension' => '\Autodesk\Client\Model\BaseAttributesExtensionObject',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class CreateRefDataMeta implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'extension' => 'extension'
+        'extension' => 'extension',
     ];
 
 
@@ -76,7 +76,7 @@ class CreateRefDataMeta implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'extension' => 'setExtension'
+        'extension' => 'setExtension',
     ];
 
 
@@ -85,7 +85,7 @@ class CreateRefDataMeta implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'extension' => 'getExtension'
+        'extension' => 'getExtension',
     ];
 
     public static function attributeMap()
@@ -103,9 +103,6 @@ class CreateRefDataMeta implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -173,6 +170,7 @@ class CreateRefDataMeta implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -196,7 +194,7 @@ class CreateRefDataMeta implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * RefsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Refs
 /**
  * @package     Autodesk\Client

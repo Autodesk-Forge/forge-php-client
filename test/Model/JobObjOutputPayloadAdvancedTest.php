@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobObjOutputPayloadAdvancedTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Advanced options for &#x60;obj&#x60; type.
 /**
  * @package     Autodesk\Client

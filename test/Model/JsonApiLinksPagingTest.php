@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JsonApiLinksPagingTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description provides the links used for paging
 /**
  * @package     Autodesk\Client

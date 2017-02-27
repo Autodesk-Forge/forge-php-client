@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JsonApiResourceTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JsonApiResource
 /**
  * @package     Autodesk\Client

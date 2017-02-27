@@ -45,19 +45,19 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobObjOutputPayload_advanced';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'export_file_structure' => 'string',
-        'model_guid' => 'string',
-        'object_ids' => 'string[]'
+        'model_guid'            => 'string',
+        'object_ids'            => 'string[]',
     ];
 
     public static function swaggerTypes()
@@ -71,8 +71,8 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
      */
     protected static $attributeMap = [
         'export_file_structure' => 'exportFileStructure',
-        'model_guid' => 'modelGuid',
-        'object_ids' => 'objectIds'
+        'model_guid'            => 'modelGuid',
+        'object_ids'            => 'objectIds',
     ];
 
 
@@ -82,8 +82,8 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
      */
     protected static $setters = [
         'export_file_structure' => 'setExportFileStructure',
-        'model_guid' => 'setModelGuid',
-        'object_ids' => 'setObjectIds'
+        'model_guid'            => 'setModelGuid',
+        'object_ids'            => 'setObjectIds',
     ];
 
 
@@ -93,8 +93,8 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
      */
     protected static $getters = [
         'export_file_structure' => 'getExportFileStructure',
-        'model_guid' => 'getModelGuid',
-        'object_ids' => 'getObjectIds'
+        'model_guid'            => 'getModelGuid',
+        'object_ids'            => 'getObjectIds',
     ];
 
     public static function attributeMap()
@@ -114,9 +114,8 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
 
     const EXPORT_FILE_STRUCTURE_SINGLE = 'single';
     const EXPORT_FILE_STRUCTURE_MULTIPLE = 'multiple';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -128,7 +127,7 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
             self::EXPORT_FILE_STRUCTURE_MULTIPLE,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -157,7 +156,7 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
         $invalid_properties = [];
 
         $allowed_values = ["single", "multiple"];
-        if (!in_array($this->container['export_file_structure'], $allowed_values)) {
+        if ( ! in_array($this->container['export_file_structure'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'export_file_structure', must be one of 'single', 'multiple'.";
         }
 
@@ -174,7 +173,7 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
     {
 
         $allowed_values = ["single", "multiple"];
-        if (!in_array($this->container['export_file_structure'], $allowed_values)) {
+        if ( ! in_array($this->container['export_file_structure'], $allowed_values)) {
             return false;
         }
         return true;
@@ -197,8 +196,8 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
      */
     public function setExportFileStructure($export_file_structure)
     {
-        $allowed_values = array('single', 'multiple');
-        if (!is_null($export_file_structure) && (!in_array($export_file_structure, $allowed_values))) {
+        $allowed_values = ['single', 'multiple'];
+        if ( ! is_null($export_file_structure) && ( ! in_array($export_file_structure, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'export_file_structure', must be one of 'single', 'multiple'");
         }
         $this->container['export_file_structure'] = $export_file_structure;
@@ -247,6 +246,7 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -270,7 +270,7 @@ class JobObjOutputPayloadAdvanced implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

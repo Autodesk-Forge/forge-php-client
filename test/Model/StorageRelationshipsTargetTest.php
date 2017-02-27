@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * StorageRelationshipsTargetTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description StorageRelationshipsTarget
 /**
  * @package     Autodesk\Client

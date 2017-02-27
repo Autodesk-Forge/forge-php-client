@@ -44,22 +44,22 @@ class RelRef implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'rel_ref';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'type' => 'string',
-        'attributes' => '\Autodesk\Client\Model\JsonApiAttributes',
-        'meta' => '\Autodesk\Client\Model\RelRefMeta',
+        'id'            => 'string',
+        'type'          => 'string',
+        'attributes'    => '\Autodesk\Client\Model\JsonApiAttributes',
+        'meta'          => '\Autodesk\Client\Model\RelRefMeta',
         'relationships' => '\Autodesk\Client\Model\JsonApiRelationships',
-        'links' => '\Autodesk\Client\Model\JsonApiLinks'
+        'links'         => '\Autodesk\Client\Model\JsonApiLinks',
     ];
 
     public static function swaggerTypes()
@@ -72,12 +72,12 @@ class RelRef implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'type' => 'type',
-        'attributes' => 'attributes',
-        'meta' => 'meta',
+        'id'            => 'id',
+        'type'          => 'type',
+        'attributes'    => 'attributes',
+        'meta'          => 'meta',
         'relationships' => 'relationships',
-        'links' => 'links'
+        'links'         => 'links',
     ];
 
 
@@ -86,12 +86,12 @@ class RelRef implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'type' => 'setType',
-        'attributes' => 'setAttributes',
-        'meta' => 'setMeta',
+        'id'            => 'setId',
+        'type'          => 'setType',
+        'attributes'    => 'setAttributes',
+        'meta'          => 'setMeta',
         'relationships' => 'setRelationships',
-        'links' => 'setLinks'
+        'links'         => 'setLinks',
     ];
 
 
@@ -100,12 +100,12 @@ class RelRef implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'type' => 'getType',
-        'attributes' => 'getAttributes',
-        'meta' => 'getMeta',
+        'id'            => 'getId',
+        'type'          => 'getType',
+        'attributes'    => 'getAttributes',
+        'meta'          => 'getMeta',
         'relationships' => 'getRelationships',
-        'links' => 'getLinks'
+        'links'         => 'getLinks',
     ];
 
     public static function attributeMap()
@@ -126,9 +126,8 @@ class RelRef implements ArrayAccess
     const TYPE_FOLDERS = 'folders';
     const TYPE_ITEMS = 'items';
     const TYPE_VERSIONS = 'versions';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -141,7 +140,7 @@ class RelRef implements ArrayAccess
             self::TYPE_VERSIONS,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -179,7 +178,7 @@ class RelRef implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["folders", "items", "versions"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'folders', 'items', 'versions'.";
         }
 
@@ -202,7 +201,7 @@ class RelRef implements ArrayAccess
             return false;
         }
         $allowed_values = ["folders", "items", "versions"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -246,8 +245,8 @@ class RelRef implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('folders', 'items', 'versions');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['folders', 'items', 'versions'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'folders', 'items', 'versions'");
         }
         $this->container['type'] = $type;
@@ -338,6 +337,7 @@ class RelRef implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -361,7 +361,7 @@ class RelRef implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

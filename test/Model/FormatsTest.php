@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * FormatsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Formats
 /**
  * @package     Autodesk\Client

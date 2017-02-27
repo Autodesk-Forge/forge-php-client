@@ -44,17 +44,17 @@ class HubRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'hub_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'projects' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternal'
+        'projects' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternal',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class HubRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'projects' => 'projects'
+        'projects' => 'projects',
     ];
 
 
@@ -76,7 +76,7 @@ class HubRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'projects' => 'setProjects'
+        'projects' => 'setProjects',
     ];
 
 
@@ -85,7 +85,7 @@ class HubRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'projects' => 'getProjects'
+        'projects' => 'getProjects',
     ];
 
     public static function attributeMap()
@@ -103,9 +103,6 @@ class HubRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -173,6 +170,7 @@ class HubRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -196,7 +194,7 @@ class HubRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

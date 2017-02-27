@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ProjectAttributesTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description ProjectAttributes
 /**
  * @package     Autodesk\Client

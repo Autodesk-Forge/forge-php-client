@@ -44,17 +44,17 @@ class PostBucketsSigned implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'post_buckets_signed';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'minutes_expiration' => 'int'
+        'minutes_expiration' => 'int',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class PostBucketsSigned implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'minutes_expiration' => 'minutesExpiration'
+        'minutes_expiration' => 'minutesExpiration',
     ];
 
 
@@ -76,7 +76,7 @@ class PostBucketsSigned implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'minutes_expiration' => 'setMinutesExpiration'
+        'minutes_expiration' => 'setMinutesExpiration',
     ];
 
 
@@ -85,7 +85,7 @@ class PostBucketsSigned implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'minutes_expiration' => 'getMinutesExpiration'
+        'minutes_expiration' => 'getMinutesExpiration',
     ];
 
     public static function attributeMap()
@@ -103,9 +103,6 @@ class PostBucketsSigned implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -173,6 +170,7 @@ class PostBucketsSigned implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -196,7 +194,7 @@ class PostBucketsSigned implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

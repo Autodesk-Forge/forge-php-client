@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * BucketObjectsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description BucketObjects
 /**
  * @package     Autodesk\Client

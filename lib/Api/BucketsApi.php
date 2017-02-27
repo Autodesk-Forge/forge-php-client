@@ -46,7 +46,7 @@ class BucketsApi extends AbstractApi
     /**
      * Operation createBucket
      *
-     * 
+     *
      *
      * @param \Autodesk\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
@@ -62,7 +62,7 @@ class BucketsApi extends AbstractApi
     /**
      * Operation createBucketWithHttpInfo
      *
-     * 
+     *
      *
      * @param \Autodesk\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
@@ -82,7 +82,7 @@ class BucketsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -118,15 +118,21 @@ class BucketsApi extends AbstractApi
                 '/oss/v2/buckets'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Bucket', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Bucket', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Bucket', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Bucket', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -138,7 +144,7 @@ class BucketsApi extends AbstractApi
     /**
      * Operation deleteBucket
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
@@ -153,7 +159,7 @@ class BucketsApi extends AbstractApi
     /**
      * Operation deleteBucketWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
@@ -165,7 +171,7 @@ class BucketsApi extends AbstractApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling deleteBucket');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling BucketsApi.deleteBucket, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -176,7 +182,7 @@ class BucketsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -192,7 +198,7 @@ class BucketsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -223,7 +229,7 @@ class BucketsApi extends AbstractApi
     /**
      * Operation getBucketDetails
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
@@ -238,7 +244,7 @@ class BucketsApi extends AbstractApi
     /**
      * Operation getBucketDetailsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
@@ -250,7 +256,7 @@ class BucketsApi extends AbstractApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getBucketDetails');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling BucketsApi.getBucketDetails, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -261,7 +267,7 @@ class BucketsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -277,7 +283,7 @@ class BucketsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -296,11 +302,16 @@ class BucketsApi extends AbstractApi
                 '/oss/v2/buckets/{bucketKey}/details'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Bucket', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Bucket', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Bucket', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Bucket', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -312,7 +323,7 @@ class BucketsApi extends AbstractApi
     /**
      * Operation getBuckets
      *
-     * 
+     *
      *
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
@@ -329,7 +340,7 @@ class BucketsApi extends AbstractApi
     /**
      * Operation getBucketsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
@@ -346,7 +357,7 @@ class BucketsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -366,7 +377,7 @@ class BucketsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -385,11 +396,17 @@ class BucketsApi extends AbstractApi
                 '/oss/v2/buckets'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Buckets', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Buckets',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Buckets', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Buckets', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -44,18 +44,18 @@ class JobPayload implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobPayload';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'input' => '\Autodesk\Client\Model\JobPayloadInput',
-        'output' => '\Autodesk\Client\Model\JobPayloadOutput'
+        'input'  => '\Autodesk\Client\Model\JobPayloadInput',
+        'output' => '\Autodesk\Client\Model\JobPayloadOutput',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'input' => 'input',
-        'output' => 'output'
+        'input'  => 'input',
+        'output' => 'output',
     ];
 
 
@@ -78,8 +78,8 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'input' => 'setInput',
-        'output' => 'setOutput'
+        'input'  => 'setInput',
+        'output' => 'setOutput',
     ];
 
 
@@ -88,8 +88,8 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'input' => 'getInput',
-        'output' => 'getOutput'
+        'input'  => 'getInput',
+        'output' => 'getOutput',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class JobPayload implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -193,6 +190,7 @@ class JobPayload implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -216,7 +214,7 @@ class JobPayload implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JsonApiErrorTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JsonApiError
 /**
  * @package     Autodesk\Client

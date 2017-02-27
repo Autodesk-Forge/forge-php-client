@@ -44,21 +44,21 @@ class VersionRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'version_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'item' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'refs' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs',
-        'storage' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksExternalResource',
+        'item'        => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'refs'        => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs',
+        'storage'     => '\Autodesk\Client\Model\JsonApiRelationshipsLinksExternalResource',
         'derivatives' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksExternalResource',
-        'thumbnails' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksExternalResource'
+        'thumbnails'  => '\Autodesk\Client\Model\JsonApiRelationshipsLinksExternalResource',
     ];
 
     public static function swaggerTypes()
@@ -71,11 +71,11 @@ class VersionRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'item' => 'item',
-        'refs' => 'refs',
-        'storage' => 'storage',
+        'item'        => 'item',
+        'refs'        => 'refs',
+        'storage'     => 'storage',
         'derivatives' => 'derivatives',
-        'thumbnails' => 'thumbnails'
+        'thumbnails'  => 'thumbnails',
     ];
 
 
@@ -84,11 +84,11 @@ class VersionRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'item' => 'setItem',
-        'refs' => 'setRefs',
-        'storage' => 'setStorage',
+        'item'        => 'setItem',
+        'refs'        => 'setRefs',
+        'storage'     => 'setStorage',
         'derivatives' => 'setDerivatives',
-        'thumbnails' => 'setThumbnails'
+        'thumbnails'  => 'setThumbnails',
     ];
 
 
@@ -97,11 +97,11 @@ class VersionRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'item' => 'getItem',
-        'refs' => 'getRefs',
-        'storage' => 'getStorage',
+        'item'        => 'getItem',
+        'refs'        => 'getRefs',
+        'storage'     => 'getStorage',
         'derivatives' => 'getDerivatives',
-        'thumbnails' => 'getThumbnails'
+        'thumbnails'  => 'getThumbnails',
     ];
 
     public static function attributeMap()
@@ -119,9 +119,6 @@ class VersionRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -283,6 +280,7 @@ class VersionRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -306,7 +304,7 @@ class VersionRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

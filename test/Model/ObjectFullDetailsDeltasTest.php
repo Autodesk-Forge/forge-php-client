@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ObjectFullDetailsDeltasTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description ObjectFullDetailsDeltas
 /**
  * @package     Autodesk\Client

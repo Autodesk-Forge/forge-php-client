@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobIgesOutputPayloadAdvancedTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Advanced options for &#x60;iges&#x60; type.
 /**
  * @package     Autodesk\Client

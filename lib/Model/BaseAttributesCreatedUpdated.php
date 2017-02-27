@@ -44,17 +44,17 @@ class BaseAttributesCreatedUpdated implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'base_attributes_created_updated';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'attributes' => '\Autodesk\Client\Model\BaseAttributesCreatedUpdatedAttributes'
+        'attributes' => '\Autodesk\Client\Model\BaseAttributesCreatedUpdatedAttributes',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class BaseAttributesCreatedUpdated implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'attributes' => 'attributes'
+        'attributes' => 'attributes',
     ];
 
 
@@ -76,7 +76,7 @@ class BaseAttributesCreatedUpdated implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'attributes' => 'setAttributes'
+        'attributes' => 'setAttributes',
     ];
 
 
@@ -85,7 +85,7 @@ class BaseAttributesCreatedUpdated implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'attributes' => 'getAttributes'
+        'attributes' => 'getAttributes',
     ];
 
     public static function attributeMap()
@@ -103,9 +103,6 @@ class BaseAttributesCreatedUpdated implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -167,6 +164,7 @@ class BaseAttributesCreatedUpdated implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -190,7 +188,7 @@ class BaseAttributesCreatedUpdated implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

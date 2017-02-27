@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * CreateItemDataTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description CreateItemData
 /**
  * @package     Autodesk\Client

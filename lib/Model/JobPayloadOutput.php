@@ -45,17 +45,17 @@ class JobPayloadOutput implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobPayload_output';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'formats' => '\Autodesk\Client\Model\JobPayloadItem[]'
+        'formats' => '\Autodesk\Client\Model\JobPayloadItem[]',
     ];
 
     public static function swaggerTypes()
@@ -68,7 +68,7 @@ class JobPayloadOutput implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'formats' => 'formats'
+        'formats' => 'formats',
     ];
 
 
@@ -77,7 +77,7 @@ class JobPayloadOutput implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'formats' => 'setFormats'
+        'formats' => 'setFormats',
     ];
 
 
@@ -86,7 +86,7 @@ class JobPayloadOutput implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'formats' => 'getFormats'
+        'formats' => 'getFormats',
     ];
 
     public static function attributeMap()
@@ -104,9 +104,6 @@ class JobPayloadOutput implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -174,6 +171,7 @@ class JobPayloadOutput implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -197,7 +195,7 @@ class JobPayloadOutput implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

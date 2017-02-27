@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobPayloadInputTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Group of inputs
 /**
  * @package     Autodesk\Client

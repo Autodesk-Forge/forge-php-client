@@ -44,18 +44,18 @@ class Refs implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'refs';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Autodesk\Client\Model\RelRef[]'
+        'data'    => '\Autodesk\Client\Model\RelRef[]',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class Refs implements ArrayAccess
      */
     protected static $attributeMap = [
         'jsonapi' => 'jsonapi',
-        'data' => 'data'
+        'data'    => 'data',
     ];
 
 
@@ -79,7 +79,7 @@ class Refs implements ArrayAccess
      */
     protected static $setters = [
         'jsonapi' => 'setJsonapi',
-        'data' => 'setData'
+        'data'    => 'setData',
     ];
 
 
@@ -89,7 +89,7 @@ class Refs implements ArrayAccess
      */
     protected static $getters = [
         'jsonapi' => 'getJsonapi',
-        'data' => 'getData'
+        'data'    => 'getData',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class Refs implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -199,6 +196,7 @@ class Refs implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -222,7 +220,7 @@ class Refs implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ReasonTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description reason for failure
 /**
  * @package     Autodesk\Client

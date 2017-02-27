@@ -44,18 +44,18 @@ class CreateVersionDataRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'create_version_data_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'item' => '\Autodesk\Client\Model\CreateVersionDataRelationshipsItem',
-        'storage' => '\Autodesk\Client\Model\CreateItemRelationshipsStorage'
+        'item'    => '\Autodesk\Client\Model\CreateVersionDataRelationshipsItem',
+        'storage' => '\Autodesk\Client\Model\CreateItemRelationshipsStorage',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class CreateVersionDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'item' => 'item',
-        'storage' => 'storage'
+        'item'    => 'item',
+        'storage' => 'storage',
     ];
 
 
@@ -78,8 +78,8 @@ class CreateVersionDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'item' => 'setItem',
-        'storage' => 'setStorage'
+        'item'    => 'setItem',
+        'storage' => 'setStorage',
     ];
 
 
@@ -88,8 +88,8 @@ class CreateVersionDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'item' => 'getItem',
-        'storage' => 'getStorage'
+        'item'    => 'getItem',
+        'storage' => 'getStorage',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class CreateVersionDataRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -193,6 +190,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -216,7 +214,7 @@ class CreateVersionDataRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

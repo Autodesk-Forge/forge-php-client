@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Job
 /**
  * @package     Autodesk\Client

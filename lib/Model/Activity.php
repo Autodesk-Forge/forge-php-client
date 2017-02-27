@@ -44,26 +44,26 @@ class Activity implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'Activity';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'instruction' => 'object',
-        'app_packages' => 'string[]',
+        'id'                      => 'string',
+        'instruction'             => 'object',
+        'app_packages'            => 'string[]',
         'required_engine_version' => 'string',
-        'parameters' => 'object',
+        'parameters'              => 'object',
         'allowed_child_processes' => 'object[]',
-        'version' => 'int',
-        'description' => 'string',
-        'host_application' => 'string',
-        'is_public' => 'bool'
+        'version'                 => 'int',
+        'description'             => 'string',
+        'host_application'        => 'string',
+        'is_public'               => 'bool',
     ];
 
     public static function swaggerTypes()
@@ -76,16 +76,16 @@ class Activity implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'Id',
-        'instruction' => 'Instruction',
-        'app_packages' => 'AppPackages',
+        'id'                      => 'Id',
+        'instruction'             => 'Instruction',
+        'app_packages'            => 'AppPackages',
         'required_engine_version' => 'RequiredEngineVersion',
-        'parameters' => 'Parameters',
+        'parameters'              => 'Parameters',
         'allowed_child_processes' => 'AllowedChildProcesses',
-        'version' => 'Version',
-        'description' => 'Description',
-        'host_application' => 'HostApplication',
-        'is_public' => 'IsPublic'
+        'version'                 => 'Version',
+        'description'             => 'Description',
+        'host_application'        => 'HostApplication',
+        'is_public'               => 'IsPublic',
     ];
 
 
@@ -94,16 +94,16 @@ class Activity implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'instruction' => 'setInstruction',
-        'app_packages' => 'setAppPackages',
+        'id'                      => 'setId',
+        'instruction'             => 'setInstruction',
+        'app_packages'            => 'setAppPackages',
         'required_engine_version' => 'setRequiredEngineVersion',
-        'parameters' => 'setParameters',
+        'parameters'              => 'setParameters',
         'allowed_child_processes' => 'setAllowedChildProcesses',
-        'version' => 'setVersion',
-        'description' => 'setDescription',
-        'host_application' => 'setHostApplication',
-        'is_public' => 'setIsPublic'
+        'version'                 => 'setVersion',
+        'description'             => 'setDescription',
+        'host_application'        => 'setHostApplication',
+        'is_public'               => 'setIsPublic',
     ];
 
 
@@ -112,16 +112,16 @@ class Activity implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'instruction' => 'getInstruction',
-        'app_packages' => 'getAppPackages',
+        'id'                      => 'getId',
+        'instruction'             => 'getInstruction',
+        'app_packages'            => 'getAppPackages',
         'required_engine_version' => 'getRequiredEngineVersion',
-        'parameters' => 'getParameters',
+        'parameters'              => 'getParameters',
         'allowed_child_processes' => 'getAllowedChildProcesses',
-        'version' => 'getVersion',
-        'description' => 'getDescription',
-        'host_application' => 'getHostApplication',
-        'is_public' => 'getIsPublic'
+        'version'                 => 'getVersion',
+        'description'             => 'getDescription',
+        'host_application'        => 'getHostApplication',
+        'is_public'               => 'getIsPublic',
     ];
 
     public static function attributeMap()
@@ -139,9 +139,6 @@ class Activity implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -449,6 +446,7 @@ class Activity implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -472,7 +470,7 @@ class Activity implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

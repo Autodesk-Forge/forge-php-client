@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ProjectRelationshipsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description ProjectRelationships
 /**
  * @package     Autodesk\Client

@@ -44,31 +44,31 @@ class WorkItemResp implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'work_item_resp';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'arguments' => 'object',
-        'status' => 'string',
-        'status_detail' => 'object',
-        'availability_zone' => 'string',
-        'activity_id' => 'string',
-        'version' => 'int',
-        'timestamp' => 'string',
-        'time_queued' => 'string',
+        'id'                          => 'string',
+        'arguments'                   => 'object',
+        'status'                      => 'string',
+        'status_detail'               => 'object',
+        'availability_zone'           => 'string',
+        'activity_id'                 => 'string',
+        'version'                     => 'int',
+        'timestamp'                   => 'string',
+        'time_queued'                 => 'string',
         'time_input_transfer_started' => 'string',
-        'time_script_started' => 'string',
-        'time_script_ended' => 'string',
-        'time_output_transfer_ended' => 'string',
-        'bytes_tranferred_in' => 'int',
-        'bytes_tranferred_out' => 'int'
+        'time_script_started'         => 'string',
+        'time_script_ended'           => 'string',
+        'time_output_transfer_ended'  => 'string',
+        'bytes_tranferred_in'         => 'int',
+        'bytes_tranferred_out'        => 'int',
     ];
 
     public static function swaggerTypes()
@@ -81,21 +81,21 @@ class WorkItemResp implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'Id',
-        'arguments' => 'Arguments',
-        'status' => 'Status',
-        'status_detail' => 'StatusDetail',
-        'availability_zone' => 'AvailabilityZone',
-        'activity_id' => 'ActivityId',
-        'version' => 'Version',
-        'timestamp' => 'Timestamp',
-        'time_queued' => 'TimeQueued',
+        'id'                          => 'Id',
+        'arguments'                   => 'Arguments',
+        'status'                      => 'Status',
+        'status_detail'               => 'StatusDetail',
+        'availability_zone'           => 'AvailabilityZone',
+        'activity_id'                 => 'ActivityId',
+        'version'                     => 'Version',
+        'timestamp'                   => 'Timestamp',
+        'time_queued'                 => 'TimeQueued',
         'time_input_transfer_started' => 'TimeInputTransferStarted',
-        'time_script_started' => 'TimeScriptStarted',
-        'time_script_ended' => 'TimeScriptEnded',
-        'time_output_transfer_ended' => 'TimeOutputTransferEnded',
-        'bytes_tranferred_in' => 'BytesTranferredIn',
-        'bytes_tranferred_out' => 'BytesTranferredOut'
+        'time_script_started'         => 'TimeScriptStarted',
+        'time_script_ended'           => 'TimeScriptEnded',
+        'time_output_transfer_ended'  => 'TimeOutputTransferEnded',
+        'bytes_tranferred_in'         => 'BytesTranferredIn',
+        'bytes_tranferred_out'        => 'BytesTranferredOut',
     ];
 
 
@@ -104,21 +104,21 @@ class WorkItemResp implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'arguments' => 'setArguments',
-        'status' => 'setStatus',
-        'status_detail' => 'setStatusDetail',
-        'availability_zone' => 'setAvailabilityZone',
-        'activity_id' => 'setActivityId',
-        'version' => 'setVersion',
-        'timestamp' => 'setTimestamp',
-        'time_queued' => 'setTimeQueued',
+        'id'                          => 'setId',
+        'arguments'                   => 'setArguments',
+        'status'                      => 'setStatus',
+        'status_detail'               => 'setStatusDetail',
+        'availability_zone'           => 'setAvailabilityZone',
+        'activity_id'                 => 'setActivityId',
+        'version'                     => 'setVersion',
+        'timestamp'                   => 'setTimestamp',
+        'time_queued'                 => 'setTimeQueued',
         'time_input_transfer_started' => 'setTimeInputTransferStarted',
-        'time_script_started' => 'setTimeScriptStarted',
-        'time_script_ended' => 'setTimeScriptEnded',
-        'time_output_transfer_ended' => 'setTimeOutputTransferEnded',
-        'bytes_tranferred_in' => 'setBytesTranferredIn',
-        'bytes_tranferred_out' => 'setBytesTranferredOut'
+        'time_script_started'         => 'setTimeScriptStarted',
+        'time_script_ended'           => 'setTimeScriptEnded',
+        'time_output_transfer_ended'  => 'setTimeOutputTransferEnded',
+        'bytes_tranferred_in'         => 'setBytesTranferredIn',
+        'bytes_tranferred_out'        => 'setBytesTranferredOut',
     ];
 
 
@@ -127,21 +127,21 @@ class WorkItemResp implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'arguments' => 'getArguments',
-        'status' => 'getStatus',
-        'status_detail' => 'getStatusDetail',
-        'availability_zone' => 'getAvailabilityZone',
-        'activity_id' => 'getActivityId',
-        'version' => 'getVersion',
-        'timestamp' => 'getTimestamp',
-        'time_queued' => 'getTimeQueued',
+        'id'                          => 'getId',
+        'arguments'                   => 'getArguments',
+        'status'                      => 'getStatus',
+        'status_detail'               => 'getStatusDetail',
+        'availability_zone'           => 'getAvailabilityZone',
+        'activity_id'                 => 'getActivityId',
+        'version'                     => 'getVersion',
+        'timestamp'                   => 'getTimestamp',
+        'time_queued'                 => 'getTimeQueued',
         'time_input_transfer_started' => 'getTimeInputTransferStarted',
-        'time_script_started' => 'getTimeScriptStarted',
-        'time_script_ended' => 'getTimeScriptEnded',
-        'time_output_transfer_ended' => 'getTimeOutputTransferEnded',
-        'bytes_tranferred_in' => 'getBytesTranferredIn',
-        'bytes_tranferred_out' => 'getBytesTranferredOut'
+        'time_script_started'         => 'getTimeScriptStarted',
+        'time_script_ended'           => 'getTimeScriptEnded',
+        'time_output_transfer_ended'  => 'getTimeOutputTransferEnded',
+        'bytes_tranferred_in'         => 'getBytesTranferredIn',
+        'bytes_tranferred_out'        => 'getBytesTranferredOut',
     ];
 
     public static function attributeMap()
@@ -159,9 +159,6 @@ class WorkItemResp implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -531,6 +528,7 @@ class WorkItemResp implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -554,7 +552,7 @@ class WorkItemResp implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

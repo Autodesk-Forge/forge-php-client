@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * CreateStorageDataTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description CreateStorageData
 /**
  * @package     Autodesk\Client

@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * RelRefMetaTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description RelRefMeta
 /**
  * @package     Autodesk\Client

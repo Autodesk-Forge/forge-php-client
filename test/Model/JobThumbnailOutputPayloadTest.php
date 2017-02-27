@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobThumbnailOutputPayloadTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JobThumbnailOutputPayload
 /**
  * @package     Autodesk\Client

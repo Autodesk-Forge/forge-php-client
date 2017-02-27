@@ -44,23 +44,23 @@ class JsonApiErrorErrors implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_error_errors';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'id' => 'string',
+        'id'     => 'string',
         'status' => 'string',
-        'code' => 'string',
-        'title' => 'string',
+        'code'   => 'string',
+        'title'  => 'string',
         'detail' => 'string',
-        'meta' => 'object',
-        'links' => '\Autodesk\Client\Model\JsonApiErrorLinks'
+        'meta'   => 'object',
+        'links'  => '\Autodesk\Client\Model\JsonApiErrorLinks',
     ];
 
     public static function swaggerTypes()
@@ -73,13 +73,13 @@ class JsonApiErrorErrors implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'id'     => 'id',
         'status' => 'status',
-        'code' => 'code',
-        'title' => 'title',
+        'code'   => 'code',
+        'title'  => 'title',
         'detail' => 'detail',
-        'meta' => 'meta',
-        'links' => 'links'
+        'meta'   => 'meta',
+        'links'  => 'links',
     ];
 
 
@@ -88,13 +88,13 @@ class JsonApiErrorErrors implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'id'     => 'setId',
         'status' => 'setStatus',
-        'code' => 'setCode',
-        'title' => 'setTitle',
+        'code'   => 'setCode',
+        'title'  => 'setTitle',
         'detail' => 'setDetail',
-        'meta' => 'setMeta',
-        'links' => 'setLinks'
+        'meta'   => 'setMeta',
+        'links'  => 'setLinks',
     ];
 
 
@@ -103,13 +103,13 @@ class JsonApiErrorErrors implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'id'     => 'getId',
         'status' => 'getStatus',
-        'code' => 'getCode',
-        'title' => 'getTitle',
+        'code'   => 'getCode',
+        'title'  => 'getTitle',
         'detail' => 'getDetail',
-        'meta' => 'getMeta',
-        'links' => 'getLinks'
+        'meta'   => 'getMeta',
+        'links'  => 'getLinks',
     ];
 
     public static function attributeMap()
@@ -127,9 +127,6 @@ class JsonApiErrorErrors implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -341,6 +338,7 @@ class JsonApiErrorErrors implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -364,7 +362,7 @@ class JsonApiErrorErrors implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -44,20 +44,20 @@ class FolderAttributes implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'folder_attributes';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'name' => 'string',
+        'name'         => 'string',
         'display_name' => 'string',
         'object_count' => 'int',
-        'extension' => '\Autodesk\Client\Model\BaseAttributesExtensionObject'
+        'extension'    => '\Autodesk\Client\Model\BaseAttributesExtensionObject',
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class FolderAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
+        'name'         => 'name',
         'display_name' => 'displayName',
         'object_count' => 'objectCount',
-        'extension' => 'extension'
+        'extension'    => 'extension',
     ];
 
 
@@ -82,10 +82,10 @@ class FolderAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
+        'name'         => 'setName',
         'display_name' => 'setDisplayName',
         'object_count' => 'setObjectCount',
-        'extension' => 'setExtension'
+        'extension'    => 'setExtension',
     ];
 
 
@@ -94,10 +94,10 @@ class FolderAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
+        'name'         => 'getName',
         'display_name' => 'getDisplayName',
         'object_count' => 'getObjectCount',
-        'extension' => 'getExtension'
+        'extension'    => 'getExtension',
     ];
 
     public static function attributeMap()
@@ -115,9 +115,6 @@ class FolderAttributes implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -269,6 +266,7 @@ class FolderAttributes implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -292,7 +290,7 @@ class FolderAttributes implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

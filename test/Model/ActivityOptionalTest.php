@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ActivityOptionalTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description ActivityOptional
 /**
  * @package     Autodesk\Client

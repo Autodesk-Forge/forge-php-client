@@ -44,18 +44,18 @@ class JobStepOutputPayload implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobStepOutputPayload';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'advanced' => '\Autodesk\Client\Model\JobStepOutputPayloadAdvanced'
+        'type'     => 'string',
+        'advanced' => '\Autodesk\Client\Model\JobStepOutputPayloadAdvanced',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class JobStepOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'advanced' => 'advanced'
+        'type'     => 'type',
+        'advanced' => 'advanced',
     ];
 
 
@@ -78,8 +78,8 @@ class JobStepOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'advanced' => 'setAdvanced'
+        'type'     => 'setType',
+        'advanced' => 'setAdvanced',
     ];
 
 
@@ -88,8 +88,8 @@ class JobStepOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'advanced' => 'getAdvanced'
+        'type'     => 'getType',
+        'advanced' => 'getAdvanced',
     ];
 
     public static function attributeMap()
@@ -113,9 +113,8 @@ class JobStepOutputPayload implements ArrayAccess
     const TYPE_STEP = 'step';
     const TYPE_IGES = 'iges';
     const TYPE_OBJ = 'obj';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -131,7 +130,7 @@ class JobStepOutputPayload implements ArrayAccess
             self::TYPE_OBJ,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -162,7 +161,7 @@ class JobStepOutputPayload implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'.";
         }
 
@@ -182,7 +181,7 @@ class JobStepOutputPayload implements ArrayAccess
             return false;
         }
         $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -205,8 +204,8 @@ class JobStepOutputPayload implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('svf', 'thumbnail', 'stl', 'step', 'iges', 'obj');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'");
         }
         $this->container['type'] = $type;
@@ -234,6 +233,7 @@ class JobStepOutputPayload implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -257,7 +257,7 @@ class JobStepOutputPayload implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

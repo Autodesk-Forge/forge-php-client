@@ -44,17 +44,17 @@ class CreateItemRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'create_item_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'storage' => '\Autodesk\Client\Model\CreateItemRelationshipsStorage'
+        'storage' => '\Autodesk\Client\Model\CreateItemRelationshipsStorage',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class CreateItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'storage' => 'storage'
+        'storage' => 'storage',
     ];
 
 
@@ -76,7 +76,7 @@ class CreateItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'storage' => 'setStorage'
+        'storage' => 'setStorage',
     ];
 
 
@@ -85,7 +85,7 @@ class CreateItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'storage' => 'getStorage'
+        'storage' => 'getStorage',
     ];
 
     public static function attributeMap()
@@ -103,9 +103,6 @@ class CreateItemRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -167,6 +164,7 @@ class CreateItemRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -190,7 +188,7 @@ class CreateItemRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

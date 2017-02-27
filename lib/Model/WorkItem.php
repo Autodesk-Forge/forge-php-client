@@ -44,24 +44,24 @@ class WorkItem implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'WorkItem';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'arguments' => 'object',
-        'status' => 'string',
-        'status_detail' => 'object',
+        'id'                => 'string',
+        'arguments'         => 'object',
+        'status'            => 'string',
+        'status_detail'     => 'object',
         'availability_zone' => 'string',
-        'activity_id' => 'string',
-        'version' => 'int',
-        'timestamp' => 'string'
+        'activity_id'       => 'string',
+        'version'           => 'int',
+        'timestamp'         => 'string',
     ];
 
     public static function swaggerTypes()
@@ -74,14 +74,14 @@ class WorkItem implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'Id',
-        'arguments' => 'Arguments',
-        'status' => 'Status',
-        'status_detail' => 'StatusDetail',
+        'id'                => 'Id',
+        'arguments'         => 'Arguments',
+        'status'            => 'Status',
+        'status_detail'     => 'StatusDetail',
         'availability_zone' => 'AvailabilityZone',
-        'activity_id' => 'ActivityId',
-        'version' => 'Version',
-        'timestamp' => 'Timestamp'
+        'activity_id'       => 'ActivityId',
+        'version'           => 'Version',
+        'timestamp'         => 'Timestamp',
     ];
 
 
@@ -90,14 +90,14 @@ class WorkItem implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'arguments' => 'setArguments',
-        'status' => 'setStatus',
-        'status_detail' => 'setStatusDetail',
+        'id'                => 'setId',
+        'arguments'         => 'setArguments',
+        'status'            => 'setStatus',
+        'status_detail'     => 'setStatusDetail',
         'availability_zone' => 'setAvailabilityZone',
-        'activity_id' => 'setActivityId',
-        'version' => 'setVersion',
-        'timestamp' => 'setTimestamp'
+        'activity_id'       => 'setActivityId',
+        'version'           => 'setVersion',
+        'timestamp'         => 'setTimestamp',
     ];
 
 
@@ -106,14 +106,14 @@ class WorkItem implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'arguments' => 'getArguments',
-        'status' => 'getStatus',
-        'status_detail' => 'getStatusDetail',
+        'id'                => 'getId',
+        'arguments'         => 'getArguments',
+        'status'            => 'getStatus',
+        'status_detail'     => 'getStatusDetail',
         'availability_zone' => 'getAvailabilityZone',
-        'activity_id' => 'getActivityId',
-        'version' => 'getVersion',
-        'timestamp' => 'getTimestamp'
+        'activity_id'       => 'getActivityId',
+        'version'           => 'getVersion',
+        'timestamp'         => 'getTimestamp',
     ];
 
     public static function attributeMap()
@@ -131,9 +131,6 @@ class WorkItem implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -367,6 +364,7 @@ class WorkItem implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -390,7 +388,7 @@ class WorkItem implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

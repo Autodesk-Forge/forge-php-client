@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * HubTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Hub
 /**
  * @package     Autodesk\Client

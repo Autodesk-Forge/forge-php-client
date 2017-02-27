@@ -44,22 +44,22 @@ class FormatsFormats implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'formats_formats';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'svf' => 'string[]',
+        'svf'       => 'string[]',
         'thumbnail' => 'string[]',
-        'stl' => 'string[]',
-        'step' => 'string[]',
-        'iges' => 'string[]',
-        'obj' => 'string[]'
+        'stl'       => 'string[]',
+        'step'      => 'string[]',
+        'iges'      => 'string[]',
+        'obj'       => 'string[]',
     ];
 
     public static function swaggerTypes()
@@ -72,12 +72,12 @@ class FormatsFormats implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'svf' => 'svf',
+        'svf'       => 'svf',
         'thumbnail' => 'thumbnail',
-        'stl' => 'stl',
-        'step' => 'step',
-        'iges' => 'iges',
-        'obj' => 'obj'
+        'stl'       => 'stl',
+        'step'      => 'step',
+        'iges'      => 'iges',
+        'obj'       => 'obj',
     ];
 
 
@@ -86,12 +86,12 @@ class FormatsFormats implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'svf' => 'setSvf',
+        'svf'       => 'setSvf',
         'thumbnail' => 'setThumbnail',
-        'stl' => 'setStl',
-        'step' => 'setStep',
-        'iges' => 'setIges',
-        'obj' => 'setObj'
+        'stl'       => 'setStl',
+        'step'      => 'setStep',
+        'iges'      => 'setIges',
+        'obj'       => 'setObj',
     ];
 
 
@@ -100,12 +100,12 @@ class FormatsFormats implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'svf' => 'getSvf',
+        'svf'       => 'getSvf',
         'thumbnail' => 'getThumbnail',
-        'stl' => 'getStl',
-        'step' => 'getStep',
-        'iges' => 'getIges',
-        'obj' => 'getObj'
+        'stl'       => 'getStl',
+        'step'      => 'getStep',
+        'iges'      => 'getIges',
+        'obj'       => 'getObj',
     ];
 
     public static function attributeMap()
@@ -123,9 +123,6 @@ class FormatsFormats implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -297,6 +294,7 @@ class FormatsFormats implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -320,7 +318,7 @@ class FormatsFormats implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

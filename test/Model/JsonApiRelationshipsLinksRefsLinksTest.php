@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JsonApiRelationshipsLinksRefsLinksTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JsonApiRelationshipsLinksRefsLinks
 /**
  * @package     Autodesk\Client

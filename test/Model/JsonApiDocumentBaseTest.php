@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JsonApiDocumentBaseTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JsonApiDocumentBase
 /**
  * @package     Autodesk\Client

@@ -44,18 +44,18 @@ class JsonApiTypeId implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_type_id';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'type' => 'string'
+        'id'   => 'string',
+        'type' => 'string',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class JsonApiTypeId implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'type' => 'type'
+        'id'   => 'id',
+        'type' => 'type',
     ];
 
 
@@ -78,8 +78,8 @@ class JsonApiTypeId implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'type' => 'setType'
+        'id'   => 'setId',
+        'type' => 'setType',
     ];
 
 
@@ -88,8 +88,8 @@ class JsonApiTypeId implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'type' => 'getType'
+        'id'   => 'getId',
+        'type' => 'getType',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class JsonApiTypeId implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -205,6 +202,7 @@ class JsonApiTypeId implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -228,7 +226,7 @@ class JsonApiTypeId implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

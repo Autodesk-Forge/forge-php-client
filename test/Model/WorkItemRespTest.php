@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * WorkItemRespTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description WorkItemResp
 /**
  * @package     Autodesk\Client

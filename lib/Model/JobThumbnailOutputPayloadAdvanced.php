@@ -45,18 +45,18 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobThumbnailOutputPayload_advanced';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'width' => 'int',
-        'height' => 'int'
+        'width'  => 'int',
+        'height' => 'int',
     ];
 
     public static function swaggerTypes()
@@ -69,8 +69,8 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'width' => 'width',
-        'height' => 'height'
+        'width'  => 'width',
+        'height' => 'height',
     ];
 
 
@@ -79,8 +79,8 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'width' => 'setWidth',
-        'height' => 'setHeight'
+        'width'  => 'setWidth',
+        'height' => 'setHeight',
     ];
 
 
@@ -89,8 +89,8 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'width' => 'getWidth',
-        'height' => 'getHeight'
+        'width'  => 'getWidth',
+        'height' => 'getHeight',
     ];
 
     public static function attributeMap()
@@ -108,9 +108,6 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -194,6 +191,7 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -217,7 +215,7 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

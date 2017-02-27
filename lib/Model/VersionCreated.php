@@ -44,20 +44,20 @@ class VersionCreated implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'version_created';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Autodesk\Client\Model\Version',
+        'jsonapi'  => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data'     => '\Autodesk\Client\Model\Version',
         'included' => '\Autodesk\Client\Model\JsonApiResource[]',
-        'links' => '\Autodesk\Client\Model\JsonApiLinksSelf'
+        'links'    => '\Autodesk\Client\Model\JsonApiLinksSelf',
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class VersionCreated implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'jsonapi' => 'jsonapi',
-        'data' => 'data',
+        'jsonapi'  => 'jsonapi',
+        'data'     => 'data',
         'included' => 'included',
-        'links' => 'links'
+        'links'    => 'links',
     ];
 
 
@@ -82,10 +82,10 @@ class VersionCreated implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'jsonapi' => 'setJsonapi',
-        'data' => 'setData',
+        'jsonapi'  => 'setJsonapi',
+        'data'     => 'setData',
         'included' => 'setIncluded',
-        'links' => 'setLinks'
+        'links'    => 'setLinks',
     ];
 
 
@@ -94,10 +94,10 @@ class VersionCreated implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'jsonapi' => 'getJsonapi',
-        'data' => 'getData',
+        'jsonapi'  => 'getJsonapi',
+        'data'     => 'getData',
         'included' => 'getIncluded',
-        'links' => 'getLinks'
+        'links'    => 'getLinks',
     ];
 
     public static function attributeMap()
@@ -115,9 +115,6 @@ class VersionCreated implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -257,6 +254,7 @@ class VersionCreated implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -280,7 +278,7 @@ class VersionCreated implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

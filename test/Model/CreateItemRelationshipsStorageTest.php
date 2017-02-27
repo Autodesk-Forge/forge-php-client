@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * CreateItemRelationshipsStorageTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description CreateItemRelationshipsStorage
 /**
  * @package     Autodesk\Client

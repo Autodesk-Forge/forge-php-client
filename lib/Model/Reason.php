@@ -45,17 +45,17 @@ class Reason implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'reason';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'reason' => 'string'
+        'reason' => 'string',
     ];
 
     public static function swaggerTypes()
@@ -68,7 +68,7 @@ class Reason implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'reason' => 'reason'
+        'reason' => 'reason',
     ];
 
 
@@ -77,7 +77,7 @@ class Reason implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'reason' => 'setReason'
+        'reason' => 'setReason',
     ];
 
 
@@ -86,7 +86,7 @@ class Reason implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'reason' => 'getReason'
+        'reason' => 'getReason',
     ];
 
     public static function attributeMap()
@@ -104,9 +104,6 @@ class Reason implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -174,6 +171,7 @@ class Reason implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -197,7 +195,7 @@ class Reason implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

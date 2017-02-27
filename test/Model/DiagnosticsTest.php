@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * DiagnosticsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Diagnostics
 /**
  * @package     Autodesk\Client

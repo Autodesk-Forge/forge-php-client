@@ -45,17 +45,17 @@ class JsonApiErrorLinks implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_error_links';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'about' => '\Autodesk\Client\Model\JsonApiLink'
+        'about' => '\Autodesk\Client\Model\JsonApiLink',
     ];
 
     public static function swaggerTypes()
@@ -68,7 +68,7 @@ class JsonApiErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'about' => 'about'
+        'about' => 'about',
     ];
 
 
@@ -77,7 +77,7 @@ class JsonApiErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'about' => 'setAbout'
+        'about' => 'setAbout',
     ];
 
 
@@ -86,7 +86,7 @@ class JsonApiErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'about' => 'getAbout'
+        'about' => 'getAbout',
     ];
 
     public static function attributeMap()
@@ -104,9 +104,6 @@ class JsonApiErrorLinks implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -174,6 +171,7 @@ class JsonApiErrorLinks implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -197,7 +195,7 @@ class JsonApiErrorLinks implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

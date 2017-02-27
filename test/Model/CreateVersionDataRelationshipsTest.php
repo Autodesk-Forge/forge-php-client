@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * CreateVersionDataRelationshipsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description CreateVersionDataRelationships
 /**
  * @package     Autodesk\Client

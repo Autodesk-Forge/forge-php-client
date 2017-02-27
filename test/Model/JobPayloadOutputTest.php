@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobPayloadOutputTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Group of outputs
 /**
  * @package     Autodesk\Client

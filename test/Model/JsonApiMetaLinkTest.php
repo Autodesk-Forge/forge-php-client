@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JsonApiMetaLinkTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JsonApiMetaLink
 /**
  * @package     Autodesk\Client

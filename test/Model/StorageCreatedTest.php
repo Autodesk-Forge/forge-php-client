@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * StorageCreatedTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description StorageCreated
 /**
  * @package     Autodesk\Client

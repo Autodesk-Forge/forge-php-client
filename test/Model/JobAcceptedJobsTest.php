@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobAcceptedJobsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description list of the requested outputs
 /**
  * @package     Autodesk\Client

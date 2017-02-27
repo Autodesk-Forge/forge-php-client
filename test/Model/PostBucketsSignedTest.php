@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * PostBucketsSignedTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description PostBucketsSigned
 /**
  * @package     Autodesk\Client

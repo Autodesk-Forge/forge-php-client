@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * MetadataCollectionTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description metadata collection definition
 /**
  * @package     Autodesk\Client

@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ManifestDerivativeTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Requested output files for the source file URN
 /**
  * @package     Autodesk\Client

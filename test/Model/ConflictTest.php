@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ConflictTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Conflict
 /**
  * @package     Autodesk\Client

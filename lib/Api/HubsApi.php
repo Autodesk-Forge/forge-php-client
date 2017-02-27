@@ -46,7 +46,7 @@ class HubsApi extends AbstractApi
     /**
      * Operation getHub
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
@@ -61,7 +61,7 @@ class HubsApi extends AbstractApi
     /**
      * Operation getHubWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
@@ -80,7 +80,7 @@ class HubsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
@@ -96,7 +96,7 @@ class HubsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -115,19 +115,26 @@ class HubsApi extends AbstractApi
                 '/project/v1/hubs/{hub_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Hub', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Hub', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Hub', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Hub', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -139,7 +146,7 @@ class HubsApi extends AbstractApi
     /**
      * Operation getHubs
      *
-     * 
+     *
      *
      * @param string[] $filter_id filter by the &#x60;id&#x60; of the &#x60;ref&#x60; target (optional)
      * @param string[] $filter_extension_type filter by the extension type (optional)
@@ -155,7 +162,7 @@ class HubsApi extends AbstractApi
     /**
      * Operation getHubsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string[] $filter_id filter by the &#x60;id&#x60; of the &#x60;ref&#x60; target (optional)
      * @param string[] $filter_extension_type filter by the extension type (optional)
@@ -171,7 +178,7 @@ class HubsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
@@ -185,7 +192,8 @@ class HubsApi extends AbstractApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
+                'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
@@ -193,7 +201,7 @@ class HubsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -212,15 +220,21 @@ class HubsApi extends AbstractApi
                 '/project/v1/hubs'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Hubs', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Hubs', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Hubs', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Hubs', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

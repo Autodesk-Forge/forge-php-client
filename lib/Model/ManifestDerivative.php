@@ -45,22 +45,22 @@ class ManifestDerivative implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'manifest-derivative';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'name' => 'string',
+        'name'          => 'string',
         'has_thumbnail' => 'bool',
-        'output_type' => 'string',
-        'progress' => 'string',
-        'status' => 'string',
-        'children' => '\Autodesk\Client\Model\ManifestChildren[]'
+        'output_type'   => 'string',
+        'progress'      => 'string',
+        'status'        => 'string',
+        'children'      => '\Autodesk\Client\Model\ManifestChildren[]',
     ];
 
     public static function swaggerTypes()
@@ -73,12 +73,12 @@ class ManifestDerivative implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
+        'name'          => 'name',
         'has_thumbnail' => 'hasThumbnail',
-        'output_type' => 'outputType',
-        'progress' => 'progress',
-        'status' => 'status',
-        'children' => 'children'
+        'output_type'   => 'outputType',
+        'progress'      => 'progress',
+        'status'        => 'status',
+        'children'      => 'children',
     ];
 
 
@@ -87,12 +87,12 @@ class ManifestDerivative implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
+        'name'          => 'setName',
         'has_thumbnail' => 'setHasThumbnail',
-        'output_type' => 'setOutputType',
-        'progress' => 'setProgress',
-        'status' => 'setStatus',
-        'children' => 'setChildren'
+        'output_type'   => 'setOutputType',
+        'progress'      => 'setProgress',
+        'status'        => 'setStatus',
+        'children'      => 'setChildren',
     ];
 
 
@@ -101,12 +101,12 @@ class ManifestDerivative implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
+        'name'          => 'getName',
         'has_thumbnail' => 'getHasThumbnail',
-        'output_type' => 'getOutputType',
-        'progress' => 'getProgress',
-        'status' => 'getStatus',
-        'children' => 'getChildren'
+        'output_type'   => 'getOutputType',
+        'progress'      => 'getProgress',
+        'status'        => 'getStatus',
+        'children'      => 'getChildren',
     ];
 
     public static function attributeMap()
@@ -136,9 +136,8 @@ class ManifestDerivative implements ArrayAccess
     const STATUS_FAILED = 'failed';
     const STATUS_TIMEOUT = 'timeout';
     const STATUS_PARTIALSUCCESS = 'partialsuccess';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -154,7 +153,7 @@ class ManifestDerivative implements ArrayAccess
             self::OUTPUT_TYPE_THUMBNAIL,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -170,7 +169,7 @@ class ManifestDerivative implements ArrayAccess
             self::STATUS_PARTIALSUCCESS,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -208,7 +207,7 @@ class ManifestDerivative implements ArrayAccess
             $invalid_properties[] = "'has_thumbnail' can't be null";
         }
         $allowed_values = ["stl", "step", "iges", "obj", "svf", "thumbnail"];
-        if (!in_array($this->container['output_type'], $allowed_values)) {
+        if ( ! in_array($this->container['output_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'output_type', must be one of 'stl', 'step', 'iges', 'obj', 'svf', 'thumbnail'.";
         }
 
@@ -219,7 +218,7 @@ class ManifestDerivative implements ArrayAccess
             $invalid_properties[] = "'status' can't be null";
         }
         $allowed_values = ["pending", "inprogress", "success", "failed", "timeout", "partialsuccess"];
-        if (!in_array($this->container['status'], $allowed_values)) {
+        if ( ! in_array($this->container['status'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'status', must be one of 'pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess'.";
         }
 
@@ -245,7 +244,7 @@ class ManifestDerivative implements ArrayAccess
             return false;
         }
         $allowed_values = ["stl", "step", "iges", "obj", "svf", "thumbnail"];
-        if (!in_array($this->container['output_type'], $allowed_values)) {
+        if ( ! in_array($this->container['output_type'], $allowed_values)) {
             return false;
         }
         if ($this->container['progress'] === null) {
@@ -255,7 +254,7 @@ class ManifestDerivative implements ArrayAccess
             return false;
         }
         $allowed_values = ["pending", "inprogress", "success", "failed", "timeout", "partialsuccess"];
-        if (!in_array($this->container['status'], $allowed_values)) {
+        if ( ! in_array($this->container['status'], $allowed_values)) {
             return false;
         }
         if ($this->container['children'] === null) {
@@ -323,8 +322,8 @@ class ManifestDerivative implements ArrayAccess
      */
     public function setOutputType($output_type)
     {
-        $allowed_values = array('stl', 'step', 'iges', 'obj', 'svf', 'thumbnail');
-        if (!is_null($output_type) && (!in_array($output_type, $allowed_values))) {
+        $allowed_values = ['stl', 'step', 'iges', 'obj', 'svf', 'thumbnail'];
+        if ( ! is_null($output_type) && ( ! in_array($output_type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'output_type', must be one of 'stl', 'step', 'iges', 'obj', 'svf', 'thumbnail'");
         }
         $this->container['output_type'] = $output_type;
@@ -369,8 +368,8 @@ class ManifestDerivative implements ArrayAccess
      */
     public function setStatus($status)
     {
-        $allowed_values = array('pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess');
-        if ((!in_array($status, $allowed_values))) {
+        $allowed_values = ['pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess'];
+        if (( ! in_array($status, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'status', must be one of 'pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess'");
         }
         $this->container['status'] = $status;
@@ -398,6 +397,7 @@ class ManifestDerivative implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -421,7 +421,7 @@ class ManifestDerivative implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

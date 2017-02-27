@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * BaseAttributesCreatedUpdatedAttributesTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description BaseAttributesCreatedUpdatedAttributes
 /**
  * @package     Autodesk\Client

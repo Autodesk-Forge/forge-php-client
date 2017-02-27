@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * PostObjectSignedTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Object Signed Object json response
 /**
  * @package     Autodesk\Client

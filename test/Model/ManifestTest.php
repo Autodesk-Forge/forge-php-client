@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ManifestTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Manifest
 /**
  * @package     Autodesk\Client

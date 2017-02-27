@@ -44,18 +44,18 @@ class ProjectRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'project_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'hub' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'root_folder' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksExternalResource'
+        'hub'         => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'root_folder' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksExternalResource',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class ProjectRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'hub' => 'hub',
-        'root_folder' => 'rootFolder'
+        'hub'         => 'hub',
+        'root_folder' => 'rootFolder',
     ];
 
 
@@ -78,8 +78,8 @@ class ProjectRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'hub' => 'setHub',
-        'root_folder' => 'setRootFolder'
+        'hub'         => 'setHub',
+        'root_folder' => 'setRootFolder',
     ];
 
 
@@ -88,8 +88,8 @@ class ProjectRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'hub' => 'getHub',
-        'root_folder' => 'getRootFolder'
+        'hub'         => 'getHub',
+        'root_folder' => 'getRootFolder',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class ProjectRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -205,6 +202,7 @@ class ProjectRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -228,7 +226,7 @@ class ProjectRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

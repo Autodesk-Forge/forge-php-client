@@ -44,17 +44,17 @@ class JsonApiVersion implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_version';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi'
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class JsonApiVersion implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'jsonapi' => 'jsonapi'
+        'jsonapi' => 'jsonapi',
     ];
 
 
@@ -76,7 +76,7 @@ class JsonApiVersion implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'jsonapi' => 'setJsonapi'
+        'jsonapi' => 'setJsonapi',
     ];
 
 
@@ -85,7 +85,7 @@ class JsonApiVersion implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'jsonapi' => 'getJsonapi'
+        'jsonapi' => 'getJsonapi',
     ];
 
     public static function attributeMap()
@@ -103,9 +103,6 @@ class JsonApiVersion implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -167,6 +164,7 @@ class JsonApiVersion implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -190,7 +188,7 @@ class JsonApiVersion implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

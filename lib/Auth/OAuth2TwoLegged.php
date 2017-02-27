@@ -36,7 +36,8 @@ class OAuth2TwoLegged extends AbstractOAuth2
             'scope'         => implode(' ', $this->getScopes()),
         ];
 
-        list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body, $headers);
+        list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body,
+            $headers);
 
         if ( ! isset($response->access_token)) {
             throw new ApiException('Two legged auth response does not contain access_token');

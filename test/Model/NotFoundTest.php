@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * NotFoundTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description NotFound
 /**
  * @package     Autodesk\Client

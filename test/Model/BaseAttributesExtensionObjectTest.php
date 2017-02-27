@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * BaseAttributesExtensionObjectTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description BaseAttributesExtensionObject
 /**
  * @package     Autodesk\Client

@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ActivityTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Activity
 /**
  * @package     Autodesk\Client

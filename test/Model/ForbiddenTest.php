@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ForbiddenTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Forbidden
 /**
  * @package     Autodesk\Client

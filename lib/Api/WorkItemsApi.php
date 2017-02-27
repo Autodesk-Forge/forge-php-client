@@ -48,7 +48,7 @@ class WorkItemsApi extends AbstractApi
      *
      * Creates a new WorkItem.
      *
-     * @param \Autodesk\Client\Model\WorkItem $work_item  (required)
+     * @param \Autodesk\Client\Model\WorkItem $work_item (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\WorkItemResp
      */
@@ -63,7 +63,7 @@ class WorkItemsApi extends AbstractApi
      *
      * Creates a new WorkItem.
      *
-     * @param \Autodesk\Client\Model\WorkItem $work_item  (required)
+     * @param \Autodesk\Client\Model\WorkItem $work_item (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\WorkItemResp, HTTP status code, HTTP response headers (array of strings)
      */
@@ -80,7 +80,7 @@ class WorkItemsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -112,11 +112,17 @@ class WorkItemsApi extends AbstractApi
                 '/autocad.io/us-east/v2/WorkItems'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\WorkItemResp', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\WorkItemResp',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\WorkItemResp', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\WorkItemResp', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -130,7 +136,7 @@ class WorkItemsApi extends AbstractApi
      *
      * Removes a specific WorkItem.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
@@ -145,7 +151,7 @@ class WorkItemsApi extends AbstractApi
      *
      * Removes a specific WorkItem.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -162,7 +168,7 @@ class WorkItemsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -178,7 +184,7 @@ class WorkItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -211,7 +217,7 @@ class WorkItemsApi extends AbstractApi
      *
      * Returns the details of all WorkItems.
      *
-     * @param int $skip  (optional)
+     * @param int $skip (optional)
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\DesignAutomationWorkItems
      */
@@ -226,7 +232,7 @@ class WorkItemsApi extends AbstractApi
      *
      * Returns the details of all WorkItems.
      *
-     * @param int $skip  (optional)
+     * @param int $skip (optional)
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\DesignAutomationWorkItems, HTTP status code, HTTP response headers (array of strings)
      */
@@ -239,7 +245,7 @@ class WorkItemsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -251,7 +257,7 @@ class WorkItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -270,11 +276,17 @@ class WorkItemsApi extends AbstractApi
                 '/autocad.io/us-east/v2/WorkItems'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\DesignAutomationWorkItems', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response,
+                    '\Autodesk\Client\Model\DesignAutomationWorkItems', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\DesignAutomationWorkItems', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\DesignAutomationWorkItems', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -288,7 +300,7 @@ class WorkItemsApi extends AbstractApi
      *
      * Returns the details of a specific WorkItem.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\WorkItemResp
      */
@@ -303,7 +315,7 @@ class WorkItemsApi extends AbstractApi
      *
      * Returns the details of a specific WorkItem.
      *
-     * @param string $id  (required)
+     * @param string $id (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\WorkItemResp, HTTP status code, HTTP response headers (array of strings)
      */
@@ -320,7 +332,7 @@ class WorkItemsApi extends AbstractApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -336,7 +348,7 @@ class WorkItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -355,11 +367,17 @@ class WorkItemsApi extends AbstractApi
                 '/autocad.io/us-east/v2/WorkItems(&#39;{id}&#39;)'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\WorkItemResp', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\WorkItemResp',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\WorkItemResp', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\WorkItemResp', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

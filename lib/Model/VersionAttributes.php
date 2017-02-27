@@ -44,23 +44,23 @@ class VersionAttributes implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'version_attributes';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'display_name' => 'string',
+        'name'           => 'string',
+        'display_name'   => 'string',
         'version_number' => 'int',
-        'mime_type' => 'string',
-        'file_type' => 'string',
-        'storage_size' => 'int',
-        'extension' => '\Autodesk\Client\Model\BaseAttributesExtensionObject'
+        'mime_type'      => 'string',
+        'file_type'      => 'string',
+        'storage_size'   => 'int',
+        'extension'      => '\Autodesk\Client\Model\BaseAttributesExtensionObject',
     ];
 
     public static function swaggerTypes()
@@ -73,13 +73,13 @@ class VersionAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'display_name' => 'displayName',
+        'name'           => 'name',
+        'display_name'   => 'displayName',
         'version_number' => 'versionNumber',
-        'mime_type' => 'mimeType',
-        'file_type' => 'fileType',
-        'storage_size' => 'storageSize',
-        'extension' => 'extension'
+        'mime_type'      => 'mimeType',
+        'file_type'      => 'fileType',
+        'storage_size'   => 'storageSize',
+        'extension'      => 'extension',
     ];
 
 
@@ -88,13 +88,13 @@ class VersionAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'display_name' => 'setDisplayName',
+        'name'           => 'setName',
+        'display_name'   => 'setDisplayName',
         'version_number' => 'setVersionNumber',
-        'mime_type' => 'setMimeType',
-        'file_type' => 'setFileType',
-        'storage_size' => 'setStorageSize',
-        'extension' => 'setExtension'
+        'mime_type'      => 'setMimeType',
+        'file_type'      => 'setFileType',
+        'storage_size'   => 'setStorageSize',
+        'extension'      => 'setExtension',
     ];
 
 
@@ -103,13 +103,13 @@ class VersionAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'display_name' => 'getDisplayName',
+        'name'           => 'getName',
+        'display_name'   => 'getDisplayName',
         'version_number' => 'getVersionNumber',
-        'mime_type' => 'getMimeType',
-        'file_type' => 'getFileType',
-        'storage_size' => 'getStorageSize',
-        'extension' => 'getExtension'
+        'mime_type'      => 'getMimeType',
+        'file_type'      => 'getFileType',
+        'storage_size'   => 'getStorageSize',
+        'extension'      => 'getExtension',
     ];
 
     public static function attributeMap()
@@ -127,9 +127,6 @@ class VersionAttributes implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -347,6 +344,7 @@ class VersionAttributes implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -370,7 +368,7 @@ class VersionAttributes implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

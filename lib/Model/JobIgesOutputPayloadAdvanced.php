@@ -45,20 +45,20 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobIgesOutputPayload_advanced';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'tolerance' => 'float',
+        'tolerance'    => 'float',
         'surface_type' => 'string',
-        'sheet_type' => 'string',
-        'solid_type' => 'string'
+        'sheet_type'   => 'string',
+        'solid_type'   => 'string',
     ];
 
     public static function swaggerTypes()
@@ -71,10 +71,10 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'tolerance' => 'tolerance',
+        'tolerance'    => 'tolerance',
         'surface_type' => 'surfaceType',
-        'sheet_type' => 'sheetType',
-        'solid_type' => 'solidType'
+        'sheet_type'   => 'sheetType',
+        'solid_type'   => 'solidType',
     ];
 
 
@@ -83,10 +83,10 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'tolerance' => 'setTolerance',
+        'tolerance'    => 'setTolerance',
         'surface_type' => 'setSurfaceType',
-        'sheet_type' => 'setSheetType',
-        'solid_type' => 'setSolidType'
+        'sheet_type'   => 'setSheetType',
+        'solid_type'   => 'setSolidType',
     ];
 
 
@@ -95,10 +95,10 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'tolerance' => 'getTolerance',
+        'tolerance'    => 'getTolerance',
         'surface_type' => 'getSurfaceType',
-        'sheet_type' => 'getSheetType',
-        'solid_type' => 'getSolidType'
+        'sheet_type'   => 'getSheetType',
+        'solid_type'   => 'getSolidType',
     ];
 
     public static function attributeMap()
@@ -126,9 +126,8 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
     const SOLID_TYPE_SOLID = 'solid';
     const SOLID_TYPE_SURFACE = 'surface';
     const SOLID_TYPE_WIREFRAME = 'wireframe';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -141,7 +140,7 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
             self::SURFACE_TYPE_WIREFRAME,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -155,7 +154,7 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
             self::SHEET_TYPE_WIREFRAME,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -168,7 +167,7 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
             self::SOLID_TYPE_WIREFRAME,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -198,17 +197,17 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
         $invalid_properties = [];
 
         $allowed_values = ["bounded", "trimmed", "wireframe"];
-        if (!in_array($this->container['surface_type'], $allowed_values)) {
+        if ( ! in_array($this->container['surface_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'surface_type', must be one of 'bounded', 'trimmed', 'wireframe'.";
         }
 
         $allowed_values = ["open", "surface", "shell", "wireframe"];
-        if (!in_array($this->container['sheet_type'], $allowed_values)) {
+        if ( ! in_array($this->container['sheet_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'sheet_type', must be one of 'open', 'surface', 'shell', 'wireframe'.";
         }
 
         $allowed_values = ["solid", "surface", "wireframe"];
-        if (!in_array($this->container['solid_type'], $allowed_values)) {
+        if ( ! in_array($this->container['solid_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'solid_type', must be one of 'solid', 'surface', 'wireframe'.";
         }
 
@@ -225,15 +224,15 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
     {
 
         $allowed_values = ["bounded", "trimmed", "wireframe"];
-        if (!in_array($this->container['surface_type'], $allowed_values)) {
+        if ( ! in_array($this->container['surface_type'], $allowed_values)) {
             return false;
         }
         $allowed_values = ["open", "surface", "shell", "wireframe"];
-        if (!in_array($this->container['sheet_type'], $allowed_values)) {
+        if ( ! in_array($this->container['sheet_type'], $allowed_values)) {
             return false;
         }
         $allowed_values = ["solid", "surface", "wireframe"];
-        if (!in_array($this->container['solid_type'], $allowed_values)) {
+        if ( ! in_array($this->container['solid_type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -277,8 +276,8 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
      */
     public function setSurfaceType($surface_type)
     {
-        $allowed_values = array('bounded', 'trimmed', 'wireframe');
-        if (!is_null($surface_type) && (!in_array($surface_type, $allowed_values))) {
+        $allowed_values = ['bounded', 'trimmed', 'wireframe'];
+        if ( ! is_null($surface_type) && ( ! in_array($surface_type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'surface_type', must be one of 'bounded', 'trimmed', 'wireframe'");
         }
         $this->container['surface_type'] = $surface_type;
@@ -302,8 +301,8 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
      */
     public function setSheetType($sheet_type)
     {
-        $allowed_values = array('open', 'surface', 'shell', 'wireframe');
-        if (!is_null($sheet_type) && (!in_array($sheet_type, $allowed_values))) {
+        $allowed_values = ['open', 'surface', 'shell', 'wireframe'];
+        if ( ! is_null($sheet_type) && ( ! in_array($sheet_type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'sheet_type', must be one of 'open', 'surface', 'shell', 'wireframe'");
         }
         $this->container['sheet_type'] = $sheet_type;
@@ -327,14 +326,15 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
      */
     public function setSolidType($solid_type)
     {
-        $allowed_values = array('solid', 'surface', 'wireframe');
-        if (!is_null($solid_type) && (!in_array($solid_type, $allowed_values))) {
+        $allowed_values = ['solid', 'surface', 'wireframe'];
+        if ( ! is_null($solid_type) && ( ! in_array($solid_type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'solid_type', must be one of 'solid', 'surface', 'wireframe'");
         }
         $this->container['solid_type'] = $solid_type;
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -358,7 +358,7 @@ class JobIgesOutputPayloadAdvanced implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * CreateItemDataRelationshipsTipDataTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description CreateItemDataRelationshipsTipData
 /**
  * @package     Autodesk\Client

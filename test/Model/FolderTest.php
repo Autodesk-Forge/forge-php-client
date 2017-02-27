@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * FolderTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Folder
 /**
  * @package     Autodesk\Client

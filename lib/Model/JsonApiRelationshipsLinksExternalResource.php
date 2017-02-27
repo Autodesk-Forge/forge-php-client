@@ -44,18 +44,18 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_relationships_links_external_resource';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'meta' => '\Autodesk\Client\Model\JsonApiMetaLink',
-        'data' => '\Autodesk\Client\Model\JsonApiTypeId'
+        'data' => '\Autodesk\Client\Model\JsonApiTypeId',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
      */
     protected static $attributeMap = [
         'meta' => 'meta',
-        'data' => 'data'
+        'data' => 'data',
     ];
 
 
@@ -79,7 +79,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
      */
     protected static $setters = [
         'meta' => 'setMeta',
-        'data' => 'setData'
+        'data' => 'setData',
     ];
 
 
@@ -89,7 +89,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
      */
     protected static $getters = [
         'meta' => 'getMeta',
-        'data' => 'getData'
+        'data' => 'getData',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -205,6 +202,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -228,7 +226,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

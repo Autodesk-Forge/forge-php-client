@@ -44,25 +44,25 @@ class Project implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'project';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Autodesk\Client\Model\JsonApiResource',
-        'included' => '\Autodesk\Client\Model\JsonApiResource[]',
-        'links' => '\Autodesk\Client\Model\JsonApiLinks',
-        'id' => 'string',
-        'type' => 'string',
-        'attributes' => '\Autodesk\Client\Model\ProjectAttributes',
-        'meta' => '\Autodesk\Client\Model\JsonApiMeta',
-        'relationships' => '\Autodesk\Client\Model\ProjectRelationships'
+        'jsonapi'       => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data'          => '\Autodesk\Client\Model\JsonApiResource',
+        'included'      => '\Autodesk\Client\Model\JsonApiResource[]',
+        'links'         => '\Autodesk\Client\Model\JsonApiLinks',
+        'id'            => 'string',
+        'type'          => 'string',
+        'attributes'    => '\Autodesk\Client\Model\ProjectAttributes',
+        'meta'          => '\Autodesk\Client\Model\JsonApiMeta',
+        'relationships' => '\Autodesk\Client\Model\ProjectRelationships',
     ];
 
     public static function swaggerTypes()
@@ -75,15 +75,15 @@ class Project implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'jsonapi' => 'jsonapi',
-        'data' => 'data',
-        'included' => 'included',
-        'links' => 'links',
-        'id' => 'id',
-        'type' => 'type',
-        'attributes' => 'attributes',
-        'meta' => 'meta',
-        'relationships' => 'relationships'
+        'jsonapi'       => 'jsonapi',
+        'data'          => 'data',
+        'included'      => 'included',
+        'links'         => 'links',
+        'id'            => 'id',
+        'type'          => 'type',
+        'attributes'    => 'attributes',
+        'meta'          => 'meta',
+        'relationships' => 'relationships',
     ];
 
 
@@ -92,15 +92,15 @@ class Project implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'jsonapi' => 'setJsonapi',
-        'data' => 'setData',
-        'included' => 'setIncluded',
-        'links' => 'setLinks',
-        'id' => 'setId',
-        'type' => 'setType',
-        'attributes' => 'setAttributes',
-        'meta' => 'setMeta',
-        'relationships' => 'setRelationships'
+        'jsonapi'       => 'setJsonapi',
+        'data'          => 'setData',
+        'included'      => 'setIncluded',
+        'links'         => 'setLinks',
+        'id'            => 'setId',
+        'type'          => 'setType',
+        'attributes'    => 'setAttributes',
+        'meta'          => 'setMeta',
+        'relationships' => 'setRelationships',
     ];
 
 
@@ -109,15 +109,15 @@ class Project implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'jsonapi' => 'getJsonapi',
-        'data' => 'getData',
-        'included' => 'getIncluded',
-        'links' => 'getLinks',
-        'id' => 'getId',
-        'type' => 'getType',
-        'attributes' => 'getAttributes',
-        'meta' => 'getMeta',
-        'relationships' => 'getRelationships'
+        'jsonapi'       => 'getJsonapi',
+        'data'          => 'getData',
+        'included'      => 'getIncluded',
+        'links'         => 'getLinks',
+        'id'            => 'getId',
+        'type'          => 'getType',
+        'attributes'    => 'getAttributes',
+        'meta'          => 'getMeta',
+        'relationships' => 'getRelationships',
     ];
 
     public static function attributeMap()
@@ -136,9 +136,8 @@ class Project implements ArrayAccess
     }
 
     const TYPE_PROJECTS = 'projects';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -149,7 +148,7 @@ class Project implements ArrayAccess
             self::TYPE_PROJECTS,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -196,7 +195,7 @@ class Project implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["projects"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'projects'.";
         }
 
@@ -225,7 +224,7 @@ class Project implements ArrayAccess
             return false;
         }
         $allowed_values = ["projects"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -353,8 +352,8 @@ class Project implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('projects');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['projects'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'projects'");
         }
         $this->container['type'] = $type;
@@ -424,6 +423,7 @@ class Project implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -447,7 +447,7 @@ class Project implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

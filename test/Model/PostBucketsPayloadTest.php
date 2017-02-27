@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * PostBucketsPayloadTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Bucket Payload Body Structure
 /**
  * @package     Autodesk\Client

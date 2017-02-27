@@ -44,20 +44,20 @@ class BaseAttributesCreatedUpdatedAttributes implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'base_attributes_created_updated_attributes';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'create_time' => '\DateTime',
-        'create_user_id' => 'string',
-        'last_modified_time' => '\DateTime',
-        'last_modified_user_id' => 'string'
+        'create_time'           => '\DateTime',
+        'create_user_id'        => 'string',
+        'last_modified_time'    => '\DateTime',
+        'last_modified_user_id' => 'string',
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class BaseAttributesCreatedUpdatedAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'create_time' => 'createTime',
-        'create_user_id' => 'createUserId',
-        'last_modified_time' => 'lastModifiedTime',
-        'last_modified_user_id' => 'lastModifiedUserId'
+        'create_time'           => 'createTime',
+        'create_user_id'        => 'createUserId',
+        'last_modified_time'    => 'lastModifiedTime',
+        'last_modified_user_id' => 'lastModifiedUserId',
     ];
 
 
@@ -82,10 +82,10 @@ class BaseAttributesCreatedUpdatedAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'create_time' => 'setCreateTime',
-        'create_user_id' => 'setCreateUserId',
-        'last_modified_time' => 'setLastModifiedTime',
-        'last_modified_user_id' => 'setLastModifiedUserId'
+        'create_time'           => 'setCreateTime',
+        'create_user_id'        => 'setCreateUserId',
+        'last_modified_time'    => 'setLastModifiedTime',
+        'last_modified_user_id' => 'setLastModifiedUserId',
     ];
 
 
@@ -94,10 +94,10 @@ class BaseAttributesCreatedUpdatedAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'create_time' => 'getCreateTime',
-        'create_user_id' => 'getCreateUserId',
-        'last_modified_time' => 'getLastModifiedTime',
-        'last_modified_user_id' => 'getLastModifiedUserId'
+        'create_time'           => 'getCreateTime',
+        'create_user_id'        => 'getCreateUserId',
+        'last_modified_time'    => 'getLastModifiedTime',
+        'last_modified_user_id' => 'getLastModifiedUserId',
     ];
 
     public static function attributeMap()
@@ -115,9 +115,6 @@ class BaseAttributesCreatedUpdatedAttributes implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -269,6 +266,7 @@ class BaseAttributesCreatedUpdatedAttributes implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -292,7 +290,7 @@ class BaseAttributesCreatedUpdatedAttributes implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

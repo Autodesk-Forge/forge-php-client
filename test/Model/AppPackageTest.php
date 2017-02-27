@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * AppPackageTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description AppPackage
 /**
  * @package     Autodesk\Client

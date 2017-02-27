@@ -45,19 +45,19 @@ class PostBucketsPayload implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'post_buckets_payload';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'bucket_key' => 'string',
-        'allow' => '\Autodesk\Client\Model\PostBucketsPayloadAllow[]',
-        'policy_key' => 'string'
+        'allow'      => '\Autodesk\Client\Model\PostBucketsPayloadAllow[]',
+        'policy_key' => 'string',
     ];
 
     public static function swaggerTypes()
@@ -71,8 +71,8 @@ class PostBucketsPayload implements ArrayAccess
      */
     protected static $attributeMap = [
         'bucket_key' => 'bucketKey',
-        'allow' => 'allow',
-        'policy_key' => 'policyKey'
+        'allow'      => 'allow',
+        'policy_key' => 'policyKey',
     ];
 
 
@@ -82,8 +82,8 @@ class PostBucketsPayload implements ArrayAccess
      */
     protected static $setters = [
         'bucket_key' => 'setBucketKey',
-        'allow' => 'setAllow',
-        'policy_key' => 'setPolicyKey'
+        'allow'      => 'setAllow',
+        'policy_key' => 'setPolicyKey',
     ];
 
 
@@ -93,8 +93,8 @@ class PostBucketsPayload implements ArrayAccess
      */
     protected static $getters = [
         'bucket_key' => 'getBucketKey',
-        'allow' => 'getAllow',
-        'policy_key' => 'getPolicyKey'
+        'allow'      => 'getAllow',
+        'policy_key' => 'getPolicyKey',
     ];
 
     public static function attributeMap()
@@ -115,9 +115,8 @@ class PostBucketsPayload implements ArrayAccess
     const POLICY_KEY_TRANSIENT = 'transient';
     const POLICY_KEY_TEMPORARY = 'temporary';
     const POLICY_KEY_PERSISTENT = 'persistent';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -130,7 +129,7 @@ class PostBucketsPayload implements ArrayAccess
             self::POLICY_KEY_PERSISTENT,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -165,7 +164,7 @@ class PostBucketsPayload implements ArrayAccess
             $invalid_properties[] = "'policy_key' can't be null";
         }
         $allowed_values = ["transient", "temporary", "persistent"];
-        if (!in_array($this->container['policy_key'], $allowed_values)) {
+        if ( ! in_array($this->container['policy_key'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'policy_key', must be one of 'transient', 'temporary', 'persistent'.";
         }
 
@@ -188,7 +187,7 @@ class PostBucketsPayload implements ArrayAccess
             return false;
         }
         $allowed_values = ["transient", "temporary", "persistent"];
-        if (!in_array($this->container['policy_key'], $allowed_values)) {
+        if ( ! in_array($this->container['policy_key'], $allowed_values)) {
             return false;
         }
         return true;
@@ -253,14 +252,15 @@ class PostBucketsPayload implements ArrayAccess
      */
     public function setPolicyKey($policy_key)
     {
-        $allowed_values = array('transient', 'temporary', 'persistent');
-        if ((!in_array($policy_key, $allowed_values))) {
+        $allowed_values = ['transient', 'temporary', 'persistent'];
+        if (( ! in_array($policy_key, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'policy_key', must be one of 'transient', 'temporary', 'persistent'");
         }
         $this->container['policy_key'] = $policy_key;
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -284,7 +284,7 @@ class PostBucketsPayload implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

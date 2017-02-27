@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * PermissionTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Permission
 /**
  * @package     Autodesk\Client

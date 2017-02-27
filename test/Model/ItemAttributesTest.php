@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ItemAttributesTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description ItemAttributes
 /**
  * @package     Autodesk\Client

@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * MessagesTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Translation service message
 /**
  * @package     Autodesk\Client

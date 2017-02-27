@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JobSvfOutputPayloadTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JobSvfOutputPayload
 /**
  * @package     Autodesk\Client

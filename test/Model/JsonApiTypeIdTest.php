@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JsonApiTypeIdTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description JsonApiTypeId
 /**
  * @package     Autodesk\Client

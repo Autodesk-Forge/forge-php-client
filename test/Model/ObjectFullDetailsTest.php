@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * ObjectFullDetailsTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description Object Details json response
 /**
  * @package     Autodesk\Client

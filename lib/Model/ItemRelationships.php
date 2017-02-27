@@ -44,20 +44,20 @@ class ItemRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'item_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'parent' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'tip' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'parent'   => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'tip'      => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
         'versions' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternal',
-        'refs' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs'
+        'refs'     => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs',
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class ItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'parent' => 'parent',
-        'tip' => 'tip',
+        'parent'   => 'parent',
+        'tip'      => 'tip',
         'versions' => 'versions',
-        'refs' => 'refs'
+        'refs'     => 'refs',
     ];
 
 
@@ -82,10 +82,10 @@ class ItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'parent' => 'setParent',
-        'tip' => 'setTip',
+        'parent'   => 'setParent',
+        'tip'      => 'setTip',
         'versions' => 'setVersions',
-        'refs' => 'setRefs'
+        'refs'     => 'setRefs',
     ];
 
 
@@ -94,10 +94,10 @@ class ItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'parent' => 'getParent',
-        'tip' => 'getTip',
+        'parent'   => 'getParent',
+        'tip'      => 'getTip',
         'versions' => 'getVersions',
-        'refs' => 'getRefs'
+        'refs'     => 'getRefs',
     ];
 
     public static function attributeMap()
@@ -115,9 +115,6 @@ class ItemRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -269,6 +266,7 @@ class ItemRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -292,7 +290,7 @@ class ItemRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

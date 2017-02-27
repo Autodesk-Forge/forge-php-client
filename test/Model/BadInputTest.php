@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * BadInputTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description BadInput
 /**
  * @package     Autodesk\Client

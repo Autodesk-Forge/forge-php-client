@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * DesignAutomationEnginesTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description DesignAutomationEngines
 /**
  * @package     Autodesk\Client

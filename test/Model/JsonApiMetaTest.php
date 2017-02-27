@@ -32,7 +32,8 @@ namespace Autodesk\Client;
 /**
  * JsonApiMetaTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description resource specific meta data
 /**
  * @package     Autodesk\Client
