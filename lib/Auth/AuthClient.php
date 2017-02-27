@@ -32,7 +32,7 @@ abstract class AuthClient
      * @param Configuration $configuration
      * @param ApiClient $apiClient
      */
-    public function __construct(Configuration $configuration, ApiClient $apiClient = null)
+    public function __construct(Configuration $configuration = null, ApiClient $apiClient = null)
     {
         if ($configuration === null) {
             $configuration = Configuration::getDefaultConfiguration();
