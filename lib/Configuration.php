@@ -39,6 +39,15 @@ namespace Autodesk\Client;
  */
 class Configuration
 {
+    /**
+     * Environments list
+     */
+    const ENVIRONMENTS = [
+        'dev'        => 'https://developer-dev.api.autodesk.com/',
+        'stage'      => 'https://developer-stg.api.autodesk.com/',
+        'production' => 'https://developer.api.autodesk.com/',
+    ];
+
     private static $defaultConfiguration = null;
 
     /**
@@ -178,6 +187,16 @@ class Configuration
     protected $proxyPassword;
 
     /**
+     * @var string
+     */
+    protected $clientId;
+
+    /**
+     * @var string
+     */
+    protected $clientSecret;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -189,7 +208,7 @@ class Configuration
      * Sets API key
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key              API key or token
+     * @param string $key API key or token
      *
      * @return Configuration
      */
@@ -215,7 +234,7 @@ class Configuration
      * Sets the prefix for API key (e.g. Bearer)
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix           API key prefix, e.g. Bearer
+     * @param string $prefix API key prefix, e.g. Bearer
      *
      * @return Configuration
      */
@@ -309,18 +328,18 @@ class Configuration
     /**
      * Adds a default header
      *
-     * @param string $headerName  header name (e.g. Token)
+     * @param string $headerName header name (e.g. Token)
      * @param string $headerValue header value (e.g. 1z8wp3)
      *
      * @return Configuration
      */
     public function addDefaultHeader($headerName, $headerValue)
     {
-        if (!is_string($headerName)) {
+        if ( ! is_string($headerName)) {
             throw new \InvalidArgumentException('Header name must be a string.');
         }
 
-        $this->defaultHeaders[$headerName] =  $headerValue;
+        $this->defaultHeaders[$headerName] = $headerValue;
         return $this;
     }
 
@@ -378,7 +397,7 @@ class Configuration
      */
     public function setUserAgent($userAgent)
     {
-        if (!is_string($userAgent)) {
+        if ( ! is_string($userAgent)) {
             throw new \InvalidArgumentException('User-agent must be a string.');
         }
 
@@ -405,7 +424,7 @@ class Configuration
      */
     public function setCurlTimeout($seconds)
     {
-        if (!is_numeric($seconds) || $seconds < 0) {
+        if ( ! is_numeric($seconds) || $seconds < 0) {
             throw new \InvalidArgumentException('Timeout value must be numeric and a non-negative number.');
         }
 
@@ -432,7 +451,7 @@ class Configuration
      */
     public function setCurlConnectTimeout($seconds)
     {
-        if (!is_numeric($seconds) || $seconds < 0) {
+        if ( ! is_numeric($seconds) || $seconds < 0) {
             throw new \InvalidArgumentException('Connect timeout value must be numeric and a non-negative number.');
         }
 
@@ -691,12 +710,66 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Autodesk\Client) Debug Report:' . PHP_EOL;
+        $report = 'PHP SDK (Autodesk\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . phpversion() . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 0.1.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
+    }
+
+    /**
+     * @param $name
+     * @return $this
+     * @throws ApiException
+     */
+    public function setEnvironment($name)
+    {
+        if ( ! array_key_exists($name, self::ENVIRONMENTS)) {
+            throw new ApiException("Environment with the name of {$name} is not exists");
+        }
+
+        $this->setHost(self::ENVIRONMENTS[$name]);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
+     * @param string $clientId
+     * @return $this
+     */
+    public function setClientId($clientId)
+    {
+        $this->clientId = $clientId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientSecret()
+    {
+        return $this->clientSecret;
+    }
+
+    /**
+     * @param string $clientSecret
+     * @return $this
+     */
+    public function setClientSecret($clientSecret)
+    {
+        $this->clientSecret = $clientSecret;
+
+        return $this;
     }
 }

@@ -3,6 +3,7 @@
 namespace Autodesk\Client\Auth;
 
 use Autodesk\Client\ApiClient;
+use Autodesk\Client\Configuration;
 
 abstract class AuthClient
 {
@@ -12,14 +13,9 @@ abstract class AuthClient
     protected $apiClient;
 
     /**
-     * @var string
+     * @var Configuration
      */
-    private $clientId;
-
-    /**
-     * @var string
-     */
-    private $clientSecret;
+    protected $configuration;
 
     /**
      * @var string
@@ -33,20 +29,21 @@ abstract class AuthClient
 
     /**
      * AbstractAuth constructor.
-     * @param $clientId
-     * @param $clientSecret
+     * @param Configuration $configuration
      * @param ApiClient $apiClient
      */
-    public function __construct($clientId, $clientSecret, ApiClient $apiClient = null)
+    public function __construct(Configuration $configuration, ApiClient $apiClient = null)
     {
+        if ($configuration === null) {
+            $configuration = Configuration::getDefaultConfiguration();
+        }
+
         if ($apiClient === null) {
             $apiClient = new ApiClient();
         }
 
+        $this->configuration = $configuration;
         $this->apiClient = $apiClient;
-
-        $this->clientId = $clientId;
-        $this->clientSecret = $clientSecret;
     }
 
     /**
@@ -100,7 +97,7 @@ abstract class AuthClient
      */
     public function getClientId()
     {
-        return $this->clientId;
+        return $this->configuration->getClientId();
     }
 
     /**
@@ -108,7 +105,7 @@ abstract class AuthClient
      */
     public function getClientSecret()
     {
-        return $this->clientSecret;
+        return $this->configuration->getClientSecret();
     }
 
     /**

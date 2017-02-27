@@ -4,18 +4,18 @@ namespace Autodesk\Client\Auth;
 
 use Autodesk\Client\ApiClient;
 use Autodesk\Client\ApiException;
+use Autodesk\Client\Configuration;
 
 class TwoLeggedClient extends AuthClient
 {
     /**
      * TwoLegged constructor.
-     * @param $clientId
-     * @param $clientSecret
+     * @param Configuration $configuration
      * @param ApiClient $apiClient
      */
-    public function __construct($clientId, $clientSecret, ApiClient $apiClient = null)
+    public function __construct(Configuration $configuration = null, ApiClient $apiClient = null)
     {
-        parent::__construct($clientId, $clientSecret, $apiClient);
+        parent::__construct($configuration, $apiClient);
     }
 
     /**
