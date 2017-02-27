@@ -6,7 +6,7 @@ use Autodesk\Client\ApiClient;
 use Autodesk\Client\ApiException;
 use Autodesk\Client\Configuration;
 
-class TwoLeggedClient extends AuthClient
+class OAuth2TwoLegged extends AbstractOAuth2
 {
     /**
      * TwoLegged constructor.

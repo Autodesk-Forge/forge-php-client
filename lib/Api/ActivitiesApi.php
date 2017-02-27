@@ -30,7 +30,6 @@ namespace Autodesk\Client\Api;
 
 use \Autodesk\Client\ApiClient;
 use \Autodesk\Client\ApiException;
-use Autodesk\Client\Auth\AuthClient;
 use \Autodesk\Client\Configuration;
 use \Autodesk\Client\ObjectSerializer;
 

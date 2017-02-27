@@ -5,7 +5,7 @@ namespace Autodesk\Client\Auth;
 use Autodesk\Client\ApiClient;
 use Autodesk\Client\Configuration;
 
-abstract class AuthClient
+abstract class AbstractOAuth2
 {
     /**
      * @var ApiClient

@@ -3,7 +3,7 @@
 namespace Autodesk\Client\Api;
 
 use Autodesk\Client\ApiClient;
-use Autodesk\Client\Auth\AuthClient;
+use Autodesk\Client\Auth\AbstractOAuth2;
 
 abstract class AbstractApi
 {
@@ -15,17 +15,17 @@ abstract class AbstractApi
     protected $apiClient;
 
     /**
-     * @var AuthClient
+     * @var AbstractOAuth2
      */
     protected $authClient;
 
     /**
      * Constructor
      *
-     * @param AuthClient $authClient
+     * @param AbstractOAuth2 $authClient
      * @param ApiClient|null $apiClient The api client to use
      */
-    public function __construct(AuthClient $authClient, ApiClient $apiClient = null)
+    public function __construct(AbstractOAuth2 $authClient, ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();

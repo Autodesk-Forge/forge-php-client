@@ -6,7 +6,7 @@ use Autodesk\Client\ApiClient;
 use Autodesk\Client\ApiException;
 use Autodesk\Client\Configuration;
 
-class ThreeLeggedClient extends AuthClient
+class OAuth2ThreeLegged extends AbstractOAuth2
 {
     /**
      * @var string
