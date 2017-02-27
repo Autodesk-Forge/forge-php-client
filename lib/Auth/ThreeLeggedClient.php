@@ -32,19 +32,15 @@ class ThreeLeggedClient extends AuthClient
      */
     public function createAuthUrl()
     {
-        $parameters = [
+        $host = $this->configuration->getHost();
+        $parameters = http_build_query([
             'response_type' => 'code',
             'client_id'     => $this->configuration->getClientId(),
             'redirect_uri'  => $this->configuration->getRedirectUrl(),
             'scope'         => implode(' ', $this->getScopes()),
-        ];
+        ]);
 
-        $parametersString = [];
-        foreach ($parameters as $key => $value) {
-            $parametersString[] = "{$key}={$value}";
-        }
-
-        return "{$this->configuration->getHost()}/authentication/v1/authorize?" . implode('&', $parametersString);
+        return "{$host}/authentication/v1/authorize?{$parameters}";
     }
 
     /**
