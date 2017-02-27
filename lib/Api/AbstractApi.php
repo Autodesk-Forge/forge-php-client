@@ -59,21 +59,6 @@ abstract class AbstractApi
     }
 
     /**
-     * @return string
-     */
-    protected function getAuthHeader()
-    {
-        $token = $this->authClient->getAccessToken();
-
-        if ($token === null) {
-            // TODO: throw good exception
-            throw new \InvalidArgumentException('token not exists');
-        }
-
-        return 'Bearer ' . $token;
-    }
-
-    /**
      * Wrapper to the callApi of the ApiClient which adds auth data
      *
      * @param string $resourcePath path to method endpoint
@@ -91,7 +76,7 @@ abstract class AbstractApi
     {
         // this endpoint requires OAuth (access token)
         if ($this->authClient->hasAccessToken()) {
-            $headerParams['Authorization'] = $this->getAuthHeader();
+            $headerParams['Authorization'] = "Bearer {$this->authClient->getAccessToken()}";
         }
 
         return $this->apiClient->callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType, $endpointPath);

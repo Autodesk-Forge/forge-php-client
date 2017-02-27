@@ -92,8 +92,8 @@ class ThreeLeggedClient extends AuthClient
         ];
 
         $body = [
-            'client_id'     => $this->getClientId(),
-            'client_secret' => $this->getClientSecret(),
+            'client_id'     => $this->configuration->getClientId(),
+            'client_secret' => $this->configuration->getClientSecret(),
             'grant_type'    => 'refresh_token',
             'refresh_token' => $refreshToken,
             'scope'         => implode(' ', $this->getScopes()),
