@@ -48,6 +48,9 @@ class Configuration
         'prod' => 'https://developer.api.autodesk.com',
     ];
 
+    /**
+     * @var Configuration|null
+     */
     private static $defaultConfiguration = null;
 
     /**
