@@ -55,10 +55,13 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'width'  => 'int',
+        'width' => 'int',
         'height' => 'int',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,7 +72,7 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'width'  => 'width',
+        'width' => 'width',
         'height' => 'height',
     ];
 
@@ -79,7 +82,7 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'width'  => 'setWidth',
+        'width' => 'setWidth',
         'height' => 'setHeight',
     ];
 
@@ -89,7 +92,7 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'width'  => 'getWidth',
+        'width' => 'getWidth',
         'height' => 'getHeight',
     ];
 
@@ -108,6 +111,9 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -191,7 +197,6 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -215,7 +220,7 @@ class JobThumbnailOutputPayloadAdvanced implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -55,11 +55,14 @@ class JobPayloadInput implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'urn'            => 'string',
+        'urn' => 'string',
         'compressed_urn' => 'bool',
-        'root_filename'  => 'string',
+        'root_filename' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -70,9 +73,9 @@ class JobPayloadInput implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'urn'            => 'urn',
+        'urn' => 'urn',
         'compressed_urn' => 'compressedUrn',
-        'root_filename'  => 'rootFilename',
+        'root_filename' => 'rootFilename',
     ];
 
 
@@ -81,9 +84,9 @@ class JobPayloadInput implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'urn'            => 'setUrn',
+        'urn' => 'setUrn',
         'compressed_urn' => 'setCompressedUrn',
-        'root_filename'  => 'setRootFilename',
+        'root_filename' => 'setRootFilename',
     ];
 
 
@@ -92,9 +95,9 @@ class JobPayloadInput implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'urn'            => 'getUrn',
+        'urn' => 'getUrn',
         'compressed_urn' => 'getCompressedUrn',
-        'root_filename'  => 'getRootFilename',
+        'root_filename' => 'getRootFilename',
     ];
 
     public static function attributeMap()
@@ -112,6 +115,9 @@ class JobPayloadInput implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -223,7 +229,6 @@ class JobPayloadInput implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -247,7 +252,7 @@ class JobPayloadInput implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -55,15 +55,18 @@ class ObjectDetails implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'bucket_key'   => 'string',
-        'object_id'    => 'string',
-        'object_key'   => 'string',
-        'sha1'         => 'string',
-        'size'         => 'int',
+        'bucket_key' => 'string',
+        'object_id' => 'string',
+        'object_key' => 'string',
+        'sha1' => 'string',
+        'size' => 'int',
         'content_type' => 'string',
-        'location'     => 'string',
+        'location' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -74,13 +77,13 @@ class ObjectDetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bucket_key'   => 'bucketKey',
-        'object_id'    => 'objectId',
-        'object_key'   => 'objectKey',
-        'sha1'         => 'sha1',
-        'size'         => 'size',
+        'bucket_key' => 'bucketKey',
+        'object_id' => 'objectId',
+        'object_key' => 'objectKey',
+        'sha1' => 'sha1',
+        'size' => 'size',
         'content_type' => 'contentType',
-        'location'     => 'location',
+        'location' => 'location',
     ];
 
 
@@ -89,13 +92,13 @@ class ObjectDetails implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bucket_key'   => 'setBucketKey',
-        'object_id'    => 'setObjectId',
-        'object_key'   => 'setObjectKey',
-        'sha1'         => 'setSha1',
-        'size'         => 'setSize',
+        'bucket_key' => 'setBucketKey',
+        'object_id' => 'setObjectId',
+        'object_key' => 'setObjectKey',
+        'sha1' => 'setSha1',
+        'size' => 'setSize',
         'content_type' => 'setContentType',
-        'location'     => 'setLocation',
+        'location' => 'setLocation',
     ];
 
 
@@ -104,13 +107,13 @@ class ObjectDetails implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bucket_key'   => 'getBucketKey',
-        'object_id'    => 'getObjectId',
-        'object_key'   => 'getObjectKey',
-        'sha1'         => 'getSha1',
-        'size'         => 'getSize',
+        'bucket_key' => 'getBucketKey',
+        'object_id' => 'getObjectId',
+        'object_key' => 'getObjectKey',
+        'sha1' => 'getSha1',
+        'size' => 'getSize',
         'content_type' => 'getContentType',
-        'location'     => 'getLocation',
+        'location' => 'getLocation',
     ];
 
     public static function attributeMap()
@@ -128,6 +131,9 @@ class ObjectDetails implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -321,7 +327,6 @@ class ObjectDetails implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -345,7 +350,7 @@ class ObjectDetails implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

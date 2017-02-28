@@ -54,11 +54,14 @@ class Job implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'result'        => 'string',
-        'urn'           => 'string',
+        'result' => 'string',
+        'urn' => 'string',
         'accepted_jobs' => '\Autodesk\Client\Model\JobAcceptedJobs',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,8 +72,8 @@ class Job implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'result'        => 'result',
-        'urn'           => 'urn',
+        'result' => 'result',
+        'urn' => 'urn',
         'accepted_jobs' => 'acceptedJobs',
     ];
 
@@ -80,8 +83,8 @@ class Job implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'result'        => 'setResult',
-        'urn'           => 'setUrn',
+        'result' => 'setResult',
+        'urn' => 'setUrn',
         'accepted_jobs' => 'setAcceptedJobs',
     ];
 
@@ -91,8 +94,8 @@ class Job implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'result'        => 'getResult',
-        'urn'           => 'getUrn',
+        'result' => 'getResult',
+        'urn' => 'getUrn',
         'accepted_jobs' => 'getAcceptedJobs',
     ];
 
@@ -111,6 +114,9 @@ class Job implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -228,7 +234,6 @@ class Job implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -252,7 +257,7 @@ class Job implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

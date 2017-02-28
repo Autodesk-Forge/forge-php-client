@@ -55,9 +55,12 @@ class CreateStorage implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data'    => '\Autodesk\Client\Model\CreateStorageData',
+        'data' => '\Autodesk\Client\Model\CreateStorageData',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,7 +72,7 @@ class CreateStorage implements ArrayAccess
      */
     protected static $attributeMap = [
         'jsonapi' => 'jsonapi',
-        'data'    => 'data',
+        'data' => 'data',
     ];
 
 
@@ -79,7 +82,7 @@ class CreateStorage implements ArrayAccess
      */
     protected static $setters = [
         'jsonapi' => 'setJsonapi',
-        'data'    => 'setData',
+        'data' => 'setData',
     ];
 
 
@@ -89,7 +92,7 @@ class CreateStorage implements ArrayAccess
      */
     protected static $getters = [
         'jsonapi' => 'getJsonapi',
-        'data'    => 'getData',
+        'data' => 'getData',
     ];
 
     public static function attributeMap()
@@ -107,6 +110,9 @@ class CreateStorage implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -190,7 +196,6 @@ class CreateStorage implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -214,7 +219,7 @@ class CreateStorage implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

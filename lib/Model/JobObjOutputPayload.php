@@ -54,10 +54,13 @@ class JobObjOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'type'     => 'string',
+        'type' => 'string',
         'advanced' => '\Autodesk\Client\Model\JobObjOutputPayloadAdvanced',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -68,7 +71,7 @@ class JobObjOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type'     => 'type',
+        'type' => 'type',
         'advanced' => 'advanced',
     ];
 
@@ -78,7 +81,7 @@ class JobObjOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type'     => 'setType',
+        'type' => 'setType',
         'advanced' => 'setAdvanced',
     ];
 
@@ -88,7 +91,7 @@ class JobObjOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type'     => 'getType',
+        'type' => 'getType',
         'advanced' => 'getAdvanced',
     ];
 
@@ -113,8 +116,9 @@ class JobObjOutputPayload implements ArrayAccess
     const TYPE_STEP = 'step';
     const TYPE_IGES = 'iges';
     const TYPE_OBJ = 'obj';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -130,7 +134,7 @@ class JobObjOutputPayload implements ArrayAccess
             self::TYPE_OBJ,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -161,7 +165,7 @@ class JobObjOutputPayload implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'.";
         }
 
@@ -181,7 +185,7 @@ class JobObjOutputPayload implements ArrayAccess
             return false;
         }
         $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -204,8 +208,8 @@ class JobObjOutputPayload implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = ['svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'];
-        if (( ! in_array($type, $allowed_values))) {
+        $allowed_values = array('svf', 'thumbnail', 'stl', 'step', 'iges', 'obj');
+        if ((!in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'");
         }
         $this->container['type'] = $type;
@@ -233,7 +237,6 @@ class JobObjOutputPayload implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -257,7 +260,7 @@ class JobObjOutputPayload implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

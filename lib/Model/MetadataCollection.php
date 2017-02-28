@@ -55,11 +55,14 @@ class MetadataCollection implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'objectid'   => 'int',
-        'name'       => 'string',
+        'objectid' => 'int',
+        'name' => 'string',
         'properties' => 'object',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -70,8 +73,8 @@ class MetadataCollection implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'objectid'   => 'objectid',
-        'name'       => 'name',
+        'objectid' => 'objectid',
+        'name' => 'name',
         'properties' => 'properties',
     ];
 
@@ -81,8 +84,8 @@ class MetadataCollection implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'objectid'   => 'setObjectid',
-        'name'       => 'setName',
+        'objectid' => 'setObjectid',
+        'name' => 'setName',
         'properties' => 'setProperties',
     ];
 
@@ -92,8 +95,8 @@ class MetadataCollection implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'objectid'   => 'getObjectid',
-        'name'       => 'getName',
+        'objectid' => 'getObjectid',
+        'name' => 'getName',
         'properties' => 'getProperties',
     ];
 
@@ -112,6 +115,9 @@ class MetadataCollection implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -229,7 +235,6 @@ class MetadataCollection implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -253,7 +258,7 @@ class MetadataCollection implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

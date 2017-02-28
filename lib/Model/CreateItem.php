@@ -54,11 +54,14 @@ class CreateItem implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi'  => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data'     => '\Autodesk\Client\Model\CreateItemData',
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Client\Model\CreateItemData',
         'included' => '\Autodesk\Client\Model\CreateItemIncluded[]',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,8 +72,8 @@ class CreateItem implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'jsonapi'  => 'jsonapi',
-        'data'     => 'data',
+        'jsonapi' => 'jsonapi',
+        'data' => 'data',
         'included' => 'included',
     ];
 
@@ -80,8 +83,8 @@ class CreateItem implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'jsonapi'  => 'setJsonapi',
-        'data'     => 'setData',
+        'jsonapi' => 'setJsonapi',
+        'data' => 'setData',
         'included' => 'setIncluded',
     ];
 
@@ -91,8 +94,8 @@ class CreateItem implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'jsonapi'  => 'getJsonapi',
-        'data'     => 'getData',
+        'jsonapi' => 'getJsonapi',
+        'data' => 'getData',
         'included' => 'getIncluded',
     ];
 
@@ -111,6 +114,9 @@ class CreateItem implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -222,7 +228,6 @@ class CreateItem implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -246,7 +251,7 @@ class CreateItem implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

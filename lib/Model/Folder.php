@@ -54,17 +54,20 @@ class Folder implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi'       => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data'          => '\Autodesk\Client\Model\JsonApiResource',
-        'included'      => '\Autodesk\Client\Model\JsonApiResource[]',
-        'links'         => '\Autodesk\Client\Model\JsonApiLinks',
-        'id'            => 'string',
-        'type'          => 'string',
-        'attributes'    => '\Autodesk\Client\Model\FolderAttributes',
-        'meta'          => '\Autodesk\Client\Model\JsonApiMeta',
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Client\Model\JsonApiResource',
+        'included' => '\Autodesk\Client\Model\JsonApiResource[]',
+        'links' => '\Autodesk\Client\Model\JsonApiLinks',
+        'id' => 'string',
+        'type' => 'string',
+        'attributes' => '\Autodesk\Client\Model\FolderAttributes',
+        'meta' => '\Autodesk\Client\Model\JsonApiMeta',
         'relationships' => '\Autodesk\Client\Model\FolderRelationships',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -75,14 +78,14 @@ class Folder implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'jsonapi'       => 'jsonapi',
-        'data'          => 'data',
-        'included'      => 'included',
-        'links'         => 'links',
-        'id'            => 'id',
-        'type'          => 'type',
-        'attributes'    => 'attributes',
-        'meta'          => 'meta',
+        'jsonapi' => 'jsonapi',
+        'data' => 'data',
+        'included' => 'included',
+        'links' => 'links',
+        'id' => 'id',
+        'type' => 'type',
+        'attributes' => 'attributes',
+        'meta' => 'meta',
         'relationships' => 'relationships',
     ];
 
@@ -92,14 +95,14 @@ class Folder implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'jsonapi'       => 'setJsonapi',
-        'data'          => 'setData',
-        'included'      => 'setIncluded',
-        'links'         => 'setLinks',
-        'id'            => 'setId',
-        'type'          => 'setType',
-        'attributes'    => 'setAttributes',
-        'meta'          => 'setMeta',
+        'jsonapi' => 'setJsonapi',
+        'data' => 'setData',
+        'included' => 'setIncluded',
+        'links' => 'setLinks',
+        'id' => 'setId',
+        'type' => 'setType',
+        'attributes' => 'setAttributes',
+        'meta' => 'setMeta',
         'relationships' => 'setRelationships',
     ];
 
@@ -109,14 +112,14 @@ class Folder implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'jsonapi'       => 'getJsonapi',
-        'data'          => 'getData',
-        'included'      => 'getIncluded',
-        'links'         => 'getLinks',
-        'id'            => 'getId',
-        'type'          => 'getType',
-        'attributes'    => 'getAttributes',
-        'meta'          => 'getMeta',
+        'jsonapi' => 'getJsonapi',
+        'data' => 'getData',
+        'included' => 'getIncluded',
+        'links' => 'getLinks',
+        'id' => 'getId',
+        'type' => 'getType',
+        'attributes' => 'getAttributes',
+        'meta' => 'getMeta',
         'relationships' => 'getRelationships',
     ];
 
@@ -136,8 +139,9 @@ class Folder implements ArrayAccess
     }
 
     const TYPE_FOLDERS = 'folders';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -148,7 +152,7 @@ class Folder implements ArrayAccess
             self::TYPE_FOLDERS,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -195,7 +199,7 @@ class Folder implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["folders"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'folders'.";
         }
 
@@ -224,7 +228,7 @@ class Folder implements ArrayAccess
             return false;
         }
         $allowed_values = ["folders"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -352,8 +356,8 @@ class Folder implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = ['folders'];
-        if (( ! in_array($type, $allowed_values))) {
+        $allowed_values = array('folders');
+        if ((!in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'folders'");
         }
         $this->container['type'] = $type;
@@ -423,7 +427,6 @@ class Folder implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -447,7 +450,7 @@ class Folder implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

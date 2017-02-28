@@ -54,10 +54,13 @@ class JobSvfOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'type'  => 'string',
+        'type' => 'string',
         'views' => 'string[]',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -68,7 +71,7 @@ class JobSvfOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type'  => 'type',
+        'type' => 'type',
         'views' => 'views',
     ];
 
@@ -78,7 +81,7 @@ class JobSvfOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type'  => 'setType',
+        'type' => 'setType',
         'views' => 'setViews',
     ];
 
@@ -88,7 +91,7 @@ class JobSvfOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type'  => 'getType',
+        'type' => 'getType',
         'views' => 'getViews',
     ];
 
@@ -115,8 +118,9 @@ class JobSvfOutputPayload implements ArrayAccess
     const TYPE_OBJ = 'obj';
     const VIEWS__2D = '2d';
     const VIEWS__3D = '3d';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -132,7 +136,7 @@ class JobSvfOutputPayload implements ArrayAccess
             self::TYPE_OBJ,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -144,7 +148,7 @@ class JobSvfOutputPayload implements ArrayAccess
             self::VIEWS__3D,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -175,7 +179,7 @@ class JobSvfOutputPayload implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'.";
         }
 
@@ -195,7 +199,7 @@ class JobSvfOutputPayload implements ArrayAccess
             return false;
         }
         $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -218,8 +222,8 @@ class JobSvfOutputPayload implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = ['svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'];
-        if (( ! in_array($type, $allowed_values))) {
+        $allowed_values = array('svf', 'thumbnail', 'stl', 'step', 'iges', 'obj');
+        if ((!in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'");
         }
         $this->container['type'] = $type;
@@ -243,15 +247,14 @@ class JobSvfOutputPayload implements ArrayAccess
      */
     public function setViews($views)
     {
-        $allowed_values = ['2d', '3d'];
-        if ( ! is_null($views) && (array_diff($views, $allowed_values))) {
+        $allowed_values = array('2d', '3d');
+        if (!is_null($views) && (array_diff($views, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'views', must be one of '2d', '3d'");
         }
         $this->container['views'] = $views;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -275,7 +278,7 @@ class JobSvfOutputPayload implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

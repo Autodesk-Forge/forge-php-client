@@ -55,9 +55,12 @@ class Conflict implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'errors'  => '\Autodesk\Client\Model\JsonApiErrorErrors[]',
+        'errors' => '\Autodesk\Client\Model\JsonApiErrorErrors[]',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,7 +72,7 @@ class Conflict implements ArrayAccess
      */
     protected static $attributeMap = [
         'jsonapi' => 'jsonapi',
-        'errors'  => 'errors',
+        'errors' => 'errors',
     ];
 
 
@@ -79,7 +82,7 @@ class Conflict implements ArrayAccess
      */
     protected static $setters = [
         'jsonapi' => 'setJsonapi',
-        'errors'  => 'setErrors',
+        'errors' => 'setErrors',
     ];
 
 
@@ -89,7 +92,7 @@ class Conflict implements ArrayAccess
      */
     protected static $getters = [
         'jsonapi' => 'getJsonapi',
-        'errors'  => 'getErrors',
+        'errors' => 'getErrors',
     ];
 
     public static function attributeMap()
@@ -107,6 +110,9 @@ class Conflict implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -196,7 +202,6 @@ class Conflict implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -220,7 +225,7 @@ class Conflict implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

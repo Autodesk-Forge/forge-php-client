@@ -54,11 +54,14 @@ class FolderRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'parent'   => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'parent' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
         'contents' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternal',
-        'refs'     => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs',
+        'refs' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,9 +72,9 @@ class FolderRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'parent'   => 'parent',
+        'parent' => 'parent',
         'contents' => 'contents',
-        'refs'     => 'refs',
+        'refs' => 'refs',
     ];
 
 
@@ -80,9 +83,9 @@ class FolderRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'parent'   => 'setParent',
+        'parent' => 'setParent',
         'contents' => 'setContents',
-        'refs'     => 'setRefs',
+        'refs' => 'setRefs',
     ];
 
 
@@ -91,9 +94,9 @@ class FolderRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'parent'   => 'getParent',
+        'parent' => 'getParent',
         'contents' => 'getContents',
-        'refs'     => 'getRefs',
+        'refs' => 'getRefs',
     ];
 
     public static function attributeMap()
@@ -111,6 +114,9 @@ class FolderRelationships implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -228,7 +234,6 @@ class FolderRelationships implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -252,7 +257,7 @@ class FolderRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -54,10 +54,13 @@ class CreateVersionDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'item'    => '\Autodesk\Client\Model\CreateVersionDataRelationshipsItem',
+        'item' => '\Autodesk\Client\Model\CreateVersionDataRelationshipsItem',
         'storage' => '\Autodesk\Client\Model\CreateItemRelationshipsStorage',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -68,7 +71,7 @@ class CreateVersionDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'item'    => 'item',
+        'item' => 'item',
         'storage' => 'storage',
     ];
 
@@ -78,7 +81,7 @@ class CreateVersionDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'item'    => 'setItem',
+        'item' => 'setItem',
         'storage' => 'setStorage',
     ];
 
@@ -88,7 +91,7 @@ class CreateVersionDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'item'    => 'getItem',
+        'item' => 'getItem',
         'storage' => 'getStorage',
     ];
 
@@ -107,6 +110,9 @@ class CreateVersionDataRelationships implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -190,7 +196,6 @@ class CreateVersionDataRelationships implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -214,7 +219,7 @@ class CreateVersionDataRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

@@ -55,11 +55,14 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'format'                => 'string',
-        'export_color'          => 'bool',
+        'format' => 'string',
+        'export_color' => 'bool',
         'export_file_structure' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -70,8 +73,8 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'format'                => 'format',
-        'export_color'          => 'exportColor',
+        'format' => 'format',
+        'export_color' => 'exportColor',
         'export_file_structure' => 'exportFileStructure',
     ];
 
@@ -81,8 +84,8 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'format'                => 'setFormat',
-        'export_color'          => 'setExportColor',
+        'format' => 'setFormat',
+        'export_color' => 'setExportColor',
         'export_file_structure' => 'setExportFileStructure',
     ];
 
@@ -92,8 +95,8 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'format'                => 'getFormat',
-        'export_color'          => 'getExportColor',
+        'format' => 'getFormat',
+        'export_color' => 'getExportColor',
         'export_file_structure' => 'getExportFileStructure',
     ];
 
@@ -116,8 +119,9 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
     const FORMAT_ASCII = 'ascii';
     const EXPORT_FILE_STRUCTURE_SINGLE = 'single';
     const EXPORT_FILE_STRUCTURE_MULTIPLE = 'multiple';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -129,7 +133,7 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
             self::FORMAT_ASCII,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -141,7 +145,7 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
             self::EXPORT_FILE_STRUCTURE_MULTIPLE,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -170,12 +174,12 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
         $invalid_properties = [];
 
         $allowed_values = ["binary", "ascii"];
-        if ( ! in_array($this->container['format'], $allowed_values)) {
+        if (!in_array($this->container['format'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'format', must be one of 'binary', 'ascii'.";
         }
 
         $allowed_values = ["single", "multiple"];
-        if ( ! in_array($this->container['export_file_structure'], $allowed_values)) {
+        if (!in_array($this->container['export_file_structure'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'export_file_structure', must be one of 'single', 'multiple'.";
         }
 
@@ -192,11 +196,11 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
     {
 
         $allowed_values = ["binary", "ascii"];
-        if ( ! in_array($this->container['format'], $allowed_values)) {
+        if (!in_array($this->container['format'], $allowed_values)) {
             return false;
         }
         $allowed_values = ["single", "multiple"];
-        if ( ! in_array($this->container['export_file_structure'], $allowed_values)) {
+        if (!in_array($this->container['export_file_structure'], $allowed_values)) {
             return false;
         }
         return true;
@@ -219,8 +223,8 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
      */
     public function setFormat($format)
     {
-        $allowed_values = ['binary', 'ascii'];
-        if ( ! is_null($format) && ( ! in_array($format, $allowed_values))) {
+        $allowed_values = array('binary', 'ascii');
+        if (!is_null($format) && (!in_array($format, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'format', must be one of 'binary', 'ascii'");
         }
         $this->container['format'] = $format;
@@ -265,15 +269,14 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
      */
     public function setExportFileStructure($export_file_structure)
     {
-        $allowed_values = ['single', 'multiple'];
-        if ( ! is_null($export_file_structure) && ( ! in_array($export_file_structure, $allowed_values))) {
+        $allowed_values = array('single', 'multiple');
+        if (!is_null($export_file_structure) && (!in_array($export_file_structure, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'export_file_structure', must be one of 'single', 'multiple'");
         }
         $this->container['export_file_structure'] = $export_file_structure;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -297,7 +300,7 @@ class JobStlOutputPayloadAdvanced implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

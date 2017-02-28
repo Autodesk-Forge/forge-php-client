@@ -57,6 +57,9 @@ class JsonApiVersionJsonapi implements ArrayAccess
         'version' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -104,8 +107,9 @@ class JsonApiVersionJsonapi implements ArrayAccess
     }
 
     const VERSION__0 = '1.0';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -116,7 +120,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
             self::VERSION__0,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -146,7 +150,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
             $invalid_properties[] = "'version' can't be null";
         }
         $allowed_values = ["1.0"];
-        if ( ! in_array($this->container['version'], $allowed_values)) {
+        if (!in_array($this->container['version'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'version', must be one of '1.0'.";
         }
 
@@ -166,7 +170,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
             return false;
         }
         $allowed_values = ["1.0"];
-        if ( ! in_array($this->container['version'], $allowed_values)) {
+        if (!in_array($this->container['version'], $allowed_values)) {
             return false;
         }
         return true;
@@ -189,15 +193,14 @@ class JsonApiVersionJsonapi implements ArrayAccess
      */
     public function setVersion($version)
     {
-        $allowed_values = ['1.0'];
-        if (( ! in_array($version, $allowed_values))) {
+        $allowed_values = array('1.0');
+        if ((!in_array($version, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'version', must be one of '1.0'");
         }
         $this->container['version'] = $version;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -221,7 +224,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

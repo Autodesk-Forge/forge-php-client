@@ -54,13 +54,16 @@ class Bucket implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'bucket_key'   => 'string',
+        'bucket_key' => 'string',
         'bucket_owner' => 'string',
         'created_date' => 'string',
-        'permissions'  => '\Autodesk\Client\Model\Permission[]',
-        'policy_key'   => 'string',
+        'permissions' => '\Autodesk\Client\Model\Permission[]',
+        'policy_key' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -71,11 +74,11 @@ class Bucket implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bucket_key'   => 'bucketKey',
+        'bucket_key' => 'bucketKey',
         'bucket_owner' => 'bucketOwner',
         'created_date' => 'createdDate',
-        'permissions'  => 'permissions',
-        'policy_key'   => 'policyKey',
+        'permissions' => 'permissions',
+        'policy_key' => 'policyKey',
     ];
 
 
@@ -84,11 +87,11 @@ class Bucket implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bucket_key'   => 'setBucketKey',
+        'bucket_key' => 'setBucketKey',
         'bucket_owner' => 'setBucketOwner',
         'created_date' => 'setCreatedDate',
-        'permissions'  => 'setPermissions',
-        'policy_key'   => 'setPolicyKey',
+        'permissions' => 'setPermissions',
+        'policy_key' => 'setPolicyKey',
     ];
 
 
@@ -97,11 +100,11 @@ class Bucket implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bucket_key'   => 'getBucketKey',
+        'bucket_key' => 'getBucketKey',
         'bucket_owner' => 'getBucketOwner',
         'created_date' => 'getCreatedDate',
-        'permissions'  => 'getPermissions',
-        'policy_key'   => 'getPolicyKey',
+        'permissions' => 'getPermissions',
+        'policy_key' => 'getPolicyKey',
     ];
 
     public static function attributeMap()
@@ -119,6 +122,9 @@ class Bucket implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -268,7 +274,6 @@ class Bucket implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -292,7 +297,7 @@ class Bucket implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
