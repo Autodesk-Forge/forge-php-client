@@ -21,24 +21,16 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://git.autodesk.com/Forge-SDKs/forge-api-php-client.git"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "Forge-SDKs/forge-api-php-client": "*@dev"
   }
 }
 ```
 
 Then run `composer install`
-
-### Manual Installation
-
-Download the files and include `autoload.php`:
-
-```php
-    require_once('/path/to/SwaggerClient-php/autoload.php');
-```
 
 ## Tests
 
@@ -53,24 +45,136 @@ composer install
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
+### Two legged
+
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
-$activity = new \Autodesk\Client\Model\Activity(); // \Autodesk\Client\Model\Activity | 
+\Autodesk\Client\Configuration::getDefaultConfiguration()
+    ->setClientId('UDZr8qfHt5BEGSIbH7A2Fem6okogvPrY')
+    ->setClientSecret('JUb2AJwWk66hVrzG');
 
-try {
-    $result = $api_instance->createActivity($activity);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ActivitiesApi->createActivity: ', $e->getMessage(), PHP_EOL;
+$twoLeggedAuth = new \Autodesk\Client\Auth\OAuth2TwoLegged();
+$twoLeggedAuth->setScopes(['bucket:read']);
+
+/**
+ * Other options to manage the scopes
+ *
+ * $twoLeggedAuth->addScope('data:read');
+ * $twoLeggedAuth->addScopes([]);
+ * $twoLeggedAuth->setScopes($scopes);
+ */
+
+if (isset($cache['applicationToken']) && $cache['expiry'] > time()) {
+    $twoLeggedAuth->setToken($cache['applicationToken']);
+} else {
+    $twoLeggedAuth->fetchToken();
+
+    $cache['applicationToken'] = $twoLeggedAuth->getAccessToken();
+    $cache['expiry'] = time() + $twoLeggedAuth->getExpiry();
 }
 
-?>
+try {
+    $bucketApi = new \Autodesk\Client\Api\BucketsApi($twoLeggedAuth);
+    print_r($bucketApi->getBuckets());
+} catch (Exception $e) {
+    echo 'Exception when calling BucketApi->getBuckets: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Three legged
+
+index.php
+
+```php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+session_start();
+
+\Autodesk\Client\Configuration::getDefaultConfiguration()
+    ->setClientId('UDZr8qfHt5BEGSIbH7A2Fem6okogvPrY')
+    ->setClientSecret('JUb2AJwWk66hVrzG')
+    ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
+
+$threeLeggedAuth = new \Autodesk\Client\Auth\OAuth2ThreeLegged();
+$threeLeggedAuth->addScope('code:all');
+
+if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
+    $threeLeggedAuth->setToken($_SESSION['accessToken']);
+
+    print_r('Token was fetched from the session');
+} else {
+    if (isset($_SESSION['refreshToken'])) {
+        $threeLeggedAuth->refreshToken($_SESSION['refreshToken']);
+
+        $_SESSION['isAuthenticated'] = true;
+        $_SESSION['accessToken'] = $threeLeggedAuth->getAccessToken();
+        $_SESSION['refreshToken'] = $threeLeggedAuth->getRefreshToken();
+        $_SESSION['expiry'] = time() + $threeLeggedAuth->getExpiry();
+
+        print_r('Token were refreshed');
+    } else {
+        $redirectTo = $threeLeggedAuth->createAuthUrl();
+
+        header('Location: ' . filter_var($redirectTo, FILTER_SANITIZE_URL));
+        return;
+    }
+}
+
+try {
+    $api = new \Autodesk\Client\Api\AppPackagesApi($threeLeggedAuth);
+    print_r($api->getAllAppPackages());
+} catch (Exception $e) {
+    echo 'Exception when calling AppPackagesApi->getAllAppPackages: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+callback.php
+```php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+session_start();
+
+\Autodesk\Client\Configuration::getDefaultConfiguration()
+    ->setClientId('UDZr8qfHt5BEGSIbH7A2Fem6okogvPrY')
+    ->setClientSecret('JUb2AJwWk66hVrzG')
+    ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
+
+$threeLeggedAuth = new \Autodesk\Client\Auth\OAuth2ThreeLegged();
+$threeLeggedAuth->addScopes(['data:read']);
+
+if (isset($_GET['code']) && $_GET['code']) {
+    $threeLeggedAuth->fetchToken($_GET['code']);
+
+    $_SESSION['isAuthenticated'] = true;
+    $_SESSION['accessToken'] = $threeLeggedAuth->getAccessToken();
+    $_SESSION['refreshToken'] = $threeLeggedAuth->getRefreshToken();
+    $_SESSION['expiry'] = time() + $threeLeggedAuth->getExpiry();
+
+    $url = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+    header('Location: ' . filter_var($url, FILTER_SANITIZE_URL));
+} else {
+    header('Location: ' . $threeLeggedAuth->createAuthUrl());
+}
+```
+
+### Configurations
+
+Environment
+
+```php
+<?php
+
+// Options: dev, stage and prod (default)
+
+\Autodesk\Client\Configuration::getDefaultConfiguration()
+    ->setEnvironment('dev');
 ```
 
 ## Documentation for API Endpoints
