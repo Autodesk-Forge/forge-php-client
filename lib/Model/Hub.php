@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Hub Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,25 +44,25 @@ class Hub implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'hub';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\JsonApiResource',
-        'included' => '\Swagger\Client\Model\JsonApiResource[]',
-        'links' => '\Swagger\Client\Model\JsonApiLinks',
-        'id' => 'string',
-        'type' => 'string',
-        'attributes' => '\Swagger\Client\Model\HubAttributes',
-        'meta' => '\Swagger\Client\Model\JsonApiMeta',
-        'relationships' => '\Swagger\Client\Model\HubRelationships'
+        'jsonapi'       => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data'          => '\Autodesk\Client\Model\JsonApiResource',
+        'included'      => '\Autodesk\Client\Model\JsonApiResource[]',
+        'links'         => '\Autodesk\Client\Model\JsonApiLinks',
+        'id'            => 'string',
+        'type'          => 'string',
+        'attributes'    => '\Autodesk\Client\Model\HubAttributes',
+        'meta'          => '\Autodesk\Client\Model\JsonApiMeta',
+        'relationships' => '\Autodesk\Client\Model\HubRelationships',
     ];
 
     public static function swaggerTypes()
@@ -75,15 +75,15 @@ class Hub implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'jsonapi' => 'jsonapi',
-        'data' => 'data',
-        'included' => 'included',
-        'links' => 'links',
-        'id' => 'id',
-        'type' => 'type',
-        'attributes' => 'attributes',
-        'meta' => 'meta',
-        'relationships' => 'relationships'
+        'jsonapi'       => 'jsonapi',
+        'data'          => 'data',
+        'included'      => 'included',
+        'links'         => 'links',
+        'id'            => 'id',
+        'type'          => 'type',
+        'attributes'    => 'attributes',
+        'meta'          => 'meta',
+        'relationships' => 'relationships',
     ];
 
 
@@ -92,15 +92,15 @@ class Hub implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'jsonapi' => 'setJsonapi',
-        'data' => 'setData',
-        'included' => 'setIncluded',
-        'links' => 'setLinks',
-        'id' => 'setId',
-        'type' => 'setType',
-        'attributes' => 'setAttributes',
-        'meta' => 'setMeta',
-        'relationships' => 'setRelationships'
+        'jsonapi'       => 'setJsonapi',
+        'data'          => 'setData',
+        'included'      => 'setIncluded',
+        'links'         => 'setLinks',
+        'id'            => 'setId',
+        'type'          => 'setType',
+        'attributes'    => 'setAttributes',
+        'meta'          => 'setMeta',
+        'relationships' => 'setRelationships',
     ];
 
 
@@ -109,15 +109,15 @@ class Hub implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'jsonapi' => 'getJsonapi',
-        'data' => 'getData',
-        'included' => 'getIncluded',
-        'links' => 'getLinks',
-        'id' => 'getId',
-        'type' => 'getType',
-        'attributes' => 'getAttributes',
-        'meta' => 'getMeta',
-        'relationships' => 'getRelationships'
+        'jsonapi'       => 'getJsonapi',
+        'data'          => 'getData',
+        'included'      => 'getIncluded',
+        'links'         => 'getLinks',
+        'id'            => 'getId',
+        'type'          => 'getType',
+        'attributes'    => 'getAttributes',
+        'meta'          => 'getMeta',
+        'relationships' => 'getRelationships',
     ];
 
     public static function attributeMap()
@@ -136,9 +136,8 @@ class Hub implements ArrayAccess
     }
 
     const TYPE_HUBS = 'hubs';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -149,7 +148,7 @@ class Hub implements ArrayAccess
             self::TYPE_HUBS,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -196,7 +195,7 @@ class Hub implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["hubs"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'hubs'.";
         }
 
@@ -225,7 +224,7 @@ class Hub implements ArrayAccess
             return false;
         }
         $allowed_values = ["hubs"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -234,7 +233,7 @@ class Hub implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -243,7 +242,7 @@ class Hub implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -255,7 +254,7 @@ class Hub implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\JsonApiResource
+     * @return \Autodesk\Client\Model\JsonApiResource
      */
     public function getData()
     {
@@ -264,7 +263,7 @@ class Hub implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\JsonApiResource $data
+     * @param \Autodesk\Client\Model\JsonApiResource $data
      * @return $this
      */
     public function setData($data)
@@ -276,7 +275,7 @@ class Hub implements ArrayAccess
 
     /**
      * Gets included
-     * @return \Swagger\Client\Model\JsonApiResource[]
+     * @return \Autodesk\Client\Model\JsonApiResource[]
      */
     public function getIncluded()
     {
@@ -285,7 +284,7 @@ class Hub implements ArrayAccess
 
     /**
      * Sets included
-     * @param \Swagger\Client\Model\JsonApiResource[] $included
+     * @param \Autodesk\Client\Model\JsonApiResource[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -297,7 +296,7 @@ class Hub implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Swagger\Client\Model\JsonApiLinks
+     * @return \Autodesk\Client\Model\JsonApiLinks
      */
     public function getLinks()
     {
@@ -306,7 +305,7 @@ class Hub implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Swagger\Client\Model\JsonApiLinks $links
+     * @param \Autodesk\Client\Model\JsonApiLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -353,8 +352,8 @@ class Hub implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('hubs');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['hubs'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'hubs'");
         }
         $this->container['type'] = $type;
@@ -364,7 +363,7 @@ class Hub implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Swagger\Client\Model\HubAttributes
+     * @return \Autodesk\Client\Model\HubAttributes
      */
     public function getAttributes()
     {
@@ -373,7 +372,7 @@ class Hub implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Swagger\Client\Model\HubAttributes $attributes
+     * @param \Autodesk\Client\Model\HubAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -385,7 +384,7 @@ class Hub implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \Swagger\Client\Model\JsonApiMeta
+     * @return \Autodesk\Client\Model\JsonApiMeta
      */
     public function getMeta()
     {
@@ -394,7 +393,7 @@ class Hub implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \Swagger\Client\Model\JsonApiMeta $meta
+     * @param \Autodesk\Client\Model\JsonApiMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -406,7 +405,7 @@ class Hub implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Swagger\Client\Model\HubRelationships
+     * @return \Autodesk\Client\Model\HubRelationships
      */
     public function getRelationships()
     {
@@ -415,7 +414,7 @@ class Hub implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Swagger\Client\Model\HubRelationships $relationships
+     * @param \Autodesk\Client\Model\HubRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -424,6 +423,7 @@ class Hub implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -447,7 +447,7 @@ class Hub implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -476,10 +476,10 @@ class Hub implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

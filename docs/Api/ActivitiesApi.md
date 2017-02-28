@@ -1,4 +1,4 @@
-# Swagger\Client\ActivitiesApi
+# Autodesk\Client\ActivitiesApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createActivity**
-> \Swagger\Client\Model\Activity createActivity($activity)
+> \Autodesk\Client\Model\Activity createActivity($activity)
 
 Creates a new Activity.
 
@@ -25,10 +25,10 @@ Creates a new Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
-$activity = new \Swagger\Client\Model\Activity(); // \Swagger\Client\Model\Activity | 
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$activity = new \Autodesk\Client\Model\Activity(); // \Autodesk\Client\Model\Activity | 
 
 try {
     $result = $api_instance->createActivity($activity);
@@ -43,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activity** | [**\Swagger\Client\Model\Activity**](../Model/\Swagger\Client\Model\Activity.md)|  |
+ **activity** | [**\Autodesk\Client\Model\Activity**](../Model/\Autodesk\Client\Model\Activity.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\Activity**](../Model/Activity.md)
+[**\Autodesk\Client\Model\Activity**](../Model/Activity.md)
 
 ### Authorization
 
@@ -71,9 +71,9 @@ Removes a specific Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -116,9 +116,9 @@ Removes the version history of the specified Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -151,7 +151,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getActivity**
-> \Swagger\Client\Model\Activity getActivity($id)
+> \Autodesk\Client\Model\Activity getActivity($id)
 
 Returns the details of a specific Activity.
 
@@ -161,9 +161,9 @@ Returns the details of a specific Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Activity**](../Model/Activity.md)
+[**\Autodesk\Client\Model\Activity**](../Model/Activity.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getActivityVersions**
-> \Swagger\Client\Model\DesignAutomationActivities getActivityVersions($id)
+> \Autodesk\Client\Model\DesignAutomationActivities getActivityVersions($id)
 
 Returns all old versions of a specified Activity.
 
@@ -207,9 +207,9 @@ Returns all old versions of a specified Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
+[**\Autodesk\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllActivities**
-> \Swagger\Client\Model\DesignAutomationActivities getAllActivities()
+> \Autodesk\Client\Model\DesignAutomationActivities getAllActivities()
 
 Returns the details of all Activities.
 
@@ -253,9 +253,9 @@ Returns the details of all Activities.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
 
 try {
     $result = $api_instance->getAllActivities();
@@ -271,7 +271,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
+[**\Autodesk\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
 
 ### Authorization
 
@@ -295,11 +295,11 @@ Updates an Activity by specifying only the changed attributes.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
-$activity = new \Swagger\Client\Model\ActivityOptional(); // \Swagger\Client\Model\ActivityOptional | 
+$activity = new \Autodesk\Client\Model\ActivityOptional(); // \Autodesk\Client\Model\ActivityOptional | 
 
 try {
     $api_instance->patchActivity($id, $activity);
@@ -314,7 +314,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **activity** | [**\Swagger\Client\Model\ActivityOptional**](../Model/\Swagger\Client\Model\ActivityOptional.md)|  |
+ **activity** | [**\Autodesk\Client\Model\ActivityOptional**](../Model/\Autodesk\Client\Model\ActivityOptional.md)|  |
 
 ### Return type
 
@@ -342,11 +342,11 @@ Sets the Activity to the specified version.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\ActivitiesApi();
+$api_instance = new Autodesk\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
-$activity_version = new \Swagger\Client\Model\ActivityVersion(); // \Swagger\Client\Model\ActivityVersion | 
+$activity_version = new \Autodesk\Client\Model\ActivityVersion(); // \Autodesk\Client\Model\ActivityVersion | 
 
 try {
     $api_instance->setActivityVersion($id, $activity_version);
@@ -361,7 +361,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **activity_version** | [**\Swagger\Client\Model\ActivityVersion**](../Model/\Swagger\Client\Model\ActivityVersion.md)|  |
+ **activity_version** | [**\Autodesk\Client\Model\ActivityVersion**](../Model/\Autodesk\Client\Model\ActivityVersion.md)|  |
 
 ### Return type
 

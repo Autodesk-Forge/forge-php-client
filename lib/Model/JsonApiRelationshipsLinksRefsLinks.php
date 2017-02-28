@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiRelationshipsLinksRefsLinks Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_relationships_links_refs_links';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'self' => '\Swagger\Client\Model\JsonApiLink',
-        'related' => '\Swagger\Client\Model\JsonApiLink'
+        'self'    => '\Autodesk\Client\Model\JsonApiLink',
+        'related' => '\Autodesk\Client\Model\JsonApiLink',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'self' => 'self',
-        'related' => 'related'
+        'self'    => 'self',
+        'related' => 'related',
     ];
 
 
@@ -78,8 +78,8 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'self' => 'setSelf',
-        'related' => 'setRelated'
+        'self'    => 'setSelf',
+        'related' => 'setRelated',
     ];
 
 
@@ -88,8 +88,8 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'self' => 'getSelf',
-        'related' => 'getRelated'
+        'self'    => 'getSelf',
+        'related' => 'getRelated',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -166,7 +163,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
     /**
      * Gets self
-     * @return \Swagger\Client\Model\JsonApiLink
+     * @return \Autodesk\Client\Model\JsonApiLink
      */
     public function getSelf()
     {
@@ -175,7 +172,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
     /**
      * Sets self
-     * @param \Swagger\Client\Model\JsonApiLink $self
+     * @param \Autodesk\Client\Model\JsonApiLink $self
      * @return $this
      */
     public function setSelf($self)
@@ -187,7 +184,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
     /**
      * Gets related
-     * @return \Swagger\Client\Model\JsonApiLink
+     * @return \Autodesk\Client\Model\JsonApiLink
      */
     public function getRelated()
     {
@@ -196,7 +193,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
     /**
      * Sets related
-     * @param \Swagger\Client\Model\JsonApiLink $related
+     * @param \Autodesk\Client\Model\JsonApiLink $related
      * @return $this
      */
     public function setRelated($related)
@@ -205,6 +202,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -228,7 +226,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -257,10 +255,10 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

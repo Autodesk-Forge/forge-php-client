@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiRelationshipsLinksExternalResource Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_relationships_links_external_resource';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'meta' => '\Swagger\Client\Model\JsonApiMetaLink',
-        'data' => '\Swagger\Client\Model\JsonApiTypeId'
+        'meta' => '\Autodesk\Client\Model\JsonApiMetaLink',
+        'data' => '\Autodesk\Client\Model\JsonApiTypeId',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
      */
     protected static $attributeMap = [
         'meta' => 'meta',
-        'data' => 'data'
+        'data' => 'data',
     ];
 
 
@@ -79,7 +79,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
      */
     protected static $setters = [
         'meta' => 'setMeta',
-        'data' => 'setData'
+        'data' => 'setData',
     ];
 
 
@@ -89,7 +89,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
      */
     protected static $getters = [
         'meta' => 'getMeta',
-        'data' => 'getData'
+        'data' => 'getData',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -166,7 +163,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \Swagger\Client\Model\JsonApiMetaLink
+     * @return \Autodesk\Client\Model\JsonApiMetaLink
      */
     public function getMeta()
     {
@@ -175,7 +172,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \Swagger\Client\Model\JsonApiMetaLink $meta
+     * @param \Autodesk\Client\Model\JsonApiMetaLink $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -187,7 +184,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\JsonApiTypeId
+     * @return \Autodesk\Client\Model\JsonApiTypeId
      */
     public function getData()
     {
@@ -196,7 +193,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\JsonApiTypeId $data
+     * @param \Autodesk\Client\Model\JsonApiTypeId $data
      * @return $this
      */
     public function setData($data)
@@ -205,6 +202,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -228,7 +226,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -257,10 +255,10 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

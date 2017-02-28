@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JobObjOutputPayload Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class JobObjOutputPayload implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobObjOutputPayload';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'advanced' => '\Swagger\Client\Model\JobObjOutputPayloadAdvanced'
+        'type'     => 'string',
+        'advanced' => '\Autodesk\Client\Model\JobObjOutputPayloadAdvanced',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class JobObjOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'advanced' => 'advanced'
+        'type'     => 'type',
+        'advanced' => 'advanced',
     ];
 
 
@@ -78,8 +78,8 @@ class JobObjOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'advanced' => 'setAdvanced'
+        'type'     => 'setType',
+        'advanced' => 'setAdvanced',
     ];
 
 
@@ -88,8 +88,8 @@ class JobObjOutputPayload implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'advanced' => 'getAdvanced'
+        'type'     => 'getType',
+        'advanced' => 'getAdvanced',
     ];
 
     public static function attributeMap()
@@ -113,9 +113,8 @@ class JobObjOutputPayload implements ArrayAccess
     const TYPE_STEP = 'step';
     const TYPE_IGES = 'iges';
     const TYPE_OBJ = 'obj';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -131,7 +130,7 @@ class JobObjOutputPayload implements ArrayAccess
             self::TYPE_OBJ,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -162,7 +161,7 @@ class JobObjOutputPayload implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'.";
         }
 
@@ -182,7 +181,7 @@ class JobObjOutputPayload implements ArrayAccess
             return false;
         }
         $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -205,8 +204,8 @@ class JobObjOutputPayload implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('svf', 'thumbnail', 'stl', 'step', 'iges', 'obj');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'");
         }
         $this->container['type'] = $type;
@@ -216,7 +215,7 @@ class JobObjOutputPayload implements ArrayAccess
 
     /**
      * Gets advanced
-     * @return \Swagger\Client\Model\JobObjOutputPayloadAdvanced
+     * @return \Autodesk\Client\Model\JobObjOutputPayloadAdvanced
      */
     public function getAdvanced()
     {
@@ -225,7 +224,7 @@ class JobObjOutputPayload implements ArrayAccess
 
     /**
      * Sets advanced
-     * @param \Swagger\Client\Model\JobObjOutputPayloadAdvanced $advanced
+     * @param \Autodesk\Client\Model\JobObjOutputPayloadAdvanced $advanced
      * @return $this
      */
     public function setAdvanced($advanced)
@@ -234,6 +233,7 @@ class JobObjOutputPayload implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -257,7 +257,7 @@ class JobObjOutputPayload implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -286,10 +286,10 @@ class JobObjOutputPayload implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

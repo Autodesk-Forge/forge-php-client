@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,77 +26,33 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Autodesk\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Autodesk\Client\ApiClient;
+use \Autodesk\Client\ApiException;
+use \Autodesk\Client\Configuration;
+use \Autodesk\Client\ObjectSerializer;
 
 /**
  * ObjectsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ObjectsApi
+class ObjectsApi extends AbstractApi
 {
-    /**
-     * API Client
-     *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
-     */
-    protected $apiClient;
-
-    /**
-     * Constructor
-     *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
-     */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
-    {
-        if ($apiClient === null) {
-            $apiClient = new ApiClient();
-        }
-
-        $this->apiClient = $apiClient;
-    }
-
-    /**
-     * Get API client
-     *
-     * @return \Swagger\Client\ApiClient get the API client
-     */
-    public function getApiClient()
-    {
-        return $this->apiClient;
-    }
-
-    /**
-     * Set the API client
-     *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
-     *
-     * @return ObjectsApi
-     */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
-    {
-        $this->apiClient = $apiClient;
-        return $this;
-    }
-
     /**
      * Operation copyTo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param string $new_obj_name URL-encoded Object key to use as the destination (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ObjectDetails
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\ObjectDetails
      */
     public function copyTo($bucket_key, $object_name, $new_obj_name)
     {
@@ -107,13 +63,13 @@ class ObjectsApi
     /**
      * Operation copyToWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param string $new_obj_name URL-encoded Object key to use as the destination (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function copyToWithHttpInfo($bucket_key, $object_name, $new_obj_name)
     {
@@ -121,7 +77,7 @@ class ObjectsApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling copyTo');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.copyTo, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -140,7 +96,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -172,34 +128,36 @@ class ObjectsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'PUT',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ObjectDetails',
+                '\Autodesk\Client\Model\ObjectDetails',
                 '/oss/v2/buckets/{bucketKey}/objects/{objectName}/copyto/{newObjName}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ObjectDetails', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -211,32 +169,33 @@ class ObjectsApi
     /**
      * Operation createSignedResource
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
-     * @param \Swagger\Client\Model\PostBucketsSigned $post_buckets_signed Body Structure (required)
+     * @param \Autodesk\Client\Model\PostBucketsSigned $post_buckets_signed Body Structure (required)
      * @param string $access Access for signed resource Acceptable values: &#x60;read&#x60;, &#x60;write&#x60;, &#x60;readwrite&#x60;. Default value: &#x60;read&#x60; (optional, default to read)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PostObjectSigned
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\PostObjectSigned
      */
     public function createSignedResource($bucket_key, $object_name, $post_buckets_signed, $access = null)
     {
-        list($response) = $this->createSignedResourceWithHttpInfo($bucket_key, $object_name, $post_buckets_signed, $access);
+        list($response) = $this->createSignedResourceWithHttpInfo($bucket_key, $object_name, $post_buckets_signed,
+            $access);
         return $response;
     }
 
     /**
      * Operation createSignedResourceWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
-     * @param \Swagger\Client\Model\PostBucketsSigned $post_buckets_signed Body Structure (required)
+     * @param \Autodesk\Client\Model\PostBucketsSigned $post_buckets_signed Body Structure (required)
      * @param string $access Access for signed resource Acceptable values: &#x60;read&#x60;, &#x60;write&#x60;, &#x60;readwrite&#x60;. Default value: &#x60;read&#x60; (optional, default to read)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PostObjectSigned, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\PostObjectSigned, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSignedResourceWithHttpInfo($bucket_key, $object_name, $post_buckets_signed, $access = null)
     {
@@ -244,7 +203,7 @@ class ObjectsApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling createSignedResource');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.createSignedResource, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -263,7 +222,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -303,27 +262,29 @@ class ObjectsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PostObjectSigned',
+                '\Autodesk\Client\Model\PostObjectSigned',
                 '/oss/v2/buckets/{bucketKey}/objects/{objectName}/signed'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PostObjectSigned', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\PostObjectSigned',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostObjectSigned', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\PostObjectSigned', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -335,11 +296,11 @@ class ObjectsApi
     /**
      * Operation deleteObject
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteObject($bucket_key, $object_name)
@@ -351,11 +312,11 @@ class ObjectsApi
     /**
      * Operation deleteObjectWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteObjectWithHttpInfo($bucket_key, $object_name)
@@ -364,7 +325,7 @@ class ObjectsApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling deleteObject');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.deleteObject, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -379,7 +340,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept([]);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -403,20 +364,16 @@ class ObjectsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'DELETE',
                 $queryParams,
@@ -438,11 +395,11 @@ class ObjectsApi
     /**
      * Operation deleteSignedResource
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteSignedResource($id, $region = null)
@@ -454,11 +411,11 @@ class ObjectsApi
     /**
      * Operation deleteSignedResourceWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSignedResourceWithHttpInfo($id, $region = null)
@@ -474,7 +431,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['text/plain']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -494,20 +451,16 @@ class ObjectsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'DELETE',
                 $queryParams,
@@ -529,7 +482,7 @@ class ObjectsApi
     /**
      * Operation getObject
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -537,19 +490,26 @@ class ObjectsApi
      * @param string $if_none_match The value of this header is compared to the ETAG of the object. If they match, the body will not be included in the response. Only the object information will be included. (optional)
      * @param \DateTime $if_modified_since If the requested object has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message body. (optional)
      * @param string $accept_encoding When gzip is specified, a gzip compressed stream of the object’s bytes will be returned in the response. Cannot use “Accept-Encoding:gzip” with Range header containing an end byte range. End byte range will not be honored if “Accept-Encoding: gzip” header is used. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function getObject($bucket_key, $object_name, $range = null, $if_none_match = null, $if_modified_since = null, $accept_encoding = null)
-    {
-        list($response) = $this->getObjectWithHttpInfo($bucket_key, $object_name, $range, $if_none_match, $if_modified_since, $accept_encoding);
+    public function getObject(
+        $bucket_key,
+        $object_name,
+        $range = null,
+        $if_none_match = null,
+        $if_modified_since = null,
+        $accept_encoding = null
+    ) {
+        list($response) = $this->getObjectWithHttpInfo($bucket_key, $object_name, $range, $if_none_match,
+            $if_modified_since, $accept_encoding);
         return $response;
     }
 
     /**
      * Operation getObjectWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -557,16 +517,22 @@ class ObjectsApi
      * @param string $if_none_match The value of this header is compared to the ETAG of the object. If they match, the body will not be included in the response. Only the object information will be included. (optional)
      * @param \DateTime $if_modified_since If the requested object has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message body. (optional)
      * @param string $accept_encoding When gzip is specified, a gzip compressed stream of the object’s bytes will be returned in the response. Cannot use “Accept-Encoding:gzip” with Range header containing an end byte range. End byte range will not be honored if “Accept-Encoding: gzip” header is used. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getObjectWithHttpInfo($bucket_key, $object_name, $range = null, $if_none_match = null, $if_modified_since = null, $accept_encoding = null)
-    {
+    public function getObjectWithHttpInfo(
+        $bucket_key,
+        $object_name,
+        $range = null,
+        $if_none_match = null,
+        $if_modified_since = null,
+        $accept_encoding = null
+    ) {
         // verify the required parameter 'bucket_key' is set
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getObject');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.getObject, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -574,7 +540,7 @@ class ObjectsApi
         if ($object_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $object_name when calling getObject');
         }
-        if (!is_null($range) && !preg_match("/^bytes=[0-9]+\\-[0-9]*$/", $range)) {
+        if ( ! is_null($range) && ! preg_match("/^bytes=[0-9]+\\-[0-9]*$/", $range)) {
             throw new \InvalidArgumentException("invalid value for \"range\" when calling ObjectsApi.getObject, must conform to the pattern /^bytes=[0-9]+\\-[0-9]*$/.");
         }
 
@@ -585,7 +551,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/octet-stream']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -625,20 +591,16 @@ class ObjectsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
@@ -648,11 +610,16 @@ class ObjectsApi
                 '/oss/v2/buckets/{bucketKey}/objects/{objectName}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject',
+                        $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -664,14 +631,14 @@ class ObjectsApi
     /**
      * Operation getObjectDetails
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param \DateTime $if_modified_since If the requested object has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message body. (optional)
      * @param string $with Extra information in details; multiple uses are supported Acceptable values: &#x60;createdDate&#x60;, &#x60;lastAccessedDate&#x60;, &#x60;lastModifiedDate&#x60; (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ObjectFullDetails
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\ObjectFullDetails
      */
     public function getObjectDetails($bucket_key, $object_name, $if_modified_since = null, $with = null)
     {
@@ -682,14 +649,14 @@ class ObjectsApi
     /**
      * Operation getObjectDetailsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param \DateTime $if_modified_since If the requested object has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message body. (optional)
      * @param string $with Extra information in details; multiple uses are supported Acceptable values: &#x60;createdDate&#x60;, &#x60;lastAccessedDate&#x60;, &#x60;lastModifiedDate&#x60; (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ObjectFullDetails, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\ObjectFullDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function getObjectDetailsWithHttpInfo($bucket_key, $object_name, $if_modified_since = null, $with = null)
     {
@@ -697,7 +664,7 @@ class ObjectsApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getObjectDetails');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.getObjectDetails, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -712,7 +679,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -744,34 +711,36 @@ class ObjectsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ObjectFullDetails',
+                '\Autodesk\Client\Model\ObjectFullDetails',
                 '/oss/v2/buckets/{bucketKey}/objects/{objectName}/details'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ObjectFullDetails', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectFullDetails',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ObjectFullDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\ObjectFullDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -783,14 +752,14 @@ class ObjectsApi
     /**
      * Operation getObjects
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
      * @param string $begins_with Provides a way to filter the based on object key name (optional)
      * @param string $start_at Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\BucketObjects
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\BucketObjects
      */
     public function getObjects($bucket_key, $limit = null, $begins_with = null, $start_at = null)
     {
@@ -801,14 +770,14 @@ class ObjectsApi
     /**
      * Operation getObjectsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
      * @param string $begins_with Provides a way to filter the based on object key name (optional)
      * @param string $start_at Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\BucketObjects, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\BucketObjects, HTTP status code, HTTP response headers (array of strings)
      */
     public function getObjectsWithHttpInfo($bucket_key, $limit = null, $begins_with = null, $start_at = null)
     {
@@ -816,7 +785,7 @@ class ObjectsApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getObjects');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.getObjects, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -827,7 +796,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -855,34 +824,36 @@ class ObjectsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\BucketObjects',
+                '\Autodesk\Client\Model\BucketObjects',
                 '/oss/v2/buckets/{bucketKey}/objects'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\BucketObjects', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\BucketObjects',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\BucketObjects', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\BucketObjects', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -894,7 +865,7 @@ class ObjectsApi
     /**
      * Operation getSignedResource
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $range A range of bytes to download from the specified object. (optional)
@@ -902,19 +873,26 @@ class ObjectsApi
      * @param \DateTime $if_modified_since If the requested object has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message body. (optional)
      * @param string $accept_encoding When gzip is specified, a gzip compressed stream of the object’s bytes will be returned in the response. Cannot use “Accept-Encoding:gzip” with Range header containing an end byte range. End byte range will not be honored if “Accept-Encoding: gzip” header is used. (optional)
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function getSignedResource($id, $range = null, $if_none_match = null, $if_modified_since = null, $accept_encoding = null, $region = null)
-    {
-        list($response) = $this->getSignedResourceWithHttpInfo($id, $range, $if_none_match, $if_modified_since, $accept_encoding, $region);
+    public function getSignedResource(
+        $id,
+        $range = null,
+        $if_none_match = null,
+        $if_modified_since = null,
+        $accept_encoding = null,
+        $region = null
+    ) {
+        list($response) = $this->getSignedResourceWithHttpInfo($id, $range, $if_none_match, $if_modified_since,
+            $accept_encoding, $region);
         return $response;
     }
 
     /**
      * Operation getSignedResourceWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $range A range of bytes to download from the specified object. (optional)
@@ -922,16 +900,22 @@ class ObjectsApi
      * @param \DateTime $if_modified_since If the requested object has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message body. (optional)
      * @param string $accept_encoding When gzip is specified, a gzip compressed stream of the object’s bytes will be returned in the response. Cannot use “Accept-Encoding:gzip” with Range header containing an end byte range. End byte range will not be honored if “Accept-Encoding: gzip” header is used. (optional)
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSignedResourceWithHttpInfo($id, $range = null, $if_none_match = null, $if_modified_since = null, $accept_encoding = null, $region = null)
-    {
+    public function getSignedResourceWithHttpInfo(
+        $id,
+        $range = null,
+        $if_none_match = null,
+        $if_modified_since = null,
+        $accept_encoding = null,
+        $region = null
+    ) {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling getSignedResource');
         }
-        if (!is_null($range) && !preg_match("/^bytes=[0-9]+\\-[0-9]*$/", $range)) {
+        if ( ! is_null($range) && ! preg_match("/^bytes=[0-9]+\\-[0-9]*$/", $range)) {
             throw new \InvalidArgumentException("invalid value for \"range\" when calling ObjectsApi.getSignedResource, must conform to the pattern /^bytes=[0-9]+\\-[0-9]*$/.");
         }
 
@@ -942,7 +926,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/octet-stream']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -978,20 +962,16 @@ class ObjectsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
@@ -1001,15 +981,21 @@ class ObjectsApi
                 '/oss/v2/signedresources/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject',
+                        $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1021,12 +1007,12 @@ class ObjectsApi
     /**
      * Operation getStatusBySessionId
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function getStatusBySessionId($bucket_key, $object_name, $session_id)
@@ -1038,12 +1024,12 @@ class ObjectsApi
     /**
      * Operation getStatusBySessionIdWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStatusBySessionIdWithHttpInfo($bucket_key, $object_name, $session_id)
@@ -1052,7 +1038,7 @@ class ObjectsApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getStatusBySessionId');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.getStatusBySessionId, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -1071,7 +1057,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -1103,20 +1089,16 @@ class ObjectsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
@@ -1130,11 +1112,13 @@ class ObjectsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 416:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1146,48 +1130,65 @@ class ObjectsApi
     /**
      * Operation uploadChunk
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param int $content_length Indicates the size of the request body. (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @param \SplFileObject $body  (required)
+     * @param \SplFileObject $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ObjectDetails
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\ObjectDetails
      */
-    public function uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition = null, $if_match = null)
-    {
-        list($response) = $this->uploadChunkWithHttpInfo($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition, $if_match);
+    public function uploadChunk(
+        $bucket_key,
+        $object_name,
+        $content_length,
+        $content_range,
+        $session_id,
+        $body,
+        $content_disposition = null,
+        $if_match = null
+    ) {
+        list($response) = $this->uploadChunkWithHttpInfo($bucket_key, $object_name, $content_length, $content_range,
+            $session_id, $body, $content_disposition, $if_match);
         return $response;
     }
 
     /**
      * Operation uploadChunkWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param int $content_length Indicates the size of the request body. (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @param \SplFileObject $body  (required)
+     * @param \SplFileObject $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadChunkWithHttpInfo($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition = null, $if_match = null)
-    {
+    public function uploadChunkWithHttpInfo(
+        $bucket_key,
+        $object_name,
+        $content_length,
+        $content_range,
+        $session_id,
+        $body,
+        $content_disposition = null,
+        $if_match = null
+    ) {
         // verify the required parameter 'bucket_key' is set
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling uploadChunk');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.uploadChunk, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -1203,7 +1204,7 @@ class ObjectsApi
         if ($content_range === null) {
             throw new \InvalidArgumentException('Missing the required parameter $content_range when calling uploadChunk');
         }
-        if (!preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
+        if ( ! preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
             throw new \InvalidArgumentException("invalid value for \"content_range\" when calling ObjectsApi.uploadChunk, must conform to the pattern /^bytes [0-9]+\\-[0-9]+/[0-9]+$/.");
         }
 
@@ -1222,7 +1223,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/octet-stream']);
@@ -1278,39 +1279,44 @@ class ObjectsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'PUT',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ObjectDetails',
+                '\Autodesk\Client\Model\ObjectDetails',
                 '/oss/v2/buckets/{bucketKey}/objects/{objectName}/resumable'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ObjectDetails', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Result', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Result', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 416:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1322,44 +1328,57 @@ class ObjectsApi
     /**
      * Operation uploadObject
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param int $content_length Indicates the size of the request body. (required)
-     * @param \SplFileObject $body  (required)
+     * @param \SplFileObject $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ObjectDetails
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\ObjectDetails
      */
-    public function uploadObject($bucket_key, $object_name, $content_length, $body, $content_disposition = null, $if_match = null)
-    {
-        list($response) = $this->uploadObjectWithHttpInfo($bucket_key, $object_name, $content_length, $body, $content_disposition, $if_match);
+    public function uploadObject(
+        $bucket_key,
+        $object_name,
+        $content_length,
+        $body,
+        $content_disposition = null,
+        $if_match = null
+    ) {
+        list($response) = $this->uploadObjectWithHttpInfo($bucket_key, $object_name, $content_length, $body,
+            $content_disposition, $if_match);
         return $response;
     }
 
     /**
      * Operation uploadObjectWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param int $content_length Indicates the size of the request body. (required)
-     * @param \SplFileObject $body  (required)
+     * @param \SplFileObject $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadObjectWithHttpInfo($bucket_key, $object_name, $content_length, $body, $content_disposition = null, $if_match = null)
-    {
+    public function uploadObjectWithHttpInfo(
+        $bucket_key,
+        $object_name,
+        $content_length,
+        $body,
+        $content_disposition = null,
+        $if_match = null
+    ) {
         // verify the required parameter 'bucket_key' is set
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling uploadObject');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.uploadObject, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -1382,7 +1401,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/octet-stream']);
@@ -1430,31 +1449,34 @@ class ObjectsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'PUT',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ObjectDetails',
+                '\Autodesk\Client\Model\ObjectDetails',
                 '/oss/v2/buckets/{bucketKey}/objects/{objectName}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ObjectDetails', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1466,39 +1488,52 @@ class ObjectsApi
     /**
      * Operation uploadSignedResource
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param int $content_length Indicates the size of the request body. (required)
-     * @param \SplFileObject $body  (required)
+     * @param \SplFileObject $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ObjectDetails
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\ObjectDetails
      */
-    public function uploadSignedResource($id, $content_length, $body, $content_disposition = null, $x_ads_region = null, $if_match = null)
-    {
-        list($response) = $this->uploadSignedResourceWithHttpInfo($id, $content_length, $body, $content_disposition, $x_ads_region, $if_match);
+    public function uploadSignedResource(
+        $id,
+        $content_length,
+        $body,
+        $content_disposition = null,
+        $x_ads_region = null,
+        $if_match = null
+    ) {
+        list($response) = $this->uploadSignedResourceWithHttpInfo($id, $content_length, $body, $content_disposition,
+            $x_ads_region, $if_match);
         return $response;
     }
 
     /**
      * Operation uploadSignedResourceWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param int $content_length Indicates the size of the request body. (required)
-     * @param \SplFileObject $body  (required)
+     * @param \SplFileObject $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadSignedResourceWithHttpInfo($id, $content_length, $body, $content_disposition = null, $x_ads_region = null, $if_match = null)
-    {
+    public function uploadSignedResourceWithHttpInfo(
+        $id,
+        $content_length,
+        $body,
+        $content_disposition = null,
+        $x_ads_region = null,
+        $if_match = null
+    ) {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling uploadSignedResource');
@@ -1518,7 +1553,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/octet-stream']);
@@ -1562,31 +1597,34 @@ class ObjectsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'PUT',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ObjectDetails',
+                '\Autodesk\Client\Model\ObjectDetails',
                 '/oss/v2/signedresources/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ObjectDetails', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1598,39 +1636,52 @@ class ObjectsApi
     /**
      * Operation uploadSignedResourcesChunk
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @param \SplFileObject $body  (required)
+     * @param \SplFileObject $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ObjectDetails
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\ObjectDetails
      */
-    public function uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition = null, $x_ads_region = null)
-    {
-        list($response) = $this->uploadSignedResourcesChunkWithHttpInfo($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    public function uploadSignedResourcesChunk(
+        $id,
+        $content_range,
+        $session_id,
+        $body,
+        $content_disposition = null,
+        $x_ads_region = null
+    ) {
+        list($response) = $this->uploadSignedResourcesChunkWithHttpInfo($id, $content_range, $session_id, $body,
+            $content_disposition, $x_ads_region);
         return $response;
     }
 
     /**
      * Operation uploadSignedResourcesChunkWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @param \SplFileObject $body  (required)
+     * @param \SplFileObject $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadSignedResourcesChunkWithHttpInfo($id, $content_range, $session_id, $body, $content_disposition = null, $x_ads_region = null)
-    {
+    public function uploadSignedResourcesChunkWithHttpInfo(
+        $id,
+        $content_range,
+        $session_id,
+        $body,
+        $content_disposition = null,
+        $x_ads_region = null
+    ) {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling uploadSignedResourcesChunk');
@@ -1639,7 +1690,7 @@ class ObjectsApi
         if ($content_range === null) {
             throw new \InvalidArgumentException('Missing the required parameter $content_range when calling uploadSignedResourcesChunk');
         }
-        if (!preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
+        if ( ! preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
             throw new \InvalidArgumentException("invalid value for \"content_range\" when calling ObjectsApi.uploadSignedResourcesChunk, must conform to the pattern /^bytes [0-9]+\\-[0-9]+/[0-9]+$/.");
         }
 
@@ -1658,7 +1709,7 @@ class ObjectsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/octet-stream']);
@@ -1702,39 +1753,44 @@ class ObjectsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'PUT',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ObjectDetails',
+                '\Autodesk\Client\Model\ObjectDetails',
                 '/oss/v2/signedresources/{id}/resumable'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ObjectDetails', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Result', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Result', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 416:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

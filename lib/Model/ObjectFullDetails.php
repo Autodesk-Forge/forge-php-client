@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Object Details json response
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -45,25 +45,25 @@ class ObjectFullDetails implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'objectFullDetails';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'bucket_key' => 'string',
-        'object_id' => 'string',
-        'object_key' => 'string',
-        'sha1' => 'string',
-        'size' => 'int',
+        'bucket_key'   => 'string',
+        'object_id'    => 'string',
+        'object_key'   => 'string',
+        'sha1'         => 'string',
+        'size'         => 'int',
         'content_type' => 'string',
-        'location' => 'string',
-        'block_sizes' => 'int[]',
-        'deltas' => '\Swagger\Client\Model\ObjectFullDetailsDeltas[]'
+        'location'     => 'string',
+        'block_sizes'  => 'int[]',
+        'deltas'       => '\Autodesk\Client\Model\ObjectFullDetailsDeltas[]',
     ];
 
     public static function swaggerTypes()
@@ -76,15 +76,15 @@ class ObjectFullDetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bucket_key' => 'bucketKey',
-        'object_id' => 'objectId',
-        'object_key' => 'objectKey',
-        'sha1' => 'sha1',
-        'size' => 'size',
+        'bucket_key'   => 'bucketKey',
+        'object_id'    => 'objectId',
+        'object_key'   => 'objectKey',
+        'sha1'         => 'sha1',
+        'size'         => 'size',
         'content_type' => 'contentType',
-        'location' => 'location',
-        'block_sizes' => 'blockSizes',
-        'deltas' => 'deltas'
+        'location'     => 'location',
+        'block_sizes'  => 'blockSizes',
+        'deltas'       => 'deltas',
     ];
 
 
@@ -93,15 +93,15 @@ class ObjectFullDetails implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bucket_key' => 'setBucketKey',
-        'object_id' => 'setObjectId',
-        'object_key' => 'setObjectKey',
-        'sha1' => 'setSha1',
-        'size' => 'setSize',
+        'bucket_key'   => 'setBucketKey',
+        'object_id'    => 'setObjectId',
+        'object_key'   => 'setObjectKey',
+        'sha1'         => 'setSha1',
+        'size'         => 'setSize',
         'content_type' => 'setContentType',
-        'location' => 'setLocation',
-        'block_sizes' => 'setBlockSizes',
-        'deltas' => 'setDeltas'
+        'location'     => 'setLocation',
+        'block_sizes'  => 'setBlockSizes',
+        'deltas'       => 'setDeltas',
     ];
 
 
@@ -110,15 +110,15 @@ class ObjectFullDetails implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bucket_key' => 'getBucketKey',
-        'object_id' => 'getObjectId',
-        'object_key' => 'getObjectKey',
-        'sha1' => 'getSha1',
-        'size' => 'getSize',
+        'bucket_key'   => 'getBucketKey',
+        'object_id'    => 'getObjectId',
+        'object_key'   => 'getObjectKey',
+        'sha1'         => 'getSha1',
+        'size'         => 'getSize',
         'content_type' => 'getContentType',
-        'location' => 'getLocation',
-        'block_sizes' => 'getBlockSizes',
-        'deltas' => 'getDeltas'
+        'location'     => 'getLocation',
+        'block_sizes'  => 'getBlockSizes',
+        'deltas'       => 'getDeltas',
     ];
 
     public static function attributeMap()
@@ -136,9 +136,6 @@ class ObjectFullDetails implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -358,7 +355,7 @@ class ObjectFullDetails implements ArrayAccess
 
     /**
      * Gets deltas
-     * @return \Swagger\Client\Model\ObjectFullDetailsDeltas[]
+     * @return \Autodesk\Client\Model\ObjectFullDetailsDeltas[]
      */
     public function getDeltas()
     {
@@ -367,7 +364,7 @@ class ObjectFullDetails implements ArrayAccess
 
     /**
      * Sets deltas
-     * @param \Swagger\Client\Model\ObjectFullDetailsDeltas[] $deltas Patch files available for download related to this object
+     * @param \Autodesk\Client\Model\ObjectFullDetailsDeltas[] $deltas Patch files available for download related to this object
      * @return $this
      */
     public function setDeltas($deltas)
@@ -376,6 +373,7 @@ class ObjectFullDetails implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -399,7 +397,7 @@ class ObjectFullDetails implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -428,10 +426,10 @@ class ObjectFullDetails implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

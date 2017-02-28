@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,75 +26,31 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Autodesk\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Autodesk\Client\ApiClient;
+use \Autodesk\Client\ApiException;
+use \Autodesk\Client\Configuration;
+use \Autodesk\Client\ObjectSerializer;
 
 /**
  * AppPackagesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AppPackagesApi
+class AppPackagesApi extends AbstractApi
 {
-    /**
-     * API Client
-     *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
-     */
-    protected $apiClient;
-
-    /**
-     * Constructor
-     *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
-     */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
-    {
-        if ($apiClient === null) {
-            $apiClient = new ApiClient();
-        }
-
-        $this->apiClient = $apiClient;
-    }
-
-    /**
-     * Get API client
-     *
-     * @return \Swagger\Client\ApiClient get the API client
-     */
-    public function getApiClient()
-    {
-        return $this->apiClient;
-    }
-
-    /**
-     * Set the API client
-     *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
-     *
-     * @return AppPackagesApi
-     */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
-    {
-        $this->apiClient = $apiClient;
-        return $this;
-    }
-
     /**
      * Operation createAppPackage
      *
      * Creates an AppPackage module.
      *
-     * @param \Swagger\Client\Model\AppPackage $app_package  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\AppPackage
+     * @param \Autodesk\Client\Model\AppPackage $app_package (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\AppPackage
      */
     public function createAppPackage($app_package)
     {
@@ -107,9 +63,9 @@ class AppPackagesApi
      *
      * Creates an AppPackage module.
      *
-     * @param \Swagger\Client\Model\AppPackage $app_package  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\AppPackage, HTTP status code, HTTP response headers (array of strings)
+     * @param \Autodesk\Client\Model\AppPackage $app_package (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\AppPackage, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAppPackageWithHttpInfo($app_package)
     {
@@ -124,7 +80,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -144,27 +100,29 @@ class AppPackagesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\AppPackage',
+                '\Autodesk\Client\Model\AppPackage',
                 '/autocad.io/us-east/v2/AppPackages'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\AppPackage', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\AppPackage',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\AppPackage', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\AppPackage', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -178,8 +136,8 @@ class AppPackagesApi
      *
      * Removes a specific AppPackage.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteAppPackage($id)
@@ -193,8 +151,8 @@ class AppPackagesApi
      *
      * Removes a specific AppPackage.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAppPackageWithHttpInfo($id)
@@ -210,7 +168,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -226,20 +184,16 @@ class AppPackagesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'DELETE',
                 $queryParams,
@@ -263,8 +217,8 @@ class AppPackagesApi
      *
      * Removes the version history of the specified AppPackage.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteAppPackageHistory($id)
@@ -278,8 +232,8 @@ class AppPackagesApi
      *
      * Removes the version history of the specified AppPackage.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAppPackageHistoryWithHttpInfo($id)
@@ -295,7 +249,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -311,20 +265,16 @@ class AppPackagesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
@@ -348,8 +298,8 @@ class AppPackagesApi
      *
      * Returns the details of all AppPackages.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DesignAutomationAppPackages
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\DesignAutomationAppPackages
      */
     public function getAllAppPackages()
     {
@@ -362,8 +312,8 @@ class AppPackagesApi
      *
      * Returns the details of all AppPackages.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DesignAutomationAppPackages, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\DesignAutomationAppPackages, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllAppPackagesWithHttpInfo()
     {
@@ -374,7 +324,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -382,34 +332,36 @@ class AppPackagesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DesignAutomationAppPackages',
+                '\Autodesk\Client\Model\DesignAutomationAppPackages',
                 '/autocad.io/us-east/v2/AppPackages'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DesignAutomationAppPackages', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response,
+                    '\Autodesk\Client\Model\DesignAutomationAppPackages', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DesignAutomationAppPackages', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\DesignAutomationAppPackages', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -423,9 +375,9 @@ class AppPackagesApi
      *
      * Returns the details of a specific AppPackage.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\AppPackage
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\AppPackage
      */
     public function getAppPackage($id)
     {
@@ -438,9 +390,9 @@ class AppPackagesApi
      *
      * Returns the details of a specific AppPackage.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\AppPackage, HTTP status code, HTTP response headers (array of strings)
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\AppPackage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAppPackageWithHttpInfo($id)
     {
@@ -455,7 +407,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -471,34 +423,36 @@ class AppPackagesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\AppPackage',
+                '\Autodesk\Client\Model\AppPackage',
                 '/autocad.io/us-east/v2/AppPackages(&#39;{id}&#39;)'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\AppPackage', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\AppPackage',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\AppPackage', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\AppPackage', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -512,9 +466,9 @@ class AppPackagesApi
      *
      * Returns all old versions of a specified AppPackage.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DesignAutomationAppPackages
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\DesignAutomationAppPackages
      */
     public function getAppPackageVersions($id)
     {
@@ -527,9 +481,9 @@ class AppPackagesApi
      *
      * Returns all old versions of a specified AppPackage.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DesignAutomationAppPackages, HTTP status code, HTTP response headers (array of strings)
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\DesignAutomationAppPackages, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAppPackageVersionsWithHttpInfo($id)
     {
@@ -544,7 +498,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -560,34 +514,36 @@ class AppPackagesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DesignAutomationAppPackages',
+                '\Autodesk\Client\Model\DesignAutomationAppPackages',
                 '/autocad.io/us-east/v2/AppPackages(&#39;{id}&#39;)/Operations.GetVersions'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DesignAutomationAppPackages', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response,
+                    '\Autodesk\Client\Model\DesignAutomationAppPackages', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DesignAutomationAppPackages', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\DesignAutomationAppPackages', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -601,7 +557,7 @@ class AppPackagesApi
      *
      * Requests a pre-signed URL for uploading a zip file that contains the binaries for this AppPackage.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function getUploadUrl()
@@ -615,7 +571,7 @@ class AppPackagesApi
      *
      * Requests a pre-signed URL for uploading a zip file that contains the binaries for this AppPackage.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUploadUrlWithHttpInfo()
@@ -627,7 +583,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -635,20 +591,16 @@ class AppPackagesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
@@ -672,8 +624,8 @@ class AppPackagesApi
      *
      * Requests a pre-signed URL for uploading a zip file that contains the binaries for this AppPackage. Unlike the GetUploadUrl method that takes no parameters, this method allows the client to request that the pre-signed URL to be issued so that the subsequent HTTP PUT operation will require Content-Type=binary/octet-stream.
      *
-     * @param bool $require  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param bool $require (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function getUploadUrlWithRequireContentType($require)
@@ -687,8 +639,8 @@ class AppPackagesApi
      *
      * Requests a pre-signed URL for uploading a zip file that contains the binaries for this AppPackage. Unlike the GetUploadUrl method that takes no parameters, this method allows the client to request that the pre-signed URL to be issued so that the subsequent HTTP PUT operation will require Content-Type=binary/octet-stream.
      *
-     * @param bool $require  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param bool $require (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUploadUrlWithRequireContentTypeWithHttpInfo($require)
@@ -704,7 +656,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -720,20 +672,16 @@ class AppPackagesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
@@ -757,9 +705,9 @@ class AppPackagesApi
      *
      * Updates an AppPackage by specifying only the changed attributes.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\AppPackageOptional $app_package  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\AppPackageOptional $app_package (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function patchAppPackage($id, $app_package)
@@ -773,9 +721,9 @@ class AppPackagesApi
      *
      * Updates an AppPackage by specifying only the changed attributes.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\AppPackageOptional $app_package  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\AppPackageOptional $app_package (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchAppPackageWithHttpInfo($id, $app_package)
@@ -795,7 +743,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -823,13 +771,9 @@ class AppPackagesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'PATCH',
                 $queryParams,
@@ -853,9 +797,9 @@ class AppPackagesApi
      *
      * Sets the AppPackage to the specified version.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\AppPackageVersion $app_package_version  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\AppPackageVersion $app_package_version (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function setAppPackageVersion($id, $app_package_version)
@@ -869,9 +813,9 @@ class AppPackagesApi
      *
      * Sets the AppPackage to the specified version.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\AppPackageVersion $app_package_version  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\AppPackageVersion $app_package_version (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setAppPackageVersionWithHttpInfo($id, $app_package_version)
@@ -891,7 +835,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -919,13 +863,9 @@ class AppPackagesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
@@ -949,9 +889,9 @@ class AppPackagesApi
      *
      * Updates an AppPackage by redefining the entire Activity object.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\AppPackage $app_package  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\AppPackage $app_package (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateAppPackage($id, $app_package)
@@ -965,9 +905,9 @@ class AppPackagesApi
      *
      * Updates an AppPackage by redefining the entire Activity object.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\AppPackage $app_package  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\AppPackage $app_package (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAppPackageWithHttpInfo($id, $app_package)
@@ -987,7 +927,7 @@ class AppPackagesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -1015,13 +955,9 @@ class AppPackagesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'PUT',
                 $queryParams,

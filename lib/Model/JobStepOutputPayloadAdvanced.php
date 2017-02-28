@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Advanced options for &#x60;step&#x60; type.
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -45,18 +45,18 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobStepOutputPayload_advanced';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'application_protocol' => 'string',
-        'tolerance' => 'float'
+        'tolerance'            => 'float',
     ];
 
     public static function swaggerTypes()
@@ -70,7 +70,7 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
      */
     protected static $attributeMap = [
         'application_protocol' => 'applicationProtocol',
-        'tolerance' => 'tolerance'
+        'tolerance'            => 'tolerance',
     ];
 
 
@@ -80,7 +80,7 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
      */
     protected static $setters = [
         'application_protocol' => 'setApplicationProtocol',
-        'tolerance' => 'setTolerance'
+        'tolerance'            => 'setTolerance',
     ];
 
 
@@ -90,7 +90,7 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
      */
     protected static $getters = [
         'application_protocol' => 'getApplicationProtocol',
-        'tolerance' => 'getTolerance'
+        'tolerance'            => 'getTolerance',
     ];
 
     public static function attributeMap()
@@ -111,9 +111,8 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
     const APPLICATION_PROTOCOL__203 = '203';
     const APPLICATION_PROTOCOL__214 = '214';
     const APPLICATION_PROTOCOL__242 = '242';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -126,7 +125,7 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
             self::APPLICATION_PROTOCOL__242,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -154,7 +153,7 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
         $invalid_properties = [];
 
         $allowed_values = ["203", "214", "242"];
-        if (!in_array($this->container['application_protocol'], $allowed_values)) {
+        if ( ! in_array($this->container['application_protocol'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'application_protocol', must be one of '203', '214', '242'.";
         }
 
@@ -171,7 +170,7 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
     {
 
         $allowed_values = ["203", "214", "242"];
-        if (!in_array($this->container['application_protocol'], $allowed_values)) {
+        if ( ! in_array($this->container['application_protocol'], $allowed_values)) {
             return false;
         }
         return true;
@@ -194,8 +193,8 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
      */
     public function setApplicationProtocol($application_protocol)
     {
-        $allowed_values = array('203', '214', '242');
-        if (!is_null($application_protocol) && (!in_array($application_protocol, $allowed_values))) {
+        $allowed_values = ['203', '214', '242'];
+        if ( ! is_null($application_protocol) && ( ! in_array($application_protocol, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'application_protocol', must be one of '203', '214', '242'");
         }
         $this->container['application_protocol'] = $application_protocol;
@@ -223,6 +222,7 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -246,7 +246,7 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -275,10 +275,10 @@ class JobStepOutputPayloadAdvanced implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

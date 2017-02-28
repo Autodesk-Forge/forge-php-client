@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,15 +27,16 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace Autodesk\Client;
 
 /**
  * JsonApiLinksSelfTest Class Doc Comment
  *
- * @category    Class */
+ * @category    Class
+ */
 // * @description provides the identity link (a link to itself)
 /**
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

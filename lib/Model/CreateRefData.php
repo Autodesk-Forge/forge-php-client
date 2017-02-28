@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateRefData Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,19 +44,19 @@ class CreateRefData implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'create_ref_data';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'id' => 'string',
-        'meta' => '\Swagger\Client\Model\CreateRefDataMeta'
+        'id'   => 'string',
+        'meta' => '\Autodesk\Client\Model\CreateRefDataMeta',
     ];
 
     public static function swaggerTypes()
@@ -70,8 +70,8 @@ class CreateRefData implements ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'id' => 'id',
-        'meta' => 'meta'
+        'id'   => 'id',
+        'meta' => 'meta',
     ];
 
 
@@ -81,8 +81,8 @@ class CreateRefData implements ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
-        'id' => 'setId',
-        'meta' => 'setMeta'
+        'id'   => 'setId',
+        'meta' => 'setMeta',
     ];
 
 
@@ -92,8 +92,8 @@ class CreateRefData implements ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
-        'id' => 'getId',
-        'meta' => 'getMeta'
+        'id'   => 'getId',
+        'meta' => 'getMeta',
     ];
 
     public static function attributeMap()
@@ -114,9 +114,8 @@ class CreateRefData implements ArrayAccess
     const TYPE_FOLDERS = 'folders';
     const TYPE_ITEMS = 'items';
     const TYPE_VERSIONS = 'versions';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -129,7 +128,7 @@ class CreateRefData implements ArrayAccess
             self::TYPE_VERSIONS,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -161,7 +160,7 @@ class CreateRefData implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["folders", "items", "versions"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'folders', 'items', 'versions'.";
         }
 
@@ -184,7 +183,7 @@ class CreateRefData implements ArrayAccess
             return false;
         }
         $allowed_values = ["folders", "items", "versions"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         if ($this->container['id'] === null) {
@@ -210,8 +209,8 @@ class CreateRefData implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('folders', 'items', 'versions');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['folders', 'items', 'versions'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'folders', 'items', 'versions'");
         }
         $this->container['type'] = $type;
@@ -242,7 +241,7 @@ class CreateRefData implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \Swagger\Client\Model\CreateRefDataMeta
+     * @return \Autodesk\Client\Model\CreateRefDataMeta
      */
     public function getMeta()
     {
@@ -251,7 +250,7 @@ class CreateRefData implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \Swagger\Client\Model\CreateRefDataMeta $meta
+     * @param \Autodesk\Client\Model\CreateRefDataMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -260,6 +259,7 @@ class CreateRefData implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -283,7 +283,7 @@ class CreateRefData implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -312,10 +312,10 @@ class CreateRefData implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

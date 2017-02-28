@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateVersionData Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,19 +44,19 @@ class CreateVersionData implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'create_version_data';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'attributes' => '\Swagger\Client\Model\CreateStorageDataAttributes',
-        'relationships' => '\Swagger\Client\Model\CreateVersionDataRelationships'
+        'type'          => 'string',
+        'attributes'    => '\Autodesk\Client\Model\CreateStorageDataAttributes',
+        'relationships' => '\Autodesk\Client\Model\CreateVersionDataRelationships',
     ];
 
     public static function swaggerTypes()
@@ -69,9 +69,9 @@ class CreateVersionData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'attributes' => 'attributes',
-        'relationships' => 'relationships'
+        'type'          => 'type',
+        'attributes'    => 'attributes',
+        'relationships' => 'relationships',
     ];
 
 
@@ -80,9 +80,9 @@ class CreateVersionData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'attributes' => 'setAttributes',
-        'relationships' => 'setRelationships'
+        'type'          => 'setType',
+        'attributes'    => 'setAttributes',
+        'relationships' => 'setRelationships',
     ];
 
 
@@ -91,9 +91,9 @@ class CreateVersionData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'attributes' => 'getAttributes',
-        'relationships' => 'getRelationships'
+        'type'          => 'getType',
+        'attributes'    => 'getAttributes',
+        'relationships' => 'getRelationships',
     ];
 
     public static function attributeMap()
@@ -112,9 +112,8 @@ class CreateVersionData implements ArrayAccess
     }
 
     const TYPE_VERSIONS = 'versions';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -125,7 +124,7 @@ class CreateVersionData implements ArrayAccess
             self::TYPE_VERSIONS,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -157,7 +156,7 @@ class CreateVersionData implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["versions"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'versions'.";
         }
 
@@ -177,7 +176,7 @@ class CreateVersionData implements ArrayAccess
             return false;
         }
         $allowed_values = ["versions"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -200,8 +199,8 @@ class CreateVersionData implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('versions');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['versions'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'versions'");
         }
         $this->container['type'] = $type;
@@ -211,7 +210,7 @@ class CreateVersionData implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Swagger\Client\Model\CreateStorageDataAttributes
+     * @return \Autodesk\Client\Model\CreateStorageDataAttributes
      */
     public function getAttributes()
     {
@@ -220,7 +219,7 @@ class CreateVersionData implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Swagger\Client\Model\CreateStorageDataAttributes $attributes
+     * @param \Autodesk\Client\Model\CreateStorageDataAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -232,7 +231,7 @@ class CreateVersionData implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Swagger\Client\Model\CreateVersionDataRelationships
+     * @return \Autodesk\Client\Model\CreateVersionDataRelationships
      */
     public function getRelationships()
     {
@@ -241,7 +240,7 @@ class CreateVersionData implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Swagger\Client\Model\CreateVersionDataRelationships $relationships
+     * @param \Autodesk\Client\Model\CreateVersionDataRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -250,6 +249,7 @@ class CreateVersionData implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -273,7 +273,7 @@ class CreateVersionData implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -302,10 +302,10 @@ class CreateVersionData implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

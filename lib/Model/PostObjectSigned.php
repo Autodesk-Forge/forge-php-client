@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Object Signed Object json response
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -45,18 +45,18 @@ class PostObjectSigned implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'post_object_signed';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'signed_url' => 'string',
-        'expiration' => 'int'
+        'expiration' => 'int',
     ];
 
     public static function swaggerTypes()
@@ -70,7 +70,7 @@ class PostObjectSigned implements ArrayAccess
      */
     protected static $attributeMap = [
         'signed_url' => 'signedUrl',
-        'expiration' => 'expiration'
+        'expiration' => 'expiration',
     ];
 
 
@@ -80,7 +80,7 @@ class PostObjectSigned implements ArrayAccess
      */
     protected static $setters = [
         'signed_url' => 'setSignedUrl',
-        'expiration' => 'setExpiration'
+        'expiration' => 'setExpiration',
     ];
 
 
@@ -90,7 +90,7 @@ class PostObjectSigned implements ArrayAccess
      */
     protected static $getters = [
         'signed_url' => 'getSignedUrl',
-        'expiration' => 'getExpiration'
+        'expiration' => 'getExpiration',
     ];
 
     public static function attributeMap()
@@ -108,9 +108,6 @@ class PostObjectSigned implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -206,6 +203,7 @@ class PostObjectSigned implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -229,7 +227,7 @@ class PostObjectSigned implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -258,10 +256,10 @@ class PostObjectSigned implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

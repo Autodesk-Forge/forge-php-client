@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ItemRelationships Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,20 +44,20 @@ class ItemRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'item_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'parent' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'tip' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'versions' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternal',
-        'refs' => '\Swagger\Client\Model\JsonApiRelationshipsLinksRefs'
+        'parent'   => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'tip'      => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'versions' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternal',
+        'refs'     => '\Autodesk\Client\Model\JsonApiRelationshipsLinksRefs',
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class ItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'parent' => 'parent',
-        'tip' => 'tip',
+        'parent'   => 'parent',
+        'tip'      => 'tip',
         'versions' => 'versions',
-        'refs' => 'refs'
+        'refs'     => 'refs',
     ];
 
 
@@ -82,10 +82,10 @@ class ItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'parent' => 'setParent',
-        'tip' => 'setTip',
+        'parent'   => 'setParent',
+        'tip'      => 'setTip',
         'versions' => 'setVersions',
-        'refs' => 'setRefs'
+        'refs'     => 'setRefs',
     ];
 
 
@@ -94,10 +94,10 @@ class ItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'parent' => 'getParent',
-        'tip' => 'getTip',
+        'parent'   => 'getParent',
+        'tip'      => 'getTip',
         'versions' => 'getVersions',
-        'refs' => 'getRefs'
+        'refs'     => 'getRefs',
     ];
 
     public static function attributeMap()
@@ -115,9 +115,6 @@ class ItemRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -188,7 +185,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets parent
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getParent()
     {
@@ -197,7 +194,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets parent
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource $parent
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource $parent
      * @return $this
      */
     public function setParent($parent)
@@ -209,7 +206,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets tip
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getTip()
     {
@@ -218,7 +215,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets tip
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternalResource $tip
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternalResource $tip
      * @return $this
      */
     public function setTip($tip)
@@ -230,7 +227,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets versions
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternal
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternal
      */
     public function getVersions()
     {
@@ -239,7 +236,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets versions
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternal $versions
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternal $versions
      * @return $this
      */
     public function setVersions($versions)
@@ -251,7 +248,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets refs
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksRefs
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksRefs
      */
     public function getRefs()
     {
@@ -260,7 +257,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets refs
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksRefs $refs
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksRefs $refs
      * @return $this
      */
     public function setRefs($refs)
@@ -269,6 +266,7 @@ class ItemRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -292,7 +290,7 @@ class ItemRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -321,10 +319,10 @@ class ItemRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

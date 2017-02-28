@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,76 +26,32 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Autodesk\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Autodesk\Client\ApiClient;
+use \Autodesk\Client\ApiException;
+use \Autodesk\Client\Configuration;
+use \Autodesk\Client\ObjectSerializer;
 
 /**
  * VersionsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class VersionsApi
+class VersionsApi extends AbstractApi
 {
-    /**
-     * API Client
-     *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
-     */
-    protected $apiClient;
-
-    /**
-     * Constructor
-     *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
-     */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
-    {
-        if ($apiClient === null) {
-            $apiClient = new ApiClient();
-        }
-
-        $this->apiClient = $apiClient;
-    }
-
-    /**
-     * Get API client
-     *
-     * @return \Swagger\Client\ApiClient get the API client
-     */
-    public function getApiClient()
-    {
-        return $this->apiClient;
-    }
-
-    /**
-     * Set the API client
-     *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
-     *
-     * @return VersionsApi
-     */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
-    {
-        $this->apiClient = $apiClient;
-        return $this;
-    }
-
     /**
      * Operation getVersion
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Version
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Version
      */
     public function getVersion($project_id, $version_id)
     {
@@ -106,12 +62,12 @@ class VersionsApi
     /**
      * Operation getVersionWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Version, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Version, HTTP status code, HTTP response headers (array of strings)
      */
     public function getVersionWithHttpInfo($project_id, $version_id)
     {
@@ -130,7 +86,7 @@ class VersionsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
@@ -154,46 +110,51 @@ class VersionsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Version',
+                '\Autodesk\Client\Model\Version',
                 '/data/v1/projects/{project_id}/versions/{version_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Version', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Version',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Version', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Version', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -205,12 +166,12 @@ class VersionsApi
     /**
      * Operation getVersionItem
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Item
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Item
      */
     public function getVersionItem($project_id, $version_id)
     {
@@ -221,12 +182,12 @@ class VersionsApi
     /**
      * Operation getVersionItemWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Item, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Item, HTTP status code, HTTP response headers (array of strings)
      */
     public function getVersionItemWithHttpInfo($project_id, $version_id)
     {
@@ -245,7 +206,7 @@ class VersionsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
@@ -269,46 +230,50 @@ class VersionsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Item',
+                '\Autodesk\Client\Model\Item',
                 '/data/v1/projects/{project_id}/versions/{version_id}/item'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Item', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Item', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Item', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Item', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -320,37 +285,48 @@ class VersionsApi
     /**
      * Operation getVersionRefs
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
      * @param string[] $filter_type filter by the &#x60;type&#x60; of the &#x60;ref&#x60; target (optional)
      * @param string[] $filter_id filter by the &#x60;id&#x60; of the &#x60;ref&#x60; target (optional)
      * @param string[] $filter_extension_type filter by the extension type (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\JsonApiCollection
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\JsonApiCollection
      */
-    public function getVersionRefs($project_id, $version_id, $filter_type = null, $filter_id = null, $filter_extension_type = null)
-    {
-        list($response) = $this->getVersionRefsWithHttpInfo($project_id, $version_id, $filter_type, $filter_id, $filter_extension_type);
+    public function getVersionRefs(
+        $project_id,
+        $version_id,
+        $filter_type = null,
+        $filter_id = null,
+        $filter_extension_type = null
+    ) {
+        list($response) = $this->getVersionRefsWithHttpInfo($project_id, $version_id, $filter_type, $filter_id,
+            $filter_extension_type);
         return $response;
     }
 
     /**
      * Operation getVersionRefsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
      * @param string[] $filter_type filter by the &#x60;type&#x60; of the &#x60;ref&#x60; target (optional)
      * @param string[] $filter_id filter by the &#x60;id&#x60; of the &#x60;ref&#x60; target (optional)
      * @param string[] $filter_extension_type filter by the extension type (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\JsonApiCollection, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\JsonApiCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVersionRefsWithHttpInfo($project_id, $version_id, $filter_type = null, $filter_id = null, $filter_extension_type = null)
-    {
+    public function getVersionRefsWithHttpInfo(
+        $project_id,
+        $version_id,
+        $filter_type = null,
+        $filter_id = null,
+        $filter_extension_type = null
+    ) {
         // verify the required parameter 'project_id' is set
         if ($project_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $project_id when calling getVersionRefs');
@@ -366,7 +342,7 @@ class VersionsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
@@ -387,7 +363,8 @@ class VersionsApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
+                'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
@@ -411,46 +388,51 @@ class VersionsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\JsonApiCollection',
+                '\Autodesk\Client\Model\JsonApiCollection',
                 '/data/v1/projects/{project_id}/versions/{version_id}/refs'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\JsonApiCollection', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\JsonApiCollection',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\JsonApiCollection', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\JsonApiCollection', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -462,7 +444,7 @@ class VersionsApi
     /**
      * Operation getVersionRelationshipsRefs
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -471,19 +453,27 @@ class VersionsApi
      * @param string[] $filter_ref_type filter by &#x60;refType&#x60; (optional)
      * @param string $filter_direction filter by the direction of the reference (optional)
      * @param string[] $filter_extension_type filter by the extension type (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Refs
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Refs
      */
-    public function getVersionRelationshipsRefs($project_id, $version_id, $filter_type = null, $filter_id = null, $filter_ref_type = null, $filter_direction = null, $filter_extension_type = null)
-    {
-        list($response) = $this->getVersionRelationshipsRefsWithHttpInfo($project_id, $version_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
+    public function getVersionRelationshipsRefs(
+        $project_id,
+        $version_id,
+        $filter_type = null,
+        $filter_id = null,
+        $filter_ref_type = null,
+        $filter_direction = null,
+        $filter_extension_type = null
+    ) {
+        list($response) = $this->getVersionRelationshipsRefsWithHttpInfo($project_id, $version_id, $filter_type,
+            $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
         return $response;
     }
 
     /**
      * Operation getVersionRelationshipsRefsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -492,11 +482,18 @@ class VersionsApi
      * @param string[] $filter_ref_type filter by &#x60;refType&#x60; (optional)
      * @param string $filter_direction filter by the direction of the reference (optional)
      * @param string[] $filter_extension_type filter by the extension type (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Refs, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Refs, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVersionRelationshipsRefsWithHttpInfo($project_id, $version_id, $filter_type = null, $filter_id = null, $filter_ref_type = null, $filter_direction = null, $filter_extension_type = null)
-    {
+    public function getVersionRelationshipsRefsWithHttpInfo(
+        $project_id,
+        $version_id,
+        $filter_type = null,
+        $filter_id = null,
+        $filter_ref_type = null,
+        $filter_direction = null,
+        $filter_extension_type = null
+    ) {
         // verify the required parameter 'project_id' is set
         if ($project_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $project_id when calling getVersionRelationshipsRefs');
@@ -512,7 +509,7 @@ class VersionsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
@@ -544,7 +541,8 @@ class VersionsApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
+                'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
@@ -568,46 +566,50 @@ class VersionsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Refs',
+                '\Autodesk\Client\Model\Refs',
                 '/data/v1/projects/{project_id}/versions/{version_id}/relationships/refs'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Refs', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Refs', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Refs', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Refs', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -619,12 +621,12 @@ class VersionsApi
     /**
      * Operation postVersionRelationshipsRef
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
-     * @param \Swagger\Client\Model\CreateRef $body describe the ref to be created (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Autodesk\Client\Model\CreateRef $body describe the ref to be created (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function postVersionRelationshipsRef($project_id, $version_id, $body)
@@ -636,12 +638,12 @@ class VersionsApi
     /**
      * Operation postVersionRelationshipsRefWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
-     * @param \Swagger\Client\Model\CreateRef $body describe the ref to be created (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Autodesk\Client\Model\CreateRef $body describe the ref to be created (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function postVersionRelationshipsRefWithHttpInfo($project_id, $version_id, $body)
@@ -665,7 +667,7 @@ class VersionsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
@@ -701,13 +703,9 @@ class VersionsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
@@ -721,15 +719,18 @@ class VersionsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

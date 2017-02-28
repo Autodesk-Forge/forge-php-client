@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiVersionJsonapi Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,17 +44,17 @@ class JsonApiVersionJsonapi implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_version_jsonapi';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'version' => 'string'
+        'version' => 'string',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'version' => 'version'
+        'version' => 'version',
     ];
 
 
@@ -76,7 +76,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'version' => 'setVersion'
+        'version' => 'setVersion',
     ];
 
 
@@ -85,7 +85,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'version' => 'getVersion'
+        'version' => 'getVersion',
     ];
 
     public static function attributeMap()
@@ -104,9 +104,8 @@ class JsonApiVersionJsonapi implements ArrayAccess
     }
 
     const VERSION__0 = '1.0';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -117,7 +116,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
             self::VERSION__0,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -147,7 +146,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
             $invalid_properties[] = "'version' can't be null";
         }
         $allowed_values = ["1.0"];
-        if (!in_array($this->container['version'], $allowed_values)) {
+        if ( ! in_array($this->container['version'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'version', must be one of '1.0'.";
         }
 
@@ -167,7 +166,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
             return false;
         }
         $allowed_values = ["1.0"];
-        if (!in_array($this->container['version'], $allowed_values)) {
+        if ( ! in_array($this->container['version'], $allowed_values)) {
             return false;
         }
         return true;
@@ -190,14 +189,15 @@ class JsonApiVersionJsonapi implements ArrayAccess
      */
     public function setVersion($version)
     {
-        $allowed_values = array('1.0');
-        if ((!in_array($version, $allowed_values))) {
+        $allowed_values = ['1.0'];
+        if (( ! in_array($version, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'version', must be one of '1.0'");
         }
         $this->container['version'] = $version;
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -221,7 +221,7 @@ class JsonApiVersionJsonapi implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -250,10 +250,10 @@ class JsonApiVersionJsonapi implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,24 +27,30 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace Autodesk\Client;
 
 /**
  * ApiClient Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ApiClient
 {
     public static $PATCH = "PATCH";
+
     public static $POST = "POST";
+
     public static $GET = "GET";
+
     public static $HEAD = "HEAD";
+
     public static $OPTIONS = "OPTIONS";
+
     public static $PUT = "PUT";
+
     public static $DELETE = "DELETE";
 
     /**
@@ -66,7 +72,7 @@ class ApiClient
      *
      * @param Configuration $config config for this ApiClient
      */
-    public function __construct(\Swagger\Client\Configuration $config = null)
+    public function __construct(Configuration $config = null)
     {
         if ($config === null) {
             $config = Configuration::getDefaultConfiguration();
@@ -108,12 +114,12 @@ class ApiClient
         $prefix = $this->config->getApiKeyPrefix($apiKeyIdentifier);
         $apiKey = $this->config->getApiKey($apiKeyIdentifier);
 
-        if (!isset($apiKey)) {
+        if ( ! isset($apiKey)) {
             return null;
         }
 
         if (isset($prefix)) {
-            $keyWithPrefix = $prefix." ".$apiKey;
+            $keyWithPrefix = $prefix . " " . $apiKey;
         } else {
             $keyWithPrefix = $apiKey;
         }
@@ -125,18 +131,25 @@ class ApiClient
      * Make the HTTP call (Sync)
      *
      * @param string $resourcePath path to method endpoint
-     * @param string $method       method to call
-     * @param array  $queryParams  parameters to be place in query URL
-     * @param array  $postData     parameters to be placed in POST body
-     * @param array  $headerParams parameters to be place in request header
+     * @param string $method method to call
+     * @param array $queryParams parameters to be place in query URL
+     * @param array $postData parameters to be placed in POST body
+     * @param array $headerParams parameters to be place in request header
      * @param string $responseType expected response type of the endpoint
      * @param string $endpointPath path to method endpoint before expanding parameters
      *
-     * @throws \Swagger\Client\ApiException on a non 2xx response
+     * @throws \Autodesk\Client\ApiException on a non 2xx response
      * @return mixed
      */
-    public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null)
-    {
+    public function callApi(
+        $resourcePath,
+        $method,
+        $queryParams,
+        $postData,
+        $headerParams,
+        $responseType = null,
+        $endpointPath = null
+    ) {
         $headers = [];
 
         // construct the http header
@@ -152,8 +165,10 @@ class ApiClient
         // form data
         if ($postData and in_array('Content-Type: application/x-www-form-urlencoded', $headers, true)) {
             $postData = http_build_query($postData);
-        } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
-            $postData = json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($postData));
+        } elseif ((is_object($postData) or is_array($postData)) and ! in_array('Content-Type: multipart/form-data',
+                $headers, true)
+        ) { // json model
+            $postData = json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($postData));
         }
 
         $url = $this->config->getHost() . $resourcePath;
@@ -167,7 +182,7 @@ class ApiClient
         if ($this->config->getCurlConnectTimeout() != 0) {
             curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $this->config->getCurlConnectTimeout());
         }
-        
+
         // return the result on success, rather than just true
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -192,10 +207,11 @@ class ApiClient
         }
 
         if ($this->config->getCurlProxyUser()) {
-            curl_setopt($curl, CURLOPT_PROXYUSERPWD, $this->config->getCurlProxyUser() . ':' .$this->config->getCurlProxyPassword());
+            curl_setopt($curl, CURLOPT_PROXYUSERPWD,
+                $this->config->getCurlProxyUser() . ':' . $this->config->getCurlProxyPassword());
         }
 
-        if (!empty($queryParams)) {
+        if ( ! empty($queryParams)) {
             $url = ($url . '?' . http_build_query($queryParams));
         }
 
@@ -226,7 +242,8 @@ class ApiClient
 
         // debugging for curl
         if ($this->config->getDebug()) {
-            error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($postData, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
+            error_log("[DEBUG] HTTP Request body  ~BEGIN~" . PHP_EOL . print_r($postData,
+                    true) . PHP_EOL . "~END~" . PHP_EOL, 3, $this->config->getDebugFile());
 
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
             curl_setopt($curl, CURLOPT_STDERR, fopen($this->config->getDebugFile(), 'a'));
@@ -246,7 +263,8 @@ class ApiClient
 
         // debug HTTP response body
         if ($this->config->getDebug()) {
-            error_log("[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($http_body, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
+            error_log("[DEBUG] HTTP Response body ~BEGIN~" . PHP_EOL . print_r($http_body,
+                    true) . PHP_EOL . "~END~" . PHP_EOL, 3, $this->config->getDebugFile());
         }
 
         // Handle the response
@@ -254,7 +272,7 @@ class ApiClient
             $curl_error_message = curl_error($curl);
 
             // curl_exec can sometimes fail but still return a blank message from curl_error().
-            if (!empty($curl_error_message)) {
+            if ( ! empty($curl_error_message)) {
                 $error_message = "API call to $url failed: $curl_error_message";
             } else {
                 $error_message = "API call to $url failed, but for an unknown reason. " .
@@ -281,7 +299,7 @@ class ApiClient
             }
 
             throw new ApiException(
-                "[".$response_info['http_code']."] Error connecting to the API ($url)",
+                "[" . $response_info['http_code'] . "] Error connecting to the API ($url)",
                 $response_info['http_code'],
                 $http_header,
                 $data
@@ -326,13 +344,13 @@ class ApiClient
         }
     }
 
-   /**
-    * Return an array of HTTP response headers
-    *
-    * @param string $raw_headers A string of raw HTTP response headers
-    *
-    * @return string[] Array of HTTP response heaers
-    */
+    /**
+     * Return an array of HTTP response headers
+     *
+     * @param string $raw_headers A string of raw HTTP response headers
+     *
+     * @return string[] Array of HTTP response heaers
+     */
     protected function httpParseHeaders($raw_headers)
     {
         // ref/credit: http://php.net/manual/en/function.http-parse-headers.php#112986
@@ -343,7 +361,7 @@ class ApiClient
             $h = explode(':', $h, 2);
 
             if (isset($h[1])) {
-                if (!isset($headers[$h[0]])) {
+                if ( ! isset($headers[$h[0]])) {
                     $headers[$h[0]] = trim($h[1]);
                 } elseif (is_array($headers[$h[0]])) {
                     $headers[$h[0]] = array_merge($headers[$h[0]], [trim($h[1])]);
@@ -354,8 +372,8 @@ class ApiClient
                 $key = $h[0];
             } else {
                 if (substr($h[0], 0, 1) === "\t") {
-                    $headers[$key] .= "\r\n\t".trim($h[0]);
-                } elseif (!$key) {
+                    $headers[$key] .= "\r\n\t" . trim($h[0]);
+                } elseif ( ! $key) {
                     $headers[0] = trim($h[0]);
                 }
                 trim($h[0]);

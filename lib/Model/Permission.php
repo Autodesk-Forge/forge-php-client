@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Permission Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class Permission implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'Permission';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'auth_id' => 'string',
-        'access' => 'string'
+        'access'  => 'string',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class Permission implements ArrayAccess
      */
     protected static $attributeMap = [
         'auth_id' => 'authId',
-        'access' => 'access'
+        'access'  => 'access',
     ];
 
 
@@ -79,7 +79,7 @@ class Permission implements ArrayAccess
      */
     protected static $setters = [
         'auth_id' => 'setAuthId',
-        'access' => 'setAccess'
+        'access'  => 'setAccess',
     ];
 
 
@@ -89,7 +89,7 @@ class Permission implements ArrayAccess
      */
     protected static $getters = [
         'auth_id' => 'getAuthId',
-        'access' => 'getAccess'
+        'access'  => 'getAccess',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class Permission implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -193,6 +190,7 @@ class Permission implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -216,7 +214,7 @@ class Permission implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -245,10 +243,10 @@ class Permission implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

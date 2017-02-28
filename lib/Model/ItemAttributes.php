@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ItemAttributes Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class ItemAttributes implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'item_attributes';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
         'display_name' => 'string',
-        'extension' => '\Swagger\Client\Model\BaseAttributesExtensionObject'
+        'extension'    => '\Autodesk\Client\Model\BaseAttributesExtensionObject',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class ItemAttributes implements ArrayAccess
      */
     protected static $attributeMap = [
         'display_name' => 'displayName',
-        'extension' => 'extension'
+        'extension'    => 'extension',
     ];
 
 
@@ -79,7 +79,7 @@ class ItemAttributes implements ArrayAccess
      */
     protected static $setters = [
         'display_name' => 'setDisplayName',
-        'extension' => 'setExtension'
+        'extension'    => 'setExtension',
     ];
 
 
@@ -89,7 +89,7 @@ class ItemAttributes implements ArrayAccess
      */
     protected static $getters = [
         'display_name' => 'getDisplayName',
-        'extension' => 'getExtension'
+        'extension'    => 'getExtension',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class ItemAttributes implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -187,7 +184,7 @@ class ItemAttributes implements ArrayAccess
 
     /**
      * Gets extension
-     * @return \Swagger\Client\Model\BaseAttributesExtensionObject
+     * @return \Autodesk\Client\Model\BaseAttributesExtensionObject
      */
     public function getExtension()
     {
@@ -196,7 +193,7 @@ class ItemAttributes implements ArrayAccess
 
     /**
      * Sets extension
-     * @param \Swagger\Client\Model\BaseAttributesExtensionObject $extension
+     * @param \Autodesk\Client\Model\BaseAttributesExtensionObject $extension
      * @return $this
      */
     public function setExtension($extension)
@@ -205,6 +202,7 @@ class ItemAttributes implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -228,7 +226,7 @@ class ItemAttributes implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -257,10 +255,10 @@ class ItemAttributes implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

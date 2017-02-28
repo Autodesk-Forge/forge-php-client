@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,13 +27,13 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace Autodesk\Client;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -173,10 +173,10 @@ class ObjectSerializer
     /**
      * Serialize an array to a string.
      *
-     * @param array  $collection                 collection to serialize to a string
-     * @param string $collectionFormat           the format use for serialization (csv,
+     * @param array $collection collection to serialize to a string
+     * @param string $collectionFormat the format use for serialization (csv,
      * ssv, tsv, pipes, multi)
-     * @param bool   $allowCollectionFormatMulti allow collection format to be a multidimensional array
+     * @param bool $allowCollectionFormatMulti allow collection format to be a multidimensional array
      *
      * @return string
      */
@@ -207,10 +207,10 @@ class ObjectSerializer
     /**
      * Deserialize a JSON string into an object
      *
-     * @param mixed    $data          object or primitive to be deserialized
-     * @param string   $class         class name is passed as a string
-     * @param string[] $httpHeaders   HTTP headers
-     * @param string   $discriminator discriminator if polymorphism is used
+     * @param mixed $data object or primitive to be deserialized
+     * @param string $class class name is passed as a string
+     * @param string[] $httpHeaders HTTP headers
+     * @param string $discriminator discriminator if polymorphism is used
      *
      * @return object|array|null an single or an array of $class instances
      */
@@ -246,18 +246,33 @@ class ObjectSerializer
             // what is meant. The invalid empty string is probably to
             // be interpreted as a missing field/value. Let's handle
             // this graceful.
-            if (!empty($data)) {
+            if ( ! empty($data)) {
                 return new \DateTime($data);
             } else {
                 return null;
             }
-        } elseif (in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+        } elseif (in_array($class, [
+            'DateTime',
+            'bool',
+            'boolean',
+            'byte',
+            'double',
+            'float',
+            'int',
+            'integer',
+            'mixed',
+            'number',
+            'object',
+            'string',
+            'void',
+        ], true)) {
             settype($data, $class);
             return $data;
         } elseif ($class === '\SplFileObject') {
             // determine file name
             if (array_key_exists('Content-Disposition', $httpHeaders) &&
-                preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)) {
+                preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)
+            ) {
                 $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . sanitizeFilename($match[1]);
             } else {
                 $filename = tempnam(Configuration::getDefaultConfiguration()->getTempFolderPath(), '');
@@ -265,15 +280,16 @@ class ObjectSerializer
             $deserialized = new \SplFileObject($filename, "w");
             $byte_written = $deserialized->fwrite($data);
             if (Configuration::getDefaultConfiguration()->getDebug()) {
-                error_log("[DEBUG] Written $byte_written byte to $filename. Please move the file to a proper folder or delete the temp file after processing.".PHP_EOL, 3, Configuration::getDefaultConfiguration()->getDebugFile());
+                error_log("[DEBUG] Written $byte_written byte to $filename. Please move the file to a proper folder or delete the temp file after processing." . PHP_EOL,
+                    3, Configuration::getDefaultConfiguration()->getDebugFile());
             }
 
             return $deserialized;
         } else {
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
-            if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\Swagger\Client\Model\\' . $data->{$discriminator};
+            if ( ! empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
+                $subclass = '\Autodesk\Client\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }
@@ -282,7 +298,7 @@ class ObjectSerializer
             foreach ($instance::swaggerTypes() as $property => $type) {
                 $propertySetter = $instance::setters()[$property];
 
-                if (!isset($propertySetter) || !isset($data->{$instance::attributeMap()[$property]})) {
+                if ( ! isset($propertySetter) || ! isset($data->{$instance::attributeMap()[$property]})) {
                     continue;
                 }
 

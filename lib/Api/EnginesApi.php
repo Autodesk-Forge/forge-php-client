@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,74 +26,30 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Autodesk\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Autodesk\Client\ApiClient;
+use \Autodesk\Client\ApiException;
+use \Autodesk\Client\Configuration;
+use \Autodesk\Client\ObjectSerializer;
 
 /**
  * EnginesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EnginesApi
+class EnginesApi extends AbstractApi
 {
-    /**
-     * API Client
-     *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
-     */
-    protected $apiClient;
-
-    /**
-     * Constructor
-     *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
-     */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
-    {
-        if ($apiClient === null) {
-            $apiClient = new ApiClient();
-        }
-
-        $this->apiClient = $apiClient;
-    }
-
-    /**
-     * Get API client
-     *
-     * @return \Swagger\Client\ApiClient get the API client
-     */
-    public function getApiClient()
-    {
-        return $this->apiClient;
-    }
-
-    /**
-     * Set the API client
-     *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
-     *
-     * @return EnginesApi
-     */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
-    {
-        $this->apiClient = $apiClient;
-        return $this;
-    }
-
     /**
      * Operation getAllEngines
      *
      * Returns the details of all available AutoCAD core engines.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DesignAutomationEngines
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\DesignAutomationEngines
      */
     public function getAllEngines()
     {
@@ -106,8 +62,8 @@ class EnginesApi
      *
      * Returns the details of all available AutoCAD core engines.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DesignAutomationEngines, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\DesignAutomationEngines, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllEnginesWithHttpInfo()
     {
@@ -118,7 +74,7 @@ class EnginesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -126,34 +82,36 @@ class EnginesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DesignAutomationEngines',
+                '\Autodesk\Client\Model\DesignAutomationEngines',
                 '/autocad.io/us-east/v2/Engines'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DesignAutomationEngines', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response,
+                    '\Autodesk\Client\Model\DesignAutomationEngines', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DesignAutomationEngines', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\DesignAutomationEngines', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -167,9 +125,9 @@ class EnginesApi
      *
      * Returns the details of a specific AutoCAD core engine.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Engine
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Engine
      */
     public function getEngine($id)
     {
@@ -182,9 +140,9 @@ class EnginesApi
      *
      * Returns the details of a specific AutoCAD core engine.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Engine, HTTP status code, HTTP response headers (array of strings)
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Engine, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEngineWithHttpInfo($id)
     {
@@ -199,7 +157,7 @@ class EnginesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -215,34 +173,35 @@ class EnginesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Engine',
+                '\Autodesk\Client\Model\Engine',
                 '/autocad.io/us-east/v2/Engines(&#39;{id}&#39;)'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Engine', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Engine', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Engine', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Engine', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

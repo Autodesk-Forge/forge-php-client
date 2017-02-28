@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JobPayload Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class JobPayload implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'jobPayload';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'input' => '\Swagger\Client\Model\JobPayloadInput',
-        'output' => '\Swagger\Client\Model\JobPayloadOutput'
+        'input'  => '\Autodesk\Client\Model\JobPayloadInput',
+        'output' => '\Autodesk\Client\Model\JobPayloadOutput',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'input' => 'input',
-        'output' => 'output'
+        'input'  => 'input',
+        'output' => 'output',
     ];
 
 
@@ -78,8 +78,8 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'input' => 'setInput',
-        'output' => 'setOutput'
+        'input'  => 'setInput',
+        'output' => 'setOutput',
     ];
 
 
@@ -88,8 +88,8 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'input' => 'getInput',
-        'output' => 'getOutput'
+        'input'  => 'getInput',
+        'output' => 'getOutput',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class JobPayload implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -154,7 +151,7 @@ class JobPayload implements ArrayAccess
 
     /**
      * Gets input
-     * @return \Swagger\Client\Model\JobPayloadInput
+     * @return \Autodesk\Client\Model\JobPayloadInput
      */
     public function getInput()
     {
@@ -163,7 +160,7 @@ class JobPayload implements ArrayAccess
 
     /**
      * Sets input
-     * @param \Swagger\Client\Model\JobPayloadInput $input
+     * @param \Autodesk\Client\Model\JobPayloadInput $input
      * @return $this
      */
     public function setInput($input)
@@ -175,7 +172,7 @@ class JobPayload implements ArrayAccess
 
     /**
      * Gets output
-     * @return \Swagger\Client\Model\JobPayloadOutput
+     * @return \Autodesk\Client\Model\JobPayloadOutput
      */
     public function getOutput()
     {
@@ -184,7 +181,7 @@ class JobPayload implements ArrayAccess
 
     /**
      * Sets output
-     * @param \Swagger\Client\Model\JobPayloadOutput $output
+     * @param \Autodesk\Client\Model\JobPayloadOutput $output
      * @return $this
      */
     public function setOutput($output)
@@ -193,6 +190,7 @@ class JobPayload implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -216,7 +214,7 @@ class JobPayload implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -245,10 +243,10 @@ class JobPayload implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -1,4 +1,4 @@
-# Swagger\Client\DerivativesApi
+# Autodesk\Client\DerivativesApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **deleteManifest**
-> \Swagger\Client\Model\Result deleteManifest($urn)
+> \Autodesk\Client\Model\Result deleteManifest($urn)
 
 
 
@@ -28,11 +28,11 @@ Deletes the manifest and all its translated output files (derivatives). However,
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 
 try {
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Result**](../Model/Result.md)
+[**\Autodesk\Client\Model\Result**](../Model/Result.md)
 
 ### Authorization
 
@@ -78,11 +78,11 @@ Downloads a selected derivative. To download the file, you need to specify the f
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $derivative_urn = "derivative_urn_example"; // string | The URL-encoded URN of the derivatives. The URN is retrieved from the GET :urn/manifest endpoint.
 $range = 56; // int | This is the standard RFC 2616 range request header. It only supports one range specifier per request: 1. Range:bytes=0-63 (returns the first 64 bytes) 2. Range:bytes=64-127 (returns the second set of 64 bytes) 3. Range:bytes=1022- (returns all the bytes from offset 1022 to the end) 4. If the range header is not specified, the whole content is returned.
@@ -119,7 +119,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFormats**
-> \Swagger\Client\Model\Formats getFormats($if_modified_since, $accept_encoding)
+> \Autodesk\Client\Model\Formats getFormats($if_modified_since, $accept_encoding)
 
 
 
@@ -131,11 +131,11 @@ Returns an up-to-date list of Forge-supported translations, that you can use to 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
 $if_modified_since = new \DateTime(); // \DateTime | The supported formats are only returned if they were modified since the specified date. An invalid date returns the latest supported format list. If the supported formats have not been modified since the specified date, the endpoint returns a `NOT MODIFIED` (304) response.
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Formats**](../Model/Formats.md)
+[**\Autodesk\Client\Model\Formats**](../Model/Formats.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getManifest**
-> \Swagger\Client\Model\Manifest getManifest($urn, $accept_encoding)
+> \Autodesk\Client\Model\Manifest getManifest($urn, $accept_encoding)
 
 
 
@@ -183,11 +183,11 @@ Returns information about derivatives that correspond to a specific source file,
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Manifest**](../Model/Manifest.md)
+[**\Autodesk\Client\Model\Manifest**](../Model/Manifest.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMetadata**
-> \Swagger\Client\Model\Metadata getMetadata($urn, $accept_encoding)
+> \Autodesk\Client\Model\Metadata getMetadata($urn, $accept_encoding)
 
 
 
@@ -235,11 +235,11 @@ Returns a list of model view (metadata) IDs for a design model. The metadata ID 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Metadata**](../Model/Metadata.md)
+[**\Autodesk\Client\Model\Metadata**](../Model/Metadata.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getModelviewMetadata**
-> \Swagger\Client\Model\Metadata getModelviewMetadata($urn, $guid, $accept_encoding)
+> \Autodesk\Client\Model\Metadata getModelviewMetadata($urn, $guid, $accept_encoding)
 
 
 
@@ -287,11 +287,11 @@ Returns an object tree, i.e., a hierarchical list of objects for a model view.  
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $guid = "guid_example"; // string | Unique model view ID. Call [GET {urn}/metadata](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-metadata-GET) to get the ID
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Metadata**](../Model/Metadata.md)
+[**\Autodesk\Client\Model\Metadata**](../Model/Metadata.md)
 
 ### Authorization
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getModelviewProperties**
-> \Swagger\Client\Model\Metadata getModelviewProperties($urn, $guid, $accept_encoding)
+> \Autodesk\Client\Model\Metadata getModelviewProperties($urn, $guid, $accept_encoding)
 
 
 
@@ -341,11 +341,11 @@ Returns a list of properties for each object in an object tree. Properties are r
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $guid = "guid_example"; // string | Unique model view ID. Call [GET {urn}/metadata](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-metadata-GET) to get the ID
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Metadata**](../Model/Metadata.md)
+[**\Autodesk\Client\Model\Metadata**](../Model/Metadata.md)
 
 ### Authorization
 
@@ -395,11 +395,11 @@ Returns the thumbnail for the source file.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $width = 56; // int | The desired width of the thumbnail. Possible values are 100, 200 and 400.
 $height = 56; // int | The desired height of the thumbnail. Possible values are 100, 200 and 400.
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **translate**
-> \Swagger\Client\Model\Job translate($job, $x_ads_force)
+> \Autodesk\Client\Model\Job translate($job, $x_ads_force)
 
 
 
@@ -449,12 +449,12 @@ Translate a source file from one format to another.  Derivatives are stored in a
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DerivativesApi();
-$job = new \Swagger\Client\Model\JobPayload(); // \Swagger\Client\Model\JobPayload | 
+$api_instance = new Autodesk\Client\Api\DerivativesApi();
+$job = new \Autodesk\Client\Model\JobPayload(); // \Autodesk\Client\Model\JobPayload | 
 $x_ads_force = false; // bool | `true`: the endpoint replaces previously translated output file types with the newly generated derivatives  `false` (default): previously created derivatives are not replaced
 
 try {
@@ -470,12 +470,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **job** | [**\Swagger\Client\Model\JobPayload**](../Model/\Swagger\Client\Model\JobPayload.md)|  |
+ **job** | [**\Autodesk\Client\Model\JobPayload**](../Model/\Autodesk\Client\Model\JobPayload.md)|  |
  **x_ads_force** | **bool**| &#x60;true&#x60;: the endpoint replaces previously translated output file types with the newly generated derivatives  &#x60;false&#x60; (default): previously created derivatives are not replaced | [optional] [default to false]
 
 ### Return type
 
-[**\Swagger\Client\Model\Job**](../Model/Job.md)
+[**\Autodesk\Client\Model\Job**](../Model/Job.md)
 
 ### Authorization
 

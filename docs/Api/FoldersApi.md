@@ -1,4 +1,4 @@
-# Swagger\Client\FoldersApi
+# Autodesk\Client\FoldersApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getFolder**
-> \Swagger\Client\Model\Folder getFolder($project_id, $folder_id)
+> \Autodesk\Client\Model\Folder getFolder($project_id, $folder_id)
 
 
 
@@ -25,9 +25,9 @@ Returns the folder by ID for any folder within a given project. All folders or s
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Autodesk\Client\Api\FoldersApi();
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Folder**](../Model/Folder.md)
+[**\Autodesk\Client\Model\Folder**](../Model/Folder.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderContents**
-> \Swagger\Client\Model\JsonApiCollection getFolderContents($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type, $page_number, $page_limit)
+> \Autodesk\Client\Model\JsonApiCollection getFolderContents($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type, $page_number, $page_limit)
 
 
 
@@ -75,9 +75,9 @@ Returns a collection of items and folders within a folder. Items represent word 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Autodesk\Client\Api\FoldersApi();
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
+[**\Autodesk\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderParent**
-> \Swagger\Client\Model\Folder getFolderParent($project_id, $folder_id)
+> \Autodesk\Client\Model\Folder getFolderParent($project_id, $folder_id)
 
 
 
@@ -135,9 +135,9 @@ Returns the parent folder (if it exists). In a project, subfolders and resource 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Autodesk\Client\Api\FoldersApi();
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Folder**](../Model/Folder.md)
+[**\Autodesk\Client\Model\Folder**](../Model/Folder.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderRefs**
-> \Swagger\Client\Model\JsonApiCollection getFolderRefs($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type)
+> \Autodesk\Client\Model\JsonApiCollection getFolderRefs($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type)
 
 
 
@@ -185,9 +185,9 @@ Returns the resources (`items`, `folders`, and `versions`) which have a custom r
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Autodesk\Client\Api\FoldersApi();
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
+[**\Autodesk\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderRelationshipsRefs**
-> \Swagger\Client\Model\Refs getFolderRelationshipsRefs($project_id, $folder_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type)
+> \Autodesk\Client\Model\Refs getFolderRelationshipsRefs($project_id, $folder_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type)
 
 
 
@@ -241,9 +241,9 @@ Returns the custom relationships that are associated to the given `folder_id`. C
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Autodesk\Client\Api\FoldersApi();
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Refs**](../Model/Refs.md)
+[**\Autodesk\Client\Model\Refs**](../Model/Refs.md)
 
 ### Authorization
 
@@ -301,12 +301,12 @@ Creates a custom relationship between a folder and another resource within the '
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Autodesk\Client\Api\FoldersApi();
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
-$body = new \Swagger\Client\Model\CreateRef(); // \Swagger\Client\Model\CreateRef | describe the ref to be created
+$body = new \Autodesk\Client\Model\CreateRef(); // \Autodesk\Client\Model\CreateRef | describe the ref to be created
 
 try {
     $api_instance->postFolderRelationshipsRef($project_id, $folder_id, $body);
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **string**| the &#x60;project id&#x60; |
  **folder_id** | **string**| the &#x60;folder id&#x60; |
- **body** | [**\Swagger\Client\Model\CreateRef**](../Model/\Swagger\Client\Model\CreateRef.md)| describe the ref to be created |
+ **body** | [**\Autodesk\Client\Model\CreateRef**](../Model/\Autodesk\Client\Model\CreateRef.md)| describe the ref to be created |
 
 ### Return type
 

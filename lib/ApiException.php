@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace Autodesk\Client;
 
 use \Exception;
 
@@ -34,7 +34,7 @@ use \Exception;
  * ApiException Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,17 +58,17 @@ class ApiException extends Exception
     /**
      * The deserialized response object
      *
-     * @var $responseObject;
+     * @var $responseObject ;
      */
     protected $responseObject;
 
     /**
      * Constructor
      *
-     * @param string $message         Error message
-     * @param int    $code            HTTP status code
+     * @param string $message Error message
+     * @param int $code HTTP status code
      * @param string $responseHeaders HTTP response header
-     * @param mixed  $responseBody    HTTP body of the server response either as Json or string
+     * @param mixed $responseBody HTTP body of the server response either as Json or string
      */
     public function __construct($message = "", $code = 0, $responseHeaders = null, $responseBody = null)
     {

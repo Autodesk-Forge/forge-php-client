@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiError Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class JsonApiError implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_error';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'errors' => '\Swagger\Client\Model\JsonApiErrorErrors[]'
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'errors'  => '\Autodesk\Client\Model\JsonApiErrorErrors[]',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class JsonApiError implements ArrayAccess
      */
     protected static $attributeMap = [
         'jsonapi' => 'jsonapi',
-        'errors' => 'errors'
+        'errors'  => 'errors',
     ];
 
 
@@ -79,7 +79,7 @@ class JsonApiError implements ArrayAccess
      */
     protected static $setters = [
         'jsonapi' => 'setJsonapi',
-        'errors' => 'setErrors'
+        'errors'  => 'setErrors',
     ];
 
 
@@ -89,7 +89,7 @@ class JsonApiError implements ArrayAccess
      */
     protected static $getters = [
         'jsonapi' => 'getJsonapi',
-        'errors' => 'getErrors'
+        'errors'  => 'getErrors',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class JsonApiError implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -160,7 +157,7 @@ class JsonApiError implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -169,7 +166,7 @@ class JsonApiError implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -181,7 +178,7 @@ class JsonApiError implements ArrayAccess
 
     /**
      * Gets errors
-     * @return \Swagger\Client\Model\JsonApiErrorErrors[]
+     * @return \Autodesk\Client\Model\JsonApiErrorErrors[]
      */
     public function getErrors()
     {
@@ -190,7 +187,7 @@ class JsonApiError implements ArrayAccess
 
     /**
      * Sets errors
-     * @param \Swagger\Client\Model\JsonApiErrorErrors[] $errors
+     * @param \Autodesk\Client\Model\JsonApiErrorErrors[] $errors
      * @return $this
      */
     public function setErrors($errors)
@@ -199,6 +196,7 @@ class JsonApiError implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -222,7 +220,7 @@ class JsonApiError implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -251,10 +249,10 @@ class JsonApiError implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

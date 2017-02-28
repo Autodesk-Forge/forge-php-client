@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * HubAttributes Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class HubAttributes implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'hub_attributes';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'extension' => '\Swagger\Client\Model\BaseAttributesExtensionObject'
+        'name'      => 'string',
+        'extension' => '\Autodesk\Client\Model\BaseAttributesExtensionObject',
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class HubAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'extension' => 'extension'
+        'name'      => 'name',
+        'extension' => 'extension',
     ];
 
 
@@ -78,8 +78,8 @@ class HubAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'extension' => 'setExtension'
+        'name'      => 'setName',
+        'extension' => 'setExtension',
     ];
 
 
@@ -88,8 +88,8 @@ class HubAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'extension' => 'getExtension'
+        'name'      => 'getName',
+        'extension' => 'getExtension',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class HubAttributes implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -187,7 +184,7 @@ class HubAttributes implements ArrayAccess
 
     /**
      * Gets extension
-     * @return \Swagger\Client\Model\BaseAttributesExtensionObject
+     * @return \Autodesk\Client\Model\BaseAttributesExtensionObject
      */
     public function getExtension()
     {
@@ -196,7 +193,7 @@ class HubAttributes implements ArrayAccess
 
     /**
      * Sets extension
-     * @param \Swagger\Client\Model\BaseAttributesExtensionObject $extension
+     * @param \Autodesk\Client\Model\BaseAttributesExtensionObject $extension
      * @return $this
      */
     public function setExtension($extension)
@@ -205,6 +202,7 @@ class HubAttributes implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -228,7 +226,7 @@ class HubAttributes implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -257,10 +255,10 @@ class HubAttributes implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

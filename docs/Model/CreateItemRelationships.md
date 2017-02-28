@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**storage** | [**\Swagger\Client\Model\CreateItemRelationshipsStorage**](CreateItemRelationshipsStorage.md) |  | [optional] 
+**storage** | [**\Autodesk\Client\Model\CreateItemRelationshipsStorage**](CreateItemRelationshipsStorage.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

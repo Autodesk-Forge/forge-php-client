@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Children Manifest
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -45,28 +45,28 @@ class ManifestChildren implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'manifest-children';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'role' => 'string',
-        'name' => 'string',
+        'type'          => 'string',
+        'role'          => 'string',
+        'name'          => 'string',
         'has_thumbnail' => 'bool',
-        'mime' => 'string',
-        'urn' => 'string',
-        'progress' => 'string',
-        'status' => 'string',
-        'resolution' => 'string[]',
-        'model_guid' => 'string',
-        'object_ids' => 'int[]',
-        'messages' => '\Swagger\Client\Model\Messages'
+        'mime'          => 'string',
+        'urn'           => 'string',
+        'progress'      => 'string',
+        'status'        => 'string',
+        'resolution'    => 'string[]',
+        'model_guid'    => 'string',
+        'object_ids'    => 'int[]',
+        'messages'      => '\Autodesk\Client\Model\Messages',
     ];
 
     public static function swaggerTypes()
@@ -79,18 +79,18 @@ class ManifestChildren implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'role' => 'role',
-        'name' => 'name',
+        'type'          => 'type',
+        'role'          => 'role',
+        'name'          => 'name',
         'has_thumbnail' => 'hasThumbnail',
-        'mime' => 'mime',
-        'urn' => 'urn',
-        'progress' => 'progress',
-        'status' => 'status',
-        'resolution' => 'resolution',
-        'model_guid' => 'modelGUID',
-        'object_ids' => 'objectIds',
-        'messages' => 'messages'
+        'mime'          => 'mime',
+        'urn'           => 'urn',
+        'progress'      => 'progress',
+        'status'        => 'status',
+        'resolution'    => 'resolution',
+        'model_guid'    => 'modelGUID',
+        'object_ids'    => 'objectIds',
+        'messages'      => 'messages',
     ];
 
 
@@ -99,18 +99,18 @@ class ManifestChildren implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'role' => 'setRole',
-        'name' => 'setName',
+        'type'          => 'setType',
+        'role'          => 'setRole',
+        'name'          => 'setName',
         'has_thumbnail' => 'setHasThumbnail',
-        'mime' => 'setMime',
-        'urn' => 'setUrn',
-        'progress' => 'setProgress',
-        'status' => 'setStatus',
-        'resolution' => 'setResolution',
-        'model_guid' => 'setModelGuid',
-        'object_ids' => 'setObjectIds',
-        'messages' => 'setMessages'
+        'mime'          => 'setMime',
+        'urn'           => 'setUrn',
+        'progress'      => 'setProgress',
+        'status'        => 'setStatus',
+        'resolution'    => 'setResolution',
+        'model_guid'    => 'setModelGuid',
+        'object_ids'    => 'setObjectIds',
+        'messages'      => 'setMessages',
     ];
 
 
@@ -119,18 +119,18 @@ class ManifestChildren implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'role' => 'getRole',
-        'name' => 'getName',
+        'type'          => 'getType',
+        'role'          => 'getRole',
+        'name'          => 'getName',
         'has_thumbnail' => 'getHasThumbnail',
-        'mime' => 'getMime',
-        'urn' => 'getUrn',
-        'progress' => 'getProgress',
-        'status' => 'getStatus',
-        'resolution' => 'getResolution',
-        'model_guid' => 'getModelGuid',
-        'object_ids' => 'getObjectIds',
-        'messages' => 'getMessages'
+        'mime'          => 'getMime',
+        'urn'           => 'getUrn',
+        'progress'      => 'getProgress',
+        'status'        => 'getStatus',
+        'resolution'    => 'getResolution',
+        'model_guid'    => 'getModelGuid',
+        'object_ids'    => 'getObjectIds',
+        'messages'      => 'getMessages',
     ];
 
     public static function attributeMap()
@@ -163,9 +163,8 @@ class ManifestChildren implements ArrayAccess
     const STATUS_FAILED = 'failed';
     const STATUS_TIMEOUT = 'timeout';
     const STATUS_PARTIALSUCCESS = 'partialsuccess';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -179,7 +178,7 @@ class ManifestChildren implements ArrayAccess
             self::TYPE_VIEW,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -194,7 +193,7 @@ class ManifestChildren implements ArrayAccess
             self::ROLE_THUMBNAIL,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -210,7 +209,7 @@ class ManifestChildren implements ArrayAccess
             self::STATUS_PARTIALSUCCESS,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -251,7 +250,7 @@ class ManifestChildren implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["resource", "manifest", "geometry", "view"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'resource', 'manifest', 'geometry', 'view'.";
         }
 
@@ -259,7 +258,7 @@ class ManifestChildren implements ArrayAccess
             $invalid_properties[] = "'role' can't be null";
         }
         $allowed_values = ["2d", "3d", "graphics", "manifest", "thumbnail"];
-        if (!in_array($this->container['role'], $allowed_values)) {
+        if ( ! in_array($this->container['role'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail'.";
         }
 
@@ -267,7 +266,7 @@ class ManifestChildren implements ArrayAccess
             $invalid_properties[] = "'mime' can't be null";
         }
         $allowed_values = ["pending", "inprogress", "success", "failed", "timeout", "partialsuccess"];
-        if (!in_array($this->container['status'], $allowed_values)) {
+        if ( ! in_array($this->container['status'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'status', must be one of 'pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess'.";
         }
 
@@ -287,21 +286,21 @@ class ManifestChildren implements ArrayAccess
             return false;
         }
         $allowed_values = ["resource", "manifest", "geometry", "view"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         if ($this->container['role'] === null) {
             return false;
         }
         $allowed_values = ["2d", "3d", "graphics", "manifest", "thumbnail"];
-        if (!in_array($this->container['role'], $allowed_values)) {
+        if ( ! in_array($this->container['role'], $allowed_values)) {
             return false;
         }
         if ($this->container['mime'] === null) {
             return false;
         }
         $allowed_values = ["pending", "inprogress", "success", "failed", "timeout", "partialsuccess"];
-        if (!in_array($this->container['status'], $allowed_values)) {
+        if ( ! in_array($this->container['status'], $allowed_values)) {
             return false;
         }
         return true;
@@ -324,8 +323,8 @@ class ManifestChildren implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('resource', 'manifest', 'geometry', 'view');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['resource', 'manifest', 'geometry', 'view'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'resource', 'manifest', 'geometry', 'view'");
         }
         $this->container['type'] = $type;
@@ -349,8 +348,8 @@ class ManifestChildren implements ArrayAccess
      */
     public function setRole($role)
     {
-        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail');
-        if ((!in_array($role, $allowed_values))) {
+        $allowed_values = ['2d', '3d', 'graphics', 'manifest', 'thumbnail'];
+        if (( ! in_array($role, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail'");
         }
         $this->container['role'] = $role;
@@ -479,8 +478,8 @@ class ManifestChildren implements ArrayAccess
      */
     public function setStatus($status)
     {
-        $allowed_values = array('pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess');
-        if (!is_null($status) && (!in_array($status, $allowed_values))) {
+        $allowed_values = ['pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess'];
+        if ( ! is_null($status) && ( ! in_array($status, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'status', must be one of 'pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess'");
         }
         $this->container['status'] = $status;
@@ -553,7 +552,7 @@ class ManifestChildren implements ArrayAccess
 
     /**
      * Gets messages
-     * @return \Swagger\Client\Model\Messages
+     * @return \Autodesk\Client\Model\Messages
      */
     public function getMessages()
     {
@@ -562,7 +561,7 @@ class ManifestChildren implements ArrayAccess
 
     /**
      * Sets messages
-     * @param \Swagger\Client\Model\Messages $messages
+     * @param \Autodesk\Client\Model\Messages $messages
      * @return $this
      */
     public function setMessages($messages)
@@ -571,6 +570,7 @@ class ManifestChildren implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -594,7 +594,7 @@ class ManifestChildren implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -623,10 +623,10 @@ class ManifestChildren implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

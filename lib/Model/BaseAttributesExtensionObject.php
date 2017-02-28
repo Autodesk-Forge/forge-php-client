@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * BaseAttributesExtensionObject Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,20 +44,20 @@ class BaseAttributesExtensionObject implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'base_attributes_extension_object';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'type' => 'string',
+        'type'    => 'string',
         'version' => 'string',
-        'schema' => '\Swagger\Client\Model\JsonApiLink',
-        'data' => 'object'
+        'schema'  => '\Autodesk\Client\Model\JsonApiLink',
+        'data'    => 'object',
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class BaseAttributesExtensionObject implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
+        'type'    => 'type',
         'version' => 'version',
-        'schema' => 'schema',
-        'data' => 'data'
+        'schema'  => 'schema',
+        'data'    => 'data',
     ];
 
 
@@ -82,10 +82,10 @@ class BaseAttributesExtensionObject implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+        'type'    => 'setType',
         'version' => 'setVersion',
-        'schema' => 'setSchema',
-        'data' => 'setData'
+        'schema'  => 'setSchema',
+        'data'    => 'setData',
     ];
 
 
@@ -94,10 +94,10 @@ class BaseAttributesExtensionObject implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
+        'type'    => 'getType',
         'version' => 'getVersion',
-        'schema' => 'getSchema',
-        'data' => 'getData'
+        'schema'  => 'getSchema',
+        'data'    => 'getData',
     ];
 
     public static function attributeMap()
@@ -115,9 +115,6 @@ class BaseAttributesExtensionObject implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -224,7 +221,7 @@ class BaseAttributesExtensionObject implements ArrayAccess
 
     /**
      * Gets schema
-     * @return \Swagger\Client\Model\JsonApiLink
+     * @return \Autodesk\Client\Model\JsonApiLink
      */
     public function getSchema()
     {
@@ -233,7 +230,7 @@ class BaseAttributesExtensionObject implements ArrayAccess
 
     /**
      * Sets schema
-     * @param \Swagger\Client\Model\JsonApiLink $schema
+     * @param \Autodesk\Client\Model\JsonApiLink $schema
      * @return $this
      */
     public function setSchema($schema)
@@ -263,6 +260,7 @@ class BaseAttributesExtensionObject implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -286,7 +284,7 @@ class BaseAttributesExtensionObject implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -315,10 +313,10 @@ class BaseAttributesExtensionObject implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

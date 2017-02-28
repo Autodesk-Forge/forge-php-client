@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateStorage Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class CreateStorage implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'create_storage';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\CreateStorageData'
+        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data'    => '\Autodesk\Client\Model\CreateStorageData',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class CreateStorage implements ArrayAccess
      */
     protected static $attributeMap = [
         'jsonapi' => 'jsonapi',
-        'data' => 'data'
+        'data'    => 'data',
     ];
 
 
@@ -79,7 +79,7 @@ class CreateStorage implements ArrayAccess
      */
     protected static $setters = [
         'jsonapi' => 'setJsonapi',
-        'data' => 'setData'
+        'data'    => 'setData',
     ];
 
 
@@ -89,7 +89,7 @@ class CreateStorage implements ArrayAccess
      */
     protected static $getters = [
         'jsonapi' => 'getJsonapi',
-        'data' => 'getData'
+        'data'    => 'getData',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class CreateStorage implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -154,7 +151,7 @@ class CreateStorage implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -163,7 +160,7 @@ class CreateStorage implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -175,7 +172,7 @@ class CreateStorage implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\CreateStorageData
+     * @return \Autodesk\Client\Model\CreateStorageData
      */
     public function getData()
     {
@@ -184,7 +181,7 @@ class CreateStorage implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\CreateStorageData $data
+     * @param \Autodesk\Client\Model\CreateStorageData $data
      * @return $this
      */
     public function setData($data)
@@ -193,6 +190,7 @@ class CreateStorage implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -216,7 +214,7 @@ class CreateStorage implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -245,10 +243,10 @@ class CreateStorage implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

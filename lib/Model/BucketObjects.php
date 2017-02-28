@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * BucketObjects Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,18 +44,18 @@ class BucketObjects implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'bucket_objects';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'items' => '\Swagger\Client\Model\ObjectDetails[]',
-        'next' => 'string'
+        'items' => '\Autodesk\Client\Model\ObjectDetails[]',
+        'next'  => 'string',
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class BucketObjects implements ArrayAccess
      */
     protected static $attributeMap = [
         'items' => 'items',
-        'next' => 'next'
+        'next'  => 'next',
     ];
 
 
@@ -79,7 +79,7 @@ class BucketObjects implements ArrayAccess
      */
     protected static $setters = [
         'items' => 'setItems',
-        'next' => 'setNext'
+        'next'  => 'setNext',
     ];
 
 
@@ -89,7 +89,7 @@ class BucketObjects implements ArrayAccess
      */
     protected static $getters = [
         'items' => 'getItems',
-        'next' => 'getNext'
+        'next'  => 'getNext',
     ];
 
     public static function attributeMap()
@@ -107,9 +107,6 @@ class BucketObjects implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -154,7 +151,7 @@ class BucketObjects implements ArrayAccess
 
     /**
      * Gets items
-     * @return \Swagger\Client\Model\ObjectDetails[]
+     * @return \Autodesk\Client\Model\ObjectDetails[]
      */
     public function getItems()
     {
@@ -163,7 +160,7 @@ class BucketObjects implements ArrayAccess
 
     /**
      * Sets items
-     * @param \Swagger\Client\Model\ObjectDetails[] $items
+     * @param \Autodesk\Client\Model\ObjectDetails[] $items
      * @return $this
      */
     public function setItems($items)
@@ -193,6 +190,7 @@ class BucketObjects implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -216,7 +214,7 @@ class BucketObjects implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -245,10 +243,10 @@ class BucketObjects implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

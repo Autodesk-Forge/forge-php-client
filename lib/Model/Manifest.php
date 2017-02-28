@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Manifest Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,23 +44,23 @@ class Manifest implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'manifest';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'urn' => 'string',
-        'type' => 'string',
-        'progress' => 'string',
-        'status' => 'string',
+        'urn'           => 'string',
+        'type'          => 'string',
+        'progress'      => 'string',
+        'status'        => 'string',
         'has_thumbnail' => 'bool',
-        'region' => 'string',
-        'derivatives' => '\Swagger\Client\Model\ManifestDerivative[]'
+        'region'        => 'string',
+        'derivatives'   => '\Autodesk\Client\Model\ManifestDerivative[]',
     ];
 
     public static function swaggerTypes()
@@ -73,13 +73,13 @@ class Manifest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'urn' => 'urn',
-        'type' => 'type',
-        'progress' => 'progress',
-        'status' => 'status',
+        'urn'           => 'urn',
+        'type'          => 'type',
+        'progress'      => 'progress',
+        'status'        => 'status',
         'has_thumbnail' => 'hasThumbnail',
-        'region' => 'region',
-        'derivatives' => 'derivatives'
+        'region'        => 'region',
+        'derivatives'   => 'derivatives',
     ];
 
 
@@ -88,13 +88,13 @@ class Manifest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'urn' => 'setUrn',
-        'type' => 'setType',
-        'progress' => 'setProgress',
-        'status' => 'setStatus',
+        'urn'           => 'setUrn',
+        'type'          => 'setType',
+        'progress'      => 'setProgress',
+        'status'        => 'setStatus',
         'has_thumbnail' => 'setHasThumbnail',
-        'region' => 'setRegion',
-        'derivatives' => 'setDerivatives'
+        'region'        => 'setRegion',
+        'derivatives'   => 'setDerivatives',
     ];
 
 
@@ -103,13 +103,13 @@ class Manifest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'urn' => 'getUrn',
-        'type' => 'getType',
-        'progress' => 'getProgress',
-        'status' => 'getStatus',
+        'urn'           => 'getUrn',
+        'type'          => 'getType',
+        'progress'      => 'getProgress',
+        'status'        => 'getStatus',
         'has_thumbnail' => 'getHasThumbnail',
-        'region' => 'getRegion',
-        'derivatives' => 'getDerivatives'
+        'region'        => 'getRegion',
+        'derivatives'   => 'getDerivatives',
     ];
 
     public static function attributeMap()
@@ -127,9 +127,6 @@ class Manifest implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -341,7 +338,7 @@ class Manifest implements ArrayAccess
 
     /**
      * Gets derivatives
-     * @return \Swagger\Client\Model\ManifestDerivative[]
+     * @return \Autodesk\Client\Model\ManifestDerivative[]
      */
     public function getDerivatives()
     {
@@ -350,7 +347,7 @@ class Manifest implements ArrayAccess
 
     /**
      * Sets derivatives
-     * @param \Swagger\Client\Model\ManifestDerivative[] $derivatives Requested output files for the source file URN
+     * @param \Autodesk\Client\Model\ManifestDerivative[] $derivatives Requested output files for the source file URN
      * @return $this
      */
     public function setDerivatives($derivatives)
@@ -359,6 +356,7 @@ class Manifest implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -382,7 +380,7 @@ class Manifest implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -411,10 +409,10 @@ class Manifest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

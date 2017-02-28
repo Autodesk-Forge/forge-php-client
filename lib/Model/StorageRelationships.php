@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * StorageRelationships Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,17 +44,17 @@ class StorageRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'storage_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'target' => '\Swagger\Client\Model\StorageRelationshipsTarget'
+        'target' => '\Autodesk\Client\Model\StorageRelationshipsTarget',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class StorageRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'target' => 'target'
+        'target' => 'target',
     ];
 
 
@@ -76,7 +76,7 @@ class StorageRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'target' => 'setTarget'
+        'target' => 'setTarget',
     ];
 
 
@@ -85,7 +85,7 @@ class StorageRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'target' => 'getTarget'
+        'target' => 'getTarget',
     ];
 
     public static function attributeMap()
@@ -103,9 +103,6 @@ class StorageRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -149,7 +146,7 @@ class StorageRelationships implements ArrayAccess
 
     /**
      * Gets target
-     * @return \Swagger\Client\Model\StorageRelationshipsTarget
+     * @return \Autodesk\Client\Model\StorageRelationshipsTarget
      */
     public function getTarget()
     {
@@ -158,7 +155,7 @@ class StorageRelationships implements ArrayAccess
 
     /**
      * Sets target
-     * @param \Swagger\Client\Model\StorageRelationshipsTarget $target
+     * @param \Autodesk\Client\Model\StorageRelationshipsTarget $target
      * @return $this
      */
     public function setTarget($target)
@@ -167,6 +164,7 @@ class StorageRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -190,7 +188,7 @@ class StorageRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -219,10 +217,10 @@ class StorageRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

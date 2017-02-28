@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,75 +26,31 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Autodesk\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Autodesk\Client\ApiClient;
+use \Autodesk\Client\ApiException;
+use \Autodesk\Client\Configuration;
+use \Autodesk\Client\ObjectSerializer;
 
 /**
  * ActivitiesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ActivitiesApi
+class ActivitiesApi extends AbstractApi
 {
-    /**
-     * API Client
-     *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
-     */
-    protected $apiClient;
-
-    /**
-     * Constructor
-     *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
-     */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
-    {
-        if ($apiClient === null) {
-            $apiClient = new ApiClient();
-        }
-
-        $this->apiClient = $apiClient;
-    }
-
-    /**
-     * Get API client
-     *
-     * @return \Swagger\Client\ApiClient get the API client
-     */
-    public function getApiClient()
-    {
-        return $this->apiClient;
-    }
-
-    /**
-     * Set the API client
-     *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
-     *
-     * @return ActivitiesApi
-     */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
-    {
-        $this->apiClient = $apiClient;
-        return $this;
-    }
-
     /**
      * Operation createActivity
      *
      * Creates a new Activity.
      *
-     * @param \Swagger\Client\Model\Activity $activity  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Activity
+     * @param \Autodesk\Client\Model\Activity $activity (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Activity
      */
     public function createActivity($activity)
     {
@@ -107,9 +63,9 @@ class ActivitiesApi
      *
      * Creates a new Activity.
      *
-     * @param \Swagger\Client\Model\Activity $activity  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
+     * @param \Autodesk\Client\Model\Activity $activity (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
      */
     public function createActivityWithHttpInfo($activity)
     {
@@ -124,7 +80,7 @@ class ActivitiesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -144,27 +100,29 @@ class ActivitiesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Activity',
+                '\Autodesk\Client\Model\Activity',
                 '/autocad.io/us-east/v2/Activities'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Activity', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Activity',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Activity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Activity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -178,8 +136,8 @@ class ActivitiesApi
      *
      * Removes a specific Activity.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteActivity($id)
@@ -193,8 +151,8 @@ class ActivitiesApi
      *
      * Removes a specific Activity.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteActivityWithHttpInfo($id)
@@ -210,7 +168,7 @@ class ActivitiesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -226,20 +184,16 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'DELETE',
                 $queryParams,
@@ -263,8 +217,8 @@ class ActivitiesApi
      *
      * Removes the version history of the specified Activity.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteActivityHistory($id)
@@ -278,8 +232,8 @@ class ActivitiesApi
      *
      * Removes the version history of the specified Activity.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteActivityHistoryWithHttpInfo($id)
@@ -295,7 +249,7 @@ class ActivitiesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -311,20 +265,16 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
@@ -348,9 +298,9 @@ class ActivitiesApi
      *
      * Returns the details of a specific Activity.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Activity
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Activity
      */
     public function getActivity($id)
     {
@@ -363,9 +313,9 @@ class ActivitiesApi
      *
      * Returns the details of a specific Activity.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
      */
     public function getActivityWithHttpInfo($id)
     {
@@ -380,7 +330,7 @@ class ActivitiesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -396,34 +346,36 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Activity',
+                '\Autodesk\Client\Model\Activity',
                 '/autocad.io/us-east/v2/Activities(&#39;{id}&#39;)'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Activity', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Activity',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Activity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Activity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -437,9 +389,9 @@ class ActivitiesApi
      *
      * Returns all old versions of a specified Activity.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DesignAutomationActivities
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\DesignAutomationActivities
      */
     public function getActivityVersions($id)
     {
@@ -452,9 +404,9 @@ class ActivitiesApi
      *
      * Returns all old versions of a specified Activity.
      *
-     * @param string $id  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
+     * @param string $id (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
      */
     public function getActivityVersionsWithHttpInfo($id)
     {
@@ -469,7 +421,7 @@ class ActivitiesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -485,34 +437,36 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DesignAutomationActivities',
+                '\Autodesk\Client\Model\DesignAutomationActivities',
                 '/autocad.io/us-east/v2/Activities(&#39;{id}&#39;)/Operations.GetVersions'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DesignAutomationActivities', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response,
+                    '\Autodesk\Client\Model\DesignAutomationActivities', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -526,8 +480,8 @@ class ActivitiesApi
      *
      * Returns the details of all Activities.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DesignAutomationActivities
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\DesignAutomationActivities
      */
     public function getAllActivities()
     {
@@ -540,8 +494,8 @@ class ActivitiesApi
      *
      * Returns the details of all Activities.
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllActivitiesWithHttpInfo()
     {
@@ -552,7 +506,7 @@ class ActivitiesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -560,34 +514,36 @@ class ActivitiesApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DesignAutomationActivities',
+                '\Autodesk\Client\Model\DesignAutomationActivities',
                 '/autocad.io/us-east/v2/Activities'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DesignAutomationActivities', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response,
+                    '\Autodesk\Client\Model\DesignAutomationActivities', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -601,9 +557,9 @@ class ActivitiesApi
      *
      * Updates an Activity by specifying only the changed attributes.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\ActivityOptional $activity  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\ActivityOptional $activity (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function patchActivity($id, $activity)
@@ -617,9 +573,9 @@ class ActivitiesApi
      *
      * Updates an Activity by specifying only the changed attributes.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\ActivityOptional $activity  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\ActivityOptional $activity (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchActivityWithHttpInfo($id, $activity)
@@ -639,7 +595,7 @@ class ActivitiesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -667,13 +623,9 @@ class ActivitiesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'PATCH',
                 $queryParams,
@@ -697,9 +649,9 @@ class ActivitiesApi
      *
      * Sets the Activity to the specified version.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\ActivityVersion $activity_version  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\ActivityVersion $activity_version (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function setActivityVersion($id, $activity_version)
@@ -713,9 +665,9 @@ class ActivitiesApi
      *
      * Sets the Activity to the specified version.
      *
-     * @param string $id  (required)
-     * @param \Swagger\Client\Model\ActivityVersion $activity_version  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $id (required)
+     * @param \Autodesk\Client\Model\ActivityVersion $activity_version (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setActivityVersionWithHttpInfo($id, $activity_version)
@@ -735,7 +687,7 @@ class ActivitiesApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -763,13 +715,9 @@ class ActivitiesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,

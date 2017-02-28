@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Storage Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,22 +44,22 @@ class Storage implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'storage';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'type' => 'string',
-        'attributes' => '\Swagger\Client\Model\JsonApiAttributes',
-        'meta' => '\Swagger\Client\Model\JsonApiMeta',
-        'relationships' => '\Swagger\Client\Model\StorageRelationships',
-        'links' => '\Swagger\Client\Model\JsonApiLinks'
+        'id'            => 'string',
+        'type'          => 'string',
+        'attributes'    => '\Autodesk\Client\Model\JsonApiAttributes',
+        'meta'          => '\Autodesk\Client\Model\JsonApiMeta',
+        'relationships' => '\Autodesk\Client\Model\StorageRelationships',
+        'links'         => '\Autodesk\Client\Model\JsonApiLinks',
     ];
 
     public static function swaggerTypes()
@@ -72,12 +72,12 @@ class Storage implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'type' => 'type',
-        'attributes' => 'attributes',
-        'meta' => 'meta',
+        'id'            => 'id',
+        'type'          => 'type',
+        'attributes'    => 'attributes',
+        'meta'          => 'meta',
         'relationships' => 'relationships',
-        'links' => 'links'
+        'links'         => 'links',
     ];
 
 
@@ -86,12 +86,12 @@ class Storage implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'type' => 'setType',
-        'attributes' => 'setAttributes',
-        'meta' => 'setMeta',
+        'id'            => 'setId',
+        'type'          => 'setType',
+        'attributes'    => 'setAttributes',
+        'meta'          => 'setMeta',
         'relationships' => 'setRelationships',
-        'links' => 'setLinks'
+        'links'         => 'setLinks',
     ];
 
 
@@ -100,12 +100,12 @@ class Storage implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'type' => 'getType',
-        'attributes' => 'getAttributes',
-        'meta' => 'getMeta',
+        'id'            => 'getId',
+        'type'          => 'getType',
+        'attributes'    => 'getAttributes',
+        'meta'          => 'getMeta',
         'relationships' => 'getRelationships',
-        'links' => 'getLinks'
+        'links'         => 'getLinks',
     ];
 
     public static function attributeMap()
@@ -124,9 +124,8 @@ class Storage implements ArrayAccess
     }
 
     const TYPE_OBJECTS = 'objects';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -137,7 +136,7 @@ class Storage implements ArrayAccess
             self::TYPE_OBJECTS,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -175,7 +174,7 @@ class Storage implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["objects"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'objects'.";
         }
 
@@ -198,7 +197,7 @@ class Storage implements ArrayAccess
             return false;
         }
         $allowed_values = ["objects"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -242,8 +241,8 @@ class Storage implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('objects');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['objects'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'objects'");
         }
         $this->container['type'] = $type;
@@ -253,7 +252,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Swagger\Client\Model\JsonApiAttributes
+     * @return \Autodesk\Client\Model\JsonApiAttributes
      */
     public function getAttributes()
     {
@@ -262,7 +261,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Swagger\Client\Model\JsonApiAttributes $attributes
+     * @param \Autodesk\Client\Model\JsonApiAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -274,7 +273,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \Swagger\Client\Model\JsonApiMeta
+     * @return \Autodesk\Client\Model\JsonApiMeta
      */
     public function getMeta()
     {
@@ -283,7 +282,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \Swagger\Client\Model\JsonApiMeta $meta
+     * @param \Autodesk\Client\Model\JsonApiMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -295,7 +294,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Swagger\Client\Model\StorageRelationships
+     * @return \Autodesk\Client\Model\StorageRelationships
      */
     public function getRelationships()
     {
@@ -304,7 +303,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Swagger\Client\Model\StorageRelationships $relationships
+     * @param \Autodesk\Client\Model\StorageRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -316,7 +315,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Swagger\Client\Model\JsonApiLinks
+     * @return \Autodesk\Client\Model\JsonApiLinks
      */
     public function getLinks()
     {
@@ -325,7 +324,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Swagger\Client\Model\JsonApiLinks $links
+     * @param \Autodesk\Client\Model\JsonApiLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -334,6 +333,7 @@ class Storage implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -357,7 +357,7 @@ class Storage implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -386,10 +386,10 @@ class Storage implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

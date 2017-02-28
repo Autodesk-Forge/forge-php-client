@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateItemIncluded Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,20 +44,20 @@ class CreateItemIncluded implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'create_item_included';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'id' => 'string',
-        'attributes' => '\Swagger\Client\Model\CreateStorageDataAttributes',
-        'relationships' => '\Swagger\Client\Model\CreateItemRelationships'
+        'type'          => 'string',
+        'id'            => 'string',
+        'attributes'    => '\Autodesk\Client\Model\CreateStorageDataAttributes',
+        'relationships' => '\Autodesk\Client\Model\CreateItemRelationships',
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class CreateItemIncluded implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'id' => 'id',
-        'attributes' => 'attributes',
-        'relationships' => 'relationships'
+        'type'          => 'type',
+        'id'            => 'id',
+        'attributes'    => 'attributes',
+        'relationships' => 'relationships',
     ];
 
 
@@ -82,10 +82,10 @@ class CreateItemIncluded implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'id' => 'setId',
-        'attributes' => 'setAttributes',
-        'relationships' => 'setRelationships'
+        'type'          => 'setType',
+        'id'            => 'setId',
+        'attributes'    => 'setAttributes',
+        'relationships' => 'setRelationships',
     ];
 
 
@@ -94,10 +94,10 @@ class CreateItemIncluded implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'id' => 'getId',
-        'attributes' => 'getAttributes',
-        'relationships' => 'getRelationships'
+        'type'          => 'getType',
+        'id'            => 'getId',
+        'attributes'    => 'getAttributes',
+        'relationships' => 'getRelationships',
     ];
 
     public static function attributeMap()
@@ -117,9 +117,8 @@ class CreateItemIncluded implements ArrayAccess
 
     const TYPE_VERSIONS = 'versions';
     const ID__1 = '1';
-    
 
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -130,7 +129,7 @@ class CreateItemIncluded implements ArrayAccess
             self::TYPE_VERSIONS,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -141,7 +140,7 @@ class CreateItemIncluded implements ArrayAccess
             self::ID__1,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -174,7 +173,7 @@ class CreateItemIncluded implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["versions"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'versions'.";
         }
 
@@ -182,7 +181,7 @@ class CreateItemIncluded implements ArrayAccess
             $invalid_properties[] = "'id' can't be null";
         }
         $allowed_values = ["1"];
-        if (!in_array($this->container['id'], $allowed_values)) {
+        if ( ! in_array($this->container['id'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'id', must be one of '1'.";
         }
 
@@ -202,14 +201,14 @@ class CreateItemIncluded implements ArrayAccess
             return false;
         }
         $allowed_values = ["versions"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ( ! in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         if ($this->container['id'] === null) {
             return false;
         }
         $allowed_values = ["1"];
-        if (!in_array($this->container['id'], $allowed_values)) {
+        if ( ! in_array($this->container['id'], $allowed_values)) {
             return false;
         }
         return true;
@@ -232,8 +231,8 @@ class CreateItemIncluded implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('versions');
-        if ((!in_array($type, $allowed_values))) {
+        $allowed_values = ['versions'];
+        if (( ! in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'versions'");
         }
         $this->container['type'] = $type;
@@ -257,8 +256,8 @@ class CreateItemIncluded implements ArrayAccess
      */
     public function setId($id)
     {
-        $allowed_values = array('1');
-        if ((!in_array($id, $allowed_values))) {
+        $allowed_values = ['1'];
+        if (( ! in_array($id, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'id', must be one of '1'");
         }
         $this->container['id'] = $id;
@@ -268,7 +267,7 @@ class CreateItemIncluded implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Swagger\Client\Model\CreateStorageDataAttributes
+     * @return \Autodesk\Client\Model\CreateStorageDataAttributes
      */
     public function getAttributes()
     {
@@ -277,7 +276,7 @@ class CreateItemIncluded implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Swagger\Client\Model\CreateStorageDataAttributes $attributes
+     * @param \Autodesk\Client\Model\CreateStorageDataAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -289,7 +288,7 @@ class CreateItemIncluded implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Swagger\Client\Model\CreateItemRelationships
+     * @return \Autodesk\Client\Model\CreateItemRelationships
      */
     public function getRelationships()
     {
@@ -298,7 +297,7 @@ class CreateItemIncluded implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Swagger\Client\Model\CreateItemRelationships $relationships
+     * @param \Autodesk\Client\Model\CreateItemRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -307,6 +306,7 @@ class CreateItemIncluded implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -330,7 +330,7 @@ class CreateItemIncluded implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -359,10 +359,10 @@ class CreateItemIncluded implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,76 +26,32 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Autodesk\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Autodesk\Client\ApiClient;
+use \Autodesk\Client\ApiException;
+use \Autodesk\Client\Configuration;
+use \Autodesk\Client\ObjectSerializer;
 
 /**
  * BucketsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BucketsApi
+class BucketsApi extends AbstractApi
 {
-    /**
-     * API Client
-     *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
-     */
-    protected $apiClient;
-
-    /**
-     * Constructor
-     *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
-     */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
-    {
-        if ($apiClient === null) {
-            $apiClient = new ApiClient();
-        }
-
-        $this->apiClient = $apiClient;
-    }
-
-    /**
-     * Get API client
-     *
-     * @return \Swagger\Client\ApiClient get the API client
-     */
-    public function getApiClient()
-    {
-        return $this->apiClient;
-    }
-
-    /**
-     * Set the API client
-     *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
-     *
-     * @return BucketsApi
-     */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
-    {
-        $this->apiClient = $apiClient;
-        return $this;
-    }
-
     /**
      * Operation createBucket
      *
-     * 
      *
-     * @param \Swagger\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
+     *
+     * @param \Autodesk\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Bucket
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Bucket
      */
     public function createBucket($post_buckets, $x_ads_region = null)
     {
@@ -106,12 +62,12 @@ class BucketsApi
     /**
      * Operation createBucketWithHttpInfo
      *
-     * 
      *
-     * @param \Swagger\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
+     *
+     * @param \Autodesk\Client\Model\PostBucketsPayload $post_buckets Body Structure (required)
      * @param string $x_ads_region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Bucket, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Bucket, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBucketWithHttpInfo($post_buckets, $x_ads_region = null)
     {
@@ -126,7 +82,7 @@ class BucketsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -150,31 +106,33 @@ class BucketsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'POST',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Bucket',
+                '\Autodesk\Client\Model\Bucket',
                 '/oss/v2/buckets'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Bucket', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Bucket', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Bucket', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Bucket', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -186,10 +144,10 @@ class BucketsApi
     /**
      * Operation deleteBucket
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteBucket($bucket_key)
@@ -201,10 +159,10 @@ class BucketsApi
     /**
      * Operation deleteBucketWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBucketWithHttpInfo($bucket_key)
@@ -213,7 +171,7 @@ class BucketsApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling deleteBucket');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling BucketsApi.deleteBucket, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -224,7 +182,7 @@ class BucketsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -240,20 +198,16 @@ class BucketsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'DELETE',
                 $queryParams,
@@ -275,11 +229,11 @@ class BucketsApi
     /**
      * Operation getBucketDetails
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Bucket
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Bucket
      */
     public function getBucketDetails($bucket_key)
     {
@@ -290,11 +244,11 @@ class BucketsApi
     /**
      * Operation getBucketDetailsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Bucket, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Bucket, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBucketDetailsWithHttpInfo($bucket_key)
     {
@@ -302,7 +256,7 @@ class BucketsApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getBucketDetails');
         }
-        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling BucketsApi.getBucketDetails, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -313,7 +267,7 @@ class BucketsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -329,34 +283,35 @@ class BucketsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Bucket',
+                '\Autodesk\Client\Model\Bucket',
                 '/oss/v2/buckets/{bucketKey}/details'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Bucket', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Bucket', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Bucket', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Bucket', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -368,13 +323,13 @@ class BucketsApi
     /**
      * Operation getBuckets
      *
-     * 
+     *
      *
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
      * @param string $start_at Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Buckets
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\Buckets
      */
     public function getBuckets($region = null, $limit = null, $start_at = null)
     {
@@ -385,13 +340,13 @@ class BucketsApi
     /**
      * Operation getBucketsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
      * @param string $start_at Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Buckets, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\Buckets, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBucketsWithHttpInfo($region = null, $limit = null, $start_at = null)
     {
@@ -402,7 +357,7 @@ class BucketsApi
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
-        if (!is_null($_header_accept)) {
+        if ( ! is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
@@ -422,34 +377,36 @@ class BucketsApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
         // make the API Call
         try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+            list($response, $statusCode, $httpHeader) = $this->callApi(
                 $resourcePath,
                 'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Buckets',
+                '\Autodesk\Client\Model\Buckets',
                 '/oss/v2/buckets'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Buckets', $httpHeader), $statusCode, $httpHeader];
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Buckets',
+                    $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Buckets', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
+                        '\Autodesk\Client\Model\Buckets', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -457,4 +414,6 @@ class BucketsApi
             throw $e;
         }
     }
+
+
 }

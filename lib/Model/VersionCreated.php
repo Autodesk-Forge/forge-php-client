@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * VersionCreated Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,20 +44,20 @@ class VersionCreated implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'version_created';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\Version',
-        'included' => '\Swagger\Client\Model\JsonApiResource[]',
-        'links' => '\Swagger\Client\Model\JsonApiLinksSelf'
+        'jsonapi'  => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data'     => '\Autodesk\Client\Model\Version',
+        'included' => '\Autodesk\Client\Model\JsonApiResource[]',
+        'links'    => '\Autodesk\Client\Model\JsonApiLinksSelf',
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class VersionCreated implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'jsonapi' => 'jsonapi',
-        'data' => 'data',
+        'jsonapi'  => 'jsonapi',
+        'data'     => 'data',
         'included' => 'included',
-        'links' => 'links'
+        'links'    => 'links',
     ];
 
 
@@ -82,10 +82,10 @@ class VersionCreated implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'jsonapi' => 'setJsonapi',
-        'data' => 'setData',
+        'jsonapi'  => 'setJsonapi',
+        'data'     => 'setData',
         'included' => 'setIncluded',
-        'links' => 'setLinks'
+        'links'    => 'setLinks',
     ];
 
 
@@ -94,10 +94,10 @@ class VersionCreated implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'jsonapi' => 'getJsonapi',
-        'data' => 'getData',
+        'jsonapi'  => 'getJsonapi',
+        'data'     => 'getData',
         'included' => 'getIncluded',
-        'links' => 'getLinks'
+        'links'    => 'getLinks',
     ];
 
     public static function attributeMap()
@@ -115,9 +115,6 @@ class VersionCreated implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -176,7 +173,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -185,7 +182,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -197,7 +194,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\Version
+     * @return \Autodesk\Client\Model\Version
      */
     public function getData()
     {
@@ -206,7 +203,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\Version $data
+     * @param \Autodesk\Client\Model\Version $data
      * @return $this
      */
     public function setData($data)
@@ -218,7 +215,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Gets included
-     * @return \Swagger\Client\Model\JsonApiResource[]
+     * @return \Autodesk\Client\Model\JsonApiResource[]
      */
     public function getIncluded()
     {
@@ -227,7 +224,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Sets included
-     * @param \Swagger\Client\Model\JsonApiResource[] $included
+     * @param \Autodesk\Client\Model\JsonApiResource[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -239,7 +236,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Swagger\Client\Model\JsonApiLinksSelf
+     * @return \Autodesk\Client\Model\JsonApiLinksSelf
      */
     public function getLinks()
     {
@@ -248,7 +245,7 @@ class VersionCreated implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Swagger\Client\Model\JsonApiLinksSelf $links
+     * @param \Autodesk\Client\Model\JsonApiLinksSelf $links
      * @return $this
      */
     public function setLinks($links)
@@ -257,6 +254,7 @@ class VersionCreated implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -280,7 +278,7 @@ class VersionCreated implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -309,10 +307,10 @@ class VersionCreated implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

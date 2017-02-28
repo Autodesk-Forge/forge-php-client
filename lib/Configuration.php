@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,19 +26,28 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace Autodesk\Client;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class Configuration
 {
+    /**
+     * Environments list
+     */
+    const ENVIRONMENT_HOSTS = [
+        'dev'   => 'https://developer-dev.api.autodesk.com/',
+        'stage' => 'https://developer-stg.api.autodesk.com/',
+        'prod'  => 'https://developer.api.autodesk.com/',
+    ];
+
     private static $defaultConfiguration = null;
 
     /**
@@ -54,27 +63,6 @@ class Configuration
      * @var string[]
      */
     protected $apiKeyPrefixes = [];
-
-    /**
-     * Access token for OAuth
-     *
-     * @var string
-     */
-    protected $accessToken = '';
-
-    /**
-     * Username for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $username = '';
-
-    /**
-     * Password for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $password = '';
 
     /**
      * The default header(s)
@@ -178,6 +166,21 @@ class Configuration
     protected $proxyPassword;
 
     /**
+     * @var string
+     */
+    protected $clientId;
+
+    /**
+     * @var string
+     */
+    protected $clientSecret;
+
+    /**
+     * @var string
+     */
+    protected $redirectUrl;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -189,7 +192,7 @@ class Configuration
      * Sets API key
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key              API key or token
+     * @param string $key API key or token
      *
      * @return Configuration
      */
@@ -215,7 +218,7 @@ class Configuration
      * Sets the prefix for API key (e.g. Bearer)
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix           API key prefix, e.g. Bearer
+     * @param string $prefix API key prefix, e.g. Bearer
      *
      * @return Configuration
      */
@@ -238,89 +241,20 @@ class Configuration
     }
 
     /**
-     * Sets the access token for OAuth
-     *
-     * @param string $accessToken Token for OAuth
-     *
-     * @return Configuration
-     */
-    public function setAccessToken($accessToken)
-    {
-        $this->accessToken = $accessToken;
-        return $this;
-    }
-
-    /**
-     * Gets the access token for OAuth
-     *
-     * @return string Access token for OAuth
-     */
-    public function getAccessToken()
-    {
-        return $this->accessToken;
-    }
-
-    /**
-     * Sets the username for HTTP basic authentication
-     *
-     * @param string $username Username for HTTP basic authentication
-     *
-     * @return Configuration
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-        return $this;
-    }
-
-    /**
-     * Gets the username for HTTP basic authentication
-     *
-     * @return string Username for HTTP basic authentication
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * Sets the password for HTTP basic authentication
-     *
-     * @param string $password Password for HTTP basic authentication
-     *
-     * @return Configuration
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-        return $this;
-    }
-
-    /**
-     * Gets the password for HTTP basic authentication
-     *
-     * @return string Password for HTTP basic authentication
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
      * Adds a default header
      *
-     * @param string $headerName  header name (e.g. Token)
+     * @param string $headerName header name (e.g. Token)
      * @param string $headerValue header value (e.g. 1z8wp3)
      *
      * @return Configuration
      */
     public function addDefaultHeader($headerName, $headerValue)
     {
-        if (!is_string($headerName)) {
+        if ( ! is_string($headerName)) {
             throw new \InvalidArgumentException('Header name must be a string.');
         }
 
-        $this->defaultHeaders[$headerName] =  $headerValue;
+        $this->defaultHeaders[$headerName] = $headerValue;
         return $this;
     }
 
@@ -339,11 +273,12 @@ class Configuration
      *
      * @param string $headerName the header to delete
      *
-     * @return Configuration
+     * @return self
      */
     public function deleteDefaultHeader($headerName)
     {
         unset($this->defaultHeaders[$headerName]);
+        return $this;
     }
 
     /**
@@ -378,7 +313,7 @@ class Configuration
      */
     public function setUserAgent($userAgent)
     {
-        if (!is_string($userAgent)) {
+        if ( ! is_string($userAgent)) {
             throw new \InvalidArgumentException('User-agent must be a string.');
         }
 
@@ -405,7 +340,7 @@ class Configuration
      */
     public function setCurlTimeout($seconds)
     {
-        if (!is_numeric($seconds) || $seconds < 0) {
+        if ( ! is_numeric($seconds) || $seconds < 0) {
             throw new \InvalidArgumentException('Timeout value must be numeric and a non-negative number.');
         }
 
@@ -432,7 +367,7 @@ class Configuration
      */
     public function setCurlConnectTimeout($seconds)
     {
-        if (!is_numeric($seconds) || $seconds < 0) {
+        if ( ! is_numeric($seconds) || $seconds < 0) {
             throw new \InvalidArgumentException('Connect timeout value must be numeric and a non-negative number.');
         }
 
@@ -456,7 +391,7 @@ class Configuration
      *
      * @param string $proxyHost HTTP Proxy URL
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyHost($proxyHost)
     {
@@ -479,7 +414,7 @@ class Configuration
      *
      * @param integer $proxyPort HTTP Proxy Port
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyPort($proxyPort)
     {
@@ -502,7 +437,7 @@ class Configuration
      *
      * @param integer $proxyType HTTP Proxy Type
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyType($proxyType)
     {
@@ -525,7 +460,7 @@ class Configuration
      *
      * @param string $proxyUser HTTP Proxy User
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyUser($proxyUser)
     {
@@ -548,7 +483,7 @@ class Configuration
      *
      * @param string $proxyPassword HTTP Proxy Password
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyPassword($proxyPassword)
     {
@@ -691,12 +626,85 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Swagger\Client) Debug Report:' . PHP_EOL;
+        $report = 'PHP SDK (Autodesk\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . phpversion() . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 0.1.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
+    }
+
+    /**
+     * @param $name
+     * @return $this
+     * @throws ApiException
+     */
+    public function setEnvironment($name)
+    {
+        if ( ! array_key_exists($name, self::ENVIRONMENT_HOSTS)) {
+            throw new ApiException("Environment with the name of {$name} is not exists");
+        }
+
+        $this->setHost(self::ENVIRONMENT_HOSTS[$name]);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
+     * @param string $clientId
+     * @return $this
+     */
+    public function setClientId($clientId)
+    {
+        $this->clientId = $clientId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientSecret()
+    {
+        return $this->clientSecret;
+    }
+
+    /**
+     * @param string $clientSecret
+     * @return $this
+     */
+    public function setClientSecret($clientSecret)
+    {
+        $this->clientSecret = $clientSecret;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRedirectUrl()
+    {
+        return $this->redirectUrl;
+    }
+
+    /**
+     * @param string $redirectUrl
+     * @return Configuration
+     */
+    public function setRedirectUrl($redirectUrl)
+    {
+        $this->redirectUrl = $redirectUrl;
+
+        return $this;
     }
 }

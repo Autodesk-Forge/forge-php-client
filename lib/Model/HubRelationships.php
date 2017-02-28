@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * HubRelationships Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,17 +44,17 @@ class HubRelationships implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'hub_relationships';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'projects' => '\Swagger\Client\Model\JsonApiRelationshipsLinksInternal'
+        'projects' => '\Autodesk\Client\Model\JsonApiRelationshipsLinksInternal',
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class HubRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'projects' => 'projects'
+        'projects' => 'projects',
     ];
 
 
@@ -76,7 +76,7 @@ class HubRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'projects' => 'setProjects'
+        'projects' => 'setProjects',
     ];
 
 
@@ -85,7 +85,7 @@ class HubRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'projects' => 'getProjects'
+        'projects' => 'getProjects',
     ];
 
     public static function attributeMap()
@@ -103,9 +103,6 @@ class HubRelationships implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -155,7 +152,7 @@ class HubRelationships implements ArrayAccess
 
     /**
      * Gets projects
-     * @return \Swagger\Client\Model\JsonApiRelationshipsLinksInternal
+     * @return \Autodesk\Client\Model\JsonApiRelationshipsLinksInternal
      */
     public function getProjects()
     {
@@ -164,7 +161,7 @@ class HubRelationships implements ArrayAccess
 
     /**
      * Sets projects
-     * @param \Swagger\Client\Model\JsonApiRelationshipsLinksInternal $projects
+     * @param \Autodesk\Client\Model\JsonApiRelationshipsLinksInternal $projects
      * @return $this
      */
     public function setProjects($projects)
@@ -173,6 +170,7 @@ class HubRelationships implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -196,7 +194,7 @@ class HubRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -225,10 +223,10 @@ class HubRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

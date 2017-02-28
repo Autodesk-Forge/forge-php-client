@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateItem Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -44,19 +44,19 @@ class CreateItem implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'create_item';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Swagger\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Swagger\Client\Model\CreateItemData',
-        'included' => '\Swagger\Client\Model\CreateItemIncluded[]'
+        'jsonapi'  => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
+        'data'     => '\Autodesk\Client\Model\CreateItemData',
+        'included' => '\Autodesk\Client\Model\CreateItemIncluded[]',
     ];
 
     public static function swaggerTypes()
@@ -69,9 +69,9 @@ class CreateItem implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'jsonapi' => 'jsonapi',
-        'data' => 'data',
-        'included' => 'included'
+        'jsonapi'  => 'jsonapi',
+        'data'     => 'data',
+        'included' => 'included',
     ];
 
 
@@ -80,9 +80,9 @@ class CreateItem implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'jsonapi' => 'setJsonapi',
-        'data' => 'setData',
-        'included' => 'setIncluded'
+        'jsonapi'  => 'setJsonapi',
+        'data'     => 'setData',
+        'included' => 'setIncluded',
     ];
 
 
@@ -91,9 +91,9 @@ class CreateItem implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'jsonapi' => 'getJsonapi',
-        'data' => 'getData',
-        'included' => 'getIncluded'
+        'jsonapi'  => 'getJsonapi',
+        'data'     => 'getData',
+        'included' => 'getIncluded',
     ];
 
     public static function attributeMap()
@@ -111,9 +111,6 @@ class CreateItem implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -165,7 +162,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Swagger\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -174,7 +171,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Swagger\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -186,7 +183,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\CreateItemData
+     * @return \Autodesk\Client\Model\CreateItemData
      */
     public function getData()
     {
@@ -195,7 +192,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\CreateItemData $data
+     * @param \Autodesk\Client\Model\CreateItemData $data
      * @return $this
      */
     public function setData($data)
@@ -207,7 +204,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Gets included
-     * @return \Swagger\Client\Model\CreateItemIncluded[]
+     * @return \Autodesk\Client\Model\CreateItemIncluded[]
      */
     public function getIncluded()
     {
@@ -216,7 +213,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Sets included
-     * @param \Swagger\Client\Model\CreateItemIncluded[] $included
+     * @param \Autodesk\Client\Model\CreateItemIncluded[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -225,6 +222,7 @@ class CreateItem implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -248,7 +246,7 @@ class CreateItem implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -277,10 +275,10 @@ class CreateItem implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

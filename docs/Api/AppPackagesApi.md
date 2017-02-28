@@ -1,4 +1,4 @@
-# Swagger\Client\AppPackagesApi
+# Autodesk\Client\AppPackagesApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **createAppPackage**
-> \Swagger\Client\Model\AppPackage createAppPackage($app_package)
+> \Autodesk\Client\Model\AppPackage createAppPackage($app_package)
 
 Creates an AppPackage module.
 
@@ -28,10 +28,10 @@ Creates an AppPackage module.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
-$app_package = new \Swagger\Client\Model\AppPackage(); // \Swagger\Client\Model\AppPackage | 
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
+$app_package = new \Autodesk\Client\Model\AppPackage(); // \Autodesk\Client\Model\AppPackage | 
 
 try {
     $result = $api_instance->createAppPackage($app_package);
@@ -46,11 +46,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_package** | [**\Swagger\Client\Model\AppPackage**](../Model/\Swagger\Client\Model\AppPackage.md)|  |
+ **app_package** | [**\Autodesk\Client\Model\AppPackage**](../Model/\Autodesk\Client\Model\AppPackage.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\AppPackage**](../Model/AppPackage.md)
+[**\Autodesk\Client\Model\AppPackage**](../Model/AppPackage.md)
 
 ### Authorization
 
@@ -74,9 +74,9 @@ Removes a specific AppPackage.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -119,9 +119,9 @@ Removes the version history of the specified AppPackage.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -154,7 +154,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllAppPackages**
-> \Swagger\Client\Model\DesignAutomationAppPackages getAllAppPackages()
+> \Autodesk\Client\Model\DesignAutomationAppPackages getAllAppPackages()
 
 Returns the details of all AppPackages.
 
@@ -164,9 +164,9 @@ Returns the details of all AppPackages.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 
 try {
     $result = $api_instance->getAllAppPackages();
@@ -182,7 +182,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\DesignAutomationAppPackages**](../Model/DesignAutomationAppPackages.md)
+[**\Autodesk\Client\Model\DesignAutomationAppPackages**](../Model/DesignAutomationAppPackages.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAppPackage**
-> \Swagger\Client\Model\AppPackage getAppPackage($id)
+> \Autodesk\Client\Model\AppPackage getAppPackage($id)
 
 Returns the details of a specific AppPackage.
 
@@ -206,9 +206,9 @@ Returns the details of a specific AppPackage.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AppPackage**](../Model/AppPackage.md)
+[**\Autodesk\Client\Model\AppPackage**](../Model/AppPackage.md)
 
 ### Authorization
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAppPackageVersions**
-> \Swagger\Client\Model\DesignAutomationAppPackages getAppPackageVersions($id)
+> \Autodesk\Client\Model\DesignAutomationAppPackages getAppPackageVersions($id)
 
 Returns all old versions of a specified AppPackage.
 
@@ -252,9 +252,9 @@ Returns all old versions of a specified AppPackage.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DesignAutomationAppPackages**](../Model/DesignAutomationAppPackages.md)
+[**\Autodesk\Client\Model\DesignAutomationAppPackages**](../Model/DesignAutomationAppPackages.md)
 
 ### Authorization
 
@@ -298,9 +298,9 @@ Requests a pre-signed URL for uploading a zip file that contains the binaries fo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 
 try {
     $api_instance->getUploadUrl();
@@ -339,9 +339,9 @@ Requests a pre-signed URL for uploading a zip file that contains the binaries fo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 $require = true; // bool | 
 
 try {
@@ -384,11 +384,11 @@ Updates an AppPackage by specifying only the changed attributes.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 $id = "id_example"; // string | 
-$app_package = new \Swagger\Client\Model\AppPackageOptional(); // \Swagger\Client\Model\AppPackageOptional | 
+$app_package = new \Autodesk\Client\Model\AppPackageOptional(); // \Autodesk\Client\Model\AppPackageOptional | 
 
 try {
     $api_instance->patchAppPackage($id, $app_package);
@@ -403,7 +403,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **app_package** | [**\Swagger\Client\Model\AppPackageOptional**](../Model/\Swagger\Client\Model\AppPackageOptional.md)|  |
+ **app_package** | [**\Autodesk\Client\Model\AppPackageOptional**](../Model/\Autodesk\Client\Model\AppPackageOptional.md)|  |
 
 ### Return type
 
@@ -431,11 +431,11 @@ Sets the AppPackage to the specified version.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 $id = "id_example"; // string | 
-$app_package_version = new \Swagger\Client\Model\AppPackageVersion(); // \Swagger\Client\Model\AppPackageVersion | 
+$app_package_version = new \Autodesk\Client\Model\AppPackageVersion(); // \Autodesk\Client\Model\AppPackageVersion | 
 
 try {
     $api_instance->setAppPackageVersion($id, $app_package_version);
@@ -450,7 +450,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **app_package_version** | [**\Swagger\Client\Model\AppPackageVersion**](../Model/\Swagger\Client\Model\AppPackageVersion.md)|  |
+ **app_package_version** | [**\Autodesk\Client\Model\AppPackageVersion**](../Model/\Autodesk\Client\Model\AppPackageVersion.md)|  |
 
 ### Return type
 
@@ -478,11 +478,11 @@ Updates an AppPackage by redefining the entire Activity object.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\AppPackagesApi();
+$api_instance = new Autodesk\Client\Api\AppPackagesApi();
 $id = "id_example"; // string | 
-$app_package = new \Swagger\Client\Model\AppPackage(); // \Swagger\Client\Model\AppPackage | 
+$app_package = new \Autodesk\Client\Model\AppPackage(); // \Autodesk\Client\Model\AppPackage | 
 
 try {
     $api_instance->updateAppPackage($id, $app_package);
@@ -497,7 +497,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **app_package** | [**\Swagger\Client\Model\AppPackage**](../Model/\Swagger\Client\Model\AppPackage.md)|  |
+ **app_package** | [**\Autodesk\Client\Model\AppPackage**](../Model/\Autodesk\Client\Model\AppPackage.md)|  |
 
 ### Return type
 

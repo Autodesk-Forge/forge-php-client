@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Autodesk\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Autodesk\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description a link that leads to further details about this particular occurrence of the problem
- * @package     Swagger\Client
+ * @package     Autodesk\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -45,17 +45,17 @@ class JsonApiErrorLinks implements ArrayAccess
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      * @var string
-      */
+     * The original name of the model.
+     * @var string
+     */
     protected static $swaggerModelName = 'json_api_error_links';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     * @var string[]
+     */
     protected static $swaggerTypes = [
-        'about' => '\Swagger\Client\Model\JsonApiLink'
+        'about' => '\Autodesk\Client\Model\JsonApiLink',
     ];
 
     public static function swaggerTypes()
@@ -68,7 +68,7 @@ class JsonApiErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'about' => 'about'
+        'about' => 'about',
     ];
 
 
@@ -77,7 +77,7 @@ class JsonApiErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'about' => 'setAbout'
+        'about' => 'setAbout',
     ];
 
 
@@ -86,7 +86,7 @@ class JsonApiErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'about' => 'getAbout'
+        'about' => 'getAbout',
     ];
 
     public static function attributeMap()
@@ -104,9 +104,6 @@ class JsonApiErrorLinks implements ArrayAccess
         return self::$getters;
     }
 
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -156,7 +153,7 @@ class JsonApiErrorLinks implements ArrayAccess
 
     /**
      * Gets about
-     * @return \Swagger\Client\Model\JsonApiLink
+     * @return \Autodesk\Client\Model\JsonApiLink
      */
     public function getAbout()
     {
@@ -165,7 +162,7 @@ class JsonApiErrorLinks implements ArrayAccess
 
     /**
      * Sets about
-     * @param \Swagger\Client\Model\JsonApiLink $about
+     * @param \Autodesk\Client\Model\JsonApiLink $about
      * @return $this
      */
     public function setAbout($about)
@@ -174,6 +171,7 @@ class JsonApiErrorLinks implements ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -197,7 +195,7 @@ class JsonApiErrorLinks implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $value Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -226,10 +224,10 @@ class JsonApiErrorLinks implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 
