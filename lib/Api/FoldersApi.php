@@ -46,7 +46,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolder
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -62,7 +62,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -110,7 +110,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -137,23 +137,19 @@ class FoldersApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Folder', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Folder', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -165,7 +161,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderContents
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -177,24 +173,16 @@ class FoldersApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\JsonApiCollection
      */
-    public function getFolderContents(
-        $project_id,
-        $folder_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_extension_type = null,
-        $page_number = null,
-        $page_limit = null
-    ) {
-        list($response) = $this->getFolderContentsWithHttpInfo($project_id, $folder_id, $filter_type, $filter_id,
-            $filter_extension_type, $page_number, $page_limit);
+    public function getFolderContents($project_id, $folder_id, $filter_type = null, $filter_id = null, $filter_extension_type = null, $page_number = null, $page_limit = null)
+    {
+        list($response) = $this->getFolderContentsWithHttpInfo($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type, $page_number, $page_limit);
         return $response;
     }
 
     /**
      * Operation getFolderContentsWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -206,15 +194,8 @@ class FoldersApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\JsonApiCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFolderContentsWithHttpInfo(
-        $project_id,
-        $folder_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_extension_type = null,
-        $page_number = null,
-        $page_limit = null
-    ) {
+    public function getFolderContentsWithHttpInfo($project_id, $folder_id, $filter_type = null, $filter_id = null, $filter_extension_type = null, $page_number = null, $page_limit = null)
+    {
         // verify the required parameter 'project_id' is set
         if ($project_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $project_id when calling getFolderContents');
@@ -251,8 +232,7 @@ class FoldersApi extends AbstractApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
-                'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
@@ -284,7 +264,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -304,31 +284,26 @@ class FoldersApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\JsonApiCollection',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\JsonApiCollection', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\JsonApiCollection', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\JsonApiCollection', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -340,7 +315,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderParent
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -356,7 +331,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderParentWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -404,7 +379,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -431,23 +406,19 @@ class FoldersApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Folder', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Folder', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -459,7 +430,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderRefs
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -469,22 +440,16 @@ class FoldersApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\JsonApiCollection
      */
-    public function getFolderRefs(
-        $project_id,
-        $folder_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_extension_type = null
-    ) {
-        list($response) = $this->getFolderRefsWithHttpInfo($project_id, $folder_id, $filter_type, $filter_id,
-            $filter_extension_type);
+    public function getFolderRefs($project_id, $folder_id, $filter_type = null, $filter_id = null, $filter_extension_type = null)
+    {
+        list($response) = $this->getFolderRefsWithHttpInfo($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type);
         return $response;
     }
 
     /**
      * Operation getFolderRefsWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -494,13 +459,8 @@ class FoldersApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\JsonApiCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFolderRefsWithHttpInfo(
-        $project_id,
-        $folder_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_extension_type = null
-    ) {
+    public function getFolderRefsWithHttpInfo($project_id, $folder_id, $filter_type = null, $filter_id = null, $filter_extension_type = null)
+    {
         // verify the required parameter 'project_id' is set
         if ($project_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $project_id when calling getFolderRefs');
@@ -537,8 +497,7 @@ class FoldersApi extends AbstractApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
-                'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
@@ -562,7 +521,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -582,31 +541,26 @@ class FoldersApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\JsonApiCollection',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\JsonApiCollection', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\JsonApiCollection', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\JsonApiCollection', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -618,7 +572,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderRelationshipsRefs
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -630,24 +584,16 @@ class FoldersApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\Refs
      */
-    public function getFolderRelationshipsRefs(
-        $project_id,
-        $folder_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_ref_type = null,
-        $filter_direction = null,
-        $filter_extension_type = null
-    ) {
-        list($response) = $this->getFolderRelationshipsRefsWithHttpInfo($project_id, $folder_id, $filter_type,
-            $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
+    public function getFolderRelationshipsRefs($project_id, $folder_id, $filter_type = null, $filter_id = null, $filter_ref_type = null, $filter_direction = null, $filter_extension_type = null)
+    {
+        list($response) = $this->getFolderRelationshipsRefsWithHttpInfo($project_id, $folder_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
         return $response;
     }
 
     /**
      * Operation getFolderRelationshipsRefsWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -659,15 +605,8 @@ class FoldersApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\Refs, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFolderRelationshipsRefsWithHttpInfo(
-        $project_id,
-        $folder_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_ref_type = null,
-        $filter_direction = null,
-        $filter_extension_type = null
-    ) {
+    public function getFolderRelationshipsRefsWithHttpInfo($project_id, $folder_id, $filter_type = null, $filter_id = null, $filter_ref_type = null, $filter_direction = null, $filter_extension_type = null)
+    {
         // verify the required parameter 'project_id' is set
         if ($project_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $project_id when calling getFolderRelationshipsRefs');
@@ -715,8 +654,7 @@ class FoldersApi extends AbstractApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
-                'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
@@ -740,7 +678,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -767,23 +705,19 @@ class FoldersApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Refs', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Refs', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -795,7 +729,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation postFolderRelationshipsRef
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -812,7 +746,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation postFolderRelationshipsRefWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -893,18 +827,15 @@ class FoldersApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -912,4 +843,5 @@ class FoldersApi extends AbstractApi
             throw $e;
         }
     }
+
 }

@@ -46,7 +46,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation copyTo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -63,7 +63,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation copyToWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -77,7 +77,7 @@ class ObjectsApi extends AbstractApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling copyTo');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.copyTo, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -128,7 +128,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -148,16 +148,14 @@ class ObjectsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -169,7 +167,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation createSignedResource
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -180,15 +178,14 @@ class ObjectsApi extends AbstractApi
      */
     public function createSignedResource($bucket_key, $object_name, $post_buckets_signed, $access = null)
     {
-        list($response) = $this->createSignedResourceWithHttpInfo($bucket_key, $object_name, $post_buckets_signed,
-            $access);
+        list($response) = $this->createSignedResourceWithHttpInfo($bucket_key, $object_name, $post_buckets_signed, $access);
         return $response;
     }
 
     /**
      * Operation createSignedResourceWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -203,7 +200,7 @@ class ObjectsApi extends AbstractApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling createSignedResource');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.createSignedResource, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -275,16 +272,14 @@ class ObjectsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\PostObjectSigned',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\PostObjectSigned', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\PostObjectSigned', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\PostObjectSigned', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -296,7 +291,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation deleteObject
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -312,7 +307,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation deleteObjectWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -325,7 +320,7 @@ class ObjectsApi extends AbstractApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling deleteObject');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.deleteObject, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -364,7 +359,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -395,7 +390,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation deleteSignedResource
      *
-     *
+     * 
      *
      * @param string $id Id of signed resource (required)
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
@@ -411,7 +406,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation deleteSignedResourceWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $id Id of signed resource (required)
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
@@ -451,7 +446,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -482,7 +477,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObject
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -493,23 +488,16 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function getObject(
-        $bucket_key,
-        $object_name,
-        $range = null,
-        $if_none_match = null,
-        $if_modified_since = null,
-        $accept_encoding = null
-    ) {
-        list($response) = $this->getObjectWithHttpInfo($bucket_key, $object_name, $range, $if_none_match,
-            $if_modified_since, $accept_encoding);
+    public function getObject($bucket_key, $object_name, $range = null, $if_none_match = null, $if_modified_since = null, $accept_encoding = null)
+    {
+        list($response) = $this->getObjectWithHttpInfo($bucket_key, $object_name, $range, $if_none_match, $if_modified_since, $accept_encoding);
         return $response;
     }
 
     /**
      * Operation getObjectWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -520,19 +508,13 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getObjectWithHttpInfo(
-        $bucket_key,
-        $object_name,
-        $range = null,
-        $if_none_match = null,
-        $if_modified_since = null,
-        $accept_encoding = null
-    ) {
+    public function getObjectWithHttpInfo($bucket_key, $object_name, $range = null, $if_none_match = null, $if_modified_since = null, $accept_encoding = null)
+    {
         // verify the required parameter 'bucket_key' is set
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getObject');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.getObject, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -540,7 +522,7 @@ class ObjectsApi extends AbstractApi
         if ($object_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $object_name when calling getObject');
         }
-        if ( ! is_null($range) && ! preg_match("/^bytes=[0-9]+\\-[0-9]*$/", $range)) {
+        if ( ! is_null($range) && !preg_match("/^bytes=[0-9]+\\-[0-9]*$/", $range)) {
             throw new \InvalidArgumentException("invalid value for \"range\" when calling ObjectsApi.getObject, must conform to the pattern /^bytes=[0-9]+\\-[0-9]*$/.");
         }
 
@@ -591,7 +573,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -618,8 +600,7 @@ class ObjectsApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject',
-                        $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -631,7 +612,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjectDetails
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -649,7 +630,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjectDetailsWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -664,7 +645,7 @@ class ObjectsApi extends AbstractApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getObjectDetails');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.getObjectDetails, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -711,7 +692,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -731,16 +712,14 @@ class ObjectsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectFullDetails',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectFullDetails', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\ObjectFullDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\ObjectFullDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -752,7 +731,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjects
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
@@ -770,7 +749,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjectsWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
@@ -785,7 +764,7 @@ class ObjectsApi extends AbstractApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getObjects');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.getObjects, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -824,7 +803,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -844,16 +823,14 @@ class ObjectsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\BucketObjects',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\BucketObjects', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BucketObjects', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BucketObjects', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -865,7 +842,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getSignedResource
      *
-     *
+     * 
      *
      * @param string $id Id of signed resource (required)
      * @param string $range A range of bytes to download from the specified object. (optional)
@@ -876,23 +853,16 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function getSignedResource(
-        $id,
-        $range = null,
-        $if_none_match = null,
-        $if_modified_since = null,
-        $accept_encoding = null,
-        $region = null
-    ) {
-        list($response) = $this->getSignedResourceWithHttpInfo($id, $range, $if_none_match, $if_modified_since,
-            $accept_encoding, $region);
+    public function getSignedResource($id, $range = null, $if_none_match = null, $if_modified_since = null, $accept_encoding = null, $region = null)
+    {
+        list($response) = $this->getSignedResourceWithHttpInfo($id, $range, $if_none_match, $if_modified_since, $accept_encoding, $region);
         return $response;
     }
 
     /**
      * Operation getSignedResourceWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $id Id of signed resource (required)
      * @param string $range A range of bytes to download from the specified object. (optional)
@@ -903,19 +873,13 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSignedResourceWithHttpInfo(
-        $id,
-        $range = null,
-        $if_none_match = null,
-        $if_modified_since = null,
-        $accept_encoding = null,
-        $region = null
-    ) {
+    public function getSignedResourceWithHttpInfo($id, $range = null, $if_none_match = null, $if_modified_since = null, $accept_encoding = null, $region = null)
+    {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling getSignedResource');
         }
-        if ( ! is_null($range) && ! preg_match("/^bytes=[0-9]+\\-[0-9]*$/", $range)) {
+        if ( ! is_null($range) && !preg_match("/^bytes=[0-9]+\\-[0-9]*$/", $range)) {
             throw new \InvalidArgumentException("invalid value for \"range\" when calling ObjectsApi.getSignedResource, must conform to the pattern /^bytes=[0-9]+\\-[0-9]*$/.");
         }
 
@@ -962,7 +926,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -989,13 +953,11 @@ class ObjectsApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject',
-                        $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1007,7 +969,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getStatusBySessionId
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1024,7 +986,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getStatusBySessionIdWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1038,7 +1000,7 @@ class ObjectsApi extends AbstractApi
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling getStatusBySessionId');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.getStatusBySessionId, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -1089,7 +1051,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1112,13 +1074,11 @@ class ObjectsApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 416:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1130,7 +1090,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadChunk
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1143,25 +1103,16 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\ObjectDetails
      */
-    public function uploadChunk(
-        $bucket_key,
-        $object_name,
-        $content_length,
-        $content_range,
-        $session_id,
-        $body,
-        $content_disposition = null,
-        $if_match = null
-    ) {
-        list($response) = $this->uploadChunkWithHttpInfo($bucket_key, $object_name, $content_length, $content_range,
-            $session_id, $body, $content_disposition, $if_match);
+    public function uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition = null, $if_match = null)
+    {
+        list($response) = $this->uploadChunkWithHttpInfo($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition, $if_match);
         return $response;
     }
 
     /**
      * Operation uploadChunkWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1174,21 +1125,13 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadChunkWithHttpInfo(
-        $bucket_key,
-        $object_name,
-        $content_length,
-        $content_range,
-        $session_id,
-        $body,
-        $content_disposition = null,
-        $if_match = null
-    ) {
+    public function uploadChunkWithHttpInfo($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition = null, $if_match = null)
+    {
         // verify the required parameter 'bucket_key' is set
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling uploadChunk');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.uploadChunk, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -1204,7 +1147,7 @@ class ObjectsApi extends AbstractApi
         if ($content_range === null) {
             throw new \InvalidArgumentException('Missing the required parameter $content_range when calling uploadChunk');
         }
-        if ( ! preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
+        if (!preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
             throw new \InvalidArgumentException("invalid value for \"content_range\" when calling ObjectsApi.uploadChunk, must conform to the pattern /^bytes [0-9]+\\-[0-9]+/[0-9]+$/.");
         }
 
@@ -1292,31 +1235,26 @@ class ObjectsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Result', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Result', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 416:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1328,7 +1266,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadObject
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1339,23 +1277,16 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\ObjectDetails
      */
-    public function uploadObject(
-        $bucket_key,
-        $object_name,
-        $content_length,
-        $body,
-        $content_disposition = null,
-        $if_match = null
-    ) {
-        list($response) = $this->uploadObjectWithHttpInfo($bucket_key, $object_name, $content_length, $body,
-            $content_disposition, $if_match);
+    public function uploadObject($bucket_key, $object_name, $content_length, $body, $content_disposition = null, $if_match = null)
+    {
+        list($response) = $this->uploadObjectWithHttpInfo($bucket_key, $object_name, $content_length, $body, $content_disposition, $if_match);
         return $response;
     }
 
     /**
      * Operation uploadObjectWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1366,19 +1297,13 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadObjectWithHttpInfo(
-        $bucket_key,
-        $object_name,
-        $content_length,
-        $body,
-        $content_disposition = null,
-        $if_match = null
-    ) {
+    public function uploadObjectWithHttpInfo($bucket_key, $object_name, $content_length, $body, $content_disposition = null, $if_match = null)
+    {
         // verify the required parameter 'bucket_key' is set
         if ($bucket_key === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bucket_key when calling uploadObject');
         }
-        if ( ! preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
+        if (!preg_match("/^[-_.a-z0-9]{3,128}$/", $bucket_key)) {
             throw new \InvalidArgumentException("invalid value for \"bucket_key\" when calling ObjectsApi.uploadObject, must conform to the pattern /^[-_.a-z0-9]{3,128}$/.");
         }
 
@@ -1462,21 +1387,18 @@ class ObjectsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1488,7 +1410,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadSignedResource
      *
-     *
+     * 
      *
      * @param string $id Id of signed resource (required)
      * @param int $content_length Indicates the size of the request body. (required)
@@ -1499,23 +1421,16 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\ObjectDetails
      */
-    public function uploadSignedResource(
-        $id,
-        $content_length,
-        $body,
-        $content_disposition = null,
-        $x_ads_region = null,
-        $if_match = null
-    ) {
-        list($response) = $this->uploadSignedResourceWithHttpInfo($id, $content_length, $body, $content_disposition,
-            $x_ads_region, $if_match);
+    public function uploadSignedResource($id, $content_length, $body, $content_disposition = null, $x_ads_region = null, $if_match = null)
+    {
+        list($response) = $this->uploadSignedResourceWithHttpInfo($id, $content_length, $body, $content_disposition, $x_ads_region, $if_match);
         return $response;
     }
 
     /**
      * Operation uploadSignedResourceWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $id Id of signed resource (required)
      * @param int $content_length Indicates the size of the request body. (required)
@@ -1526,14 +1441,8 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadSignedResourceWithHttpInfo(
-        $id,
-        $content_length,
-        $body,
-        $content_disposition = null,
-        $x_ads_region = null,
-        $if_match = null
-    ) {
+    public function uploadSignedResourceWithHttpInfo($id, $content_length, $body, $content_disposition = null, $x_ads_region = null, $if_match = null)
+    {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling uploadSignedResource');
@@ -1610,21 +1519,18 @@ class ObjectsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1636,7 +1542,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadSignedResourcesChunk
      *
-     *
+     * 
      *
      * @param string $id Id of signed resource (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
@@ -1647,23 +1553,16 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\ObjectDetails
      */
-    public function uploadSignedResourcesChunk(
-        $id,
-        $content_range,
-        $session_id,
-        $body,
-        $content_disposition = null,
-        $x_ads_region = null
-    ) {
-        list($response) = $this->uploadSignedResourcesChunkWithHttpInfo($id, $content_range, $session_id, $body,
-            $content_disposition, $x_ads_region);
+    public function uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition = null, $x_ads_region = null)
+    {
+        list($response) = $this->uploadSignedResourcesChunkWithHttpInfo($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
         return $response;
     }
 
     /**
      * Operation uploadSignedResourcesChunkWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $id Id of signed resource (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
@@ -1674,14 +1573,8 @@ class ObjectsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\ObjectDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadSignedResourcesChunkWithHttpInfo(
-        $id,
-        $content_range,
-        $session_id,
-        $body,
-        $content_disposition = null,
-        $x_ads_region = null
-    ) {
+    public function uploadSignedResourcesChunkWithHttpInfo($id, $content_range, $session_id, $body, $content_disposition = null, $x_ads_region = null)
+    {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling uploadSignedResourcesChunk');
@@ -1690,7 +1583,7 @@ class ObjectsApi extends AbstractApi
         if ($content_range === null) {
             throw new \InvalidArgumentException('Missing the required parameter $content_range when calling uploadSignedResourcesChunk');
         }
-        if ( ! preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
+        if (!preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
             throw new \InvalidArgumentException("invalid value for \"content_range\" when calling ObjectsApi.uploadSignedResourcesChunk, must conform to the pattern /^bytes [0-9]+\\-[0-9]+/[0-9]+$/.");
         }
 
@@ -1766,31 +1659,26 @@ class ObjectsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ObjectDetails', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\ObjectDetails', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Result', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Result', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 416:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Reason', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1798,4 +1686,5 @@ class ObjectsApi extends AbstractApi
             throw $e;
         }
     }
+
 }
