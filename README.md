@@ -23,6 +23,14 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 
 Then run `composer install`
 
+### Manual Installation
+
+Download the files and include `autoload.php`:
+
+```php
+    require_once('/path/to/AutodeskClient/autoload.php');
+```
+
 ## Tests
 
 To run the unit tests:
@@ -74,9 +82,8 @@ try {
     $result = $apiInstance->createActivity($activity);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BucketApi->getBuckets: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ActivitiesApi->createActivity: ', $e->getMessage(), PHP_EOL;
 }
-```
 
 ```
 
