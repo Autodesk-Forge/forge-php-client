@@ -65,27 +65,6 @@ class Configuration
     protected $apiKeyPrefixes = [];
 
     /**
-     * Access token for OAuth
-     *
-     * @var string
-     */
-    protected $accessToken = '';
-
-    /**
-     * Username for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $username = '';
-
-    /**
-     * Password for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $password = '';
-
-    /**
      * The default header(s)
      *
      * @var array
@@ -262,75 +241,6 @@ class Configuration
     }
 
     /**
-     * Sets the access token for OAuth
-     *
-     * @param string $accessToken Token for OAuth
-     *
-     * @return Configuration
-     */
-    public function setAccessToken($accessToken)
-    {
-        $this->accessToken = $accessToken;
-        return $this;
-    }
-
-    /**
-     * Gets the access token for OAuth
-     *
-     * @return string Access token for OAuth
-     */
-    public function getAccessToken()
-    {
-        return $this->accessToken;
-    }
-
-    /**
-     * Sets the username for HTTP basic authentication
-     *
-     * @param string $username Username for HTTP basic authentication
-     *
-     * @return Configuration
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-        return $this;
-    }
-
-    /**
-     * Gets the username for HTTP basic authentication
-     *
-     * @return string Username for HTTP basic authentication
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * Sets the password for HTTP basic authentication
-     *
-     * @param string $password Password for HTTP basic authentication
-     *
-     * @return Configuration
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-        return $this;
-    }
-
-    /**
-     * Gets the password for HTTP basic authentication
-     *
-     * @return string Password for HTTP basic authentication
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
      * Adds a default header
      *
      * @param string $headerName header name (e.g. Token)
@@ -363,11 +273,12 @@ class Configuration
      *
      * @param string $headerName the header to delete
      *
-     * @return Configuration
+     * @return self
      */
     public function deleteDefaultHeader($headerName)
     {
         unset($this->defaultHeaders[$headerName]);
+        return $this;
     }
 
     /**
@@ -480,7 +391,7 @@ class Configuration
      *
      * @param string $proxyHost HTTP Proxy URL
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyHost($proxyHost)
     {
@@ -503,7 +414,7 @@ class Configuration
      *
      * @param integer $proxyPort HTTP Proxy Port
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyPort($proxyPort)
     {
@@ -526,7 +437,7 @@ class Configuration
      *
      * @param integer $proxyType HTTP Proxy Type
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyType($proxyType)
     {
@@ -549,7 +460,7 @@ class Configuration
      *
      * @param string $proxyUser HTTP Proxy User
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyUser($proxyUser)
     {
@@ -572,7 +483,7 @@ class Configuration
      *
      * @param string $proxyPassword HTTP Proxy Password
      *
-     * @return ApiClient
+     * @return self
      */
     public function setCurlProxyPassword($proxyPassword)
     {
