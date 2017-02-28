@@ -9,7 +9,6 @@ use Autodesk\Client\Configuration;
 class OAuth2TwoLegged extends AbstractOAuth2
 {
     /**
-     * TwoLegged constructor.
      * @param Configuration $configuration
      * @param ApiClient $apiClient
      */
@@ -24,25 +23,6 @@ class OAuth2TwoLegged extends AbstractOAuth2
      */
     public function fetchToken()
     {
-        $url = 'authentication/v1/authenticate';
-        $headers = [
-            'Content-Type' => 'application/x-www-form-urlencoded',
-        ];
-
-        $body = [
-            'client_id'     => $this->configuration->getClientId(),
-            'client_secret' => $this->configuration->getClientSecret(),
-            'grant_type'    => 'client_credentials',
-            'scope'         => implode(' ', $this->getScopes()),
-        ];
-
-        list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body,
-            $headers);
-
-        if ( ! isset($response->access_token)) {
-            throw new ApiException('Two legged auth response does not contain access_token');
-        }
-
-        $this->setToken($response->access_token);
+        parent::fetchAccessToken('authentication/v1/authenticate', 'client_credentials');
     }
 }

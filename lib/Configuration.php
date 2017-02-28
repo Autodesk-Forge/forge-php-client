@@ -42,10 +42,10 @@ class Configuration
     /**
      * Environments list
      */
-    const ENVIRONMENTS = [
-        'dev'        => 'https://developer-dev.api.autodesk.com/',
-        'stage'      => 'https://developer-stg.api.autodesk.com/',
-        'production' => 'https://developer.api.autodesk.com/',
+    const ENVIRONMENT_HOSTS = [
+        'dev'   => 'https://developer-dev.api.autodesk.com/',
+        'stage' => 'https://developer-stg.api.autodesk.com/',
+        'prod'  => 'https://developer.api.autodesk.com/',
     ];
 
     private static $defaultConfiguration = null;
@@ -731,11 +731,11 @@ class Configuration
      */
     public function setEnvironment($name)
     {
-        if ( ! array_key_exists($name, self::ENVIRONMENTS)) {
+        if ( ! array_key_exists($name, self::ENVIRONMENT_HOSTS)) {
             throw new ApiException("Environment with the name of {$name} is not exists");
         }
 
-        $this->setHost(self::ENVIRONMENTS[$name]);
+        $this->setHost(self::ENVIRONMENT_HOSTS[$name]);
 
         return $this;
     }

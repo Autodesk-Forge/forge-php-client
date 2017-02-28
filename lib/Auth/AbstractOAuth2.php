@@ -3,6 +3,7 @@
 namespace Autodesk\Client\Auth;
 
 use Autodesk\Client\ApiClient;
+use Autodesk\Client\ApiException;
 use Autodesk\Client\Configuration;
 
 abstract class AbstractOAuth2
@@ -23,12 +24,16 @@ abstract class AbstractOAuth2
     private $token;
 
     /**
+     * @var int
+     */
+    private $expiry;
+
+    /**
      * @var array
      */
     private $scopes = [];
 
     /**
-     * AbstractAuth constructor.
      * @param Configuration $configuration
      * @param ApiClient $apiClient
      */
@@ -85,6 +90,14 @@ abstract class AbstractOAuth2
     }
 
     /**
+     * @return int
+     */
+    public function getExpiry()
+    {
+        return $this->expiry;
+    }
+
+    /**
      * @param array $scopes
      */
     public function setScopes(array $scopes)
@@ -106,5 +119,44 @@ abstract class AbstractOAuth2
     public function getScopes()
     {
         return $this->scopes;
+    }
+
+    /**
+     * Returns application token
+     * @param $url
+     * @param $grantType
+     * @param array $additionalParams
+     * @throws ApiException
+     */
+    protected function fetchAccessToken($url, $grantType, array $additionalParams = [])
+    {
+        $headers = [
+            'Content-Type' => 'application/x-www-form-urlencoded',
+        ];
+
+        $scopes = $this->getScopes();
+
+        if (count($scopes) == 0) {
+            throw new ApiException('Cannot fetch token when no scopes where defined');
+        }
+
+        $body = array_merge([
+            'client_id'     => $this->configuration->getClientId(),
+            'client_secret' => $this->configuration->getClientSecret(),
+            'grant_type'    => $grantType,
+            'scope'         => implode(' ', $scopes),
+        ], $additionalParams);
+
+        list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body,
+            $headers);
+
+        if ( ! isset($response->access_token)) {
+            throw new ApiException('Auth response does not contain access_token');
+        }
+
+        $this->token = $response->access_token;
+        $this->expiry = $response->expires_in;
+
+        return $response;
     }
 }

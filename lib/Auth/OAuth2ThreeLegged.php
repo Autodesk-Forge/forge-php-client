@@ -14,11 +14,6 @@ class OAuth2ThreeLegged extends AbstractOAuth2
     private $refreshToken;
 
     /**
-     * @var int
-     */
-    private $expiry;
-
-    /**
      * @param Configuration $configuration
      * @param ApiClient $apiClient
      */
@@ -50,30 +45,14 @@ class OAuth2ThreeLegged extends AbstractOAuth2
      */
     public function fetchToken($authorizationCode)
     {
-        $url = 'authentication/v1/gettoken';
-        $headers = [
-            'Content-Type' => 'application/x-www-form-urlencoded',
+        $additionalParams = [
+            'code'         => $authorizationCode,
+            'redirect_uri' => $this->configuration->getRedirectUrl(),
         ];
 
-        $body = [
-            'client_id'     => $this->configuration->getClientId(),
-            'client_secret' => $this->configuration->getClientSecret(),
-            'grant_type'    => 'authorization_code',
-            'scope'         => implode(' ', $this->getScopes()),
-            'code'          => $authorizationCode,
-            'redirect_uri'  => $this->configuration->getRedirectUrl(),
-        ];
+        $response = parent::fetchAccessToken('authentication/v1/gettoken', 'authorization_code', $additionalParams);
 
-        list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body,
-            $headers);
-
-        if ( ! isset($response->access_token)) {
-            throw new ApiException('Three legged auth response does not contain access_token');
-        }
-
-        $this->setToken($response->access_token);
         $this->refreshToken = $response->refresh_token;
-        $this->expiry = $response->expires_in;
     }
 
     /**
@@ -82,29 +61,13 @@ class OAuth2ThreeLegged extends AbstractOAuth2
      */
     public function refreshToken($refreshToken)
     {
-        $url = 'authentication/v1/refreshtoken';
-        $headers = [
-            'Content-Type' => 'application/x-www-form-urlencoded',
-        ];
-
-        $body = [
-            'client_id'     => $this->configuration->getClientId(),
-            'client_secret' => $this->configuration->getClientSecret(),
-            'grant_type'    => 'refresh_token',
+        $additionalParams = [
             'refresh_token' => $refreshToken,
-            'scope'         => implode(' ', $this->getScopes()),
         ];
 
-        list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body,
-            $headers);
+        $response = parent::fetchAccessToken('authentication/v1/refreshtoken', 'refresh_token', $additionalParams);
 
-        if ( ! isset($response->access_token)) {
-            throw new ApiException('Three legged auth response does not contain access_token');
-        }
-
-        $this->setToken($response->access_token);
         $this->refreshToken = $response->refresh_token;
-        $this->expiry = $response->expires_in;
     }
 
     /**
@@ -113,13 +76,5 @@ class OAuth2ThreeLegged extends AbstractOAuth2
     public function getRefreshToken()
     {
         return $this->refreshToken;
-    }
-
-    /**
-     * @return int
-     */
-    public function getExpiry()
-    {
-        return $this->expiry;
     }
 }
