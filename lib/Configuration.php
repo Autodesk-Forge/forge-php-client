@@ -43,9 +43,9 @@ class Configuration
      * Environments list
      */
     const ENVIRONMENT_HOSTS = [
-        'dev'   => 'https://developer-dev.api.autodesk.com/',
-        'stage' => 'https://developer-stg.api.autodesk.com/',
-        'prod'  => 'https://developer.api.autodesk.com/',
+        'dev' => 'https://developer-dev.api.autodesk.com',
+        'stg' => 'https://developer-stg.api.autodesk.com',
+        'prod' => 'https://developer.api.autodesk.com',
     ];
 
     private static $defaultConfiguration = null;
@@ -192,7 +192,7 @@ class Configuration
      * Sets API key
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key API key or token
+     * @param string $key              API key or token
      *
      * @return Configuration
      */
@@ -218,7 +218,7 @@ class Configuration
      * Sets the prefix for API key (e.g. Bearer)
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix API key prefix, e.g. Bearer
+     * @param string $prefix           API key prefix, e.g. Bearer
      *
      * @return Configuration
      */
@@ -243,7 +243,7 @@ class Configuration
     /**
      * Adds a default header
      *
-     * @param string $headerName header name (e.g. Token)
+     * @param string $headerName  header name (e.g. Token)
      * @param string $headerValue header value (e.g. 1z8wp3)
      *
      * @return Configuration
