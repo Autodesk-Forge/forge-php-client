@@ -1,5 +1,5 @@
 {
-  "name": "GIT_USER_ID/GIT_REPO_ID",
+  "name": "Forge-SDKs/forge-api-php-client",
   "description": "",
   "keywords": [
     "swagger",
@@ -11,8 +11,8 @@
   "license": "proprietary",
   "authors": [
     {
-      "name": "Swagger and contributors",
-      "homepage": "https://github.com/swagger-api/swagger-codegen"
+      "name": "Forge-SDKs",
+      "homepage": "https://git.autodesk.com/Forge-SDKs/forge-api-php-client"
     }
   ],
   "require": {
