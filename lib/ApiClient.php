@@ -103,31 +103,6 @@ class ApiClient
     }
 
     /**
-     * Get API key (with prefix if set)
-     *
-     * @param  string $apiKeyIdentifier name of apikey
-     *
-     * @return string API key with the prefix
-     */
-    public function getApiKeyWithPrefix($apiKeyIdentifier)
-    {
-        $prefix = $this->config->getApiKeyPrefix($apiKeyIdentifier);
-        $apiKey = $this->config->getApiKey($apiKeyIdentifier);
-
-        if ( ! isset($apiKey)) {
-            return null;
-        }
-
-        if (isset($prefix)) {
-            $keyWithPrefix = $prefix . " " . $apiKey;
-        } else {
-            $keyWithPrefix = $apiKey;
-        }
-
-        return $keyWithPrefix;
-    }
-
-    /**
      * Make the HTTP call (Sync)
      *
      * @param string $resourcePath path to method endpoint
