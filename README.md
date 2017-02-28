@@ -12,7 +12,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.autodesk.com/Developer-Autodesk/forge-api-php-client.git"
+      "url": "https://github.com/Developer-Autodesk/forge-api-php-client.git"
     }
   ],
   "require": {
@@ -169,18 +169,6 @@ if (isset($_GET['code']) && $_GET['code']) {
 } else {
     header('Location: ' . $threeLeggedAuth->createAuthUrl());
 }
-```
-
-### Configurations
-
-Change environment
-
-```php
-<?php
-
-
-Autodesk\Client\Configuration::getDefaultConfiguration()
-    ->setEnvironment('dev'); // Options: 'dev' 'stg' 'prod' 
 ```
 
 
