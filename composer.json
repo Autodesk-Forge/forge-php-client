@@ -1,5 +1,5 @@
 {
-  "name": "Forge-SDKs/forge-api-php-client",
+  "name": "Developer-Autodesk/forge-api-client",
   "description": "",
   "keywords": [
     "swagger",
@@ -7,12 +7,12 @@
     "sdk",
     "api"
   ],
-  "homepage": "http://swagger.io",
-  "license": "proprietary",
+  "homepage": "https://github.com/Developer-Autodesk/forge-api-php-client",
+  "license": "Apache 2.0",
   "authors": [
     {
-      "name": "Forge-SDKs",
-      "homepage": "https://git.autodesk.com/Forge-SDKs/forge-api-php-client"
+      "name": "Developer-Autodesk",
+      "homepage": "https://github.com/Developer-Autodesk/forge-api-php-client"
     }
   ],
   "require": {
