@@ -54,10 +54,13 @@ class CreateItemDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'tip'    => '\Autodesk\Client\Model\CreateItemDataRelationshipsTip',
+        'tip' => '\Autodesk\Client\Model\CreateItemDataRelationshipsTip',
         'parent' => '\Autodesk\Client\Model\CreateStorageDataRelationshipsTarget',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -68,7 +71,7 @@ class CreateItemDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'tip'    => 'tip',
+        'tip' => 'tip',
         'parent' => 'parent',
     ];
 
@@ -78,7 +81,7 @@ class CreateItemDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'tip'    => 'setTip',
+        'tip' => 'setTip',
         'parent' => 'setParent',
     ];
 
@@ -88,7 +91,7 @@ class CreateItemDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'tip'    => 'getTip',
+        'tip' => 'getTip',
         'parent' => 'getParent',
     ];
 
@@ -107,6 +110,9 @@ class CreateItemDataRelationships implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -190,7 +196,6 @@ class CreateItemDataRelationships implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -214,7 +219,7 @@ class CreateItemDataRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

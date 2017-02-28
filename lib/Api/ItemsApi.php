@@ -46,7 +46,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItem
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -62,7 +62,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItemWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -110,7 +110,7 @@ class ItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -137,23 +137,19 @@ class ItemsApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Item', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Item', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -165,7 +161,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItemParentFolder
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -181,7 +177,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItemParentFolderWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -229,7 +225,7 @@ class ItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -256,23 +252,19 @@ class ItemsApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Folder', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Folder', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -284,7 +276,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItemRefs
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -294,22 +286,16 @@ class ItemsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\JsonApiCollection
      */
-    public function getItemRefs(
-        $project_id,
-        $item_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_extension_type = null
-    ) {
-        list($response) = $this->getItemRefsWithHttpInfo($project_id, $item_id, $filter_type, $filter_id,
-            $filter_extension_type);
+    public function getItemRefs($project_id, $item_id, $filter_type = null, $filter_id = null, $filter_extension_type = null)
+    {
+        list($response) = $this->getItemRefsWithHttpInfo($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type);
         return $response;
     }
 
     /**
      * Operation getItemRefsWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -319,13 +305,8 @@ class ItemsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\JsonApiCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getItemRefsWithHttpInfo(
-        $project_id,
-        $item_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_extension_type = null
-    ) {
+    public function getItemRefsWithHttpInfo($project_id, $item_id, $filter_type = null, $filter_id = null, $filter_extension_type = null)
+    {
         // verify the required parameter 'project_id' is set
         if ($project_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $project_id when calling getItemRefs');
@@ -362,8 +343,7 @@ class ItemsApi extends AbstractApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
-                'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
@@ -387,7 +367,7 @@ class ItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -407,31 +387,26 @@ class ItemsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\JsonApiCollection',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\JsonApiCollection', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\JsonApiCollection', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\JsonApiCollection', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -443,7 +418,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItemRelationshipsRefs
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -455,24 +430,16 @@ class ItemsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\Refs
      */
-    public function getItemRelationshipsRefs(
-        $project_id,
-        $item_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_ref_type = null,
-        $filter_direction = null,
-        $filter_extension_type = null
-    ) {
-        list($response) = $this->getItemRelationshipsRefsWithHttpInfo($project_id, $item_id, $filter_type, $filter_id,
-            $filter_ref_type, $filter_direction, $filter_extension_type);
+    public function getItemRelationshipsRefs($project_id, $item_id, $filter_type = null, $filter_id = null, $filter_ref_type = null, $filter_direction = null, $filter_extension_type = null)
+    {
+        list($response) = $this->getItemRelationshipsRefsWithHttpInfo($project_id, $item_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
         return $response;
     }
 
     /**
      * Operation getItemRelationshipsRefsWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -484,15 +451,8 @@ class ItemsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\Refs, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getItemRelationshipsRefsWithHttpInfo(
-        $project_id,
-        $item_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_ref_type = null,
-        $filter_direction = null,
-        $filter_extension_type = null
-    ) {
+    public function getItemRelationshipsRefsWithHttpInfo($project_id, $item_id, $filter_type = null, $filter_id = null, $filter_ref_type = null, $filter_direction = null, $filter_extension_type = null)
+    {
         // verify the required parameter 'project_id' is set
         if ($project_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $project_id when calling getItemRelationshipsRefs');
@@ -540,8 +500,7 @@ class ItemsApi extends AbstractApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
-                'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
@@ -565,7 +524,7 @@ class ItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -592,23 +551,19 @@ class ItemsApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Refs', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Refs', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -620,7 +575,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItemTip
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -636,7 +591,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItemTipWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -684,7 +639,7 @@ class ItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -704,31 +659,26 @@ class ItemsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Version',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Version', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Version', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Version', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -740,7 +690,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation getItemVersions
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -753,25 +703,16 @@ class ItemsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return \Autodesk\Client\Model\Versions
      */
-    public function getItemVersions(
-        $project_id,
-        $item_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_extension_type = null,
-        $filter_version_number = null,
-        $page_number = null,
-        $page_limit = null
-    ) {
-        list($response) = $this->getItemVersionsWithHttpInfo($project_id, $item_id, $filter_type, $filter_id,
-            $filter_extension_type, $filter_version_number, $page_number, $page_limit);
+    public function getItemVersions($project_id, $item_id, $filter_type = null, $filter_id = null, $filter_extension_type = null, $filter_version_number = null, $page_number = null, $page_limit = null)
+    {
+        list($response) = $this->getItemVersionsWithHttpInfo($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type, $filter_version_number, $page_number, $page_limit);
         return $response;
     }
 
     /**
      * Operation getItemVersionsWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -784,16 +725,8 @@ class ItemsApi extends AbstractApi
      * @throws \Autodesk\Client\ApiException on non-2xx response
      * @return array of \Autodesk\Client\Model\Versions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getItemVersionsWithHttpInfo(
-        $project_id,
-        $item_id,
-        $filter_type = null,
-        $filter_id = null,
-        $filter_extension_type = null,
-        $filter_version_number = null,
-        $page_number = null,
-        $page_limit = null
-    ) {
+    public function getItemVersionsWithHttpInfo($project_id, $item_id, $filter_type = null, $filter_id = null, $filter_extension_type = null, $filter_version_number = null, $page_number = null, $page_limit = null)
+    {
         // verify the required parameter 'project_id' is set
         if ($project_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $project_id when calling getItemVersions');
@@ -830,16 +763,14 @@ class ItemsApi extends AbstractApi
         }
         // query params
         if (is_array($filter_extension_type)) {
-            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type,
-                'csv', true);
+            $filter_extension_type = $this->apiClient->getSerializer()->serializeCollection($filter_extension_type, 'csv', true);
         }
         if ($filter_extension_type !== null) {
             $queryParams['filter[extension.type]'] = $this->apiClient->getSerializer()->toQueryValue($filter_extension_type);
         }
         // query params
         if (is_array($filter_version_number)) {
-            $filter_version_number = $this->apiClient->getSerializer()->serializeCollection($filter_version_number,
-                'csv', true);
+            $filter_version_number = $this->apiClient->getSerializer()->serializeCollection($filter_version_number, 'csv', true);
         }
         if ($filter_version_number !== null) {
             $queryParams['filter[versionNumber]'] = $this->apiClient->getSerializer()->toQueryValue($filter_version_number);
@@ -871,7 +802,7 @@ class ItemsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -891,31 +822,26 @@ class ItemsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Versions',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Versions', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Versions', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Versions', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -927,7 +853,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation postItem
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param \Autodesk\Client\Model\CreateItem $body describe the item to be created (required)
@@ -943,7 +869,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation postItemWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param \Autodesk\Client\Model\CreateItem $body describe the item to be created (required)
@@ -1008,36 +934,30 @@ class ItemsApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ItemCreated',
-                    $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\ItemCreated', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\ItemCreated', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\ItemCreated', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Conflict', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Conflict', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1049,7 +969,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation postItemRelationshipsRef
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -1066,7 +986,7 @@ class ItemsApi extends AbstractApi
     /**
      * Operation postItemRelationshipsRefWithHttpInfo
      *
-     *
+     * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $item_id the &#x60;item id&#x60; (required)
@@ -1147,18 +1067,15 @@ class ItemsApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1166,4 +1083,5 @@ class ItemsApi extends AbstractApi
             throw $e;
         }
     }
+
 }

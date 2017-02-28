@@ -55,10 +55,13 @@ class CreateRefData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'id'   => 'string',
+        'id' => 'string',
         'meta' => '\Autodesk\Client\Model\CreateRefDataMeta',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -70,7 +73,7 @@ class CreateRefData implements ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'id'   => 'id',
+        'id' => 'id',
         'meta' => 'meta',
     ];
 
@@ -81,7 +84,7 @@ class CreateRefData implements ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
-        'id'   => 'setId',
+        'id' => 'setId',
         'meta' => 'setMeta',
     ];
 
@@ -92,7 +95,7 @@ class CreateRefData implements ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
-        'id'   => 'getId',
+        'id' => 'getId',
         'meta' => 'getMeta',
     ];
 
@@ -114,8 +117,9 @@ class CreateRefData implements ArrayAccess
     const TYPE_FOLDERS = 'folders';
     const TYPE_ITEMS = 'items';
     const TYPE_VERSIONS = 'versions';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -128,7 +132,7 @@ class CreateRefData implements ArrayAccess
             self::TYPE_VERSIONS,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -160,7 +164,7 @@ class CreateRefData implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["folders", "items", "versions"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'folders', 'items', 'versions'.";
         }
 
@@ -183,7 +187,7 @@ class CreateRefData implements ArrayAccess
             return false;
         }
         $allowed_values = ["folders", "items", "versions"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         if ($this->container['id'] === null) {
@@ -209,8 +213,8 @@ class CreateRefData implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = ['folders', 'items', 'versions'];
-        if (( ! in_array($type, $allowed_values))) {
+        $allowed_values = array('folders', 'items', 'versions');
+        if ((!in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'folders', 'items', 'versions'");
         }
         $this->container['type'] = $type;
@@ -259,7 +263,6 @@ class CreateRefData implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -283,7 +286,7 @@ class CreateRefData implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

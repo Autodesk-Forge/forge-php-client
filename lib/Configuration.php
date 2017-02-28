@@ -40,29 +40,9 @@ namespace Autodesk\Client;
 class Configuration
 {
     /**
-     * Environments list
+     * @var Configuration|null
      */
-    const ENVIRONMENT_HOSTS = [
-        'dev'   => 'https://developer-dev.api.autodesk.com/',
-        'stage' => 'https://developer-stg.api.autodesk.com/',
-        'prod'  => 'https://developer.api.autodesk.com/',
-    ];
-
     private static $defaultConfiguration = null;
-
-    /**
-     * Associate array to store API key(s)
-     *
-     * @var string[]
-     */
-    protected $apiKeys = [];
-
-    /**
-     * Associate array to store API prefix (e.g. Bearer)
-     *
-     * @var string[]
-     */
-    protected $apiKeyPrefixes = [];
 
     /**
      * The default header(s)
@@ -189,61 +169,9 @@ class Configuration
     }
 
     /**
-     * Sets API key
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key API key or token
-     *
-     * @return Configuration
-     */
-    public function setApiKey($apiKeyIdentifier, $key)
-    {
-        $this->apiKeys[$apiKeyIdentifier] = $key;
-        return $this;
-    }
-
-    /**
-     * Gets API key
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return string API key or token
-     */
-    public function getApiKey($apiKeyIdentifier)
-    {
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
-    }
-
-    /**
-     * Sets the prefix for API key (e.g. Bearer)
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix API key prefix, e.g. Bearer
-     *
-     * @return Configuration
-     */
-    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
-    {
-        $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
-        return $this;
-    }
-
-    /**
-     * Gets API key prefix
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return string
-     */
-    public function getApiKeyPrefix($apiKeyIdentifier)
-    {
-        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
-    }
-
-    /**
      * Adds a default header
      *
-     * @param string $headerName header name (e.g. Token)
+     * @param string $headerName  header name (e.g. Token)
      * @param string $headerValue header value (e.g. 1z8wp3)
      *
      * @return Configuration
@@ -633,22 +561,6 @@ class Configuration
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
-    }
-
-    /**
-     * @param $name
-     * @return $this
-     * @throws ApiException
-     */
-    public function setEnvironment($name)
-    {
-        if ( ! array_key_exists($name, self::ENVIRONMENT_HOSTS)) {
-            throw new ApiException("Environment with the name of {$name} is not exists");
-        }
-
-        $this->setHost(self::ENVIRONMENT_HOSTS[$name]);
-
-        return $this;
     }
 
     /**

@@ -55,9 +55,12 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'id'   => 'string',
+        'id' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,7 +72,7 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'id'   => 'id',
+        'id' => 'id',
     ];
 
 
@@ -79,7 +82,7 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
-        'id'   => 'setId',
+        'id' => 'setId',
     ];
 
 
@@ -89,7 +92,7 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
-        'id'   => 'getId',
+        'id' => 'getId',
     ];
 
     public static function attributeMap()
@@ -108,8 +111,9 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
     }
 
     const TYPE_ITEMS = 'items';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -120,7 +124,7 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
             self::TYPE_ITEMS,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -151,7 +155,7 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
             $invalid_properties[] = "'type' can't be null";
         }
         $allowed_values = ["items"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'type', must be one of 'items'.";
         }
 
@@ -174,7 +178,7 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
             return false;
         }
         $allowed_values = ["items"];
-        if ( ! in_array($this->container['type'], $allowed_values)) {
+        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         if ($this->container['id'] === null) {
@@ -200,8 +204,8 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = ['items'];
-        if (( ! in_array($type, $allowed_values))) {
+        $allowed_values = array('items');
+        if ((!in_array($type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'items'");
         }
         $this->container['type'] = $type;
@@ -229,7 +233,6 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -253,7 +256,7 @@ class CreateVersionDataRelationshipsItemData implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

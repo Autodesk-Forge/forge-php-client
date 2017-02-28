@@ -56,10 +56,13 @@ class MetadataObject implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'objectid' => 'int',
-        'name'     => 'string',
-        'objects'  => '\Autodesk\Client\Model\MetadataObject[]',
+        'name' => 'string',
+        'objects' => '\Autodesk\Client\Model\MetadataObject[]',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -71,8 +74,8 @@ class MetadataObject implements ArrayAccess
      */
     protected static $attributeMap = [
         'objectid' => 'objectid',
-        'name'     => 'name',
-        'objects'  => 'objects',
+        'name' => 'name',
+        'objects' => 'objects',
     ];
 
 
@@ -82,8 +85,8 @@ class MetadataObject implements ArrayAccess
      */
     protected static $setters = [
         'objectid' => 'setObjectid',
-        'name'     => 'setName',
-        'objects'  => 'setObjects',
+        'name' => 'setName',
+        'objects' => 'setObjects',
     ];
 
 
@@ -93,8 +96,8 @@ class MetadataObject implements ArrayAccess
      */
     protected static $getters = [
         'objectid' => 'getObjectid',
-        'name'     => 'getName',
-        'objects'  => 'getObjects',
+        'name' => 'getName',
+        'objects' => 'getObjects',
     ];
 
     public static function attributeMap()
@@ -112,6 +115,9 @@ class MetadataObject implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -229,7 +235,6 @@ class MetadataObject implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -253,7 +258,7 @@ class MetadataObject implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

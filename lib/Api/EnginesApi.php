@@ -82,7 +82,7 @@ class EnginesApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -102,16 +102,14 @@ class EnginesApi extends AbstractApi
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response,
-                    '\Autodesk\Client\Model\DesignAutomationEngines', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\DesignAutomationEngines', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\DesignAutomationEngines', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\DesignAutomationEngines', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -173,7 +171,7 @@ class EnginesApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-
+        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -200,8 +198,7 @@ class EnginesApi extends AbstractApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(),
-                        '\Autodesk\Client\Model\Engine', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Engine', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -209,4 +206,5 @@ class EnginesApi extends AbstractApi
             throw $e;
         }
     }
+
 }

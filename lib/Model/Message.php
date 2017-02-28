@@ -55,11 +55,14 @@ class Message implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'type'    => 'string',
-        'code'    => 'string',
+        'type' => 'string',
+        'code' => 'string',
         'message' => 'string[]',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -70,8 +73,8 @@ class Message implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type'    => 'type',
-        'code'    => 'code',
+        'type' => 'type',
+        'code' => 'code',
         'message' => 'message',
     ];
 
@@ -81,8 +84,8 @@ class Message implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type'    => 'setType',
-        'code'    => 'setCode',
+        'type' => 'setType',
+        'code' => 'setCode',
         'message' => 'setMessage',
     ];
 
@@ -92,8 +95,8 @@ class Message implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type'    => 'getType',
-        'code'    => 'getCode',
+        'type' => 'getType',
+        'code' => 'getCode',
         'message' => 'getMessage',
     ];
 
@@ -112,6 +115,9 @@ class Message implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -235,7 +241,6 @@ class Message implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -259,7 +264,7 @@ class Message implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

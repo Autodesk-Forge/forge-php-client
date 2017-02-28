@@ -56,11 +56,14 @@ class JsonApiLinksPaging implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'first' => '\Autodesk\Client\Model\JsonApiLink',
-        'prev'  => '\Autodesk\Client\Model\JsonApiLink',
-        'next'  => '\Autodesk\Client\Model\JsonApiLink',
-        'last'  => '\Autodesk\Client\Model\JsonApiLink',
+        'prev' => '\Autodesk\Client\Model\JsonApiLink',
+        'next' => '\Autodesk\Client\Model\JsonApiLink',
+        'last' => '\Autodesk\Client\Model\JsonApiLink',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -72,9 +75,9 @@ class JsonApiLinksPaging implements ArrayAccess
      */
     protected static $attributeMap = [
         'first' => 'first',
-        'prev'  => 'prev',
-        'next'  => 'next',
-        'last'  => 'last',
+        'prev' => 'prev',
+        'next' => 'next',
+        'last' => 'last',
     ];
 
 
@@ -84,9 +87,9 @@ class JsonApiLinksPaging implements ArrayAccess
      */
     protected static $setters = [
         'first' => 'setFirst',
-        'prev'  => 'setPrev',
-        'next'  => 'setNext',
-        'last'  => 'setLast',
+        'prev' => 'setPrev',
+        'next' => 'setNext',
+        'last' => 'setLast',
     ];
 
 
@@ -96,9 +99,9 @@ class JsonApiLinksPaging implements ArrayAccess
      */
     protected static $getters = [
         'first' => 'getFirst',
-        'prev'  => 'getPrev',
-        'next'  => 'getNext',
-        'last'  => 'getLast',
+        'prev' => 'getPrev',
+        'next' => 'getNext',
+        'last' => 'getLast',
     ];
 
     public static function attributeMap()
@@ -116,6 +119,9 @@ class JsonApiLinksPaging implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -243,7 +249,6 @@ class JsonApiLinksPaging implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -267,7 +272,7 @@ class JsonApiLinksPaging implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

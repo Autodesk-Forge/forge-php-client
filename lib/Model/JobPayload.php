@@ -54,10 +54,13 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'input'  => '\Autodesk\Client\Model\JobPayloadInput',
+        'input' => '\Autodesk\Client\Model\JobPayloadInput',
         'output' => '\Autodesk\Client\Model\JobPayloadOutput',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -68,7 +71,7 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'input'  => 'input',
+        'input' => 'input',
         'output' => 'output',
     ];
 
@@ -78,7 +81,7 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'input'  => 'setInput',
+        'input' => 'setInput',
         'output' => 'setOutput',
     ];
 
@@ -88,7 +91,7 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'input'  => 'getInput',
+        'input' => 'getInput',
         'output' => 'getOutput',
     ];
 
@@ -107,6 +110,9 @@ class JobPayload implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -190,7 +196,6 @@ class JobPayload implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -214,7 +219,7 @@ class JobPayload implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

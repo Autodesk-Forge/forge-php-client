@@ -58,6 +58,9 @@ class JobPayloadOutput implements ArrayAccess
         'formats' => '\Autodesk\Client\Model\JobPayloadItem[]',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -104,6 +107,9 @@ class JobPayloadOutput implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -171,7 +177,6 @@ class JobPayloadOutput implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -195,7 +200,7 @@ class JobPayloadOutput implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

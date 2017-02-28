@@ -173,10 +173,10 @@ class ObjectSerializer
     /**
      * Serialize an array to a string.
      *
-     * @param array $collection collection to serialize to a string
-     * @param string $collectionFormat the format use for serialization (csv,
+     * @param array  $collection                 collection to serialize to a string
+     * @param string $collectionFormat           the format use for serialization (csv,
      * ssv, tsv, pipes, multi)
-     * @param bool $allowCollectionFormatMulti allow collection format to be a multidimensional array
+     * @param bool   $allowCollectionFormatMulti allow collection format to be a multidimensional array
      *
      * @return string
      */
@@ -207,10 +207,10 @@ class ObjectSerializer
     /**
      * Deserialize a JSON string into an object
      *
-     * @param mixed $data object or primitive to be deserialized
-     * @param string $class class name is passed as a string
-     * @param string[] $httpHeaders HTTP headers
-     * @param string $discriminator discriminator if polymorphism is used
+     * @param mixed    $data          object or primitive to be deserialized
+     * @param string   $class         class name is passed as a string
+     * @param string[] $httpHeaders   HTTP headers
+     * @param string   $discriminator discriminator if polymorphism is used
      *
      * @return object|array|null an single or an array of $class instances
      */
@@ -251,28 +251,13 @@ class ObjectSerializer
             } else {
                 return null;
             }
-        } elseif (in_array($class, [
-            'DateTime',
-            'bool',
-            'boolean',
-            'byte',
-            'double',
-            'float',
-            'int',
-            'integer',
-            'mixed',
-            'number',
-            'object',
-            'string',
-            'void',
-        ], true)) {
+        } elseif (in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
             settype($data, $class);
             return $data;
         } elseif ($class === '\SplFileObject') {
             // determine file name
             if (array_key_exists('Content-Disposition', $httpHeaders) &&
-                preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)
-            ) {
+                preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)) {
                 $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . sanitizeFilename($match[1]);
             } else {
                 $filename = tempnam(Configuration::getDefaultConfiguration()->getTempFolderPath(), '');
@@ -280,8 +265,7 @@ class ObjectSerializer
             $deserialized = new \SplFileObject($filename, "w");
             $byte_written = $deserialized->fwrite($data);
             if (Configuration::getDefaultConfiguration()->getDebug()) {
-                error_log("[DEBUG] Written $byte_written byte to $filename. Please move the file to a proper folder or delete the temp file after processing." . PHP_EOL,
-                    3, Configuration::getDefaultConfiguration()->getDebugFile());
+                error_log("[DEBUG] Written $byte_written byte to $filename. Please move the file to a proper folder or delete the temp file after processing.".PHP_EOL, 3, Configuration::getDefaultConfiguration()->getDebugFile());
             }
 
             return $deserialized;

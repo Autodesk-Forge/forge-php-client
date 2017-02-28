@@ -55,9 +55,11 @@ class JsonApiRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -68,7 +70,6 @@ class JsonApiRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-
     ];
 
 
@@ -77,7 +78,6 @@ class JsonApiRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-
     ];
 
 
@@ -86,7 +86,6 @@ class JsonApiRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-
     ];
 
     public static function attributeMap()
@@ -104,6 +103,9 @@ class JsonApiRelationships implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -166,7 +168,7 @@ class JsonApiRelationships implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

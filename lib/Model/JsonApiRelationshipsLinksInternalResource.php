@@ -55,9 +55,12 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'links' => '\Autodesk\Client\Model\JsonApiLinksRelated',
-        'data'  => '\Autodesk\Client\Model\JsonApiTypeId',
+        'data' => '\Autodesk\Client\Model\JsonApiTypeId',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,7 +72,7 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
      */
     protected static $attributeMap = [
         'links' => 'links',
-        'data'  => 'data',
+        'data' => 'data',
     ];
 
 
@@ -79,7 +82,7 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
      */
     protected static $setters = [
         'links' => 'setLinks',
-        'data'  => 'setData',
+        'data' => 'setData',
     ];
 
 
@@ -89,7 +92,7 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
      */
     protected static $getters = [
         'links' => 'getLinks',
-        'data'  => 'getData',
+        'data' => 'getData',
     ];
 
     public static function attributeMap()
@@ -107,6 +110,9 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -202,7 +208,6 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -226,7 +231,7 @@ class JsonApiRelationshipsLinksInternalResource implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

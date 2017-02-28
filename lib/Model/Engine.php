@@ -54,14 +54,17 @@ class Engine implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'id'          => 'string',
-        'resource'    => 'string',
-        'is_public'   => 'bool',
-        'version'     => 'int',
-        'timestamp'   => 'string',
+        'id' => 'string',
+        'resource' => 'string',
+        'is_public' => 'bool',
+        'version' => 'int',
+        'timestamp' => 'string',
         'description' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -72,11 +75,11 @@ class Engine implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id'          => 'Id',
-        'resource'    => 'Resource',
-        'is_public'   => 'IsPublic',
-        'version'     => 'Version',
-        'timestamp'   => 'Timestamp',
+        'id' => 'Id',
+        'resource' => 'Resource',
+        'is_public' => 'IsPublic',
+        'version' => 'Version',
+        'timestamp' => 'Timestamp',
         'description' => 'Description',
     ];
 
@@ -86,11 +89,11 @@ class Engine implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id'          => 'setId',
-        'resource'    => 'setResource',
-        'is_public'   => 'setIsPublic',
-        'version'     => 'setVersion',
-        'timestamp'   => 'setTimestamp',
+        'id' => 'setId',
+        'resource' => 'setResource',
+        'is_public' => 'setIsPublic',
+        'version' => 'setVersion',
+        'timestamp' => 'setTimestamp',
         'description' => 'setDescription',
     ];
 
@@ -100,11 +103,11 @@ class Engine implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id'          => 'getId',
-        'resource'    => 'getResource',
-        'is_public'   => 'getIsPublic',
-        'version'     => 'getVersion',
-        'timestamp'   => 'getTimestamp',
+        'id' => 'getId',
+        'resource' => 'getResource',
+        'is_public' => 'getIsPublic',
+        'version' => 'getVersion',
+        'timestamp' => 'getTimestamp',
         'description' => 'getDescription',
     ];
 
@@ -123,6 +126,9 @@ class Engine implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -294,7 +300,6 @@ class Engine implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -318,7 +323,7 @@ class Engine implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

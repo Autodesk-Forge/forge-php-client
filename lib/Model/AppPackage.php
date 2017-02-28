@@ -54,16 +54,19 @@ class AppPackage implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'id'                      => 'string',
-        'resource'                => 'string',
-        'references'              => 'string[]',
+        'id' => 'string',
+        'resource' => 'string',
+        'references' => 'string[]',
         'required_engine_version' => 'string',
-        'version'                 => 'int',
-        'description'             => 'string',
-        'is_public'               => 'bool',
-        'is_object_enabler'       => 'bool',
+        'version' => 'int',
+        'description' => 'string',
+        'is_public' => 'bool',
+        'is_object_enabler' => 'bool',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -74,14 +77,14 @@ class AppPackage implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id'                      => 'Id',
-        'resource'                => 'Resource',
-        'references'              => 'References',
+        'id' => 'Id',
+        'resource' => 'Resource',
+        'references' => 'References',
         'required_engine_version' => 'RequiredEngineVersion',
-        'version'                 => 'Version',
-        'description'             => 'Description',
-        'is_public'               => 'IsPublic',
-        'is_object_enabler'       => 'IsObjectEnabler',
+        'version' => 'Version',
+        'description' => 'Description',
+        'is_public' => 'IsPublic',
+        'is_object_enabler' => 'IsObjectEnabler',
     ];
 
 
@@ -90,14 +93,14 @@ class AppPackage implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id'                      => 'setId',
-        'resource'                => 'setResource',
-        'references'              => 'setReferences',
+        'id' => 'setId',
+        'resource' => 'setResource',
+        'references' => 'setReferences',
         'required_engine_version' => 'setRequiredEngineVersion',
-        'version'                 => 'setVersion',
-        'description'             => 'setDescription',
-        'is_public'               => 'setIsPublic',
-        'is_object_enabler'       => 'setIsObjectEnabler',
+        'version' => 'setVersion',
+        'description' => 'setDescription',
+        'is_public' => 'setIsPublic',
+        'is_object_enabler' => 'setIsObjectEnabler',
     ];
 
 
@@ -106,14 +109,14 @@ class AppPackage implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id'                      => 'getId',
-        'resource'                => 'getResource',
-        'references'              => 'getReferences',
+        'id' => 'getId',
+        'resource' => 'getResource',
+        'references' => 'getReferences',
         'required_engine_version' => 'getRequiredEngineVersion',
-        'version'                 => 'getVersion',
-        'description'             => 'getDescription',
-        'is_public'               => 'getIsPublic',
-        'is_object_enabler'       => 'getIsObjectEnabler',
+        'version' => 'getVersion',
+        'description' => 'getDescription',
+        'is_public' => 'getIsPublic',
+        'is_object_enabler' => 'getIsObjectEnabler',
     ];
 
     public static function attributeMap()
@@ -131,6 +134,9 @@ class AppPackage implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -376,7 +382,6 @@ class AppPackage implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -400,7 +405,7 @@ class AppPackage implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

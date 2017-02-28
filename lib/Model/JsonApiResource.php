@@ -54,14 +54,17 @@ class JsonApiResource implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'id'            => 'string',
-        'type'          => 'string',
-        'attributes'    => '\Autodesk\Client\Model\JsonApiAttributes',
-        'meta'          => '\Autodesk\Client\Model\JsonApiMeta',
+        'id' => 'string',
+        'type' => 'string',
+        'attributes' => '\Autodesk\Client\Model\JsonApiAttributes',
+        'meta' => '\Autodesk\Client\Model\JsonApiMeta',
         'relationships' => '\Autodesk\Client\Model\JsonApiRelationships',
-        'links'         => '\Autodesk\Client\Model\JsonApiLinks',
+        'links' => '\Autodesk\Client\Model\JsonApiLinks',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -72,12 +75,12 @@ class JsonApiResource implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id'            => 'id',
-        'type'          => 'type',
-        'attributes'    => 'attributes',
-        'meta'          => 'meta',
+        'id' => 'id',
+        'type' => 'type',
+        'attributes' => 'attributes',
+        'meta' => 'meta',
         'relationships' => 'relationships',
-        'links'         => 'links',
+        'links' => 'links',
     ];
 
 
@@ -86,12 +89,12 @@ class JsonApiResource implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id'            => 'setId',
-        'type'          => 'setType',
-        'attributes'    => 'setAttributes',
-        'meta'          => 'setMeta',
+        'id' => 'setId',
+        'type' => 'setType',
+        'attributes' => 'setAttributes',
+        'meta' => 'setMeta',
         'relationships' => 'setRelationships',
-        'links'         => 'setLinks',
+        'links' => 'setLinks',
     ];
 
 
@@ -100,12 +103,12 @@ class JsonApiResource implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id'            => 'getId',
-        'type'          => 'getType',
-        'attributes'    => 'getAttributes',
-        'meta'          => 'getMeta',
+        'id' => 'getId',
+        'type' => 'getType',
+        'attributes' => 'getAttributes',
+        'meta' => 'getMeta',
         'relationships' => 'getRelationships',
-        'links'         => 'getLinks',
+        'links' => 'getLinks',
     ];
 
     public static function attributeMap()
@@ -123,6 +126,9 @@ class JsonApiResource implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -306,7 +312,6 @@ class JsonApiResource implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -330,7 +335,7 @@ class JsonApiResource implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

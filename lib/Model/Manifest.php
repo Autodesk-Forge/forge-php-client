@@ -54,15 +54,18 @@ class Manifest implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'urn'           => 'string',
-        'type'          => 'string',
-        'progress'      => 'string',
-        'status'        => 'string',
+        'urn' => 'string',
+        'type' => 'string',
+        'progress' => 'string',
+        'status' => 'string',
         'has_thumbnail' => 'bool',
-        'region'        => 'string',
-        'derivatives'   => '\Autodesk\Client\Model\ManifestDerivative[]',
+        'region' => 'string',
+        'derivatives' => '\Autodesk\Client\Model\ManifestDerivative[]',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -73,13 +76,13 @@ class Manifest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'urn'           => 'urn',
-        'type'          => 'type',
-        'progress'      => 'progress',
-        'status'        => 'status',
+        'urn' => 'urn',
+        'type' => 'type',
+        'progress' => 'progress',
+        'status' => 'status',
         'has_thumbnail' => 'hasThumbnail',
-        'region'        => 'region',
-        'derivatives'   => 'derivatives',
+        'region' => 'region',
+        'derivatives' => 'derivatives',
     ];
 
 
@@ -88,13 +91,13 @@ class Manifest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'urn'           => 'setUrn',
-        'type'          => 'setType',
-        'progress'      => 'setProgress',
-        'status'        => 'setStatus',
+        'urn' => 'setUrn',
+        'type' => 'setType',
+        'progress' => 'setProgress',
+        'status' => 'setStatus',
         'has_thumbnail' => 'setHasThumbnail',
-        'region'        => 'setRegion',
-        'derivatives'   => 'setDerivatives',
+        'region' => 'setRegion',
+        'derivatives' => 'setDerivatives',
     ];
 
 
@@ -103,13 +106,13 @@ class Manifest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'urn'           => 'getUrn',
-        'type'          => 'getType',
-        'progress'      => 'getProgress',
-        'status'        => 'getStatus',
+        'urn' => 'getUrn',
+        'type' => 'getType',
+        'progress' => 'getProgress',
+        'status' => 'getStatus',
         'has_thumbnail' => 'getHasThumbnail',
-        'region'        => 'getRegion',
-        'derivatives'   => 'getDerivatives',
+        'region' => 'getRegion',
+        'derivatives' => 'getDerivatives',
     ];
 
     public static function attributeMap()
@@ -127,6 +130,9 @@ class Manifest implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -356,7 +362,6 @@ class Manifest implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -380,7 +385,7 @@ class Manifest implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

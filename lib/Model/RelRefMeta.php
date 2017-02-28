@@ -54,15 +54,18 @@ class RelRefMeta implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'ref_type'  => 'string',
+        'ref_type' => 'string',
         'direction' => 'string',
-        'from_id'   => 'string',
+        'from_id' => 'string',
         'from_type' => 'string',
-        'to_id'     => 'string',
-        'to_type'   => 'string',
+        'to_id' => 'string',
+        'to_type' => 'string',
         'extension' => '\Autodesk\Client\Model\BaseAttributesExtensionObject',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -73,12 +76,12 @@ class RelRefMeta implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'ref_type'  => 'refType',
+        'ref_type' => 'refType',
         'direction' => 'direction',
-        'from_id'   => 'fromId',
+        'from_id' => 'fromId',
         'from_type' => 'fromType',
-        'to_id'     => 'toId',
-        'to_type'   => 'toType',
+        'to_id' => 'toId',
+        'to_type' => 'toType',
         'extension' => 'extension',
     ];
 
@@ -88,12 +91,12 @@ class RelRefMeta implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'ref_type'  => 'setRefType',
+        'ref_type' => 'setRefType',
         'direction' => 'setDirection',
-        'from_id'   => 'setFromId',
+        'from_id' => 'setFromId',
         'from_type' => 'setFromType',
-        'to_id'     => 'setToId',
-        'to_type'   => 'setToType',
+        'to_id' => 'setToId',
+        'to_type' => 'setToType',
         'extension' => 'setExtension',
     ];
 
@@ -103,12 +106,12 @@ class RelRefMeta implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'ref_type'  => 'getRefType',
+        'ref_type' => 'getRefType',
         'direction' => 'getDirection',
-        'from_id'   => 'getFromId',
+        'from_id' => 'getFromId',
         'from_type' => 'getFromType',
-        'to_id'     => 'getToId',
-        'to_type'   => 'getToType',
+        'to_id' => 'getToId',
+        'to_type' => 'getToType',
         'extension' => 'getExtension',
     ];
 
@@ -139,8 +142,9 @@ class RelRefMeta implements ArrayAccess
     const TO_TYPE_FOLDERS = 'folders';
     const TO_TYPE_ITEMS = 'items';
     const TO_TYPE_VERSIONS = 'versions';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -154,7 +158,7 @@ class RelRefMeta implements ArrayAccess
             self::REF_TYPE_XREFS,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -166,7 +170,7 @@ class RelRefMeta implements ArrayAccess
             self::DIRECTION_TO,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -179,7 +183,7 @@ class RelRefMeta implements ArrayAccess
             self::FROM_TYPE_VERSIONS,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -192,7 +196,7 @@ class RelRefMeta implements ArrayAccess
             self::TO_TYPE_VERSIONS,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -228,7 +232,7 @@ class RelRefMeta implements ArrayAccess
             $invalid_properties[] = "'ref_type' can't be null";
         }
         $allowed_values = ["derived", "dependencies", "auxiliary", "xrefs"];
-        if ( ! in_array($this->container['ref_type'], $allowed_values)) {
+        if (!in_array($this->container['ref_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'ref_type', must be one of 'derived', 'dependencies', 'auxiliary', 'xrefs'.";
         }
 
@@ -236,7 +240,7 @@ class RelRefMeta implements ArrayAccess
             $invalid_properties[] = "'direction' can't be null";
         }
         $allowed_values = ["from", "to"];
-        if ( ! in_array($this->container['direction'], $allowed_values)) {
+        if (!in_array($this->container['direction'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'direction', must be one of 'from', 'to'.";
         }
 
@@ -247,7 +251,7 @@ class RelRefMeta implements ArrayAccess
             $invalid_properties[] = "'from_type' can't be null";
         }
         $allowed_values = ["folders", "items", "versions"];
-        if ( ! in_array($this->container['from_type'], $allowed_values)) {
+        if (!in_array($this->container['from_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'from_type', must be one of 'folders', 'items', 'versions'.";
         }
 
@@ -258,7 +262,7 @@ class RelRefMeta implements ArrayAccess
             $invalid_properties[] = "'to_type' can't be null";
         }
         $allowed_values = ["folders", "items", "versions"];
-        if ( ! in_array($this->container['to_type'], $allowed_values)) {
+        if (!in_array($this->container['to_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'to_type', must be one of 'folders', 'items', 'versions'.";
         }
 
@@ -281,14 +285,14 @@ class RelRefMeta implements ArrayAccess
             return false;
         }
         $allowed_values = ["derived", "dependencies", "auxiliary", "xrefs"];
-        if ( ! in_array($this->container['ref_type'], $allowed_values)) {
+        if (!in_array($this->container['ref_type'], $allowed_values)) {
             return false;
         }
         if ($this->container['direction'] === null) {
             return false;
         }
         $allowed_values = ["from", "to"];
-        if ( ! in_array($this->container['direction'], $allowed_values)) {
+        if (!in_array($this->container['direction'], $allowed_values)) {
             return false;
         }
         if ($this->container['from_id'] === null) {
@@ -298,7 +302,7 @@ class RelRefMeta implements ArrayAccess
             return false;
         }
         $allowed_values = ["folders", "items", "versions"];
-        if ( ! in_array($this->container['from_type'], $allowed_values)) {
+        if (!in_array($this->container['from_type'], $allowed_values)) {
             return false;
         }
         if ($this->container['to_id'] === null) {
@@ -308,7 +312,7 @@ class RelRefMeta implements ArrayAccess
             return false;
         }
         $allowed_values = ["folders", "items", "versions"];
-        if ( ! in_array($this->container['to_type'], $allowed_values)) {
+        if (!in_array($this->container['to_type'], $allowed_values)) {
             return false;
         }
         if ($this->container['extension'] === null) {
@@ -334,8 +338,8 @@ class RelRefMeta implements ArrayAccess
      */
     public function setRefType($ref_type)
     {
-        $allowed_values = ['derived', 'dependencies', 'auxiliary', 'xrefs'];
-        if (( ! in_array($ref_type, $allowed_values))) {
+        $allowed_values = array('derived', 'dependencies', 'auxiliary', 'xrefs');
+        if ((!in_array($ref_type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'ref_type', must be one of 'derived', 'dependencies', 'auxiliary', 'xrefs'");
         }
         $this->container['ref_type'] = $ref_type;
@@ -359,8 +363,8 @@ class RelRefMeta implements ArrayAccess
      */
     public function setDirection($direction)
     {
-        $allowed_values = ['from', 'to'];
-        if (( ! in_array($direction, $allowed_values))) {
+        $allowed_values = array('from', 'to');
+        if ((!in_array($direction, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'direction', must be one of 'from', 'to'");
         }
         $this->container['direction'] = $direction;
@@ -405,8 +409,8 @@ class RelRefMeta implements ArrayAccess
      */
     public function setFromType($from_type)
     {
-        $allowed_values = ['folders', 'items', 'versions'];
-        if (( ! in_array($from_type, $allowed_values))) {
+        $allowed_values = array('folders', 'items', 'versions');
+        if ((!in_array($from_type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'from_type', must be one of 'folders', 'items', 'versions'");
         }
         $this->container['from_type'] = $from_type;
@@ -451,8 +455,8 @@ class RelRefMeta implements ArrayAccess
      */
     public function setToType($to_type)
     {
-        $allowed_values = ['folders', 'items', 'versions'];
-        if (( ! in_array($to_type, $allowed_values))) {
+        $allowed_values = array('folders', 'items', 'versions');
+        if ((!in_array($to_type, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'to_type', must be one of 'folders', 'items', 'versions'");
         }
         $this->container['to_type'] = $to_type;
@@ -480,7 +484,6 @@ class RelRefMeta implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -504,7 +507,7 @@ class RelRefMeta implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

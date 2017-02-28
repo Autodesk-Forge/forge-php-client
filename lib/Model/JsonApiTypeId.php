@@ -54,10 +54,13 @@ class JsonApiTypeId implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'id'   => 'string',
+        'id' => 'string',
         'type' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -68,7 +71,7 @@ class JsonApiTypeId implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id'   => 'id',
+        'id' => 'id',
         'type' => 'type',
     ];
 
@@ -78,7 +81,7 @@ class JsonApiTypeId implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id'   => 'setId',
+        'id' => 'setId',
         'type' => 'setType',
     ];
 
@@ -88,7 +91,7 @@ class JsonApiTypeId implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id'   => 'getId',
+        'id' => 'getId',
         'type' => 'getType',
     ];
 
@@ -107,6 +110,9 @@ class JsonApiTypeId implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -202,7 +208,6 @@ class JsonApiTypeId implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -226,7 +231,7 @@ class JsonApiTypeId implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

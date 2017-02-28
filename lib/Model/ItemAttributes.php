@@ -55,9 +55,12 @@ class ItemAttributes implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'display_name' => 'string',
-        'extension'    => '\Autodesk\Client\Model\BaseAttributesExtensionObject',
+        'extension' => '\Autodesk\Client\Model\BaseAttributesExtensionObject',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,7 +72,7 @@ class ItemAttributes implements ArrayAccess
      */
     protected static $attributeMap = [
         'display_name' => 'displayName',
-        'extension'    => 'extension',
+        'extension' => 'extension',
     ];
 
 
@@ -79,7 +82,7 @@ class ItemAttributes implements ArrayAccess
      */
     protected static $setters = [
         'display_name' => 'setDisplayName',
-        'extension'    => 'setExtension',
+        'extension' => 'setExtension',
     ];
 
 
@@ -89,7 +92,7 @@ class ItemAttributes implements ArrayAccess
      */
     protected static $getters = [
         'display_name' => 'getDisplayName',
-        'extension'    => 'getExtension',
+        'extension' => 'getExtension',
     ];
 
     public static function attributeMap()
@@ -107,6 +110,9 @@ class ItemAttributes implements ArrayAccess
         return self::$getters;
     }
 
+    
+
+    
 
     /**
      * Associative array for storing property values
@@ -202,7 +208,6 @@ class ItemAttributes implements ArrayAccess
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -226,7 +231,7 @@ class ItemAttributes implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)

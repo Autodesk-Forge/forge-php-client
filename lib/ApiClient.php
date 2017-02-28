@@ -103,53 +103,21 @@ class ApiClient
     }
 
     /**
-     * Get API key (with prefix if set)
-     *
-     * @param  string $apiKeyIdentifier name of apikey
-     *
-     * @return string API key with the prefix
-     */
-    public function getApiKeyWithPrefix($apiKeyIdentifier)
-    {
-        $prefix = $this->config->getApiKeyPrefix($apiKeyIdentifier);
-        $apiKey = $this->config->getApiKey($apiKeyIdentifier);
-
-        if ( ! isset($apiKey)) {
-            return null;
-        }
-
-        if (isset($prefix)) {
-            $keyWithPrefix = $prefix . " " . $apiKey;
-        } else {
-            $keyWithPrefix = $apiKey;
-        }
-
-        return $keyWithPrefix;
-    }
-
-    /**
      * Make the HTTP call (Sync)
      *
      * @param string $resourcePath path to method endpoint
-     * @param string $method method to call
-     * @param array $queryParams parameters to be place in query URL
-     * @param array $postData parameters to be placed in POST body
-     * @param array $headerParams parameters to be place in request header
+     * @param string $method       method to call
+     * @param array  $queryParams  parameters to be place in query URL
+     * @param array  $postData     parameters to be placed in POST body
+     * @param array  $headerParams parameters to be place in request header
      * @param string $responseType expected response type of the endpoint
      * @param string $endpointPath path to method endpoint before expanding parameters
      *
      * @throws \Autodesk\Client\ApiException on a non 2xx response
      * @return mixed
      */
-    public function callApi(
-        $resourcePath,
-        $method,
-        $queryParams,
-        $postData,
-        $headerParams,
-        $responseType = null,
-        $endpointPath = null
-    ) {
+    public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null)
+    {
         $headers = [];
 
         // construct the http header
@@ -165,9 +133,7 @@ class ApiClient
         // form data
         if ($postData and in_array('Content-Type: application/x-www-form-urlencoded', $headers, true)) {
             $postData = http_build_query($postData);
-        } elseif ((is_object($postData) or is_array($postData)) and ! in_array('Content-Type: multipart/form-data',
-                $headers, true)
-        ) { // json model
+        } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
             $postData = json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($postData));
         }
 
@@ -182,7 +148,7 @@ class ApiClient
         if ($this->config->getCurlConnectTimeout() != 0) {
             curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $this->config->getCurlConnectTimeout());
         }
-
+        
         // return the result on success, rather than just true
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -207,8 +173,7 @@ class ApiClient
         }
 
         if ($this->config->getCurlProxyUser()) {
-            curl_setopt($curl, CURLOPT_PROXYUSERPWD,
-                $this->config->getCurlProxyUser() . ':' . $this->config->getCurlProxyPassword());
+            curl_setopt($curl, CURLOPT_PROXYUSERPWD, $this->config->getCurlProxyUser() . ':' .$this->config->getCurlProxyPassword());
         }
 
         if ( ! empty($queryParams)) {
@@ -242,8 +207,7 @@ class ApiClient
 
         // debugging for curl
         if ($this->config->getDebug()) {
-            error_log("[DEBUG] HTTP Request body  ~BEGIN~" . PHP_EOL . print_r($postData,
-                    true) . PHP_EOL . "~END~" . PHP_EOL, 3, $this->config->getDebugFile());
+            error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($postData, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
 
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
             curl_setopt($curl, CURLOPT_STDERR, fopen($this->config->getDebugFile(), 'a'));
@@ -263,8 +227,7 @@ class ApiClient
 
         // debug HTTP response body
         if ($this->config->getDebug()) {
-            error_log("[DEBUG] HTTP Response body ~BEGIN~" . PHP_EOL . print_r($http_body,
-                    true) . PHP_EOL . "~END~" . PHP_EOL, 3, $this->config->getDebugFile());
+            error_log("[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($http_body, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
         }
 
         // Handle the response
@@ -344,13 +307,13 @@ class ApiClient
         }
     }
 
-    /**
-     * Return an array of HTTP response headers
-     *
-     * @param string $raw_headers A string of raw HTTP response headers
-     *
-     * @return string[] Array of HTTP response heaers
-     */
+   /**
+    * Return an array of HTTP response headers
+    *
+    * @param string $raw_headers A string of raw HTTP response headers
+    *
+    * @return string[] Array of HTTP response heaers
+    */
     protected function httpParseHeaders($raw_headers)
     {
         // ref/credit: http://php.net/manual/en/function.http-parse-headers.php#112986

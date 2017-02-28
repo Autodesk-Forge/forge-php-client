@@ -55,9 +55,12 @@ class PostBucketsPayloadAllow implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'auth_id' => 'string',
-        'access'  => 'string',
+        'access' => 'string',
     ];
 
+    /**
+     * @return \string[]
+     */
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
@@ -69,7 +72,7 @@ class PostBucketsPayloadAllow implements ArrayAccess
      */
     protected static $attributeMap = [
         'auth_id' => 'authId',
-        'access'  => 'access',
+        'access' => 'access',
     ];
 
 
@@ -79,7 +82,7 @@ class PostBucketsPayloadAllow implements ArrayAccess
      */
     protected static $setters = [
         'auth_id' => 'setAuthId',
-        'access'  => 'setAccess',
+        'access' => 'setAccess',
     ];
 
 
@@ -89,7 +92,7 @@ class PostBucketsPayloadAllow implements ArrayAccess
      */
     protected static $getters = [
         'auth_id' => 'getAuthId',
-        'access'  => 'getAccess',
+        'access' => 'getAccess',
     ];
 
     public static function attributeMap()
@@ -109,8 +112,9 @@ class PostBucketsPayloadAllow implements ArrayAccess
 
     const ACCESS_FULL = 'full';
     const ACCESS_READ = 'read';
+    
 
-
+    
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -122,7 +126,7 @@ class PostBucketsPayloadAllow implements ArrayAccess
             self::ACCESS_READ,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -156,7 +160,7 @@ class PostBucketsPayloadAllow implements ArrayAccess
             $invalid_properties[] = "'access' can't be null";
         }
         $allowed_values = ["full", "read"];
-        if ( ! in_array($this->container['access'], $allowed_values)) {
+        if (!in_array($this->container['access'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'access', must be one of 'full', 'read'.";
         }
 
@@ -179,7 +183,7 @@ class PostBucketsPayloadAllow implements ArrayAccess
             return false;
         }
         $allowed_values = ["full", "read"];
-        if ( ! in_array($this->container['access'], $allowed_values)) {
+        if (!in_array($this->container['access'], $allowed_values)) {
             return false;
         }
         return true;
@@ -223,15 +227,14 @@ class PostBucketsPayloadAllow implements ArrayAccess
      */
     public function setAccess($access)
     {
-        $allowed_values = ['full', 'read'];
-        if (( ! in_array($access, $allowed_values))) {
+        $allowed_values = array('full', 'read');
+        if ((!in_array($access, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'access', must be one of 'full', 'read'");
         }
         $this->container['access'] = $access;
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -255,7 +258,7 @@ class PostBucketsPayloadAllow implements ArrayAccess
     /**
      * Sets value based on offset.
      * @param  integer $offset Offset
-     * @param  mixed $value Value to be set
+     * @param  mixed   $value  Value to be set
      * @return void
      */
     public function offsetSet($offset, $value)
