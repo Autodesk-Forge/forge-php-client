@@ -46,7 +46,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation getHubProjects
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string[] $filter_id filter by the &#x60;id&#x60; of the &#x60;ref&#x60; target (optional)
@@ -63,7 +63,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation getHubProjectsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string[] $filter_id filter by the &#x60;id&#x60; of the &#x60;ref&#x60; target (optional)
@@ -114,7 +114,7 @@ class ProjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -161,7 +161,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation getProject
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
@@ -177,7 +177,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation getProjectWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
@@ -225,7 +225,7 @@ class ProjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -272,7 +272,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation getProjectHub
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
@@ -288,7 +288,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation getProjectHubWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
@@ -336,7 +336,7 @@ class ProjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -383,7 +383,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation getProjectTopFolders
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
@@ -399,7 +399,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation getProjectTopFoldersWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
@@ -447,7 +447,7 @@ class ProjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -498,7 +498,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation postStorage
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param \Autodesk\Client\Model\CreateStorage $body describe the file the storage is created for (required)
@@ -514,7 +514,7 @@ class ProjectsApi extends AbstractApi
     /**
      * Operation postStorageWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param \Autodesk\Client\Model\CreateStorage $body describe the file the storage is created for (required)

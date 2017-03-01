@@ -46,7 +46,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolder
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -62,7 +62,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -110,7 +110,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -161,7 +161,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderContents
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -182,7 +182,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderContentsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -264,7 +264,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -315,7 +315,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderParent
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -331,7 +331,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderParentWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -379,7 +379,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -430,7 +430,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderRefs
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -449,7 +449,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderRefsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -521,7 +521,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -572,7 +572,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderRelationshipsRefs
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -593,7 +593,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation getFolderRelationshipsRefsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -678,7 +678,7 @@ class FoldersApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -729,7 +729,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation postFolder
      *
-     * 
+     *
      *
      * @param \Autodesk\Client\Model\CreateFolder $body describe the folder to be created (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
@@ -744,7 +744,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation postFolderWithHttpInfo
      *
-     * 
+     *
      *
      * @param \Autodesk\Client\Model\CreateFolder $body describe the folder to be created (required)
      * @throws \Autodesk\Client\ApiException on non-2xx response
@@ -823,7 +823,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation postFolderRelationshipsRef
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)
@@ -840,7 +840,7 @@ class FoldersApi extends AbstractApi
     /**
      * Operation postFolderRelationshipsRefWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $folder_id the &#x60;folder id&#x60; (required)

@@ -46,7 +46,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation getVersion
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -62,7 +62,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation getVersionWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -110,7 +110,7 @@ class VersionsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -161,7 +161,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation getVersionItem
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -177,7 +177,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation getVersionItemWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -225,7 +225,7 @@ class VersionsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -276,7 +276,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation getVersionRefs
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -295,7 +295,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation getVersionRefsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -367,7 +367,7 @@ class VersionsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -418,7 +418,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation getVersionRelationshipsRefs
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -439,7 +439,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation getVersionRelationshipsRefsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -524,7 +524,7 @@ class VersionsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -575,7 +575,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation postVersion
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param \Autodesk\Client\Model\CreateVersion $body describe the version to be created (required)
@@ -591,7 +591,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation postVersionWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param \Autodesk\Client\Model\CreateVersion $body describe the version to be created (required)
@@ -691,7 +691,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation postVersionRelationshipsRef
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
@@ -708,7 +708,7 @@ class VersionsApi extends AbstractApi
     /**
      * Operation postVersionRelationshipsRefWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
      * @param string $version_id the &#x60;version id&#x60; (required)
