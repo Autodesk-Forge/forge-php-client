@@ -2,21 +2,14 @@
 
 namespace Autodesk\Client\Auth;
 
-use Autodesk\Client\ApiClient;
 use Autodesk\Client\ApiException;
-use Autodesk\Client\Configuration;
 
 abstract class AbstractOAuth2
 {
     /**
-     * @var ApiClient
+     * @var TokenFetcher
      */
-    protected $apiClient;
-
-    /**
-     * @var Configuration
-     */
-    protected $configuration;
+    protected $tokenFetcher;
 
     /**
      * @var string
@@ -34,21 +27,17 @@ abstract class AbstractOAuth2
     private $scopes = [];
 
     /**
-     * @param Configuration $configuration
-     * @param ApiClient $apiClient
+     * @param TokenFetcher $tokenFetcher
      */
-    public function __construct(Configuration $configuration = null, ApiClient $apiClient = null)
+    public function __construct(TokenFetcher $tokenFetcher = null)
     {
-        if ($configuration === null) {
-            $configuration = Configuration::getDefaultConfiguration();
+        // @codeCoverageIgnoreStart
+        if ($tokenFetcher === null) {
+            $tokenFetcher = new TokenFetcher();
         }
+        // @codeCoverageIgnoreEnd
 
-        if ($apiClient === null) {
-            $apiClient = new ApiClient();
-        }
-
-        $this->configuration = $configuration;
-        $this->apiClient = $apiClient;
+        $this->tokenFetcher = $tokenFetcher;
     }
 
     /**
@@ -122,40 +111,26 @@ abstract class AbstractOAuth2
     }
 
     /**
-     * Returns application token
      * @param $url
      * @param $grantType
      * @param array $additionalParams
+     * @return array
      * @throws ApiException
      */
     protected function fetchAccessToken($url, $grantType, array $additionalParams = [])
     {
-        $headers = [
-            'Content-Type' => 'application/x-www-form-urlencoded',
-        ];
+        $response = $this->tokenFetcher->fetch($url, $grantType, $this->scopes, $additionalParams);
 
-        $scopes = $this->getScopes();
-
-        if (count($scopes) == 0) {
-            throw new ApiException('Cannot fetch token when no scopes where defined');
+        if ( ! array_key_exists('access_token', $response)) {
+            throw new ApiException('Access token was not found in the response');
         }
 
-        $body = array_merge([
-            'client_id'     => $this->configuration->getClientId(),
-            'client_secret' => $this->configuration->getClientSecret(),
-            'grant_type'    => $grantType,
-            'scope'         => implode(' ', $scopes),
-        ], $additionalParams);
-
-        list($response, $statusCode, $httpHeader) = $this->apiClient->callApi($url, ApiClient::$POST, [], $body,
-            $headers);
-
-        if ( ! isset($response->access_token)) {
-            throw new ApiException('Auth response does not contain access_token');
+        if ( ! array_key_exists('expires_in', $response)) {
+            throw new ApiException('Expiry was not found in the response');
         }
 
-        $this->token = $response->access_token;
-        $this->expiry = $response->expires_in;
+        $this->token = $response['access_token'];
+        $this->expiry = $response['expires_in'];
 
         return $response;
     }

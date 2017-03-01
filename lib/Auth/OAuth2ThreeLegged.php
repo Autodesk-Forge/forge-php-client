@@ -2,7 +2,6 @@
 
 namespace Autodesk\Client\Auth;
 
-use Autodesk\Client\ApiClient;
 use Autodesk\Client\ApiException;
 use Autodesk\Client\Configuration;
 
@@ -14,12 +13,26 @@ class OAuth2ThreeLegged extends AbstractOAuth2
     private $refreshToken;
 
     /**
-     * @param Configuration $configuration
-     * @param ApiClient $apiClient
+     * @var Configuration
      */
-    public function __construct(Configuration $configuration = null, ApiClient $apiClient = null)
+    private $configuration;
+
+    /**
+     * OAuth2ThreeLegged constructor.
+     * @param Configuration|null $configuration
+     * @param TokenFetcher|null $tokenFetcher
+     */
+    public function __construct(Configuration $configuration = null, TokenFetcher $tokenFetcher = null)
     {
-        parent::__construct($configuration, $apiClient);
+        // @codeCoverageIgnoreStart
+        if ($configuration === null) {
+            $configuration = Configuration::getDefaultConfiguration();
+        }
+        // @codeCoverageIgnoreEnd
+
+        $this->configuration = $configuration;
+
+        parent::__construct($tokenFetcher);
     }
 
     /**
@@ -52,7 +65,7 @@ class OAuth2ThreeLegged extends AbstractOAuth2
 
         $response = parent::fetchAccessToken('authentication/v1/gettoken', 'authorization_code', $additionalParams);
 
-        $this->refreshToken = $response->refresh_token;
+        $this->saveRefreshToken($response);
     }
 
     /**
@@ -67,7 +80,7 @@ class OAuth2ThreeLegged extends AbstractOAuth2
 
         $response = parent::fetchAccessToken('authentication/v1/refreshtoken', 'refresh_token', $additionalParams);
 
-        $this->refreshToken = $response->refresh_token;
+        $this->saveRefreshToken($response);
     }
 
     /**
@@ -76,5 +89,18 @@ class OAuth2ThreeLegged extends AbstractOAuth2
     public function getRefreshToken()
     {
         return $this->refreshToken;
+    }
+
+    /**
+     * @param $response
+     * @throws ApiException
+     */
+    private function saveRefreshToken($response)
+    {
+        if ( ! array_key_exists('refresh_token', $response)) {
+            throw new ApiException('Refresh token was not found in the response');
+        }
+
+        $this->refreshToken = $response['refresh_token'];
     }
 }
