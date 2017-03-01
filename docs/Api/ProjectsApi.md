@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**getHubProjects**](ProjectsApi.md#getHubProjects) | **GET** /project/v1/hubs/{hub_id}/projects | 
 [**getProject**](ProjectsApi.md#getProject) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id} | 
 [**getProjectHub**](ProjectsApi.md#getProjectHub) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id}/hub | 
+[**getProjectTopFolders**](ProjectsApi.md#getProjectTopFolders) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id}/topFolders | 
 [**postStorage**](ProjectsApi.md#postStorage) | **POST** /data/v1/projects/{project_id}/storage | 
-[**postVersion**](ProjectsApi.md#postVersion) | **POST** /data/v1/projects/{project_id}/versions | 
 
 
 # **getHubProjects**
@@ -163,6 +163,56 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getProjectTopFolders**
+> \Autodesk\Client\Model\TopFolders getProjectTopFolders($hub_id, $project_id)
+
+
+
+Returns the details of the highest level folders the user has access to for a given project
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: oauth2_access_code
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Autodesk\Client\Api\ProjectsApi();
+$hub_id = "hub_id_example"; // string | the `hub id` for the current operation
+$project_id = "project_id_example"; // string | the `project id`
+
+try {
+    $result = $api_instance->getProjectTopFolders($hub_id, $project_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->getProjectTopFolders: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **hub_id** | **string**| the &#x60;hub id&#x60; for the current operation |
+ **project_id** | **string**| the &#x60;project id&#x60; |
+
+### Return type
+
+[**\Autodesk\Client\Model\TopFolders**](../Model/TopFolders.md)
+
+### Authorization
+
+[oauth2_access_code](../../README.md#oauth2_access_code)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **postStorage**
 > \Autodesk\Client\Model\StorageCreated postStorage($project_id, $body)
 
@@ -201,56 +251,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Autodesk\Client\Model\StorageCreated**](../Model/StorageCreated.md)
-
-### Authorization
-
-[oauth2_access_code](../../README.md#oauth2_access_code)
-
-### HTTP request headers
-
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json, application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **postVersion**
-> \Autodesk\Client\Model\VersionCreated postVersion($project_id, $body)
-
-
-
-Creates a new version of an item in the 'data' domain service.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Autodesk\Client\Api\ProjectsApi();
-$project_id = "project_id_example"; // string | the `project id`
-$body = new \Autodesk\Client\Model\CreateVersion(); // \Autodesk\Client\Model\CreateVersion | describe the version to be created
-
-try {
-    $result = $api_instance->postVersion($project_id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProjectsApi->postVersion: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **project_id** | **string**| the &#x60;project id&#x60; |
- **body** | [**\Autodesk\Client\Model\CreateVersion**](../Model/\Autodesk\Client\Model\CreateVersion.md)| describe the version to be created |
-
-### Return type
-
-[**\Autodesk\Client\Model\VersionCreated**](../Model/VersionCreated.md)
 
 ### Authorization
 

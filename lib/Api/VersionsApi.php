@@ -573,6 +573,122 @@ class VersionsApi extends AbstractApi
     }
 
     /**
+     * Operation postVersion
+     *
+     * 
+     *
+     * @param string $project_id the &#x60;project id&#x60; (required)
+     * @param \Autodesk\Client\Model\CreateVersion $body describe the version to be created (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return \Autodesk\Client\Model\VersionCreated
+     */
+    public function postVersion($project_id, $body)
+    {
+        list($response) = $this->postVersionWithHttpInfo($project_id, $body);
+        return $response;
+    }
+
+    /**
+     * Operation postVersionWithHttpInfo
+     *
+     * 
+     *
+     * @param string $project_id the &#x60;project id&#x60; (required)
+     * @param \Autodesk\Client\Model\CreateVersion $body describe the version to be created (required)
+     * @throws \Autodesk\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Client\Model\VersionCreated, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postVersionWithHttpInfo($project_id, $body)
+    {
+        // verify the required parameter 'project_id' is set
+        if ($project_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $project_id when calling postVersion');
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling postVersion');
+        }
+        // parse inputs
+        $resourcePath = "/data/v1/projects/{project_id}/versions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/vnd.api+json', 'application/json']);
+        if ( ! is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
+
+        // path params
+        if ($project_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "project_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($project_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Autodesk\Client\Model\VersionCreated',
+                '/data/v1/projects/{project_id}/versions'
+            );
+
+            return [
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\VersionCreated', $httpHeader),
+                $statusCode,
+                $httpHeader,
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\VersionCreated', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Conflict', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation postVersionRelationshipsRef
      *
      * 

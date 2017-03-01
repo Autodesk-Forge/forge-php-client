@@ -217,6 +217,7 @@ Class | Method | HTTP request | Description
 *FoldersApi* | [**getFolderParent**](docs/Api/FoldersApi.md#getfolderparent) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/parent | 
 *FoldersApi* | [**getFolderRefs**](docs/Api/FoldersApi.md#getfolderrefs) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/refs | 
 *FoldersApi* | [**getFolderRelationshipsRefs**](docs/Api/FoldersApi.md#getfolderrelationshipsrefs) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/relationships/refs | 
+*FoldersApi* | [**postFolder**](docs/Api/FoldersApi.md#postfolder) | **POST** /data/v1/projects/{project_id}/folders | 
 *FoldersApi* | [**postFolderRelationshipsRef**](docs/Api/FoldersApi.md#postfolderrelationshipsref) | **POST** /data/v1/projects/{project_id}/folders/{folder_id}/relationships/refs | 
 *HubsApi* | [**getHub**](docs/Api/HubsApi.md#gethub) | **GET** /project/v1/hubs/{hub_id} | 
 *HubsApi* | [**getHubs**](docs/Api/HubsApi.md#gethubs) | **GET** /project/v1/hubs | 
@@ -244,12 +245,13 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**getHubProjects**](docs/Api/ProjectsApi.md#gethubprojects) | **GET** /project/v1/hubs/{hub_id}/projects | 
 *ProjectsApi* | [**getProject**](docs/Api/ProjectsApi.md#getproject) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id} | 
 *ProjectsApi* | [**getProjectHub**](docs/Api/ProjectsApi.md#getprojecthub) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id}/hub | 
+*ProjectsApi* | [**getProjectTopFolders**](docs/Api/ProjectsApi.md#getprojecttopfolders) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id}/topFolders | 
 *ProjectsApi* | [**postStorage**](docs/Api/ProjectsApi.md#poststorage) | **POST** /data/v1/projects/{project_id}/storage | 
-*ProjectsApi* | [**postVersion**](docs/Api/ProjectsApi.md#postversion) | **POST** /data/v1/projects/{project_id}/versions | 
 *VersionsApi* | [**getVersion**](docs/Api/VersionsApi.md#getversion) | **GET** /data/v1/projects/{project_id}/versions/{version_id} | 
 *VersionsApi* | [**getVersionItem**](docs/Api/VersionsApi.md#getversionitem) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/item | 
 *VersionsApi* | [**getVersionRefs**](docs/Api/VersionsApi.md#getversionrefs) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/refs | 
 *VersionsApi* | [**getVersionRelationshipsRefs**](docs/Api/VersionsApi.md#getversionrelationshipsrefs) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/relationships/refs | 
+*VersionsApi* | [**postVersion**](docs/Api/VersionsApi.md#postversion) | **POST** /data/v1/projects/{project_id}/versions | 
 *VersionsApi* | [**postVersionRelationshipsRef**](docs/Api/VersionsApi.md#postversionrelationshipsref) | **POST** /data/v1/projects/{project_id}/versions/{version_id}/relationships/refs | 
 *WorkItemsApi* | [**createWorkItem**](docs/Api/WorkItemsApi.md#createworkitem) | **POST** /autocad.io/us-east/v2/WorkItems | Creates a new WorkItem.
 *WorkItemsApi* | [**deleteWorkItem**](docs/Api/WorkItemsApi.md#deleteworkitem) | **DELETE** /autocad.io/us-east/v2/WorkItems(&#39;{id}&#39;) | Removes a specific WorkItem.
@@ -269,6 +271,7 @@ Class | Method | HTTP request | Description
  - [BaseAttributesCreatedUpdated](docs/Model/BaseAttributesCreatedUpdated.md)
  - [BaseAttributesCreatedUpdatedAttributes](docs/Model/BaseAttributesCreatedUpdatedAttributes.md)
  - [BaseAttributesExtensionObject](docs/Model/BaseAttributesExtensionObject.md)
+ - [BaseAttributesExtensionObjectWithoutSchemaLink](docs/Model/BaseAttributesExtensionObjectWithoutSchemaLink.md)
  - [Bucket](docs/Model/Bucket.md)
  - [BucketObjects](docs/Model/BucketObjects.md)
  - [Buckets](docs/Model/Buckets.md)
@@ -384,12 +387,14 @@ Class | Method | HTTP request | Description
  - [Refs](docs/Model/Refs.md)
  - [RelRef](docs/Model/RelRef.md)
  - [RelRefMeta](docs/Model/RelRefMeta.md)
+ - [ResourceId](docs/Model/ResourceId.md)
  - [Result](docs/Model/Result.md)
  - [Storage](docs/Model/Storage.md)
  - [StorageCreated](docs/Model/StorageCreated.md)
  - [StorageRelationships](docs/Model/StorageRelationships.md)
  - [StorageRelationshipsTarget](docs/Model/StorageRelationshipsTarget.md)
  - [StorageRelationshipsTargetData](docs/Model/StorageRelationshipsTargetData.md)
+ - [TopFolders](docs/Model/TopFolders.md)
  - [Version](docs/Model/Version.md)
  - [VersionAttributes](docs/Model/VersionAttributes.md)
  - [VersionCreated](docs/Model/VersionCreated.md)

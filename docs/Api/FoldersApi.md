@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getFolderParent**](FoldersApi.md#getFolderParent) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/parent | 
 [**getFolderRefs**](FoldersApi.md#getFolderRefs) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/refs | 
 [**getFolderRelationshipsRefs**](FoldersApi.md#getFolderRelationshipsRefs) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/relationships/refs | 
+[**postFolder**](FoldersApi.md#postFolder) | **POST** /data/v1/projects/{project_id}/folders | 
 [**postFolderRelationshipsRef**](FoldersApi.md#postFolderRelationshipsRef) | **POST** /data/v1/projects/{project_id}/folders/{folder_id}/relationships/refs | 
 
 
@@ -276,6 +277,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Autodesk\Client\Model\Refs**](../Model/Refs.md)
+
+### Authorization
+
+[oauth2_access_code](../../README.md#oauth2_access_code)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **postFolder**
+> postFolder($body)
+
+
+
+Creates a new folder in the `data` domain service
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: oauth2_access_code
+Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Autodesk\Client\Api\FoldersApi();
+$body = new \Autodesk\Client\Model\CreateFolder(); // \Autodesk\Client\Model\CreateFolder | describe the folder to be created
+
+try {
+    $api_instance->postFolder($body);
+} catch (Exception $e) {
+    echo 'Exception when calling FoldersApi->postFolder: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Autodesk\Client\Model\CreateFolder**](../Model/\Autodesk\Client\Model\CreateFolder.md)| describe the folder to be created |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
