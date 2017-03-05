@@ -16,7 +16,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
     }
   ],
   "require": {
-    "Developer-Autodesk/forge-api-php-client": "*@dev"
+    "autodesk/client": "*@dev"
   }
 }
 ```
