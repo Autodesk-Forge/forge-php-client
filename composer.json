@@ -7,12 +7,12 @@
     "sdk",
     "api"
   ],
-  "homepage": "https://github.com/Developer-Autodesk/forge-api-php-client",
+  "homepage": "https://github.autodesk.com/Developer-Autodesk/forge-api-php-client",
   "license": "Apache 2.0",
   "authors": [
     {
       "name": "Developer-Autodesk",
-      "homepage": "https://github.com/Developer-Autodesk/forge-api-php-client"
+      "homepage": "https://github.autodesk.com/Developer-Autodesk/forge-api-php-client"
     }
   ],
   "require": {

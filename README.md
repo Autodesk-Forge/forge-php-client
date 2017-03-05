@@ -12,7 +12,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/Developer-Autodesk/forge-api-php-client.git"
+      "url": "https://github.autodesk.com/Developer-Autodesk/forge-api-php-client.git"
     }
   ],
   "require": {
@@ -55,7 +55,7 @@ Autodesk\Client\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX');
 
-$twoLeggedAuth = new Autodesk\Client\Auth\OAuth2TwoLegged();
+$twoLeggedAuth = new Autodesk\Core\Auth\OAuth2TwoLegged();
 $twoLeggedAuth->setScopes(['bucket:read']);
 
 /**
@@ -103,7 +103,7 @@ Autodesk\Client\Configuration::getDefaultConfiguration()
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
 
-$threeLeggedAuth = new Autodesk\Client\Auth\OAuth2ThreeLegged();
+$threeLeggedAuth = new Autodesk\Core\Auth\OAuth2ThreeLegged();
 $threeLeggedAuth->addScope('code:all');
 
 if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
@@ -153,7 +153,7 @@ Autodesk\Client\Configuration::getDefaultConfiguration()
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
 
-$threeLeggedAuth = new Autodesk\Client\Auth\OAuth2ThreeLegged();
+$threeLeggedAuth = new Autodesk\Core\Auth\OAuth2ThreeLegged();
 $threeLeggedAuth->addScopes(['data:read']);
 
 if (isset($_GET['code']) && $_GET['code']) {
@@ -169,6 +169,18 @@ if (isset($_GET['code']) && $_GET['code']) {
 } else {
     header('Location: ' . $threeLeggedAuth->createAuthUrl());
 }
+```
+
+### Configurations
+
+Change environment
+
+```php
+<?php
+
+
+Autodesk\Client\Configuration::getDefaultConfiguration()
+    ->setEnvironment('dev'); // Options: 'dev' 'stg' 'prod' 
 ```
 
 
