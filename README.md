@@ -51,7 +51,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-Autodesk\Client\Configuration::getDefaultConfiguration()
+Autodesk\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX');
 
@@ -98,7 +98,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 session_start();
 
-Autodesk\Client\Configuration::getDefaultConfiguration()
+Autodesk\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
@@ -148,7 +148,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 session_start();
 
-Autodesk\Client\Configuration::getDefaultConfiguration()
+Autodesk\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
