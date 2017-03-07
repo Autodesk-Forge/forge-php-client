@@ -55,7 +55,7 @@ Autodesk\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX');
 
-$twoLeggedAuth = new Autodesk\Core\Auth\OAuth2TwoLegged();
+$twoLeggedAuth = new Autodesk\Core\Auth\OAuth2\TwoLeggedAuth();
 $twoLeggedAuth->setScopes(['bucket:read']);
 
 /**
@@ -67,7 +67,7 @@ $twoLeggedAuth->setScopes(['bucket:read']);
  */
 
 if (isset($cache['applicationToken']) && $cache['expiry'] > time()) {
-    $twoLeggedAuth->setToken($cache['applicationToken']);
+    $twoLeggedAuth->setAccessToken($cache['applicationToken']);
 } else {
     $twoLeggedAuth->fetchToken();
 
@@ -103,11 +103,11 @@ Autodesk\Core\Configuration::getDefaultConfiguration()
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
 
-$threeLeggedAuth = new Autodesk\Core\Auth\OAuth2ThreeLegged();
+$threeLeggedAuth = new Autodesk\Core\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScope('code:all');
 
 if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
-    $threeLeggedAuth->setToken($_SESSION['accessToken']);
+    $threeLeggedAuth->setAccessToken($_SESSION['accessToken']);
 
     print_r('Token was fetched from the session');
 } else {
@@ -119,7 +119,7 @@ if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
         $_SESSION['refreshToken'] = $threeLeggedAuth->getRefreshToken();
         $_SESSION['expiry'] = time() + $threeLeggedAuth->getExpiry();
 
-        print_r('Token were refreshed');
+        print_r('Token was refreshed');
     } else {
         $redirectTo = $threeLeggedAuth->createAuthUrl();
 
@@ -153,7 +153,7 @@ Autodesk\Core\Configuration::getDefaultConfiguration()
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
 
-$threeLeggedAuth = new Autodesk\Core\Auth\OAuth2ThreeLegged();
+$threeLeggedAuth = new Autodesk\Core\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScopes(['data:read']);
 
 if (isset($_GET['code']) && $_GET['code']) {

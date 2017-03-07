@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.autodesk.com/Forge-SDKs/php-core-sdk",
-                "reference": "ec7cfa92bd64893a8643a48bf9601a8b4038fe40"
+                "reference": "27a29ecfb99002b4150446299711448626cb8849"
             },
             "require": {
                 "ext-curl": "*",
@@ -42,16 +42,16 @@
             "authors": [
                 {
                     "name": "Autodesk",
-                    "homepage": "https://github.com/Developer-Autodesk"
+                    "homepage": "https://git.autodesk.com/Forge-SDKs"
                 }
             ],
-            "homepage": "https://github.com/Developer-Autodesk/forge-api-php-client",
+            "homepage": "https://git.autodesk.com/Forge-SDKs/forge-auth-php-client",
             "keywords": [
                 "api",
                 "php",
                 "sdk"
             ],
-            "time": "2017-03-05 13:36:30"
+            "time": "2017-03-07 10:39:59"
         },
         {
             "name": "guzzlehttp/guzzle",

@@ -3,7 +3,7 @@
 namespace Autodesk\Client\Api;
 
 use Autodesk\Client\ApiClient;
-use Autodesk\Core\Auth\AbstractOAuth2;
+use Autodesk\Core\Auth\OAuth2\AbstractOAuth2;
 
 abstract class AbstractApi
 {

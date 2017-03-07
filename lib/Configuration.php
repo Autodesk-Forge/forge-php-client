@@ -39,6 +39,8 @@ namespace Autodesk\Client;
  */
 class Configuration
 {
+    const DEFAULT_HEADER_TIMESTAMP = 'x-sdk-sent-timestamp';
+
     /**
      * @var Configuration|null
      */
@@ -49,7 +51,11 @@ class Configuration
      *
      * @var array
      */
-    protected $defaultHeaders = [];
+    protected $defaultHeaders = [
+        'x-sdk-type'    => 'PHP',
+        'x-sdk-usage'   => 'external',
+        'x-sdk-version' => '1.0',
+    ];
 
     /**
      * The host
@@ -178,7 +184,9 @@ class Configuration
      */
     public function getDefaultHeaders()
     {
-        return $this->defaultHeaders;
+        return array_merge($this->defaultHeaders, [
+            self::DEFAULT_HEADER_TIMESTAMP => time(),
+        ]);
     }
 
     /**
