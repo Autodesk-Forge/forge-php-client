@@ -171,19 +171,6 @@ if (isset($_GET['code']) && $_GET['code']) {
 }
 ```
 
-### Configurations
-
-Change environment
-
-```php
-<?php
-
-
-Autodesk\Core\Configuration::getDefaultConfiguration()
-    ->setEnvironment('dev'); // Options: 'dev' 'stg' 'prod' 
-```
-
-
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://developer.api.autodesk.com/*

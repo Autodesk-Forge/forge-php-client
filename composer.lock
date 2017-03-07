@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6dc94c208d6709b0489b501b87e25dd6",
+    "content-hash": "65abeb1459522968540a857725d1a085",
     "packages": [
         {
             "name": "autodesk/core",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://git.autodesk.com/Forge-SDKs/php-core-sdk",
-                "reference": "27a29ecfb99002b4150446299711448626cb8849"
+                "url": "https://github.com/Autodesk-Forge/php-core-sdk",
+                "reference": "bbf4cc42f4fe0ba3efb7a907e96942d616a5fb17"
             },
             "require": {
                 "ext-curl": "*",
@@ -41,17 +41,17 @@
             ],
             "authors": [
                 {
-                    "name": "Autodesk",
-                    "homepage": "https://git.autodesk.com/Forge-SDKs"
+                    "name": "Autodesk-Forge",
+                    "homepage": "https://github.com/Autodesk-Forge"
                 }
             ],
-            "homepage": "https://git.autodesk.com/Forge-SDKs/forge-auth-php-client",
+            "homepage": "https://github.com/Autodesk-Forge/php-core-sdk",
             "keywords": [
                 "api",
                 "php",
                 "sdk"
             ],
-            "time": "2017-03-07 10:39:59"
+            "time": "2017-03-07 14:38:45"
         },
         {
             "name": "guzzlehttp/guzzle",

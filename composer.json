@@ -8,12 +8,12 @@
     "sdk",
     "api"
   ],
-  "homepage": "https://git.autodesk.com/Forge-SDKs/forge-api-php-client",
+  "homepage": "https://github.com/Autodesk-Forge/forge-api-php-client",
   "license": "Apache 2.0",
   "authors": [
     {
       "name": "Forge-SDKs",
-      "homepage": "https://git.autodesk.com/Forge-SDKs/forge-api-php-client"
+      "homepage": "https://github.com/Autodesk-Forge"
     }
   ],
   "require": {
@@ -43,7 +43,7 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://git.autodesk.com/Forge-SDKs/php-core-sdk"
+      "url": "https://github.com/Autodesk-Forge/php-core-sdk"
     }
   ]
 }
