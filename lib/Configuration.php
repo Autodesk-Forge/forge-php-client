@@ -45,6 +45,13 @@ class Configuration
     private static $defaultConfiguration = null;
 
     /**
+     * The default header(s)
+     *
+     * @var array
+     */
+    protected $defaultHeaders = [];
+
+    /**
      * The host
      *
      * @var string
@@ -171,8 +178,7 @@ class Configuration
      */
     public function getDefaultHeaders()
     {
-        return array_merge($this->defaultHeaders, [
-        ]);
+        return $this->defaultHeaders;
     }
 
     /**

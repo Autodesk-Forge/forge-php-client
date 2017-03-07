@@ -12,7 +12,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.autodesk.com/Forge-SDKs/forge-api-php-client.git"
+      "url": "https://github.com/Autodesk-Forge/forge-api-php-client.git"
     }
   ],
   "require": {
