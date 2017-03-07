@@ -42,6 +42,15 @@ class Configuration
     const DEFAULT_HEADER_TIMESTAMP = 'x-sdk-sent-timestamp';
 
     /**
+     * Environments list
+     */
+    const ENVIRONMENT_HOSTS = [
+        'dev' => 'https://developer-dev.api.autodesk.com',
+        'stg' => 'https://developer-stg.api.autodesk.com',
+        'prod' => 'https://developer.api.autodesk.com',
+    ];
+
+    /**
      * @var Configuration|null
      */
     private static $defaultConfiguration = null;
@@ -53,7 +62,7 @@ class Configuration
      */
     protected $defaultHeaders = [
         'x-sdk-type'    => 'PHP',
-        'x-sdk-usage'   => 'external',
+        'x-sdk-usage'   => 'internal',
         'x-sdk-version' => '1.0',
     ];
 
@@ -83,7 +92,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = "Swagger-Codegen/1.0.0/php";
+    protected $userAgent = "Swagger-Codegen/1.0/php";
 
     /**
      * Debug switch (default set to false)
@@ -551,8 +560,25 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . phpversion() . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 0.1.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 1.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
+    }
+
+    /**
+     * @param $name
+     * @return $this
+     * @throws ApiException
+     */
+    public function setEnvironment($name)
+    {
+        if ( ! array_key_exists($name, self::ENVIRONMENT_HOSTS)) {
+            throw new ApiException("Environment with the name of {$name} is not exists");
+        }
+
+        $this->setHost(self::ENVIRONMENT_HOSTS[$name]);
+
+        return $this;
     }
 }
