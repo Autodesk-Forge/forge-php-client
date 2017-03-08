@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Api;
+namespace AutodeskForge\Client\Api;
 
-use \Autodesk\Client\ApiException;
+use \AutodeskForge\Client\ApiException;
 
 /**
  * ProjectsApi Class Doc Comment
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -48,8 +48,8 @@ class ProjectsApi extends AbstractApi
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string[] $filter_id filter by the &#x60;id&#x60; of the &#x60;ref&#x60; target (optional)
      * @param string[] $filter_extension_type filter by the extension type (optional)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return \Autodesk\Client\Model\Projects
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return \AutodeskForge\Client\Model\Projects
      */
     public function getHubProjects($hub_id, $filter_id = null, $filter_extension_type = null)
     {
@@ -65,8 +65,8 @@ class ProjectsApi extends AbstractApi
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string[] $filter_id filter by the &#x60;id&#x60; of the &#x60;ref&#x60; target (optional)
      * @param string[] $filter_extension_type filter by the extension type (optional)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return array of \Autodesk\Client\Model\Projects, HTTP status code, HTTP response headers (array of strings)
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return array of \AutodeskForge\Client\Model\Projects, HTTP status code, HTTP response headers (array of strings)
      */
     public function getHubProjectsWithHttpInfo($hub_id, $filter_id = null, $filter_extension_type = null)
     {
@@ -126,27 +126,27 @@ class ProjectsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Autodesk\Client\Model\Projects',
+                '\AutodeskForge\Client\Model\Projects',
                 '/project/v1/hubs/{hub_id}/projects'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Projects', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\Projects', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Projects', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Projects', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -162,8 +162,8 @@ class ProjectsApi extends AbstractApi
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return \Autodesk\Client\Model\Project
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return \AutodeskForge\Client\Model\Project
      */
     public function getProject($hub_id, $project_id)
     {
@@ -178,8 +178,8 @@ class ProjectsApi extends AbstractApi
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return array of \Autodesk\Client\Model\Project, HTTP status code, HTTP response headers (array of strings)
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return array of \AutodeskForge\Client\Model\Project, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProjectWithHttpInfo($hub_id, $project_id)
     {
@@ -237,27 +237,27 @@ class ProjectsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Autodesk\Client\Model\Project',
+                '\AutodeskForge\Client\Model\Project',
                 '/project/v1/hubs/{hub_id}/projects/{project_id}'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Project', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\Project', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Project', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Project', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -273,8 +273,8 @@ class ProjectsApi extends AbstractApi
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return \Autodesk\Client\Model\Hub
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return \AutodeskForge\Client\Model\Hub
      */
     public function getProjectHub($hub_id, $project_id)
     {
@@ -289,8 +289,8 @@ class ProjectsApi extends AbstractApi
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return array of \Autodesk\Client\Model\Hub, HTTP status code, HTTP response headers (array of strings)
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return array of \AutodeskForge\Client\Model\Hub, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProjectHubWithHttpInfo($hub_id, $project_id)
     {
@@ -348,27 +348,27 @@ class ProjectsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Autodesk\Client\Model\Hub',
+                '\AutodeskForge\Client\Model\Hub',
                 '/project/v1/hubs/{hub_id}/projects/{project_id}/hub'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\Hub', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\Hub', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Hub', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Hub', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -384,8 +384,8 @@ class ProjectsApi extends AbstractApi
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return \Autodesk\Client\Model\TopFolders
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return \AutodeskForge\Client\Model\TopFolders
      */
     public function getProjectTopFolders($hub_id, $project_id)
     {
@@ -400,8 +400,8 @@ class ProjectsApi extends AbstractApi
      *
      * @param string $hub_id the &#x60;hub id&#x60; for the current operation (required)
      * @param string $project_id the &#x60;project id&#x60; (required)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return array of \Autodesk\Client\Model\TopFolders, HTTP status code, HTTP response headers (array of strings)
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return array of \AutodeskForge\Client\Model\TopFolders, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProjectTopFoldersWithHttpInfo($hub_id, $project_id)
     {
@@ -459,31 +459,31 @@ class ProjectsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Autodesk\Client\Model\TopFolders',
+                '\AutodeskForge\Client\Model\TopFolders',
                 '/project/v1/hubs/{hub_id}/projects/{project_id}/topFolders'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\TopFolders', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\TopFolders', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\TopFolders', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\TopFolders', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -498,9 +498,9 @@ class ProjectsApi extends AbstractApi
      * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
-     * @param \Autodesk\Client\Model\CreateStorage $body describe the file the storage is created for (required)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return \Autodesk\Client\Model\StorageCreated
+     * @param \AutodeskForge\Client\Model\CreateStorage $body describe the file the storage is created for (required)
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return \AutodeskForge\Client\Model\StorageCreated
      */
     public function postStorage($project_id, $body)
     {
@@ -514,9 +514,9 @@ class ProjectsApi extends AbstractApi
      * 
      *
      * @param string $project_id the &#x60;project id&#x60; (required)
-     * @param \Autodesk\Client\Model\CreateStorage $body describe the file the storage is created for (required)
-     * @throws \Autodesk\Client\ApiException on non-2xx response
-     * @return array of \Autodesk\Client\Model\StorageCreated, HTTP status code, HTTP response headers (array of strings)
+     * @param \AutodeskForge\Client\Model\CreateStorage $body describe the file the storage is created for (required)
+     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @return array of \AutodeskForge\Client\Model\StorageCreated, HTTP status code, HTTP response headers (array of strings)
      */
     public function postStorageWithHttpInfo($project_id, $body)
     {
@@ -571,31 +571,31 @@ class ProjectsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Autodesk\Client\Model\StorageCreated',
+                '\AutodeskForge\Client\Model\StorageCreated',
                 '/data/v1/projects/{project_id}/storage'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Client\Model\StorageCreated', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\StorageCreated', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\StorageCreated', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\StorageCreated', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\BadInput', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\BadInput', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\Forbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Forbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Client\Model\NotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\NotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

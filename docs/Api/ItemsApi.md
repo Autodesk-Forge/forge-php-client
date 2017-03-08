@@ -1,4 +1,4 @@
-# Autodesk\Client\ItemsApi
+# AutodeskForge\Client\ItemsApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **getItem**
-> \Autodesk\Client\Model\Item getItem($project_id, $item_id)
+> \AutodeskForge\Client\Model\Item getItem($project_id, $item_id)
 
 
 
@@ -27,9 +27,9 @@ Returns a resource item by ID for any item within a given project. Resource item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ItemsApi();
+$api_instance = new AutodeskForge\Client\Api\ItemsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Item**](../Model/Item.md)
+[**\AutodeskForge\Client\Model\Item**](../Model/Item.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getItemParentFolder**
-> \Autodesk\Client\Model\Folder getItemParentFolder($project_id, $item_id)
+> \AutodeskForge\Client\Model\Folder getItemParentFolder($project_id, $item_id)
 
 
 
@@ -77,9 +77,9 @@ Returns the \"parent\" folder for the given item.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ItemsApi();
+$api_instance = new AutodeskForge\Client\Api\ItemsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Folder**](../Model/Folder.md)
+[**\AutodeskForge\Client\Model\Folder**](../Model/Folder.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getItemRefs**
-> \Autodesk\Client\Model\JsonApiCollection getItemRefs($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type)
+> \AutodeskForge\Client\Model\JsonApiCollection getItemRefs($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type)
 
 
 
@@ -127,9 +127,9 @@ Returns the resources (`items`, `folders`, and `versions`) which have a custom r
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ItemsApi();
+$api_instance = new AutodeskForge\Client\Api\ItemsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
+[**\AutodeskForge\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getItemRelationshipsRefs**
-> \Autodesk\Client\Model\Refs getItemRelationshipsRefs($project_id, $item_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type)
+> \AutodeskForge\Client\Model\Refs getItemRelationshipsRefs($project_id, $item_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type)
 
 
 
@@ -183,9 +183,9 @@ Returns the custom relationships that are associated to the given `item_id`. Cus
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ItemsApi();
+$api_instance = new AutodeskForge\Client\Api\ItemsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Refs**](../Model/Refs.md)
+[**\AutodeskForge\Client\Model\Refs**](../Model/Refs.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getItemTip**
-> \Autodesk\Client\Model\Version getItemTip($project_id, $item_id)
+> \AutodeskForge\Client\Model\Version getItemTip($project_id, $item_id)
 
 
 
@@ -243,9 +243,9 @@ Returns the \"tip\" version for the given item. Multiple versions of a resource 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ItemsApi();
+$api_instance = new AutodeskForge\Client\Api\ItemsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Version**](../Model/Version.md)
+[**\AutodeskForge\Client\Model\Version**](../Model/Version.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getItemVersions**
-> \Autodesk\Client\Model\Versions getItemVersions($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type, $filter_version_number, $page_number, $page_limit)
+> \AutodeskForge\Client\Model\Versions getItemVersions($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type, $filter_version_number, $page_number, $page_limit)
 
 
 
@@ -293,9 +293,9 @@ Returns versions for the given item. Multiple versions of a resource item can be
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ItemsApi();
+$api_instance = new AutodeskForge\Client\Api\ItemsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Versions**](../Model/Versions.md)
+[**\AutodeskForge\Client\Model\Versions**](../Model/Versions.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postItem**
-> \Autodesk\Client\Model\ItemCreated postItem($project_id, $body)
+> \AutodeskForge\Client\Model\ItemCreated postItem($project_id, $body)
 
 
 
@@ -355,11 +355,11 @@ Creates a new item in the 'data' domain service.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ItemsApi();
+$api_instance = new AutodeskForge\Client\Api\ItemsApi();
 $project_id = "project_id_example"; // string | the `project id`
-$body = new \Autodesk\Client\Model\CreateItem(); // \Autodesk\Client\Model\CreateItem | describe the item to be created
+$body = new \AutodeskForge\Client\Model\CreateItem(); // \AutodeskForge\Client\Model\CreateItem | describe the item to be created
 
 try {
     $result = $api_instance->postItem($project_id, $body);
@@ -375,11 +375,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **string**| the &#x60;project id&#x60; |
- **body** | [**\Autodesk\Client\Model\CreateItem**](../Model/\Autodesk\Client\Model\CreateItem.md)| describe the item to be created |
+ **body** | [**\AutodeskForge\Client\Model\CreateItem**](../Model/\AutodeskForge\Client\Model\CreateItem.md)| describe the item to be created |
 
 ### Return type
 
-[**\Autodesk\Client\Model\ItemCreated**](../Model/ItemCreated.md)
+[**\AutodeskForge\Client\Model\ItemCreated**](../Model/ItemCreated.md)
 
 ### Authorization
 
@@ -405,12 +405,12 @@ Creates a custom relationship between an item and another resource within the 'd
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ItemsApi();
+$api_instance = new AutodeskForge\Client\Api\ItemsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
-$body = new \Autodesk\Client\Model\CreateRef(); // \Autodesk\Client\Model\CreateRef | describe the ref to be created
+$body = new \AutodeskForge\Client\Model\CreateRef(); // \AutodeskForge\Client\Model\CreateRef | describe the ref to be created
 
 try {
     $api_instance->postItemRelationshipsRef($project_id, $item_id, $body);
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **string**| the &#x60;project id&#x60; |
  **item_id** | **string**| the &#x60;item id&#x60; |
- **body** | [**\Autodesk\Client\Model\CreateRef**](../Model/\Autodesk\Client\Model\CreateRef.md)| describe the ref to be created |
+ **body** | [**\AutodeskForge\Client\Model\CreateRef**](../Model/\AutodeskForge\Client\Model\CreateRef.md)| describe the ref to be created |
 
 ### Return type
 

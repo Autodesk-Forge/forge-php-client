@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateItemData Class Doc Comment
  *
  * @category    Class
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,8 +55,8 @@ class CreateItemData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'attributes' => '\Autodesk\Client\Model\CreateStorageDataAttributes',
-        'relationships' => '\Autodesk\Client\Model\CreateItemDataRelationships',
+        'attributes' => '\AutodeskForge\Client\Model\CreateStorageDataAttributes',
+        'relationships' => '\AutodeskForge\Client\Model\CreateItemDataRelationships',
     ];
 
     /**
@@ -214,7 +214,7 @@ class CreateItemData implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Autodesk\Client\Model\CreateStorageDataAttributes
+     * @return \AutodeskForge\Client\Model\CreateStorageDataAttributes
      */
     public function getAttributes()
     {
@@ -223,7 +223,7 @@ class CreateItemData implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Autodesk\Client\Model\CreateStorageDataAttributes $attributes
+     * @param \AutodeskForge\Client\Model\CreateStorageDataAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -235,7 +235,7 @@ class CreateItemData implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Autodesk\Client\Model\CreateItemDataRelationships
+     * @return \AutodeskForge\Client\Model\CreateItemDataRelationships
      */
     public function getRelationships()
     {
@@ -244,7 +244,7 @@ class CreateItemData implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Autodesk\Client\Model\CreateItemDataRelationships $relationships
+     * @param \AutodeskForge\Client\Model\CreateItemDataRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -305,10 +305,10 @@ class CreateItemData implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

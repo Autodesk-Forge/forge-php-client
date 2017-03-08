@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateVersionDataRelationships Class Doc Comment
  *
  * @category    Class
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class CreateVersionDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'item' => '\Autodesk\Client\Model\CreateVersionDataRelationshipsItem',
-        'storage' => '\Autodesk\Client\Model\CreateItemRelationshipsStorage',
+        'item' => '\AutodeskForge\Client\Model\CreateVersionDataRelationshipsItem',
+        'storage' => '\AutodeskForge\Client\Model\CreateItemRelationshipsStorage',
     ];
 
     /**
@@ -157,7 +157,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
     /**
      * Gets item
-     * @return \Autodesk\Client\Model\CreateVersionDataRelationshipsItem
+     * @return \AutodeskForge\Client\Model\CreateVersionDataRelationshipsItem
      */
     public function getItem()
     {
@@ -166,7 +166,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
     /**
      * Sets item
-     * @param \Autodesk\Client\Model\CreateVersionDataRelationshipsItem $item
+     * @param \AutodeskForge\Client\Model\CreateVersionDataRelationshipsItem $item
      * @return $this
      */
     public function setItem($item)
@@ -178,7 +178,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
     /**
      * Gets storage
-     * @return \Autodesk\Client\Model\CreateItemRelationshipsStorage
+     * @return \AutodeskForge\Client\Model\CreateItemRelationshipsStorage
      */
     public function getStorage()
     {
@@ -187,7 +187,7 @@ class CreateVersionDataRelationships implements ArrayAccess
 
     /**
      * Sets storage
-     * @param \Autodesk\Client\Model\CreateItemRelationshipsStorage $storage
+     * @param \AutodeskForge\Client\Model\CreateItemRelationshipsStorage $storage
      * @return $this
      */
     public function setStorage($storage)
@@ -248,10 +248,10 @@ class CreateVersionDataRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

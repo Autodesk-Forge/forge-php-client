@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * TopFolders Class Doc Comment
  *
  * @category    Class
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,9 +54,9 @@ class TopFolders implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersion',
-        'links' => '\Autodesk\Client\Model\JsonApiLinksSelf',
-        'data' => '\Autodesk\Client\Model\Folder[]',
+        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersion',
+        'links' => '\AutodeskForge\Client\Model\JsonApiLinksSelf',
+        'data' => '\AutodeskForge\Client\Model\Folder[]',
     ];
 
     /**
@@ -180,7 +180,7 @@ class TopFolders implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Autodesk\Client\Model\JsonApiVersion
+     * @return \AutodeskForge\Client\Model\JsonApiVersion
      */
     public function getJsonapi()
     {
@@ -189,7 +189,7 @@ class TopFolders implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Autodesk\Client\Model\JsonApiVersion $jsonapi
+     * @param \AutodeskForge\Client\Model\JsonApiVersion $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -201,7 +201,7 @@ class TopFolders implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Autodesk\Client\Model\JsonApiLinksSelf
+     * @return \AutodeskForge\Client\Model\JsonApiLinksSelf
      */
     public function getLinks()
     {
@@ -210,7 +210,7 @@ class TopFolders implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Autodesk\Client\Model\JsonApiLinksSelf $links
+     * @param \AutodeskForge\Client\Model\JsonApiLinksSelf $links
      * @return $this
      */
     public function setLinks($links)
@@ -222,7 +222,7 @@ class TopFolders implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Autodesk\Client\Model\Folder[]
+     * @return \AutodeskForge\Client\Model\Folder[]
      */
     public function getData()
     {
@@ -231,7 +231,7 @@ class TopFolders implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Autodesk\Client\Model\Folder[] $data
+     * @param \AutodeskForge\Client\Model\Folder[] $data
      * @return $this
      */
     public function setData($data)
@@ -292,10 +292,10 @@ class TopFolders implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

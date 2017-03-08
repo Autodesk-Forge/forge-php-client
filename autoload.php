@@ -15,10 +15,10 @@
  * An example of a project-specific implementation.
  *
  * After registering this autoload function with SPL, the following line
- * would cause the function to attempt to load the \Autodesk\Client\Baz\Qux class
+ * would cause the function to attempt to load the \AutodeskForge\Client\Baz\Qux class
  * from /path/to/project/lib/Baz/Qux.php:
  *
- *      new \Autodesk\Client\Baz\Qux;
+ *      new \AutodeskForge\Client\Baz\Qux;
  *
  * @param string $class The fully-qualified class name.
  *

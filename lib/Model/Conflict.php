@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Conflict Class Doc Comment
  *
  * @category    Class
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class Conflict implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'errors' => '\Autodesk\Client\Model\JsonApiErrorErrors[]',
+        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersionJsonapi',
+        'errors' => '\AutodeskForge\Client\Model\JsonApiErrorErrors[]',
     ];
 
     /**
@@ -163,7 +163,7 @@ class Conflict implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
+     * @return \AutodeskForge\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -172,7 +172,7 @@ class Conflict implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \AutodeskForge\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -184,7 +184,7 @@ class Conflict implements ArrayAccess
 
     /**
      * Gets errors
-     * @return \Autodesk\Client\Model\JsonApiErrorErrors[]
+     * @return \AutodeskForge\Client\Model\JsonApiErrorErrors[]
      */
     public function getErrors()
     {
@@ -193,7 +193,7 @@ class Conflict implements ArrayAccess
 
     /**
      * Sets errors
-     * @param \Autodesk\Client\Model\JsonApiErrorErrors[] $errors
+     * @param \AutodeskForge\Client\Model\JsonApiErrorErrors[] $errors
      * @return $this
      */
     public function setErrors($errors)
@@ -254,10 +254,10 @@ class Conflict implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

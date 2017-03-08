@@ -1,4 +1,4 @@
-# Autodesk\Client\ActivitiesApi
+# AutodeskForge\Client\ActivitiesApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createActivity**
-> \Autodesk\Client\Model\Activity createActivity($activity)
+> \AutodeskForge\Client\Model\Activity createActivity($activity)
 
 Creates a new Activity.
 
@@ -25,10 +25,10 @@ Creates a new Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
-$activity = new \Autodesk\Client\Model\Activity(); // \Autodesk\Client\Model\Activity | 
+$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity | 
 
 try {
     $result = $api_instance->createActivity($activity);
@@ -43,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activity** | [**\Autodesk\Client\Model\Activity**](../Model/\Autodesk\Client\Model\Activity.md)|  |
+ **activity** | [**\AutodeskForge\Client\Model\Activity**](../Model/\AutodeskForge\Client\Model\Activity.md)|  |
 
 ### Return type
 
-[**\Autodesk\Client\Model\Activity**](../Model/Activity.md)
+[**\AutodeskForge\Client\Model\Activity**](../Model/Activity.md)
 
 ### Authorization
 
@@ -71,9 +71,9 @@ Removes a specific Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -116,9 +116,9 @@ Removes the version history of the specified Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -151,7 +151,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getActivity**
-> \Autodesk\Client\Model\Activity getActivity($id)
+> \AutodeskForge\Client\Model\Activity getActivity($id)
 
 Returns the details of a specific Activity.
 
@@ -161,9 +161,9 @@ Returns the details of a specific Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Activity**](../Model/Activity.md)
+[**\AutodeskForge\Client\Model\Activity**](../Model/Activity.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getActivityVersions**
-> \Autodesk\Client\Model\DesignAutomationActivities getActivityVersions($id)
+> \AutodeskForge\Client\Model\DesignAutomationActivities getActivityVersions($id)
 
 Returns all old versions of a specified Activity.
 
@@ -207,9 +207,9 @@ Returns all old versions of a specified Activity.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
+[**\AutodeskForge\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllActivities**
-> \Autodesk\Client\Model\DesignAutomationActivities getAllActivities()
+> \AutodeskForge\Client\Model\DesignAutomationActivities getAllActivities()
 
 Returns the details of all Activities.
 
@@ -253,9 +253,9 @@ Returns the details of all Activities.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
 
 try {
     $result = $api_instance->getAllActivities();
@@ -271,7 +271,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Autodesk\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
+[**\AutodeskForge\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
 
 ### Authorization
 
@@ -295,11 +295,11 @@ Updates an Activity by specifying only the changed attributes.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
-$activity = new \Autodesk\Client\Model\ActivityOptional(); // \Autodesk\Client\Model\ActivityOptional | 
+$activity = new \AutodeskForge\Client\Model\ActivityOptional(); // \AutodeskForge\Client\Model\ActivityOptional | 
 
 try {
     $api_instance->patchActivity($id, $activity);
@@ -314,7 +314,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **activity** | [**\Autodesk\Client\Model\ActivityOptional**](../Model/\Autodesk\Client\Model\ActivityOptional.md)|  |
+ **activity** | [**\AutodeskForge\Client\Model\ActivityOptional**](../Model/\AutodeskForge\Client\Model\ActivityOptional.md)|  |
 
 ### Return type
 
@@ -342,11 +342,11 @@ Sets the Activity to the specified version.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ActivitiesApi();
+$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
 $id = "id_example"; // string | 
-$activity_version = new \Autodesk\Client\Model\ActivityVersion(); // \Autodesk\Client\Model\ActivityVersion | 
+$activity_version = new \AutodeskForge\Client\Model\ActivityVersion(); // \AutodeskForge\Client\Model\ActivityVersion | 
 
 try {
     $api_instance->setActivityVersion($id, $activity_version);
@@ -361,7 +361,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **activity_version** | [**\Autodesk\Client\Model\ActivityVersion**](../Model/\Autodesk\Client\Model\ActivityVersion.md)|  |
+ **activity_version** | [**\AutodeskForge\Client\Model\ActivityVersion**](../Model/\AutodeskForge\Client\Model\ActivityVersion.md)|  |
 
 ### Return type
 

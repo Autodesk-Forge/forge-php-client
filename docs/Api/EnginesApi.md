@@ -1,4 +1,4 @@
-# Autodesk\Client\EnginesApi
+# AutodeskForge\Client\EnginesApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getAllEngines**
-> \Autodesk\Client\Model\DesignAutomationEngines getAllEngines()
+> \AutodeskForge\Client\Model\DesignAutomationEngines getAllEngines()
 
 Returns the details of all available AutoCAD core engines.
 
@@ -19,9 +19,9 @@ Returns the details of all available AutoCAD core engines.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\EnginesApi();
+$api_instance = new AutodeskForge\Client\Api\EnginesApi();
 
 try {
     $result = $api_instance->getAllEngines();
@@ -37,7 +37,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Autodesk\Client\Model\DesignAutomationEngines**](../Model/DesignAutomationEngines.md)
+[**\AutodeskForge\Client\Model\DesignAutomationEngines**](../Model/DesignAutomationEngines.md)
 
 ### Authorization
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEngine**
-> \Autodesk\Client\Model\Engine getEngine($id)
+> \AutodeskForge\Client\Model\Engine getEngine($id)
 
 Returns the details of a specific AutoCAD core engine.
 
@@ -61,9 +61,9 @@ Returns the details of a specific AutoCAD core engine.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\EnginesApi();
+$api_instance = new AutodeskForge\Client\Api\EnginesApi();
 $id = "id_example"; // string | 
 
 try {
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Engine**](../Model/Engine.md)
+[**\AutodeskForge\Client\Model\Engine**](../Model/Engine.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# Autodesk\Client\ProjectsApi
+# AutodeskForge\Client\ProjectsApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **getHubProjects**
-> \Autodesk\Client\Model\Projects getHubProjects($hub_id, $filter_id, $filter_extension_type)
+> \AutodeskForge\Client\Model\Projects getHubProjects($hub_id, $filter_id, $filter_extension_type)
 
 
 
@@ -24,9 +24,9 @@ Returns a collection of projects for a given `hub_id`. A project represents an A
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ProjectsApi();
+$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 $filter_id = array("filter_id_example"); // string[] | filter by the `id` of the `ref` target
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Projects**](../Model/Projects.md)
+[**\AutodeskForge\Client\Model\Projects**](../Model/Projects.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProject**
-> \Autodesk\Client\Model\Project getProject($hub_id, $project_id)
+> \AutodeskForge\Client\Model\Project getProject($hub_id, $project_id)
 
 
 
@@ -76,9 +76,9 @@ Returns a project for a given `project_id`.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ProjectsApi();
+$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 $project_id = "project_id_example"; // string | the `project id`
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Project**](../Model/Project.md)
+[**\AutodeskForge\Client\Model\Project**](../Model/Project.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProjectHub**
-> \Autodesk\Client\Model\Hub getProjectHub($hub_id, $project_id)
+> \AutodeskForge\Client\Model\Hub getProjectHub($hub_id, $project_id)
 
 
 
@@ -126,9 +126,9 @@ Returns the hub for a given `project_id`.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ProjectsApi();
+$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 $project_id = "project_id_example"; // string | the `project id`
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Hub**](../Model/Hub.md)
+[**\AutodeskForge\Client\Model\Hub**](../Model/Hub.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProjectTopFolders**
-> \Autodesk\Client\Model\TopFolders getProjectTopFolders($hub_id, $project_id)
+> \AutodeskForge\Client\Model\TopFolders getProjectTopFolders($hub_id, $project_id)
 
 
 
@@ -176,9 +176,9 @@ Returns the details of the highest level folders the user has access to for a gi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ProjectsApi();
+$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 $project_id = "project_id_example"; // string | the `project id`
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\TopFolders**](../Model/TopFolders.md)
+[**\AutodeskForge\Client\Model\TopFolders**](../Model/TopFolders.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postStorage**
-> \Autodesk\Client\Model\StorageCreated postStorage($project_id, $body)
+> \AutodeskForge\Client\Model\StorageCreated postStorage($project_id, $body)
 
 
 
@@ -226,11 +226,11 @@ Creates a storage location in the OSS where data can be uploaded to.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\ProjectsApi();
+$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
 $project_id = "project_id_example"; // string | the `project id`
-$body = new \Autodesk\Client\Model\CreateStorage(); // \Autodesk\Client\Model\CreateStorage | describe the file the storage is created for
+$body = new \AutodeskForge\Client\Model\CreateStorage(); // \AutodeskForge\Client\Model\CreateStorage | describe the file the storage is created for
 
 try {
     $result = $api_instance->postStorage($project_id, $body);
@@ -246,11 +246,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **string**| the &#x60;project id&#x60; |
- **body** | [**\Autodesk\Client\Model\CreateStorage**](../Model/\Autodesk\Client\Model\CreateStorage.md)| describe the file the storage is created for |
+ **body** | [**\AutodeskForge\Client\Model\CreateStorage**](../Model/\AutodeskForge\Client\Model\CreateStorage.md)| describe the file the storage is created for |
 
 ### Return type
 
-[**\Autodesk\Client\Model\StorageCreated**](../Model/StorageCreated.md)
+[**\AutodeskForge\Client\Model\StorageCreated**](../Model/StorageCreated.md)
 
 ### Authorization
 

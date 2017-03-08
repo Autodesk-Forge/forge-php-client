@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Autodesk\Client;
+namespace AutodeskForge\Client;
 
 /**
  * ItemRelationshipsTest Class Doc Comment
@@ -36,7 +36,7 @@ namespace Autodesk\Client;
  */
 // * @description ItemRelationships
 /**
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

@@ -16,7 +16,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
     }
   ],
   "require": {
-    "autodesk/client": "*@dev"
+    "autodesk-forge/client": "*@dev"
   }
 }
 ```
@@ -51,11 +51,11 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-Autodesk\Core\Configuration::getDefaultConfiguration()
+AutodeskForge\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX');
 
-$twoLeggedAuth = new Autodesk\Core\Auth\OAuth2\TwoLeggedAuth();
+$twoLeggedAuth = new AutodeskForge\Auth\OAuth2\TwoLeggedAuth();
 $twoLeggedAuth->setScopes(['bucket:read']);
 
 /**
@@ -76,8 +76,8 @@ if (isset($cache['applicationToken']) && $cache['expiry'] > time()) {
 }
 
 try {
-    $apiInstance = new Autodesk\Client\Api\ActivitiesApi($twoLeggedAuth);
-    $activity = new \Autodesk\Client\Model\Activity(); // \Autodesk\Client\Model\Activity
+    $apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($twoLeggedAuth);
+    $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
 
     $result = $apiInstance->createActivity($activity);
     print_r($result);
@@ -98,12 +98,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 session_start();
 
-Autodesk\Core\Configuration::getDefaultConfiguration()
+AutodeskForge\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
 
-$threeLeggedAuth = new Autodesk\Core\Auth\OAuth2\ThreeLeggedAuth();
+$threeLeggedAuth = new AutodeskForge\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScope('code:all');
 
 if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
@@ -129,8 +129,8 @@ if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
 }
 
 try {
-    $apiInstance = new Autodesk\Client\Api\ActivitiesApi($threeLeggedAuth);
-    $activity = new \Autodesk\Client\Model\Activity(); // \Autodesk\Client\Model\Activity
+    $apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($threeLeggedAuth);
+    $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
 
     $result = $apiInstance->createActivity($activity);
     print_r($result);
@@ -148,12 +148,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 session_start();
 
-Autodesk\Core\Configuration::getDefaultConfiguration()
+AutodeskForge\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
 
-$threeLeggedAuth = new Autodesk\Core\Auth\OAuth2\ThreeLeggedAuth();
+$threeLeggedAuth = new AutodeskForge\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScopes(['data:read']);
 
 if (isset($_GET['code']) && $_GET['code']) {

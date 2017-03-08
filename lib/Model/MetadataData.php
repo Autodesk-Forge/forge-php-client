@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description 
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,9 +56,9 @@ class MetadataData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'metadata' => '\Autodesk\Client\Model\MetadataMetadata[]',
-        'objects' => '\Autodesk\Client\Model\MetadataObject[]',
-        'collection' => '\Autodesk\Client\Model\MetadataCollection[]',
+        'metadata' => '\AutodeskForge\Client\Model\MetadataMetadata[]',
+        'objects' => '\AutodeskForge\Client\Model\MetadataObject[]',
+        'collection' => '\AutodeskForge\Client\Model\MetadataCollection[]',
     ];
 
     /**
@@ -195,7 +195,7 @@ class MetadataData implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return \Autodesk\Client\Model\MetadataMetadata[]
+     * @return \AutodeskForge\Client\Model\MetadataMetadata[]
      */
     public function getMetadata()
     {
@@ -204,7 +204,7 @@ class MetadataData implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param \Autodesk\Client\Model\MetadataMetadata[] $metadata
+     * @param \AutodeskForge\Client\Model\MetadataMetadata[] $metadata
      * @return $this
      */
     public function setMetadata($metadata)
@@ -216,7 +216,7 @@ class MetadataData implements ArrayAccess
 
     /**
      * Gets objects
-     * @return \Autodesk\Client\Model\MetadataObject[]
+     * @return \AutodeskForge\Client\Model\MetadataObject[]
      */
     public function getObjects()
     {
@@ -225,7 +225,7 @@ class MetadataData implements ArrayAccess
 
     /**
      * Sets objects
-     * @param \Autodesk\Client\Model\MetadataObject[] $objects Collection of “objects”
+     * @param \AutodeskForge\Client\Model\MetadataObject[] $objects Collection of “objects”
      * @return $this
      */
     public function setObjects($objects)
@@ -237,7 +237,7 @@ class MetadataData implements ArrayAccess
 
     /**
      * Gets collection
-     * @return \Autodesk\Client\Model\MetadataCollection[]
+     * @return \AutodeskForge\Client\Model\MetadataCollection[]
      */
     public function getCollection()
     {
@@ -246,7 +246,7 @@ class MetadataData implements ArrayAccess
 
     /**
      * Sets collection
-     * @param \Autodesk\Client\Model\MetadataCollection[] $collection Array of objects with their “properties” as a non-hierarchical list.
+     * @param \AutodeskForge\Client\Model\MetadataCollection[] $collection Array of objects with their “properties” as a non-hierarchical list.
      * @return $this
      */
     public function setCollection($collection)
@@ -307,10 +307,10 @@ class MetadataData implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

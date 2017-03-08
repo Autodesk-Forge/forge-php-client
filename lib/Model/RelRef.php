@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * RelRef Class Doc Comment
  *
  * @category    Class
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,10 +56,10 @@ class RelRef implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'type' => 'string',
-        'attributes' => '\Autodesk\Client\Model\JsonApiAttributes',
-        'meta' => '\Autodesk\Client\Model\RelRefMeta',
-        'relationships' => '\Autodesk\Client\Model\JsonApiRelationships',
-        'links' => '\Autodesk\Client\Model\JsonApiLinks',
+        'attributes' => '\AutodeskForge\Client\Model\JsonApiAttributes',
+        'meta' => '\AutodeskForge\Client\Model\RelRefMeta',
+        'relationships' => '\AutodeskForge\Client\Model\JsonApiRelationships',
+        'links' => '\AutodeskForge\Client\Model\JsonApiLinks',
     ];
 
     /**
@@ -260,7 +260,7 @@ class RelRef implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Autodesk\Client\Model\JsonApiAttributes
+     * @return \AutodeskForge\Client\Model\JsonApiAttributes
      */
     public function getAttributes()
     {
@@ -269,7 +269,7 @@ class RelRef implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Autodesk\Client\Model\JsonApiAttributes $attributes
+     * @param \AutodeskForge\Client\Model\JsonApiAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -281,7 +281,7 @@ class RelRef implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \Autodesk\Client\Model\RelRefMeta
+     * @return \AutodeskForge\Client\Model\RelRefMeta
      */
     public function getMeta()
     {
@@ -290,7 +290,7 @@ class RelRef implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \Autodesk\Client\Model\RelRefMeta $meta
+     * @param \AutodeskForge\Client\Model\RelRefMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -302,7 +302,7 @@ class RelRef implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Autodesk\Client\Model\JsonApiRelationships
+     * @return \AutodeskForge\Client\Model\JsonApiRelationships
      */
     public function getRelationships()
     {
@@ -311,7 +311,7 @@ class RelRef implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Autodesk\Client\Model\JsonApiRelationships $relationships
+     * @param \AutodeskForge\Client\Model\JsonApiRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -323,7 +323,7 @@ class RelRef implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Autodesk\Client\Model\JsonApiLinks
+     * @return \AutodeskForge\Client\Model\JsonApiLinks
      */
     public function getLinks()
     {
@@ -332,7 +332,7 @@ class RelRef implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Autodesk\Client\Model\JsonApiLinks $links
+     * @param \AutodeskForge\Client\Model\JsonApiLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -393,10 +393,10 @@ class RelRef implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 
