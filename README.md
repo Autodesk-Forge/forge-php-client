@@ -1,9 +1,18 @@
-## Requirements
+# Forge PHP SDK
 
-PHP 5.4.0 and later
+## Overview
+This [PHP](http://php.net/) SDK enables you to easily integrate the Forge REST APIs
+into your application, including [OAuth](https://developer.autodesk.com/en/docs/oauth/v2/overview/),
+[Data Management](https://developer.autodesk.com/en/docs/data/v2/overview/),
+[Model Derivative](https://developer.autodesk.com/en/docs/model-derivative/v2/overview/),
+and [Design Automation](https://developer.autodesk.com/en/docs/design-automation/v2/overview/).
 
-## Installation & Usage
-### Composer
+### Requirements
+* PHP 5.4.0 and later
+* A registered app on the [Forge Developer portal](https://developer.autodesk.com/myapps).
+
+### Installation
+#### Composer
 
 To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
 
@@ -23,15 +32,15 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 
 Then run `composer install`
 
-### Manual Installation
+#### Manual Installation
 
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/AutodeskClient/autoload.php');
+require_once('/path/to/AutodeskForge/autoload.php');
 ```
 
-## Tests
+### Tests
 
 To run the unit tests:
 
@@ -39,136 +48,114 @@ To run the unit tests:
 composer install
 ./vendor/bin/phpunit
 ```
+## Tutorial
+Follow this tutorial to see a step-by-step authentication guide, and examples of how to use the Forge APIs.
 
-## Getting Started
+### Create an App
+Create an app on the Forge Developer portal. Note the client ID and client secret.
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+### Authentication
+This SDK comes with an [OAuth 2.0](https://developer.autodesk.com/en/docs/oauth/v2/overview/) client that allows you to
+retrieve 2-legged and 3-legged tokens. It also enables you to refresh 3-legged tokens. The tutorial uses 2-legged
+and 3-legged tokens for calling different Data Management endpoints.
 
-### Two legged
+#### 2-Legged Token
+
+This type of token is given directly to the application.
+
+To get a 2-legged token run the following code. Note that you need to replace `your-client-id` and `your-client-secret` with your [app](https://developer.autodesk.com/myapps)'s client ID and client secret.
+
 
 ```php
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
-
 AutodeskForge\Core\Configuration::getDefaultConfiguration()
-    ->setClientId('XXXXXX')
-    ->setClientSecret('XXXXXX');
+    ->setClientId('<your-client-id>')
+    ->setClientSecret('<your-client-secret>');
 
 $twoLeggedAuth = new AutodeskForge\Auth\OAuth2\TwoLeggedAuth();
 $twoLeggedAuth->setScopes(['bucket:read']);
 
-/**
- * Other options to manage the scopes
- *
- * $twoLeggedAuth->addScope('data:read');
- * $twoLeggedAuth->addScopes([]);
- * $twoLeggedAuth->setScopes($scopes);
- */
+$twoLeggedAuth->fetchToken();
 
-if (isset($cache['applicationToken']) && $cache['expiry'] > time()) {
-    $twoLeggedAuth->setAccessToken($cache['applicationToken']);
-} else {
-    $twoLeggedAuth->fetchToken();
-
-    $cache['applicationToken'] = $twoLeggedAuth->getAccessToken();
-    $cache['expiry'] = time() + $twoLeggedAuth->getExpiry();
-}
-
-try {
-    $apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($twoLeggedAuth);
-    $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
-
-    $result = $apiInstance->createActivity($activity);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ActivitiesApi->createActivity: ', $e->getMessage(), PHP_EOL;
-}
+$tokenInfo = [
+    'applicationToken' => $twoLeggedAuth->getAccessToken(),
+    'expiry'           => time() + $twoLeggedAuth->getExpiresIn(),
+];
 
 ```
 
-### Three legged
+#### 3-Legged Token
+##### Generate an Authentication URL
 
-index.php
+To ask for permissions from a user to retrieve an access token, you
+redirect the user to a consent page.
+
+Replace `your-client-id`, `your-client-secret`, and `your-redirect-url` with your [app](https://developer.autodesk.com/myapps)'s client ID, client secret, and redirect URL, and run the code to create a consent page URL.
+
+Note that the redirect URL must match the pattern of the callback URL field of the app’s registration in the My Apps section. The pattern may include wildcards after the hostname, allowing different redirect URL values to be specified in different parts of your app.
 
 ```php
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
-
-session_start();
-
 AutodeskForge\Core\Configuration::getDefaultConfiguration()
-    ->setClientId('XXXXXX')
-    ->setClientSecret('XXXXXX')
-    ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
+    ->setClientId('<your-client-id>')
+    ->setClientSecret('<your-client-secret>')
+    ->setRedirectUrl('<your-redirect-url>');
 
 $threeLeggedAuth = new AutodeskForge\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScope('code:all');
 
-if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
-    $threeLeggedAuth->setAccessToken($_SESSION['accessToken']);
-
-    print_r('Token was fetched from the session');
-} else {
-    if (isset($_SESSION['refreshToken'])) {
-        $threeLeggedAuth->refreshToken($_SESSION['refreshToken']);
-
-        $_SESSION['isAuthenticated'] = true;
-        $_SESSION['accessToken'] = $threeLeggedAuth->getAccessToken();
-        $_SESSION['refreshToken'] = $threeLeggedAuth->getRefreshToken();
-        $_SESSION['expiry'] = time() + $threeLeggedAuth->getExpiry();
-
-        print_r('Token was refreshed');
-    } else {
-        $redirectTo = $threeLeggedAuth->createAuthUrl();
-
-        header('Location: ' . filter_var($redirectTo, FILTER_SANITIZE_URL));
-        return;
-    }
-}
-
-try {
-    $apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($threeLeggedAuth);
-    $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
-
-    $result = $apiInstance->createActivity($activity);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ActivitiesApi->createActivity: ', $e->getMessage(), PHP_EOL;
-}
+$authUrl = $threeLeggedAuth->createAuthUrl();
 
 ```
 
-callback.php
+##### Retrieve an Authorization Code
+
+Once a user receives permissions on the consent page, Forge will redirect
+the page to the redirect URL you provided when you created the app. An authorization code is returned in the query string.
+
+GET /callback?code={authorizationCode}
+
+##### Retrieve an Access Token
+
+Request an access token using the authorization code you received, as shown below:
+
 ```php
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
-
-session_start();
-
 AutodeskForge\Core\Configuration::getDefaultConfiguration()
-    ->setClientId('XXXXXX')
-    ->setClientSecret('XXXXXX')
-    ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
+    ->setClientId('<your-client-id>')
+    ->setClientSecret('<your-client-secret>')
+    ->setRedirectUrl('<your-redirect-url>');
 
 $threeLeggedAuth = new AutodeskForge\Auth\OAuth2\ThreeLeggedAuth();
-$threeLeggedAuth->addScopes(['data:read']);
+$threeLeggedAuth->addScope('code:all');
 
-if (isset($_GET['code']) && $_GET['code']) {
-    $threeLeggedAuth->fetchToken($_GET['code']);
+$threeLeggedAuth->fetchToken($_GET['code']);
 
-    $_SESSION['isAuthenticated'] = true;
-    $_SESSION['accessToken'] = $threeLeggedAuth->getAccessToken();
-    $_SESSION['refreshToken'] = $threeLeggedAuth->getRefreshToken();
-    $_SESSION['expiry'] = time() + $threeLeggedAuth->getExpiry();
+$userToken = [
+    'accessToken'  => $threeLeggedAuth->getAccessToken(),
+    'refreshToken' => $threeLeggedAuth->getRefreshToken(),
+    'expiry'       => time() + $threeLeggedAuth->getExpiresIn(),  
+];
 
-    $url = 'http://' . $_SERVER['HTTP_HOST'] . '/';
-    header('Location: ' . filter_var($url, FILTER_SANITIZE_URL));
-} else {
-    header('Location: ' . $threeLeggedAuth->createAuthUrl());
-}
+```
+
+Note that access tokens expire after a short period of time. The `expires_in` field gives the validity of an access token in seconds.
+To refresh your access token, call the `$threeLeggedAuth->refreshToken($refreshToken);` method.
+
+#### Example API Calls
+
+Use `TwoLeggedAuth` or `ThreeLeggedAuth` object to call the Forge APIs.
+
+```php
+<?php
+
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($threeLeggedAuth);
+$activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
+
+$result = $apiInstance->getAllActivities();
 ```
 
 ## Documentation for API Endpoints

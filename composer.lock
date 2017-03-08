@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Autodesk-Forge/php-core-sdk",
-                "reference": "a5132aa45f50699c3828ef90f48659e59927f955"
+                "reference": "d80761f83ab8109d86e53651d164e65b0dd23f18"
             },
             "require": {
                 "ext-curl": "*",
@@ -52,7 +52,7 @@
                 "php",
                 "sdk"
             ],
-            "time": "2017-03-08 08:18:38"
+            "time": "2017-03-08 12:51:46"
         },
         {
             "name": "guzzlehttp/guzzle",
