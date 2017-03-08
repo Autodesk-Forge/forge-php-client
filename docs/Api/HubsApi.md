@@ -20,14 +20,11 @@ Returns data on a specific `hub_id`.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\HubsApi();
+$apiInstance = new AutodeskForge\Client\Api\HubsApi($authObject);
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 
 try {
-    $result = $api_instance->getHub($hub_id);
+    $result = $apiInstance->getHub($hub_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubsApi->getHub: ', $e->getMessage(), PHP_EOL;
@@ -68,15 +65,12 @@ Returns a collection of accessible hubs for this member. A Hub represents an A36
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\HubsApi();
+$apiInstance = new AutodeskForge\Client\Api\HubsApi($authObject);
 $filter_id = array("filter_id_example"); // string[] | filter by the `id` of the `ref` target
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
 
 try {
-    $result = $api_instance->getHubs($filter_id, $filter_extension_type);
+    $result = $apiInstance->getHubs($filter_id, $filter_extension_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubsApi->getHubs: ', $e->getMessage(), PHP_EOL;

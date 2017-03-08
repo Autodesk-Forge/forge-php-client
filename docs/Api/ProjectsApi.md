@@ -23,16 +23,13 @@ Returns a collection of projects for a given `hub_id`. A project represents an A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ProjectsApi($authObject);
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 $filter_id = array("filter_id_example"); // string[] | filter by the `id` of the `ref` target
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
 
 try {
-    $result = $api_instance->getHubProjects($hub_id, $filter_id, $filter_extension_type);
+    $result = $apiInstance->getHubProjects($hub_id, $filter_id, $filter_extension_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectsApi->getHubProjects: ', $e->getMessage(), PHP_EOL;
@@ -75,15 +72,12 @@ Returns a project for a given `project_id`.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ProjectsApi($authObject);
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 $project_id = "project_id_example"; // string | the `project id`
 
 try {
-    $result = $api_instance->getProject($hub_id, $project_id);
+    $result = $apiInstance->getProject($hub_id, $project_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectsApi->getProject: ', $e->getMessage(), PHP_EOL;
@@ -125,15 +119,12 @@ Returns the hub for a given `project_id`.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ProjectsApi($authObject);
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 $project_id = "project_id_example"; // string | the `project id`
 
 try {
-    $result = $api_instance->getProjectHub($hub_id, $project_id);
+    $result = $apiInstance->getProjectHub($hub_id, $project_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectsApi->getProjectHub: ', $e->getMessage(), PHP_EOL;
@@ -175,15 +166,12 @@ Returns the details of the highest level folders the user has access to for a gi
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ProjectsApi($authObject);
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 $project_id = "project_id_example"; // string | the `project id`
 
 try {
-    $result = $api_instance->getProjectTopFolders($hub_id, $project_id);
+    $result = $apiInstance->getProjectTopFolders($hub_id, $project_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectsApi->getProjectTopFolders: ', $e->getMessage(), PHP_EOL;
@@ -225,15 +213,12 @@ Creates a storage location in the OSS where data can be uploaded to.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ProjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ProjectsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $body = new \AutodeskForge\Client\Model\CreateStorage(); // \AutodeskForge\Client\Model\CreateStorage | describe the file the storage is created for
 
 try {
-    $result = $api_instance->postStorage($project_id, $body);
+    $result = $apiInstance->postStorage($project_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectsApi->postStorage: ', $e->getMessage(), PHP_EOL;

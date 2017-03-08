@@ -31,16 +31,13 @@ Copies an object to another object name in the same bucket.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $new_obj_name = "new_obj_name_example"; // string | URL-encoded Object key to use as the destination
 
 try {
-    $result = $api_instance->copyTo($bucket_key, $object_name, $new_obj_name);
+    $result = $apiInstance->copyTo($bucket_key, $object_name, $new_obj_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->copyTo: ', $e->getMessage(), PHP_EOL;
@@ -83,17 +80,14 @@ This endpoint creates a signed URL that can be used to download an object within
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $post_buckets_signed = new \AutodeskForge\Client\Model\PostBucketsSigned(); // \AutodeskForge\Client\Model\PostBucketsSigned | Body Structure
 $access = "read"; // string | Access for signed resource Acceptable values: `read`, `write`, `readwrite`. Default value: `read`
 
 try {
-    $result = $api_instance->createSignedResource($bucket_key, $object_name, $post_buckets_signed, $access);
+    $result = $apiInstance->createSignedResource($bucket_key, $object_name, $post_buckets_signed, $access);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->createSignedResource: ', $e->getMessage(), PHP_EOL;
@@ -137,15 +131,12 @@ Deletes an object from the bucket.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 
 try {
-    $api_instance->deleteObject($bucket_key, $object_name);
+    $apiInstance->deleteObject($bucket_key, $object_name);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->deleteObject: ', $e->getMessage(), PHP_EOL;
 }
@@ -186,15 +177,12 @@ Delete a signed URL. A successful call to this endpoint requires bucket owner ac
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
 try {
-    $api_instance->deleteSignedResource($id, $region);
+    $apiInstance->deleteSignedResource($id, $region);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->deleteSignedResource: ', $e->getMessage(), PHP_EOL;
 }
@@ -235,10 +223,7 @@ Download an object.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $range = "range_example"; // string | A range of bytes to download from the specified object.
@@ -247,7 +232,7 @@ $if_modified_since = new \DateTime(); // \DateTime | If the requested object has
 $accept_encoding = "accept_encoding_example"; // string | When gzip is specified, a gzip compressed stream of the object’s bytes will be returned in the response. Cannot use “Accept-Encoding:gzip” with Range header containing an end byte range. End byte range will not be honored if “Accept-Encoding: gzip” header is used.
 
 try {
-    $result = $api_instance->getObject($bucket_key, $object_name, $range, $if_none_match, $if_modified_since, $accept_encoding);
+    $result = $apiInstance->getObject($bucket_key, $object_name, $range, $if_none_match, $if_modified_since, $accept_encoding);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->getObject: ', $e->getMessage(), PHP_EOL;
@@ -293,17 +278,14 @@ Returns object details in JSON format.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $if_modified_since = new \DateTime(); // \DateTime | If the requested object has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message body.
 $with = "with_example"; // string | Extra information in details; multiple uses are supported Acceptable values: `createdDate`, `lastAccessedDate`, `lastModifiedDate`
 
 try {
-    $result = $api_instance->getObjectDetails($bucket_key, $object_name, $if_modified_since, $with);
+    $result = $apiInstance->getObjectDetails($bucket_key, $object_name, $if_modified_since, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->getObjectDetails: ', $e->getMessage(), PHP_EOL;
@@ -347,17 +329,14 @@ List objects in a bucket. It is only available to the bucket creator.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $limit = 10; // int | Limit to the response size, Acceptable values: 1-100 Default = 10
 $begins_with = "begins_with_example"; // string | Provides a way to filter the based on object key name
 $start_at = "start_at_example"; // string | Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response
 
 try {
-    $result = $api_instance->getObjects($bucket_key, $limit, $begins_with, $start_at);
+    $result = $apiInstance->getObjects($bucket_key, $limit, $begins_with, $start_at);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->getObjects: ', $e->getMessage(), PHP_EOL;
@@ -401,10 +380,7 @@ Download an object using a signed URL.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $range = "range_example"; // string | A range of bytes to download from the specified object.
 $if_none_match = "if_none_match_example"; // string | The value of this header is compared to the ETAG of the object. If they match, the body will not be included in the response. Only the object information will be included.
@@ -413,7 +389,7 @@ $accept_encoding = "accept_encoding_example"; // string | When gzip is specified
 $region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
 try {
-    $result = $api_instance->getSignedResource($id, $range, $if_none_match, $if_modified_since, $accept_encoding, $region);
+    $result = $apiInstance->getSignedResource($id, $range, $if_none_match, $if_modified_since, $accept_encoding, $region);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->getSignedResource: ', $e->getMessage(), PHP_EOL;
@@ -459,16 +435,13 @@ This endpoint returns status information about a resumable upload.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $session_id = "session_id_example"; // string | Unique identifier of a session of a file being uploaded
 
 try {
-    $api_instance->getStatusBySessionId($bucket_key, $object_name, $session_id);
+    $apiInstance->getStatusBySessionId($bucket_key, $object_name, $session_id);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->getStatusBySessionId: ', $e->getMessage(), PHP_EOL;
 }
@@ -510,10 +483,7 @@ This endpoint allows resumable uploads for large files in chunks.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $content_length = 56; // int | Indicates the size of the request body.
@@ -524,7 +494,7 @@ $content_disposition = "content_disposition_example"; // string | The suggested 
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
 
 try {
-    $result = $api_instance->uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition, $if_match);
+    $result = $apiInstance->uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition, $if_match);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadChunk: ', $e->getMessage(), PHP_EOL;
@@ -572,10 +542,7 @@ Upload an object. If the specified object name already exists in the bucket, the
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $content_length = 56; // int | Indicates the size of the request body.
@@ -584,7 +551,7 @@ $content_disposition = "content_disposition_example"; // string | The suggested 
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
 
 try {
-    $result = $api_instance->uploadObject($bucket_key, $object_name, $content_length, $body, $content_disposition, $if_match);
+    $result = $apiInstance->uploadObject($bucket_key, $object_name, $content_length, $body, $content_disposition, $if_match);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadObject: ', $e->getMessage(), PHP_EOL;
@@ -630,10 +597,7 @@ Overwrite a existing object using a signed URL.  Conditions to call this operati
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $content_length = 56; // int | Indicates the size of the request body.
 $body = "/path/to/file.txt"; // \SplFileObject | 
@@ -642,7 +606,7 @@ $x_ads_region = "US"; // string | The region where the bucket resides Acceptable
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
 
 try {
-    $result = $api_instance->uploadSignedResource($id, $content_length, $body, $content_disposition, $x_ads_region, $if_match);
+    $result = $apiInstance->uploadSignedResource($id, $content_length, $body, $content_disposition, $x_ads_region, $if_match);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadSignedResource: ', $e->getMessage(), PHP_EOL;
@@ -688,10 +652,7 @@ Resumable upload for signed URLs.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ObjectsApi();
+$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $content_range = "content_range_example"; // string | Byte range of a segment being uploaded
 $session_id = "session_id_example"; // string | Unique identifier of a session of a file being uploaded
@@ -700,7 +661,7 @@ $content_disposition = "content_disposition_example"; // string | The suggested 
 $x_ads_region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
 try {
-    $result = $api_instance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    $result = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadSignedResourcesChunk: ', $e->getMessage(), PHP_EOL;

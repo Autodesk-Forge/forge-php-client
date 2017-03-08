@@ -20,14 +20,11 @@ Creates a new WorkItem.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\WorkItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\WorkItemsApi($authObject);
 $work_item = new \AutodeskForge\Client\Model\WorkItem(); // \AutodeskForge\Client\Model\WorkItem | 
 
 try {
-    $result = $api_instance->createWorkItem($work_item);
+    $result = $apiInstance->createWorkItem($work_item);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WorkItemsApi->createWorkItem: ', $e->getMessage(), PHP_EOL;
@@ -66,14 +63,11 @@ Removes a specific WorkItem.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\WorkItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\WorkItemsApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $api_instance->deleteWorkItem($id);
+    $apiInstance->deleteWorkItem($id);
 } catch (Exception $e) {
     echo 'Exception when calling WorkItemsApi->deleteWorkItem: ', $e->getMessage(), PHP_EOL;
 }
@@ -111,14 +105,11 @@ Returns the details of all WorkItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\WorkItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\WorkItemsApi($authObject);
 $skip = 56; // int | 
 
 try {
-    $result = $api_instance->getAllWorkItems($skip);
+    $result = $apiInstance->getAllWorkItems($skip);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WorkItemsApi->getAllWorkItems: ', $e->getMessage(), PHP_EOL;
@@ -157,14 +148,11 @@ Returns the details of a specific WorkItem.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\WorkItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\WorkItemsApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->getWorkItem($id);
+    $result = $apiInstance->getWorkItem($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WorkItemsApi->getWorkItem: ', $e->getMessage(), PHP_EOL;

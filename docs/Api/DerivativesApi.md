@@ -27,16 +27,11 @@ Deletes the manifest and all its translated output files (derivatives). However,
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 
 try {
-    $result = $api_instance->deleteManifest($urn);
+    $result = $apiInstance->deleteManifest($urn);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->deleteManifest: ', $e->getMessage(), PHP_EOL;
@@ -77,18 +72,13 @@ Downloads a selected derivative. To download the file, you need to specify the f
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $derivative_urn = "derivative_urn_example"; // string | The URL-encoded URN of the derivatives. The URN is retrieved from the GET :urn/manifest endpoint.
 $range = 56; // int | This is the standard RFC 2616 range request header. It only supports one range specifier per request: 1. Range:bytes=0-63 (returns the first 64 bytes) 2. Range:bytes=64-127 (returns the second set of 64 bytes) 3. Range:bytes=1022- (returns all the bytes from offset 1022 to the end) 4. If the range header is not specified, the whole content is returned.
 
 try {
-    $api_instance->getDerivativeManifest($urn, $derivative_urn, $range);
+    $apiInstance->getDerivativeManifest($urn, $derivative_urn, $range);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->getDerivativeManifest: ', $e->getMessage(), PHP_EOL;
 }
@@ -130,17 +120,12 @@ Returns an up-to-date list of Forge-supported translations, that you can use to 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $if_modified_since = new \DateTime(); // \DateTime | The supported formats are only returned if they were modified since the specified date. An invalid date returns the latest supported format list. If the supported formats have not been modified since the specified date, the endpoint returns a `NOT MODIFIED` (304) response.
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
 try {
-    $result = $api_instance->getFormats($if_modified_since, $accept_encoding);
+    $result = $apiInstance->getFormats($if_modified_since, $accept_encoding);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->getFormats: ', $e->getMessage(), PHP_EOL;
@@ -182,17 +167,12 @@ Returns information about derivatives that correspond to a specific source file,
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
 try {
-    $result = $api_instance->getManifest($urn, $accept_encoding);
+    $result = $apiInstance->getManifest($urn, $accept_encoding);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->getManifest: ', $e->getMessage(), PHP_EOL;
@@ -234,17 +214,12 @@ Returns a list of model view (metadata) IDs for a design model. The metadata ID 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
 try {
-    $result = $api_instance->getMetadata($urn, $accept_encoding);
+    $result = $apiInstance->getMetadata($urn, $accept_encoding);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->getMetadata: ', $e->getMessage(), PHP_EOL;
@@ -286,18 +261,13 @@ Returns an object tree, i.e., a hierarchical list of objects for a model view.  
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $guid = "guid_example"; // string | Unique model view ID. Call [GET {urn}/metadata](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-metadata-GET) to get the ID
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
 try {
-    $result = $api_instance->getModelviewMetadata($urn, $guid, $accept_encoding);
+    $result = $apiInstance->getModelviewMetadata($urn, $guid, $accept_encoding);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->getModelviewMetadata: ', $e->getMessage(), PHP_EOL;
@@ -340,18 +310,13 @@ Returns a list of properties for each object in an object tree. Properties are r
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $guid = "guid_example"; // string | Unique model view ID. Call [GET {urn}/metadata](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-metadata-GET) to get the ID
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
 try {
-    $result = $api_instance->getModelviewProperties($urn, $guid, $accept_encoding);
+    $result = $apiInstance->getModelviewProperties($urn, $guid, $accept_encoding);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->getModelviewProperties: ', $e->getMessage(), PHP_EOL;
@@ -394,18 +359,13 @@ Returns the thumbnail for the source file.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $width = 56; // int | The desired width of the thumbnail. Possible values are 100, 200 and 400.
 $height = 56; // int | The desired height of the thumbnail. Possible values are 100, 200 and 400.
 
 try {
-    $result = $api_instance->getThumbnail($urn, $width, $height);
+    $result = $apiInstance->getThumbnail($urn, $width, $height);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->getThumbnail: ', $e->getMessage(), PHP_EOL;
@@ -448,17 +408,12 @@ Translate a source file from one format to another.  Derivatives are stored in a
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\DerivativesApi();
+$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
 $job = new \AutodeskForge\Client\Model\JobPayload(); // \AutodeskForge\Client\Model\JobPayload | 
 $x_ads_force = false; // bool | `true`: the endpoint replaces previously translated output file types with the newly generated derivatives  `false` (default): previously created derivatives are not replaced
 
 try {
-    $result = $api_instance->translate($job, $x_ads_force);
+    $result = $apiInstance->translate($job, $x_ads_force);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DerivativesApi->translate: ', $e->getMessage(), PHP_EOL;

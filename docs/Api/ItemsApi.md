@@ -26,15 +26,12 @@ Returns a resource item by ID for any item within a given project. Resource item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\ItemsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 
 try {
-    $result = $api_instance->getItem($project_id, $item_id);
+    $result = $apiInstance->getItem($project_id, $item_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItem: ', $e->getMessage(), PHP_EOL;
@@ -76,15 +73,12 @@ Returns the \"parent\" folder for the given item.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\ItemsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 
 try {
-    $result = $api_instance->getItemParentFolder($project_id, $item_id);
+    $result = $apiInstance->getItemParentFolder($project_id, $item_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItemParentFolder: ', $e->getMessage(), PHP_EOL;
@@ -126,10 +120,7 @@ Returns the resources (`items`, `folders`, and `versions`) which have a custom r
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\ItemsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -137,7 +128,7 @@ $filter_id = array("filter_id_example"); // string[] | filter by the `id` of the
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
 
 try {
-    $result = $api_instance->getItemRefs($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type);
+    $result = $apiInstance->getItemRefs($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItemRefs: ', $e->getMessage(), PHP_EOL;
@@ -182,10 +173,7 @@ Returns the custom relationships that are associated to the given `item_id`. Cus
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\ItemsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -195,7 +183,7 @@ $filter_direction = "filter_direction_example"; // string | filter by the direct
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
 
 try {
-    $result = $api_instance->getItemRelationshipsRefs($project_id, $item_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
+    $result = $apiInstance->getItemRelationshipsRefs($project_id, $item_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItemRelationshipsRefs: ', $e->getMessage(), PHP_EOL;
@@ -242,15 +230,12 @@ Returns the \"tip\" version for the given item. Multiple versions of a resource 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\ItemsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 
 try {
-    $result = $api_instance->getItemTip($project_id, $item_id);
+    $result = $apiInstance->getItemTip($project_id, $item_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItemTip: ', $e->getMessage(), PHP_EOL;
@@ -292,10 +277,7 @@ Returns versions for the given item. Multiple versions of a resource item can be
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\ItemsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -306,7 +288,7 @@ $page_number = 56; // int | specify the page number
 $page_limit = 56; // int | specify the maximal number of elements per page
 
 try {
-    $result = $api_instance->getItemVersions($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type, $filter_version_number, $page_number, $page_limit);
+    $result = $apiInstance->getItemVersions($project_id, $item_id, $filter_type, $filter_id, $filter_extension_type, $filter_version_number, $page_number, $page_limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItemVersions: ', $e->getMessage(), PHP_EOL;
@@ -354,15 +336,12 @@ Creates a new item in the 'data' domain service.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\ItemsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $body = new \AutodeskForge\Client\Model\CreateItem(); // \AutodeskForge\Client\Model\CreateItem | describe the item to be created
 
 try {
-    $result = $api_instance->postItem($project_id, $body);
+    $result = $apiInstance->postItem($project_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->postItem: ', $e->getMessage(), PHP_EOL;
@@ -404,16 +383,13 @@ Creates a custom relationship between an item and another resource within the 'd
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ItemsApi();
+$apiInstance = new AutodeskForge\Client\Api\ItemsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $item_id = "item_id_example"; // string | the `item id`
 $body = new \AutodeskForge\Client\Model\CreateRef(); // \AutodeskForge\Client\Model\CreateRef | describe the ref to be created
 
 try {
-    $api_instance->postItemRelationshipsRef($project_id, $item_id, $body);
+    $apiInstance->postItemRelationshipsRef($project_id, $item_id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->postItemRelationshipsRef: ', $e->getMessage(), PHP_EOL;
 }
