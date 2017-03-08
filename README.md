@@ -246,6 +246,7 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**getProjectHub**](docs/Api/ProjectsApi.md#getprojecthub) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id}/hub | 
 *ProjectsApi* | [**getProjectTopFolders**](docs/Api/ProjectsApi.md#getprojecttopfolders) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id}/topFolders | 
 *ProjectsApi* | [**postStorage**](docs/Api/ProjectsApi.md#poststorage) | **POST** /data/v1/projects/{project_id}/storage | 
+*UserProfileApi* | [**getUserProfile**](docs/Api/UserProfileApi.md#getuserprofile) | **GET** /userprofile/v1/users/@me | Returns the profile information of an authorizing end user.
 *VersionsApi* | [**getVersion**](docs/Api/VersionsApi.md#getversion) | **GET** /data/v1/projects/{project_id}/versions/{version_id} | 
 *VersionsApi* | [**getVersionItem**](docs/Api/VersionsApi.md#getversionitem) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/item | 
 *VersionsApi* | [**getVersionRefs**](docs/Api/VersionsApi.md#getversionrefs) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/refs | 
@@ -394,6 +395,8 @@ Class | Method | HTTP request | Description
  - [StorageRelationshipsTarget](docs/Model/StorageRelationshipsTarget.md)
  - [StorageRelationshipsTargetData](docs/Model/StorageRelationshipsTargetData.md)
  - [TopFolders](docs/Model/TopFolders.md)
+ - [UserProfile](docs/Model/UserProfile.md)
+ - [UserProfileProfileImages](docs/Model/UserProfileProfileImages.md)
  - [Version](docs/Model/Version.md)
  - [VersionAttributes](docs/Model/VersionAttributes.md)
  - [VersionCreated](docs/Model/VersionCreated.md)
