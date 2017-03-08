@@ -124,7 +124,7 @@ $threeLeggedAuth->fetchToken($_GET['code']);
 $userToken = [
     'accessToken'  => $threeLeggedAuth->getAccessToken(),
     'refreshToken' => $threeLeggedAuth->getRefreshToken(),
-    'expiry'       => time() + $threeLeggedAuth->getExpiresIn(),  
+    'expiry'       => time() + $threeLeggedAuth->getExpiresIn(),
 ];
 
 ```
@@ -139,10 +139,11 @@ Use `TwoLeggedAuth` or `ThreeLeggedAuth` object to call the Forge APIs.
 ```php
 <?php
 
+
 $apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($threeLeggedAuth);
 $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
 
-$result = $apiInstance->getAllActivities();
+$result = $apiInstance->createActivity($activity);
 ```
 
 ## Documentation for API Endpoints
