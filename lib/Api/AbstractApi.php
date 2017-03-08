@@ -1,9 +1,9 @@
 <?php
 
-namespace Autodesk\Client\Api;
+namespace AutodeskForge\Client\Api;
 
-use Autodesk\Client\ApiClient;
-use Autodesk\Client\Auth\AbstractOAuth2;
+use AutodeskForge\Client\ApiClient;
+use AutodeskForge\Auth\OAuth2\AbstractOAuth2;
 
 abstract class AbstractApi
 {
@@ -69,7 +69,7 @@ abstract class AbstractApi
      * @param string $responseType expected response type of the endpoint
      * @param string $endpointPath path to method endpoint before expanding parameters
      *
-     * @throws \Autodesk\Client\ApiException on a non 2xx response
+     * @throws \AutodeskForge\Client\ApiException on a non 2xx response
      * @return mixed
      */
     protected function callApi(

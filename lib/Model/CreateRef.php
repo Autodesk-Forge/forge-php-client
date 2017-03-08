@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateRef Class Doc Comment
  *
  * @category    Class
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class CreateRef implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Autodesk\Client\Model\CreateRefData',
+        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\AutodeskForge\Client\Model\CreateRefData',
     ];
 
     /**
@@ -157,7 +157,7 @@ class CreateRef implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
+     * @return \AutodeskForge\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -166,7 +166,7 @@ class CreateRef implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \AutodeskForge\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -178,7 +178,7 @@ class CreateRef implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Autodesk\Client\Model\CreateRefData
+     * @return \AutodeskForge\Client\Model\CreateRefData
      */
     public function getData()
     {
@@ -187,7 +187,7 @@ class CreateRef implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Autodesk\Client\Model\CreateRefData $data
+     * @param \AutodeskForge\Client\Model\CreateRefData $data
      * @return $this
      */
     public function setData($data)
@@ -248,10 +248,10 @@ class CreateRef implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

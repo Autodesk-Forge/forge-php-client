@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiCollection Class Doc Comment
  *
  * @category    Class
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class JsonApiCollection implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Autodesk\Client\Model\JsonApiResource[]',
+        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\AutodeskForge\Client\Model\JsonApiResource[]',
     ];
 
     /**
@@ -163,7 +163,7 @@ class JsonApiCollection implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
+     * @return \AutodeskForge\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -172,7 +172,7 @@ class JsonApiCollection implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \AutodeskForge\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -184,7 +184,7 @@ class JsonApiCollection implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Autodesk\Client\Model\JsonApiResource[]
+     * @return \AutodeskForge\Client\Model\JsonApiResource[]
      */
     public function getData()
     {
@@ -193,7 +193,7 @@ class JsonApiCollection implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Autodesk\Client\Model\JsonApiResource[] $data
+     * @param \AutodeskForge\Client\Model\JsonApiResource[] $data
      * @return $this
      */
     public function setData($data)
@@ -254,10 +254,10 @@ class JsonApiCollection implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

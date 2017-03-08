@@ -1,4 +1,4 @@
-# Autodesk\Client\VersionsApi
+# AutodeskForge\Client\VersionsApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**getVersionItem**](VersionsApi.md#getVersionItem) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/item | 
 [**getVersionRefs**](VersionsApi.md#getVersionRefs) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/refs | 
 [**getVersionRelationshipsRefs**](VersionsApi.md#getVersionRelationshipsRefs) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/relationships/refs | 
+[**postVersion**](VersionsApi.md#postVersion) | **POST** /data/v1/projects/{project_id}/versions | 
 [**postVersionRelationshipsRef**](VersionsApi.md#postVersionRelationshipsRef) | **POST** /data/v1/projects/{project_id}/versions/{version_id}/relationships/refs | 
 
 
 # **getVersion**
-> \Autodesk\Client\Model\Version getVersion($project_id, $version_id)
+> \AutodeskForge\Client\Model\Version getVersion($project_id, $version_id)
 
 
 
@@ -24,9 +25,9 @@ Returns the version with the given `version_id`.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\VersionsApi();
+$api_instance = new AutodeskForge\Client\Api\VersionsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 
@@ -48,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Version**](../Model/Version.md)
+[**\AutodeskForge\Client\Model\Version**](../Model/Version.md)
 
 ### Authorization
 
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getVersionItem**
-> \Autodesk\Client\Model\Item getVersionItem($project_id, $version_id)
+> \AutodeskForge\Client\Model\Item getVersionItem($project_id, $version_id)
 
 
 
@@ -74,9 +75,9 @@ Returns the item the given version is associated with.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\VersionsApi();
+$api_instance = new AutodeskForge\Client\Api\VersionsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 
@@ -98,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Item**](../Model/Item.md)
+[**\AutodeskForge\Client\Model\Item**](../Model/Item.md)
 
 ### Authorization
 
@@ -112,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getVersionRefs**
-> \Autodesk\Client\Model\JsonApiCollection getVersionRefs($project_id, $version_id, $filter_type, $filter_id, $filter_extension_type)
+> \AutodeskForge\Client\Model\JsonApiCollection getVersionRefs($project_id, $version_id, $filter_type, $filter_id, $filter_extension_type)
 
 
 
@@ -124,9 +125,9 @@ Returns the resources (`items`, `folders`, and `versions`) which have a custom r
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\VersionsApi();
+$api_instance = new AutodeskForge\Client\Api\VersionsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -154,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
+[**\AutodeskForge\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
 
 ### Authorization
 
@@ -168,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getVersionRelationshipsRefs**
-> \Autodesk\Client\Model\Refs getVersionRelationshipsRefs($project_id, $version_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type)
+> \AutodeskForge\Client\Model\Refs getVersionRelationshipsRefs($project_id, $version_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type)
 
 
 
@@ -180,9 +181,9 @@ Returns the custom relationships that are associated to the given `version_id`. 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\VersionsApi();
+$api_instance = new AutodeskForge\Client\Api\VersionsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -214,7 +215,57 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Refs**](../Model/Refs.md)
+[**\AutodeskForge\Client\Model\Refs**](../Model/Refs.md)
+
+### Authorization
+
+[oauth2_access_code](../../README.md#oauth2_access_code)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **postVersion**
+> \AutodeskForge\Client\Model\VersionCreated postVersion($project_id, $body)
+
+
+
+Creates a new version of an item in the 'data' domain service.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: oauth2_access_code
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new AutodeskForge\Client\Api\VersionsApi();
+$project_id = "project_id_example"; // string | the `project id`
+$body = new \AutodeskForge\Client\Model\CreateVersion(); // \AutodeskForge\Client\Model\CreateVersion | describe the version to be created
+
+try {
+    $result = $api_instance->postVersion($project_id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling VersionsApi->postVersion: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **string**| the &#x60;project id&#x60; |
+ **body** | [**\AutodeskForge\Client\Model\CreateVersion**](../Model/\AutodeskForge\Client\Model\CreateVersion.md)| describe the version to be created |
+
+### Return type
+
+[**\AutodeskForge\Client\Model\VersionCreated**](../Model/VersionCreated.md)
 
 ### Authorization
 
@@ -240,12 +291,12 @@ Creates a custom relationship between a version and another resource within the 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_access_code
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\VersionsApi();
+$api_instance = new AutodeskForge\Client\Api\VersionsApi();
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
-$body = new \Autodesk\Client\Model\CreateRef(); // \Autodesk\Client\Model\CreateRef | describe the ref to be created
+$body = new \AutodeskForge\Client\Model\CreateRef(); // \AutodeskForge\Client\Model\CreateRef | describe the ref to be created
 
 try {
     $api_instance->postVersionRelationshipsRef($project_id, $version_id, $body);
@@ -261,7 +312,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **string**| the &#x60;project id&#x60; |
  **version_id** | **string**| the &#x60;version id&#x60; |
- **body** | [**\Autodesk\Client\Model\CreateRef**](../Model/\Autodesk\Client\Model\CreateRef.md)| describe the ref to be created |
+ **body** | [**\AutodeskForge\Client\Model\CreateRef**](../Model/\AutodeskForge\Client\Model\CreateRef.md)| describe the ref to be created |
 
 ### Return type
 

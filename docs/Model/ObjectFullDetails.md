@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **content_type** | **string** | Object content-type | [optional] 
 **location** | **string** | URL to download the object | [optional] 
 **block_sizes** | **int[]** | For delta-encoding. Represents whether a signature exists at a specific block size | [optional] 
-**deltas** | [**\Autodesk\Client\Model\ObjectFullDetailsDeltas[]**](ObjectFullDetailsDeltas.md) | Patch files available for download related to this object | [optional] 
+**deltas** | [**\AutodeskForge\Client\Model\ObjectFullDetailsDeltas[]**](ObjectFullDetailsDeltas.md) | Patch files available for download related to this object | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

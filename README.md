@@ -12,11 +12,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/Developer-Autodesk/forge-api-php-client.git"
+      "url": "https://github.com/Autodesk-Forge/forge-api-php-client.git"
     }
   ],
   "require": {
-    "Developer-Autodesk/forge-api-php-client": "*@dev"
+    "autodesk-forge/client": "*@dev"
   }
 }
 ```
@@ -51,11 +51,11 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-Autodesk\Client\Configuration::getDefaultConfiguration()
+AutodeskForge\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX');
 
-$twoLeggedAuth = new Autodesk\Client\Auth\OAuth2TwoLegged();
+$twoLeggedAuth = new AutodeskForge\Auth\OAuth2\TwoLeggedAuth();
 $twoLeggedAuth->setScopes(['bucket:read']);
 
 /**
@@ -67,7 +67,7 @@ $twoLeggedAuth->setScopes(['bucket:read']);
  */
 
 if (isset($cache['applicationToken']) && $cache['expiry'] > time()) {
-    $twoLeggedAuth->setToken($cache['applicationToken']);
+    $twoLeggedAuth->setAccessToken($cache['applicationToken']);
 } else {
     $twoLeggedAuth->fetchToken();
 
@@ -76,8 +76,8 @@ if (isset($cache['applicationToken']) && $cache['expiry'] > time()) {
 }
 
 try {
-    $apiInstance = new Autodesk\Client\Api\ActivitiesApi($twoLeggedAuth);
-    $activity = new \Autodesk\Client\Model\Activity(); // \Autodesk\Client\Model\Activity
+    $apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($twoLeggedAuth);
+    $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
 
     $result = $apiInstance->createActivity($activity);
     print_r($result);
@@ -98,16 +98,16 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 session_start();
 
-Autodesk\Client\Configuration::getDefaultConfiguration()
+AutodeskForge\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
 
-$threeLeggedAuth = new Autodesk\Client\Auth\OAuth2ThreeLegged();
+$threeLeggedAuth = new AutodeskForge\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScope('code:all');
 
 if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
-    $threeLeggedAuth->setToken($_SESSION['accessToken']);
+    $threeLeggedAuth->setAccessToken($_SESSION['accessToken']);
 
     print_r('Token was fetched from the session');
 } else {
@@ -119,7 +119,7 @@ if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
         $_SESSION['refreshToken'] = $threeLeggedAuth->getRefreshToken();
         $_SESSION['expiry'] = time() + $threeLeggedAuth->getExpiry();
 
-        print_r('Token were refreshed');
+        print_r('Token was refreshed');
     } else {
         $redirectTo = $threeLeggedAuth->createAuthUrl();
 
@@ -129,8 +129,8 @@ if (isset($_SESSION['isAuthenticated']) && $_SESSION['expiry'] > time()) {
 }
 
 try {
-    $apiInstance = new Autodesk\Client\Api\ActivitiesApi($threeLeggedAuth);
-    $activity = new \Autodesk\Client\Model\Activity(); // \Autodesk\Client\Model\Activity
+    $apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($threeLeggedAuth);
+    $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
 
     $result = $apiInstance->createActivity($activity);
     print_r($result);
@@ -148,12 +148,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 session_start();
 
-Autodesk\Client\Configuration::getDefaultConfiguration()
+AutodeskForge\Core\Configuration::getDefaultConfiguration()
     ->setClientId('XXXXXX')
     ->setClientSecret('XXXXXX')
     ->setRedirectUrl("http://{$_SERVER['HTTP_HOST']}/callback.php");
 
-$threeLeggedAuth = new Autodesk\Client\Auth\OAuth2ThreeLegged();
+$threeLeggedAuth = new AutodeskForge\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScopes(['data:read']);
 
 if (isset($_GET['code']) && $_GET['code']) {
@@ -170,7 +170,6 @@ if (isset($_GET['code']) && $_GET['code']) {
     header('Location: ' . $threeLeggedAuth->createAuthUrl());
 }
 ```
-
 
 ## Documentation for API Endpoints
 
@@ -217,6 +216,7 @@ Class | Method | HTTP request | Description
 *FoldersApi* | [**getFolderParent**](docs/Api/FoldersApi.md#getfolderparent) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/parent | 
 *FoldersApi* | [**getFolderRefs**](docs/Api/FoldersApi.md#getfolderrefs) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/refs | 
 *FoldersApi* | [**getFolderRelationshipsRefs**](docs/Api/FoldersApi.md#getfolderrelationshipsrefs) | **GET** /data/v1/projects/{project_id}/folders/{folder_id}/relationships/refs | 
+*FoldersApi* | [**postFolder**](docs/Api/FoldersApi.md#postfolder) | **POST** /data/v1/projects/{project_id}/folders | 
 *FoldersApi* | [**postFolderRelationshipsRef**](docs/Api/FoldersApi.md#postfolderrelationshipsref) | **POST** /data/v1/projects/{project_id}/folders/{folder_id}/relationships/refs | 
 *HubsApi* | [**getHub**](docs/Api/HubsApi.md#gethub) | **GET** /project/v1/hubs/{hub_id} | 
 *HubsApi* | [**getHubs**](docs/Api/HubsApi.md#gethubs) | **GET** /project/v1/hubs | 
@@ -244,12 +244,13 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**getHubProjects**](docs/Api/ProjectsApi.md#gethubprojects) | **GET** /project/v1/hubs/{hub_id}/projects | 
 *ProjectsApi* | [**getProject**](docs/Api/ProjectsApi.md#getproject) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id} | 
 *ProjectsApi* | [**getProjectHub**](docs/Api/ProjectsApi.md#getprojecthub) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id}/hub | 
+*ProjectsApi* | [**getProjectTopFolders**](docs/Api/ProjectsApi.md#getprojecttopfolders) | **GET** /project/v1/hubs/{hub_id}/projects/{project_id}/topFolders | 
 *ProjectsApi* | [**postStorage**](docs/Api/ProjectsApi.md#poststorage) | **POST** /data/v1/projects/{project_id}/storage | 
-*ProjectsApi* | [**postVersion**](docs/Api/ProjectsApi.md#postversion) | **POST** /data/v1/projects/{project_id}/versions | 
 *VersionsApi* | [**getVersion**](docs/Api/VersionsApi.md#getversion) | **GET** /data/v1/projects/{project_id}/versions/{version_id} | 
 *VersionsApi* | [**getVersionItem**](docs/Api/VersionsApi.md#getversionitem) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/item | 
 *VersionsApi* | [**getVersionRefs**](docs/Api/VersionsApi.md#getversionrefs) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/refs | 
 *VersionsApi* | [**getVersionRelationshipsRefs**](docs/Api/VersionsApi.md#getversionrelationshipsrefs) | **GET** /data/v1/projects/{project_id}/versions/{version_id}/relationships/refs | 
+*VersionsApi* | [**postVersion**](docs/Api/VersionsApi.md#postversion) | **POST** /data/v1/projects/{project_id}/versions | 
 *VersionsApi* | [**postVersionRelationshipsRef**](docs/Api/VersionsApi.md#postversionrelationshipsref) | **POST** /data/v1/projects/{project_id}/versions/{version_id}/relationships/refs | 
 *WorkItemsApi* | [**createWorkItem**](docs/Api/WorkItemsApi.md#createworkitem) | **POST** /autocad.io/us-east/v2/WorkItems | Creates a new WorkItem.
 *WorkItemsApi* | [**deleteWorkItem**](docs/Api/WorkItemsApi.md#deleteworkitem) | **DELETE** /autocad.io/us-east/v2/WorkItems(&#39;{id}&#39;) | Removes a specific WorkItem.
@@ -269,6 +270,7 @@ Class | Method | HTTP request | Description
  - [BaseAttributesCreatedUpdated](docs/Model/BaseAttributesCreatedUpdated.md)
  - [BaseAttributesCreatedUpdatedAttributes](docs/Model/BaseAttributesCreatedUpdatedAttributes.md)
  - [BaseAttributesExtensionObject](docs/Model/BaseAttributesExtensionObject.md)
+ - [BaseAttributesExtensionObjectWithoutSchemaLink](docs/Model/BaseAttributesExtensionObjectWithoutSchemaLink.md)
  - [Bucket](docs/Model/Bucket.md)
  - [BucketObjects](docs/Model/BucketObjects.md)
  - [Buckets](docs/Model/Buckets.md)
@@ -384,12 +386,14 @@ Class | Method | HTTP request | Description
  - [Refs](docs/Model/Refs.md)
  - [RelRef](docs/Model/RelRef.md)
  - [RelRefMeta](docs/Model/RelRefMeta.md)
+ - [ResourceId](docs/Model/ResourceId.md)
  - [Result](docs/Model/Result.md)
  - [Storage](docs/Model/Storage.md)
  - [StorageCreated](docs/Model/StorageCreated.md)
  - [StorageRelationships](docs/Model/StorageRelationships.md)
  - [StorageRelationshipsTarget](docs/Model/StorageRelationshipsTarget.md)
  - [StorageRelationshipsTargetData](docs/Model/StorageRelationshipsTargetData.md)
+ - [TopFolders](docs/Model/TopFolders.md)
  - [Version](docs/Model/Version.md)
  - [VersionAttributes](docs/Model/VersionAttributes.md)
  - [VersionCreated](docs/Model/VersionCreated.md)

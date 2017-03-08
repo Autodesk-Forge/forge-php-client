@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **string** |  | 
 **version** | **string** |  | 
-**schema** | [**\Autodesk\Client\Model\JsonApiLink**](JsonApiLink.md) |  | 
+**schema** | [**\AutodeskForge\Client\Model\JsonApiLink**](JsonApiLink.md) |  | 
 **data** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

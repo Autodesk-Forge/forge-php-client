@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client\Model;
+namespace AutodeskForge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Project Class Doc Comment
  *
  * @category    Class
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,15 +54,15 @@ class Project implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\Autodesk\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Autodesk\Client\Model\JsonApiResource',
-        'included' => '\Autodesk\Client\Model\JsonApiResource[]',
-        'links' => '\Autodesk\Client\Model\JsonApiLinks',
+        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\AutodeskForge\Client\Model\JsonApiResource',
+        'included' => '\AutodeskForge\Client\Model\JsonApiResource[]',
+        'links' => '\AutodeskForge\Client\Model\JsonApiLinks',
         'id' => 'string',
         'type' => 'string',
-        'attributes' => '\Autodesk\Client\Model\ProjectAttributes',
-        'meta' => '\Autodesk\Client\Model\JsonApiMeta',
-        'relationships' => '\Autodesk\Client\Model\ProjectRelationships',
+        'attributes' => '\AutodeskForge\Client\Model\ProjectAttributes',
+        'meta' => '\AutodeskForge\Client\Model\JsonApiMeta',
+        'relationships' => '\AutodeskForge\Client\Model\ProjectRelationships',
     ];
 
     /**
@@ -237,7 +237,7 @@ class Project implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \Autodesk\Client\Model\JsonApiVersionJsonapi
+     * @return \AutodeskForge\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -246,7 +246,7 @@ class Project implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \Autodesk\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \AutodeskForge\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -258,7 +258,7 @@ class Project implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Autodesk\Client\Model\JsonApiResource
+     * @return \AutodeskForge\Client\Model\JsonApiResource
      */
     public function getData()
     {
@@ -267,7 +267,7 @@ class Project implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Autodesk\Client\Model\JsonApiResource $data
+     * @param \AutodeskForge\Client\Model\JsonApiResource $data
      * @return $this
      */
     public function setData($data)
@@ -279,7 +279,7 @@ class Project implements ArrayAccess
 
     /**
      * Gets included
-     * @return \Autodesk\Client\Model\JsonApiResource[]
+     * @return \AutodeskForge\Client\Model\JsonApiResource[]
      */
     public function getIncluded()
     {
@@ -288,7 +288,7 @@ class Project implements ArrayAccess
 
     /**
      * Sets included
-     * @param \Autodesk\Client\Model\JsonApiResource[] $included
+     * @param \AutodeskForge\Client\Model\JsonApiResource[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -300,7 +300,7 @@ class Project implements ArrayAccess
 
     /**
      * Gets links
-     * @return \Autodesk\Client\Model\JsonApiLinks
+     * @return \AutodeskForge\Client\Model\JsonApiLinks
      */
     public function getLinks()
     {
@@ -309,7 +309,7 @@ class Project implements ArrayAccess
 
     /**
      * Sets links
-     * @param \Autodesk\Client\Model\JsonApiLinks $links
+     * @param \AutodeskForge\Client\Model\JsonApiLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -367,7 +367,7 @@ class Project implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Autodesk\Client\Model\ProjectAttributes
+     * @return \AutodeskForge\Client\Model\ProjectAttributes
      */
     public function getAttributes()
     {
@@ -376,7 +376,7 @@ class Project implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Autodesk\Client\Model\ProjectAttributes $attributes
+     * @param \AutodeskForge\Client\Model\ProjectAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -388,7 +388,7 @@ class Project implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \Autodesk\Client\Model\JsonApiMeta
+     * @return \AutodeskForge\Client\Model\JsonApiMeta
      */
     public function getMeta()
     {
@@ -397,7 +397,7 @@ class Project implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \Autodesk\Client\Model\JsonApiMeta $meta
+     * @param \AutodeskForge\Client\Model\JsonApiMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -409,7 +409,7 @@ class Project implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \Autodesk\Client\Model\ProjectRelationships
+     * @return \AutodeskForge\Client\Model\ProjectRelationships
      */
     public function getRelationships()
     {
@@ -418,7 +418,7 @@ class Project implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \Autodesk\Client\Model\ProjectRelationships $relationships
+     * @param \AutodeskForge\Client\Model\ProjectRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -479,10 +479,10 @@ class Project implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Autodesk\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

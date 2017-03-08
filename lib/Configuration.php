@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Do not edit the class manually.
  */
 
-namespace Autodesk\Client;
+namespace AutodeskForge\Client;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -77,7 +77,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = "Swagger-Codegen/1.0.0/php";
+    protected $userAgent = "AutodeskForge/1.0/php";
 
     /**
      * Debug switch (default set to false)
@@ -144,21 +144,6 @@ class Configuration
      * @var string
      */
     protected $proxyPassword;
-
-    /**
-     * @var string
-     */
-    protected $clientId;
-
-    /**
-     * @var string
-     */
-    protected $clientSecret;
-
-    /**
-     * @var string
-     */
-    protected $redirectUrl;
 
     /**
      * Constructor
@@ -554,69 +539,13 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report = 'PHP SDK (Autodesk\Client) Debug Report:' . PHP_EOL;
+        $report = 'PHP SDK (AutodeskForge\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . phpversion() . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 0.1.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 1.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
-    }
-
-    /**
-     * @return string
-     */
-    public function getClientId()
-    {
-        return $this->clientId;
-    }
-
-    /**
-     * @param string $clientId
-     * @return $this
-     */
-    public function setClientId($clientId)
-    {
-        $this->clientId = $clientId;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getClientSecret()
-    {
-        return $this->clientSecret;
-    }
-
-    /**
-     * @param string $clientSecret
-     * @return $this
-     */
-    public function setClientSecret($clientSecret)
-    {
-        $this->clientSecret = $clientSecret;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRedirectUrl()
-    {
-        return $this->redirectUrl;
-    }
-
-    /**
-     * @param string $redirectUrl
-     * @return Configuration
-     */
-    public function setRedirectUrl($redirectUrl)
-    {
-        $this->redirectUrl = $redirectUrl;
-
-        return $this;
     }
 }

@@ -1,4 +1,4 @@
-# Autodesk\Client\BucketsApi
+# AutodeskForge\Client\BucketsApi
 
 All URIs are relative to *https://developer.api.autodesk.com/*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createBucket**
-> \Autodesk\Client\Model\Bucket createBucket($post_buckets, $x_ads_region)
+> \AutodeskForge\Client\Model\Bucket createBucket($post_buckets, $x_ads_region)
 
 
 
@@ -23,10 +23,10 @@ Use this endpoint to create a bucket. Buckets are arbitrary spaces created and o
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\BucketsApi();
-$post_buckets = new \Autodesk\Client\Model\PostBucketsPayload(); // \Autodesk\Client\Model\PostBucketsPayload | Body Structure
+$api_instance = new AutodeskForge\Client\Api\BucketsApi();
+$post_buckets = new \AutodeskForge\Client\Model\PostBucketsPayload(); // \AutodeskForge\Client\Model\PostBucketsPayload | Body Structure
 $x_ads_region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
 try {
@@ -42,12 +42,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **post_buckets** | [**\Autodesk\Client\Model\PostBucketsPayload**](../Model/\Autodesk\Client\Model\PostBucketsPayload.md)| Body Structure |
+ **post_buckets** | [**\AutodeskForge\Client\Model\PostBucketsPayload**](../Model/\AutodeskForge\Client\Model\PostBucketsPayload.md)| Body Structure |
  **x_ads_region** | **string**| The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; | [optional] [default to US]
 
 ### Return type
 
-[**\Autodesk\Client\Model\Bucket**](../Model/Bucket.md)
+[**\AutodeskForge\Client\Model\Bucket**](../Model/Bucket.md)
 
 ### Authorization
 
@@ -73,9 +73,9 @@ This endpoint will delete a bucket.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\BucketsApi();
+$api_instance = new AutodeskForge\Client\Api\BucketsApi();
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 
 try {
@@ -108,7 +108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBucketDetails**
-> \Autodesk\Client\Model\Bucket getBucketDetails($bucket_key)
+> \AutodeskForge\Client\Model\Bucket getBucketDetails($bucket_key)
 
 
 
@@ -120,9 +120,9 @@ This endpoint will return the buckets owned by the application. This endpoint su
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\BucketsApi();
+$api_instance = new AutodeskForge\Client\Api\BucketsApi();
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 
 try {
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Bucket**](../Model/Bucket.md)
+[**\AutodeskForge\Client\Model\Bucket**](../Model/Bucket.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBuckets**
-> \Autodesk\Client\Model\Buckets getBuckets($region, $limit, $start_at)
+> \AutodeskForge\Client\Model\Buckets getBuckets($region, $limit, $start_at)
 
 
 
@@ -168,9 +168,9 @@ This endpoint will return the buckets owned by the application. This endpoint su
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: oauth2_application
-Autodesk\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Autodesk\Client\Api\BucketsApi();
+$api_instance = new AutodeskForge\Client\Api\BucketsApi();
 $region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 $limit = 10; // int | Limit to the response size, Acceptable values: 1-100 Default = 10
 $start_at = "start_at_example"; // string | Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Autodesk\Client\Model\Buckets**](../Model/Buckets.md)
+[**\AutodeskForge\Client\Model\Buckets**](../Model/Buckets.md)
 
 ### Authorization
 

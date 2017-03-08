@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Autodesk\Client
+ * @package  AutodeskForge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Autodesk\Client;
+namespace AutodeskForge\Client;
 
 /**
  * ManifestDerivativeTest Class Doc Comment
@@ -36,7 +36,7 @@ namespace Autodesk\Client;
  */
 // * @description Requested output files for the source file URN
 /**
- * @package     Autodesk\Client
+ * @package     AutodeskForge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
