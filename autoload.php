@@ -27,7 +27,7 @@
 spl_autoload_register(function ($class) {
 
     // project-specific namespace prefix
-    $prefix = 'Autodesk\\Client\\';
+    $prefix = 'AutodeskForge\\Client\\';
 
     // base directory for the namespace prefix
     $base_dir = __DIR__ . '/lib/';
