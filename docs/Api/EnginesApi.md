@@ -18,13 +18,10 @@ Returns the details of all available AutoCAD core engines.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\EnginesApi();
+$apiInstance = new AutodeskForge\Client\Api\EnginesApi($authObject);
 
 try {
-    $result = $api_instance->getAllEngines();
+    $result = $apiInstance->getAllEngines();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnginesApi->getAllEngines: ', $e->getMessage(), PHP_EOL;
@@ -60,14 +57,11 @@ Returns the details of a specific AutoCAD core engine.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\EnginesApi();
+$apiInstance = new AutodeskForge\Client\Api\EnginesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->getEngine($id);
+    $result = $apiInstance->getEngine($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnginesApi->getEngine: ', $e->getMessage(), PHP_EOL;

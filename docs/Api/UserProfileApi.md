@@ -17,13 +17,10 @@ Returns the profile information of an authorizing end user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\UserProfileApi();
+$apiInstance = new AutodeskForge\Client\Api\UserProfileApi($authObject);
 
 try {
-    $result = $api_instance->getUserProfile();
+    $result = $apiInstance->getUserProfile();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserProfileApi->getUserProfile: ', $e->getMessage(), PHP_EOL;

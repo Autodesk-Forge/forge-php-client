@@ -24,15 +24,12 @@ Returns the version with the given `version_id`.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\VersionsApi();
+$apiInstance = new AutodeskForge\Client\Api\VersionsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 
 try {
-    $result = $api_instance->getVersion($project_id, $version_id);
+    $result = $apiInstance->getVersion($project_id, $version_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VersionsApi->getVersion: ', $e->getMessage(), PHP_EOL;
@@ -74,15 +71,12 @@ Returns the item the given version is associated with.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\VersionsApi();
+$apiInstance = new AutodeskForge\Client\Api\VersionsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 
 try {
-    $result = $api_instance->getVersionItem($project_id, $version_id);
+    $result = $apiInstance->getVersionItem($project_id, $version_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VersionsApi->getVersionItem: ', $e->getMessage(), PHP_EOL;
@@ -124,10 +118,7 @@ Returns the resources (`items`, `folders`, and `versions`) which have a custom r
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\VersionsApi();
+$apiInstance = new AutodeskForge\Client\Api\VersionsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -135,7 +126,7 @@ $filter_id = array("filter_id_example"); // string[] | filter by the `id` of the
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
 
 try {
-    $result = $api_instance->getVersionRefs($project_id, $version_id, $filter_type, $filter_id, $filter_extension_type);
+    $result = $apiInstance->getVersionRefs($project_id, $version_id, $filter_type, $filter_id, $filter_extension_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VersionsApi->getVersionRefs: ', $e->getMessage(), PHP_EOL;
@@ -180,10 +171,7 @@ Returns the custom relationships that are associated to the given `version_id`. 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\VersionsApi();
+$apiInstance = new AutodeskForge\Client\Api\VersionsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -193,7 +181,7 @@ $filter_direction = "filter_direction_example"; // string | filter by the direct
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
 
 try {
-    $result = $api_instance->getVersionRelationshipsRefs($project_id, $version_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
+    $result = $apiInstance->getVersionRelationshipsRefs($project_id, $version_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VersionsApi->getVersionRelationshipsRefs: ', $e->getMessage(), PHP_EOL;
@@ -240,15 +228,12 @@ Creates a new version of an item in the 'data' domain service.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\VersionsApi();
+$apiInstance = new AutodeskForge\Client\Api\VersionsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $body = new \AutodeskForge\Client\Model\CreateVersion(); // \AutodeskForge\Client\Model\CreateVersion | describe the version to be created
 
 try {
-    $result = $api_instance->postVersion($project_id, $body);
+    $result = $apiInstance->postVersion($project_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VersionsApi->postVersion: ', $e->getMessage(), PHP_EOL;
@@ -290,16 +275,13 @@ Creates a custom relationship between a version and another resource within the 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_access_code
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\VersionsApi();
+$apiInstance = new AutodeskForge\Client\Api\VersionsApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $version_id = "version_id_example"; // string | the `version id`
 $body = new \AutodeskForge\Client\Model\CreateRef(); // \AutodeskForge\Client\Model\CreateRef | describe the ref to be created
 
 try {
-    $api_instance->postVersionRelationshipsRef($project_id, $version_id, $body);
+    $apiInstance->postVersionRelationshipsRef($project_id, $version_id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling VersionsApi->postVersionRelationshipsRef: ', $e->getMessage(), PHP_EOL;
 }

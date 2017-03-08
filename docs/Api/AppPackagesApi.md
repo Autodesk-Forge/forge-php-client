@@ -27,14 +27,11 @@ Creates an AppPackage module.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $app_package = new \AutodeskForge\Client\Model\AppPackage(); // \AutodeskForge\Client\Model\AppPackage | 
 
 try {
-    $result = $api_instance->createAppPackage($app_package);
+    $result = $apiInstance->createAppPackage($app_package);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->createAppPackage: ', $e->getMessage(), PHP_EOL;
@@ -73,14 +70,11 @@ Removes a specific AppPackage.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $api_instance->deleteAppPackage($id);
+    $apiInstance->deleteAppPackage($id);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->deleteAppPackage: ', $e->getMessage(), PHP_EOL;
 }
@@ -118,14 +112,11 @@ Removes the version history of the specified AppPackage.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $api_instance->deleteAppPackageHistory($id);
+    $apiInstance->deleteAppPackageHistory($id);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->deleteAppPackageHistory: ', $e->getMessage(), PHP_EOL;
 }
@@ -163,13 +154,10 @@ Returns the details of all AppPackages.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 
 try {
-    $result = $api_instance->getAllAppPackages();
+    $result = $apiInstance->getAllAppPackages();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->getAllAppPackages: ', $e->getMessage(), PHP_EOL;
@@ -205,14 +193,11 @@ Returns the details of a specific AppPackage.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->getAppPackage($id);
+    $result = $apiInstance->getAppPackage($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->getAppPackage: ', $e->getMessage(), PHP_EOL;
@@ -251,14 +236,11 @@ Returns all old versions of a specified AppPackage.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->getAppPackageVersions($id);
+    $result = $apiInstance->getAppPackageVersions($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->getAppPackageVersions: ', $e->getMessage(), PHP_EOL;
@@ -297,13 +279,10 @@ Requests a pre-signed URL for uploading a zip file that contains the binaries fo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 
 try {
-    $api_instance->getUploadUrl();
+    $apiInstance->getUploadUrl();
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->getUploadUrl: ', $e->getMessage(), PHP_EOL;
 }
@@ -338,14 +317,11 @@ Requests a pre-signed URL for uploading a zip file that contains the binaries fo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $require = true; // bool | 
 
 try {
-    $api_instance->getUploadUrlWithRequireContentType($require);
+    $apiInstance->getUploadUrlWithRequireContentType($require);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->getUploadUrlWithRequireContentType: ', $e->getMessage(), PHP_EOL;
 }
@@ -383,15 +359,12 @@ Updates an AppPackage by specifying only the changed attributes.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 $app_package = new \AutodeskForge\Client\Model\AppPackageOptional(); // \AutodeskForge\Client\Model\AppPackageOptional | 
 
 try {
-    $api_instance->patchAppPackage($id, $app_package);
+    $apiInstance->patchAppPackage($id, $app_package);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->patchAppPackage: ', $e->getMessage(), PHP_EOL;
 }
@@ -430,15 +403,12 @@ Sets the AppPackage to the specified version.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 $app_package_version = new \AutodeskForge\Client\Model\AppPackageVersion(); // \AutodeskForge\Client\Model\AppPackageVersion | 
 
 try {
-    $api_instance->setAppPackageVersion($id, $app_package_version);
+    $apiInstance->setAppPackageVersion($id, $app_package_version);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->setAppPackageVersion: ', $e->getMessage(), PHP_EOL;
 }
@@ -477,15 +447,12 @@ Updates an AppPackage by redefining the entire Activity object.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\AppPackagesApi();
+$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 $app_package = new \AutodeskForge\Client\Model\AppPackage(); // \AutodeskForge\Client\Model\AppPackage | 
 
 try {
-    $api_instance->updateAppPackage($id, $app_package);
+    $apiInstance->updateAppPackage($id, $app_package);
 } catch (Exception $e) {
     echo 'Exception when calling AppPackagesApi->updateAppPackage: ', $e->getMessage(), PHP_EOL;
 }

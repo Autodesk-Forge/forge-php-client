@@ -24,14 +24,11 @@ Creates a new Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
 $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity | 
 
 try {
-    $result = $api_instance->createActivity($activity);
+    $result = $apiInstance->createActivity($activity);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ActivitiesApi->createActivity: ', $e->getMessage(), PHP_EOL;
@@ -70,14 +67,11 @@ Removes a specific Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $api_instance->deleteActivity($id);
+    $apiInstance->deleteActivity($id);
 } catch (Exception $e) {
     echo 'Exception when calling ActivitiesApi->deleteActivity: ', $e->getMessage(), PHP_EOL;
 }
@@ -115,14 +109,11 @@ Removes the version history of the specified Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $api_instance->deleteActivityHistory($id);
+    $apiInstance->deleteActivityHistory($id);
 } catch (Exception $e) {
     echo 'Exception when calling ActivitiesApi->deleteActivityHistory: ', $e->getMessage(), PHP_EOL;
 }
@@ -160,14 +151,11 @@ Returns the details of a specific Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->getActivity($id);
+    $result = $apiInstance->getActivity($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ActivitiesApi->getActivity: ', $e->getMessage(), PHP_EOL;
@@ -206,14 +194,11 @@ Returns all old versions of a specified Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->getActivityVersions($id);
+    $result = $apiInstance->getActivityVersions($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ActivitiesApi->getActivityVersions: ', $e->getMessage(), PHP_EOL;
@@ -252,13 +237,10 @@ Returns the details of all Activities.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
 
 try {
-    $result = $api_instance->getAllActivities();
+    $result = $apiInstance->getAllActivities();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ActivitiesApi->getAllActivities: ', $e->getMessage(), PHP_EOL;
@@ -294,15 +276,12 @@ Updates an Activity by specifying only the changed attributes.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 $activity = new \AutodeskForge\Client\Model\ActivityOptional(); // \AutodeskForge\Client\Model\ActivityOptional | 
 
 try {
-    $api_instance->patchActivity($id, $activity);
+    $apiInstance->patchActivity($id, $activity);
 } catch (Exception $e) {
     echo 'Exception when calling ActivitiesApi->patchActivity: ', $e->getMessage(), PHP_EOL;
 }
@@ -341,15 +320,12 @@ Sets the Activity to the specified version.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\ActivitiesApi();
+$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 $activity_version = new \AutodeskForge\Client\Model\ActivityVersion(); // \AutodeskForge\Client\Model\ActivityVersion | 
 
 try {
-    $api_instance->setActivityVersion($id, $activity_version);
+    $apiInstance->setActivityVersion($id, $activity_version);
 } catch (Exception $e) {
     echo 'Exception when calling ActivitiesApi->setActivityVersion: ', $e->getMessage(), PHP_EOL;
 }

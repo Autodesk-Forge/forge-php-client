@@ -22,15 +22,12 @@ Use this endpoint to create a bucket. Buckets are arbitrary spaces created and o
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\BucketsApi();
+$apiInstance = new AutodeskForge\Client\Api\BucketsApi($authObject);
 $post_buckets = new \AutodeskForge\Client\Model\PostBucketsPayload(); // \AutodeskForge\Client\Model\PostBucketsPayload | Body Structure
 $x_ads_region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
 try {
-    $result = $api_instance->createBucket($post_buckets, $x_ads_region);
+    $result = $apiInstance->createBucket($post_buckets, $x_ads_region);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BucketsApi->createBucket: ', $e->getMessage(), PHP_EOL;
@@ -72,14 +69,11 @@ This endpoint will delete a bucket.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\BucketsApi();
+$apiInstance = new AutodeskForge\Client\Api\BucketsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 
 try {
-    $api_instance->deleteBucket($bucket_key);
+    $apiInstance->deleteBucket($bucket_key);
 } catch (Exception $e) {
     echo 'Exception when calling BucketsApi->deleteBucket: ', $e->getMessage(), PHP_EOL;
 }
@@ -119,14 +113,11 @@ This endpoint will return the buckets owned by the application. This endpoint su
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\BucketsApi();
+$apiInstance = new AutodeskForge\Client\Api\BucketsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 
 try {
-    $result = $api_instance->getBucketDetails($bucket_key);
+    $result = $apiInstance->getBucketDetails($bucket_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BucketsApi->getBucketDetails: ', $e->getMessage(), PHP_EOL;
@@ -167,16 +158,13 @@ This endpoint will return the buckets owned by the application. This endpoint su
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2_application
-AutodeskForge\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new AutodeskForge\Client\Api\BucketsApi();
+$apiInstance = new AutodeskForge\Client\Api\BucketsApi($authObject);
 $region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 $limit = 10; // int | Limit to the response size, Acceptable values: 1-100 Default = 10
 $start_at = "start_at_example"; // string | Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response
 
 try {
-    $result = $api_instance->getBuckets($region, $limit, $start_at);
+    $result = $apiInstance->getBuckets($region, $limit, $start_at);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BucketsApi->getBuckets: ', $e->getMessage(), PHP_EOL;
