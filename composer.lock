@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fd34895d51322b302002c9314a9cb84",
+    "content-hash": "ed62bc13e40eaa33ba32d419801185f8",
     "packages": [
         {
             "name": "autodesk-forge/core",
-            "version": "dev-master",
+            "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Autodesk-Forge/php-core-sdk",
+                "url": "https://github.com/Autodesk-Forge/php-core-sdk.git",
                 "reference": "d80761f83ab8109d86e53651d164e65b0dd23f18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Autodesk-Forge/php-core-sdk/zipball/d80761f83ab8109d86e53651d164e65b0dd23f18",
+                "reference": "d80761f83ab8109d86e53651d164e65b0dd23f18",
+                "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
@@ -32,11 +38,7 @@
                     "AutodeskForge\\Core\\": "lib/Core"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "AutodeskForge\\Core\\": "test/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache 2.0"
             ],
@@ -52,7 +54,7 @@
                 "php",
                 "sdk"
             ],
-            "time": "2017-03-08 12:51:46"
+            "time": "2017-03-08T12:51:46+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2289,9 +2291,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "autodesk-forge/core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

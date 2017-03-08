@@ -21,7 +21,7 @@
     "ext-curl": "*",
     "ext-json": "*",
     "ext-mbstring": "*",
-    "autodesk-forge/core": "*@dev"
+    "autodesk-forge/core": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.8",
@@ -39,11 +39,5 @@
     "psr-4": {
       "AutodeskForge\\Client\\": "test/"
     }
-  },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/Autodesk-Forge/php-core-sdk"
-    }
-  ]
+  }
 }

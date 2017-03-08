@@ -14,23 +14,10 @@ and [Design Automation](https://developer.autodesk.com/en/docs/design-automation
 ### Installation
 #### Composer
 
-To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
-
+To install the bindings via [Composer](http://getcomposer.org/) run:
 ```
-{
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/Autodesk-Forge/forge-api-php-client.git"
-    }
-  ],
-  "require": {
-    "autodesk-forge/client": "*@dev"
-  }
-}
+composer require autodesk-forge/client
 ```
-
-Then run `composer install`
 
 #### Manual Installation
 
