@@ -1,6 +1,6 @@
 # AutodeskForge\Client\HubsApi
 
-All URIs are relative to *https://developer.api.autodesk.com/*
+All URIs are relative to *https://developer.api.autodesk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
