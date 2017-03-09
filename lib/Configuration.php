@@ -56,7 +56,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://developer.api.autodesk.com/';
+    protected $host = 'https://developer.api.autodesk.com';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout

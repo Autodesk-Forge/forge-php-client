@@ -14,7 +14,7 @@ and [Design Automation](https://developer.autodesk.com/en/docs/design-automation
 ### Installation
 #### Composer
 
-To install the bindings via [Composer](http://getcomposer.org/) run:
+To install the bindings via [Composer](http://getcomposer.org/), run:
 ```
 composer require autodesk-forge/client
 ```
@@ -148,7 +148,7 @@ $result = $apiInstance->createActivity($activity);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://developer.api.autodesk.com/*
+All URIs are relative to *https://developer.api.autodesk.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
