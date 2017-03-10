@@ -8,7 +8,7 @@ into your application, including [OAuth](https://developer.autodesk.com/en/docs/
 and [Design Automation](https://developer.autodesk.com/en/docs/design-automation/v2/overview/).
 
 ### Requirements
-* PHP 5.4.0 and later
+* PHP version 5.4.0 and above.
 * A registered app on the [Forge Developer portal](https://developer.autodesk.com/myapps).
 
 ### Installation
@@ -27,14 +27,6 @@ Download the files and include `autoload.php`:
 require_once('/path/to/AutodeskForge/autoload.php');
 ```
 
-### Tests
-
-To run the unit tests:
-
-```
-composer install
-./vendor/bin/phpunit
-```
 ## Tutorial
 Follow this tutorial to see a step-by-step authentication guide, and examples of how to use the Forge APIs.
 
@@ -134,7 +126,7 @@ To refresh your access token, call the `$threeLeggedAuth->refreshToken($refreshT
 
 #### Example API Calls
 
-Use `TwoLeggedAuth` or `ThreeLeggedAuth` object to call the Forge APIs.
+Use the `TwoLeggedAuth` object or the `ThreeLeggedAuth` object to call the Forge APIs.
 
 ```php
 <?php
