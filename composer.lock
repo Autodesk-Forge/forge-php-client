@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Autodesk-Forge/php-core-sdk.git",
-                "reference": "d80761f83ab8109d86e53651d164e65b0dd23f18"
+                "reference": "f3ea6a284128821a8d09b110a4a3edb95b4334b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Autodesk-Forge/php-core-sdk/zipball/d80761f83ab8109d86e53651d164e65b0dd23f18",
-                "reference": "d80761f83ab8109d86e53651d164e65b0dd23f18",
+                "url": "https://api.github.com/repos/Autodesk-Forge/php-core-sdk/zipball/f3ea6a284128821a8d09b110a4a3edb95b4334b6",
+                "reference": "f3ea6a284128821a8d09b110a4a3edb95b4334b6",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
                 "php",
                 "sdk"
             ],
-            "time": "2017-03-08T12:51:46+00:00"
+            "time": "2017-03-20T15:23:46+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

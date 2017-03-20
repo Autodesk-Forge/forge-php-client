@@ -48,7 +48,7 @@ To get a 2-legged token run the following code. Note that you need to replace `y
 ```php
 <?php
 
-AutodeskForge\Core\Configuration::getDefaultConfiguration()
+AutodeskForge\Auth\Configuration::getDefaultConfiguration()
     ->setClientId('<your-client-id>')
     ->setClientSecret('<your-client-secret>');
 
@@ -77,7 +77,7 @@ Note that the redirect URL must match the pattern of the callback URL field of t
 ```php
 <?php
 
-AutodeskForge\Core\Configuration::getDefaultConfiguration()
+AutodeskForge\Auth\Configuration::getDefaultConfiguration()
     ->setClientId('<your-client-id>')
     ->setClientSecret('<your-client-secret>')
     ->setRedirectUrl('<your-redirect-url>');
@@ -103,7 +103,7 @@ Request an access token using the authorization code you received, as shown belo
 ```php
 <?php
 
-AutodeskForge\Core\Configuration::getDefaultConfiguration()
+AutodeskForge\Auth\Configuration::getDefaultConfiguration()
     ->setClientId('<your-client-id>')
     ->setClientSecret('<your-client-secret>')
     ->setRedirectUrl('<your-redirect-url>');

@@ -202,9 +202,6 @@ class ApiClient
         }
         curl_setopt($curl, CURLOPT_URL, $url);
 
-        // Set user agent
-        curl_setopt($curl, CURLOPT_USERAGENT, $this->config->getUserAgent());
-
         // debugging for curl
         if ($this->config->getDebug()) {
             error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($postData, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());

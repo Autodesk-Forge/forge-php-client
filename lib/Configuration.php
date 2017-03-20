@@ -28,6 +28,8 @@
 
 namespace AutodeskForge\Client;
 
+use AutodeskForge\Core\HeadersProvider;
+
 /**
  * Configuration Class Doc Comment
  * PHP version 5
@@ -73,11 +75,9 @@ class Configuration
     protected $curlConnectTimeout = 0;
 
     /**
-     * User agent of the HTTP request, set to "PHP-Swagger" by default
-     *
      * @var string
      */
-    protected $userAgent = "AutodeskForge/1.0/php";
+    protected $sdkVersion = '1.0';
 
     /**
      * Debug switch (default set to false)
@@ -151,6 +151,10 @@ class Configuration
     public function __construct()
     {
         $this->tempFolderPath = sys_get_temp_dir();
+
+        $headersProvider = new HeadersProvider($this->sdkVersion);
+
+        $this->defaultHeaders = array_merge($this->defaultHeaders, $headersProvider->getHeaders());
     }
 
     /**
@@ -215,33 +219,6 @@ class Configuration
     public function getHost()
     {
         return $this->host;
-    }
-
-    /**
-     * Sets the user agent of the api client
-     *
-     * @param string $userAgent the user agent of the api client
-     *
-     * @return Configuration
-     */
-    public function setUserAgent($userAgent)
-    {
-        if ( ! is_string($userAgent)) {
-            throw new \InvalidArgumentException('User-agent must be a string.');
-        }
-
-        $this->userAgent = $userAgent;
-        return $this;
-    }
-
-    /**
-     * Gets the user agent of the api client
-     *
-     * @return string user agent
-     */
-    public function getUserAgent()
-    {
-        return $this->userAgent;
     }
 
     /**
