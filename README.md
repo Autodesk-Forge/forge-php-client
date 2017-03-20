@@ -138,9 +138,14 @@ $activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client
 $result = $apiInstance->createActivity($activity);
 ```
 
-## Documentation for API Endpoints
+## API Documentation
 
-All URIs are relative to *https://developer.api.autodesk.com*
+You can get the full documentation for the API on the [Developer Portal](https://developer.autodesk.com/)
+
+### Documentation for API Endpoints
+
+All URIs are relative to https://developer.api.autodesk.com/. For example, the *createBucket* URI is 'https://developer.api.autodesk.com/oss/v2/buckets'.
+
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -226,7 +231,7 @@ Class | Method | HTTP request | Description
 *WorkItemsApi* | [**getWorkItem**](docs/Api/WorkItemsApi.md#getworkitem) | **GET** /autocad.io/us-east/v2/WorkItems(&#39;{id}&#39;) | Returns the details of a specific WorkItem.
 
 
-## Author
+## Support
 
 forge.help@autodesk.com
 
