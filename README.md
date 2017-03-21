@@ -72,7 +72,7 @@ redirect the user to a consent page.
 
 Replace `your-client-id`, `your-client-secret`, and `your-redirect-url` with your [app](https://developer.autodesk.com/myapps)'s client ID, client secret, and redirect URL, and run the code to create a consent page URL.
 
-Note that the redirect URL must match the pattern of the callback URL field of the app’s registration in the My Apps section. The pattern may include wildcards after the hostname, allowing different redirect URL values to be specified in different parts of your app.
+Note that the redirect URL must match the callback URL you provided when you created the app.
 
 ```php
 <?php
