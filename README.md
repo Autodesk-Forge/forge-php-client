@@ -144,7 +144,7 @@ You can get the full documentation for the API on the [Developer Portal](https:/
 
 ### Documentation for API Endpoints
 
-All URIs are relative to https://developer.api.autodesk.com/. For example, the *createBucket* URI is 'https://developer.api.autodesk.com/oss/v2/buckets'.
+All URIs are relative to https://developer.api.autodesk.com. For example, the *createActivity* URI is 'https://developer.api.autodesk.com/autocad.io/us-east/v2/Activities'.
 
 
 Class | Method | HTTP request | Description
@@ -234,5 +234,3 @@ Class | Method | HTTP request | Description
 ## Support
 
 forge.help@autodesk.com
-
-
