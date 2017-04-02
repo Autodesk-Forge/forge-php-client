@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateItemData
+ * CreateItemDataAttributes
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Autodesk\Forge\Client\Model;
 use \ArrayAccess;
 
 /**
- * CreateItemData Class Doc Comment
+ * CreateItemDataAttributes Class Doc Comment
  *
  * @category    Class
  * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateItemData implements ArrayAccess
+class CreateItemDataAttributes implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,16 +47,15 @@ class CreateItemData implements ArrayAccess
      * The original name of the model.
      * @var string
      */
-    protected static $swaggerModelName = 'create_item_data';
+    protected static $swaggerModelName = 'create_item_data_attributes';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'attributes' => '\Autodesk\Forge\Client\Model\CreateItemDataAttributes',
-        'relationships' => '\Autodesk\Forge\Client\Model\CreateItemDataRelationships',
+        'display_name' => 'string',
+        'extension' => '\Autodesk\Forge\Client\Model\BaseAttributesExtensionObjectWithoutSchemaLink',
     ];
 
     /**
@@ -72,9 +71,8 @@ class CreateItemData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'attributes' => 'attributes',
-        'relationships' => 'relationships',
+        'display_name' => 'displayName',
+        'extension' => 'extension',
     ];
 
 
@@ -83,9 +81,8 @@ class CreateItemData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'attributes' => 'setAttributes',
-        'relationships' => 'setRelationships',
+        'display_name' => 'setDisplayName',
+        'extension' => 'setExtension',
     ];
 
 
@@ -94,9 +91,8 @@ class CreateItemData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'attributes' => 'getAttributes',
-        'relationships' => 'getRelationships',
+        'display_name' => 'getDisplayName',
+        'extension' => 'getExtension',
     ];
 
     public static function attributeMap()
@@ -114,20 +110,8 @@ class CreateItemData implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_ITEMS = 'items';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_ITEMS,
-        ];
-    }
     
 
     /**
@@ -142,9 +126,8 @@ class CreateItemData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
-        $this->container['relationships'] = isset($data['relationships']) ? $data['relationships'] : null;
+        $this->container['display_name'] = isset($data['display_name']) ? $data['display_name'] : null;
+        $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
     }
 
     /**
@@ -156,14 +139,16 @@ class CreateItemData implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['type'] === null) {
-            $invalid_properties[] = "'type' can't be null";
+        if ($this->container['display_name'] === null) {
+            $invalid_properties[] = "'display_name' can't be null";
         }
-        $allowed_values = ["items"];
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'items'.";
+        if (!preg_match("/^.+$/", $this->container['display_name'])) {
+            $invalid_properties[] = "invalid value for 'display_name', must be conform to the pattern /^.+$/.";
         }
 
+        if ($this->container['extension'] === null) {
+            $invalid_properties[] = "'extension' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -176,11 +161,13 @@ class CreateItemData implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['type'] === null) {
+        if ($this->container['display_name'] === null) {
             return false;
         }
-        $allowed_values = ["items"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if (!preg_match("/^.+$/", $this->container['display_name'])) {
+            return false;
+        }
+        if ($this->container['extension'] === null) {
             return false;
         }
         return true;
@@ -188,68 +175,48 @@ class CreateItemData implements ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets display_name
      * @return string
      */
-    public function getType()
+    public function getDisplayName()
     {
-        return $this->container['type'];
+        return $this->container['display_name'];
     }
 
     /**
-     * Sets type
-     * @param string $type
+     * Sets display_name
+     * @param string $display_name
      * @return $this
      */
-    public function setType($type)
+    public function setDisplayName($display_name)
     {
-        $allowed_values = array('items');
-        if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'items'");
+
+        if ((!preg_match("/^.+$/", $display_name))) {
+            throw new \InvalidArgumentException("invalid value for $display_name when calling CreateItemDataAttributes., must conform to the pattern /^.+$/.");
         }
-        $this->container['type'] = $type;
+
+        $this->container['display_name'] = $display_name;
 
         return $this;
     }
 
     /**
-     * Gets attributes
-     * @return \Autodesk\Forge\Client\Model\CreateItemDataAttributes
+     * Gets extension
+     * @return \Autodesk\Forge\Client\Model\BaseAttributesExtensionObjectWithoutSchemaLink
      */
-    public function getAttributes()
+    public function getExtension()
     {
-        return $this->container['attributes'];
+        return $this->container['extension'];
     }
 
     /**
-     * Sets attributes
-     * @param \Autodesk\Forge\Client\Model\CreateItemDataAttributes $attributes
+     * Sets extension
+     * @param \Autodesk\Forge\Client\Model\BaseAttributesExtensionObjectWithoutSchemaLink $extension
      * @return $this
      */
-    public function setAttributes($attributes)
+    public function setExtension($extension)
     {
-        $this->container['attributes'] = $attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets relationships
-     * @return \Autodesk\Forge\Client\Model\CreateItemDataRelationships
-     */
-    public function getRelationships()
-    {
-        return $this->container['relationships'];
-    }
-
-    /**
-     * Sets relationships
-     * @param \Autodesk\Forge\Client\Model\CreateItemDataRelationships $relationships
-     * @return $this
-     */
-    public function setRelationships($relationships)
-    {
-        $this->container['relationships'] = $relationships;
+        $this->container['extension'] = $extension;
 
         return $this;
     }

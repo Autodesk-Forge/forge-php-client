@@ -16,7 +16,7 @@ and [Design Automation](https://developer.autodesk.com/en/docs/design-automation
 
 To install the bindings via [Composer](http://getcomposer.org/), run:
 ```
-composer require autodesk-forge/client
+composer require autodesk/forge-client
 ```
 
 #### Manual Installation

@@ -230,7 +230,7 @@ class PostBucketsPayload implements ArrayAccess
 
     /**
      * Sets allow
-     * @param \Autodesk\Forge\Client\Model\PostBucketsPayloadAllow[] $allow
+     * @param \Autodesk\Forge\Client\Model\PostBucketsPayloadAllow[] $allow 
      * @return $this
      */
     public function setAllow($allow)
