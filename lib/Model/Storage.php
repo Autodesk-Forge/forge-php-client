@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Storage Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,10 +56,10 @@ class Storage implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'type' => 'string',
-        'attributes' => '\AutodeskForge\Client\Model\JsonApiAttributes',
-        'meta' => '\AutodeskForge\Client\Model\JsonApiMeta',
-        'relationships' => '\AutodeskForge\Client\Model\StorageRelationships',
-        'links' => '\AutodeskForge\Client\Model\JsonApiLinks',
+        'attributes' => '\Autodesk\Forge\Client\Model\JsonApiAttributes',
+        'meta' => '\Autodesk\Forge\Client\Model\JsonApiMeta',
+        'relationships' => '\Autodesk\Forge\Client\Model\StorageRelationships',
+        'links' => '\Autodesk\Forge\Client\Model\JsonApiLinks',
     ];
 
     /**
@@ -256,7 +256,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \AutodeskForge\Client\Model\JsonApiAttributes
+     * @return \Autodesk\Forge\Client\Model\JsonApiAttributes
      */
     public function getAttributes()
     {
@@ -265,7 +265,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \AutodeskForge\Client\Model\JsonApiAttributes $attributes
+     * @param \Autodesk\Forge\Client\Model\JsonApiAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -277,7 +277,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \AutodeskForge\Client\Model\JsonApiMeta
+     * @return \Autodesk\Forge\Client\Model\JsonApiMeta
      */
     public function getMeta()
     {
@@ -286,7 +286,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \AutodeskForge\Client\Model\JsonApiMeta $meta
+     * @param \Autodesk\Forge\Client\Model\JsonApiMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -298,7 +298,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \AutodeskForge\Client\Model\StorageRelationships
+     * @return \Autodesk\Forge\Client\Model\StorageRelationships
      */
     public function getRelationships()
     {
@@ -307,7 +307,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \AutodeskForge\Client\Model\StorageRelationships $relationships
+     * @param \Autodesk\Forge\Client\Model\StorageRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -319,7 +319,7 @@ class Storage implements ArrayAccess
 
     /**
      * Gets links
-     * @return \AutodeskForge\Client\Model\JsonApiLinks
+     * @return \Autodesk\Forge\Client\Model\JsonApiLinks
      */
     public function getLinks()
     {
@@ -328,7 +328,7 @@ class Storage implements ArrayAccess
 
     /**
      * Sets links
-     * @param \AutodeskForge\Client\Model\JsonApiLinks $links
+     * @param \Autodesk\Forge\Client\Model\JsonApiLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -389,10 +389,10 @@ class Storage implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

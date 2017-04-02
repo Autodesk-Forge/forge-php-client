@@ -1,4 +1,4 @@
-# AutodeskForge\Client\FoldersApi
+# Autodesk\Forge\Client\FoldersApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **getFolder**
-> \AutodeskForge\Client\Model\Folder getFolder($project_id, $folder_id)
+> \Autodesk\Forge\Client\Model\Folder getFolder($project_id, $folder_id)
 
 
 
@@ -25,7 +25,7 @@ Returns the folder by ID for any folder within a given project. All folders or s
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\FoldersApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\FoldersApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Folder**](../Model/Folder.md)
+[**\Autodesk\Forge\Client\Model\Folder**](../Model/Folder.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderContents**
-> \AutodeskForge\Client\Model\JsonApiCollection getFolderContents($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type, $page_number, $page_limit)
+> \Autodesk\Forge\Client\Model\JsonApiCollection getFolderContents($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type, $page_number, $page_limit)
 
 
 
@@ -72,7 +72,7 @@ Returns a collection of items and folders within a folder. Items represent word 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\FoldersApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\FoldersApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
+[**\Autodesk\Forge\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderParent**
-> \AutodeskForge\Client\Model\Folder getFolderParent($project_id, $folder_id)
+> \Autodesk\Forge\Client\Model\Folder getFolderParent($project_id, $folder_id)
 
 
 
@@ -129,7 +129,7 @@ Returns the parent folder (if it exists). In a project, subfolders and resource 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\FoldersApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\FoldersApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Folder**](../Model/Folder.md)
+[**\Autodesk\Forge\Client\Model\Folder**](../Model/Folder.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderRefs**
-> \AutodeskForge\Client\Model\JsonApiCollection getFolderRefs($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type)
+> \Autodesk\Forge\Client\Model\JsonApiCollection getFolderRefs($project_id, $folder_id, $filter_type, $filter_id, $filter_extension_type)
 
 
 
@@ -176,7 +176,7 @@ Returns the resources (`items`, `folders`, and `versions`) which have a custom r
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\FoldersApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\FoldersApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
+[**\Autodesk\Forge\Client\Model\JsonApiCollection**](../Model/JsonApiCollection.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderRelationshipsRefs**
-> \AutodeskForge\Client\Model\Refs getFolderRelationshipsRefs($project_id, $folder_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type)
+> \Autodesk\Forge\Client\Model\Refs getFolderRelationshipsRefs($project_id, $folder_id, $filter_type, $filter_id, $filter_ref_type, $filter_direction, $filter_extension_type)
 
 
 
@@ -229,7 +229,7 @@ Returns the custom relationships that are associated to the given `folder_id`. C
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\FoldersApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\FoldersApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
 $filter_type = array("filter_type_example"); // string[] | filter by the `type` of the `ref` target
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Refs**](../Model/Refs.md)
+[**\Autodesk\Forge\Client\Model\Refs**](../Model/Refs.md)
 
 ### Authorization
 
@@ -286,8 +286,8 @@ Creates a new folder in the `data` domain service
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\FoldersApi($authObject);
-$body = new \AutodeskForge\Client\Model\CreateFolder(); // \AutodeskForge\Client\Model\CreateFolder | describe the folder to be created
+$apiInstance = new Autodesk\Forge\Client\Api\FoldersApi($authObject);
+$body = new \Autodesk\Forge\Client\Model\CreateFolder(); // \Autodesk\Forge\Client\Model\CreateFolder | describe the folder to be created
 
 try {
     $apiInstance->postFolder($body);
@@ -301,7 +301,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\AutodeskForge\Client\Model\CreateFolder**](../Model/\AutodeskForge\Client\Model\CreateFolder.md)| describe the folder to be created |
+ **body** | [**\Autodesk\Forge\Client\Model\CreateFolder**](../Model/\Autodesk\Forge\Client\Model\CreateFolder.md)| describe the folder to be created |
 
 ### Return type
 
@@ -330,10 +330,10 @@ Creates a custom relationship between a folder and another resource within the '
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\FoldersApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\FoldersApi($authObject);
 $project_id = "project_id_example"; // string | the `project id`
 $folder_id = "folder_id_example"; // string | the `folder id`
-$body = new \AutodeskForge\Client\Model\CreateRef(); // \AutodeskForge\Client\Model\CreateRef | describe the ref to be created
+$body = new \Autodesk\Forge\Client\Model\CreateRef(); // \Autodesk\Forge\Client\Model\CreateRef | describe the ref to be created
 
 try {
     $apiInstance->postFolderRelationshipsRef($project_id, $folder_id, $body);
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **string**| the &#x60;project id&#x60; |
  **folder_id** | **string**| the &#x60;folder id&#x60; |
- **body** | [**\AutodeskForge\Client\Model\CreateRef**](../Model/\AutodeskForge\Client\Model\CreateRef.md)| describe the ref to be created |
+ **body** | [**\Autodesk\Forge\Client\Model\CreateRef**](../Model/\Autodesk\Forge\Client\Model\CreateRef.md)| describe the ref to be created |
 
 ### Return type
 

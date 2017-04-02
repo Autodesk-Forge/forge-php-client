@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Api;
+namespace Autodesk\Forge\Client\Api;
 
-use \AutodeskForge\Client\ApiException;
+use \Autodesk\Forge\Client\ApiException;
 
 /**
  * UserProfileApi Class Doc Comment
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -45,8 +45,8 @@ class UserProfileApi extends AbstractApi
      *
      * Returns the profile information of an authorizing end user.
      *
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\UserProfile
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\UserProfile
      */
     public function getUserProfile()
     {
@@ -59,8 +59,8 @@ class UserProfileApi extends AbstractApi
      *
      * Returns the profile information of an authorizing end user.
      *
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\UserProfile, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\UserProfile, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserProfileWithHttpInfo()
     {
@@ -94,19 +94,19 @@ class UserProfileApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\UserProfile',
+                '\Autodesk\Forge\Client\Model\UserProfile',
                 '/userprofile/v1/users/@me'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\UserProfile', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\UserProfile', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\UserProfile', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\UserProfile', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

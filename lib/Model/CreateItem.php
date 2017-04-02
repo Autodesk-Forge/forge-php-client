@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateItem Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,9 +54,9 @@ class CreateItem implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\AutodeskForge\Client\Model\CreateItemData',
-        'included' => '\AutodeskForge\Client\Model\CreateItemIncluded[]',
+        'jsonapi' => '\Autodesk\Forge\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Forge\Client\Model\CreateItemData',
+        'included' => '\Autodesk\Forge\Client\Model\CreateItemIncluded[]',
     ];
 
     /**
@@ -168,7 +168,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \AutodeskForge\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Forge\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -177,7 +177,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \AutodeskForge\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Forge\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -189,7 +189,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Gets data
-     * @return \AutodeskForge\Client\Model\CreateItemData
+     * @return \Autodesk\Forge\Client\Model\CreateItemData
      */
     public function getData()
     {
@@ -198,7 +198,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Sets data
-     * @param \AutodeskForge\Client\Model\CreateItemData $data
+     * @param \Autodesk\Forge\Client\Model\CreateItemData $data
      * @return $this
      */
     public function setData($data)
@@ -210,7 +210,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Gets included
-     * @return \AutodeskForge\Client\Model\CreateItemIncluded[]
+     * @return \Autodesk\Forge\Client\Model\CreateItemIncluded[]
      */
     public function getIncluded()
     {
@@ -219,7 +219,7 @@ class CreateItem implements ArrayAccess
 
     /**
      * Sets included
-     * @param \AutodeskForge\Client\Model\CreateItemIncluded[] $included
+     * @param \Autodesk\Forge\Client\Model\CreateItemIncluded[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -280,10 +280,10 @@ class CreateItem implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

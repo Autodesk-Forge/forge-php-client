@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description provides the links used for paging
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,10 +55,10 @@ class JsonApiLinksPaging implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'first' => '\AutodeskForge\Client\Model\JsonApiLink',
-        'prev' => '\AutodeskForge\Client\Model\JsonApiLink',
-        'next' => '\AutodeskForge\Client\Model\JsonApiLink',
-        'last' => '\AutodeskForge\Client\Model\JsonApiLink',
+        'first' => '\Autodesk\Forge\Client\Model\JsonApiLink',
+        'prev' => '\Autodesk\Forge\Client\Model\JsonApiLink',
+        'next' => '\Autodesk\Forge\Client\Model\JsonApiLink',
+        'last' => '\Autodesk\Forge\Client\Model\JsonApiLink',
     ];
 
     /**
@@ -168,7 +168,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Gets first
-     * @return \AutodeskForge\Client\Model\JsonApiLink
+     * @return \Autodesk\Forge\Client\Model\JsonApiLink
      */
     public function getFirst()
     {
@@ -177,7 +177,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Sets first
-     * @param \AutodeskForge\Client\Model\JsonApiLink $first
+     * @param \Autodesk\Forge\Client\Model\JsonApiLink $first
      * @return $this
      */
     public function setFirst($first)
@@ -189,7 +189,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Gets prev
-     * @return \AutodeskForge\Client\Model\JsonApiLink
+     * @return \Autodesk\Forge\Client\Model\JsonApiLink
      */
     public function getPrev()
     {
@@ -198,7 +198,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Sets prev
-     * @param \AutodeskForge\Client\Model\JsonApiLink $prev
+     * @param \Autodesk\Forge\Client\Model\JsonApiLink $prev
      * @return $this
      */
     public function setPrev($prev)
@@ -210,7 +210,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Gets next
-     * @return \AutodeskForge\Client\Model\JsonApiLink
+     * @return \Autodesk\Forge\Client\Model\JsonApiLink
      */
     public function getNext()
     {
@@ -219,7 +219,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Sets next
-     * @param \AutodeskForge\Client\Model\JsonApiLink $next
+     * @param \Autodesk\Forge\Client\Model\JsonApiLink $next
      * @return $this
      */
     public function setNext($next)
@@ -231,7 +231,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Gets last
-     * @return \AutodeskForge\Client\Model\JsonApiLink
+     * @return \Autodesk\Forge\Client\Model\JsonApiLink
      */
     public function getLast()
     {
@@ -240,7 +240,7 @@ class JsonApiLinksPaging implements ArrayAccess
 
     /**
      * Sets last
-     * @param \AutodeskForge\Client\Model\JsonApiLink $last
+     * @param \Autodesk\Forge\Client\Model\JsonApiLink $last
      * @return $this
      */
     public function setLast($last)
@@ -301,10 +301,10 @@ class JsonApiLinksPaging implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

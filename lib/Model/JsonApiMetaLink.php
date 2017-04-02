@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiMetaLink Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class JsonApiMetaLink implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'link' => '\AutodeskForge\Client\Model\JsonApiLink',
+        'link' => '\Autodesk\Forge\Client\Model\JsonApiLink',
     ];
 
     /**
@@ -158,7 +158,7 @@ class JsonApiMetaLink implements ArrayAccess
 
     /**
      * Gets link
-     * @return \AutodeskForge\Client\Model\JsonApiLink
+     * @return \Autodesk\Forge\Client\Model\JsonApiLink
      */
     public function getLink()
     {
@@ -167,7 +167,7 @@ class JsonApiMetaLink implements ArrayAccess
 
     /**
      * Sets link
-     * @param \AutodeskForge\Client\Model\JsonApiLink $link
+     * @param \Autodesk\Forge\Client\Model\JsonApiLink $link
      * @return $this
      */
     public function setLink($link)
@@ -228,10 +228,10 @@ class JsonApiMetaLink implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

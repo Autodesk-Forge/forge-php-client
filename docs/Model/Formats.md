@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**formats** | [**\AutodeskForge\Client\Model\FormatsFormats**](FormatsFormats.md) |  | [optional] 
+**formats** | [**\Autodesk\Forge\Client\Model\FormatsFormats**](FormatsFormats.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

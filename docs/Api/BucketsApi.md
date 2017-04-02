@@ -1,4 +1,4 @@
-# AutodeskForge\Client\BucketsApi
+# Autodesk\Forge\Client\BucketsApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createBucket**
-> \AutodeskForge\Client\Model\Bucket createBucket($post_buckets, $x_ads_region)
+> \Autodesk\Forge\Client\Model\Bucket createBucket($post_buckets, $x_ads_region)
 
 
 
@@ -22,8 +22,8 @@ Use this endpoint to create a bucket. Buckets are arbitrary spaces created and o
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\BucketsApi($authObject);
-$post_buckets = new \AutodeskForge\Client\Model\PostBucketsPayload(); // \AutodeskForge\Client\Model\PostBucketsPayload | Body Structure
+$apiInstance = new Autodesk\Forge\Client\Api\BucketsApi($authObject);
+$post_buckets = new \Autodesk\Forge\Client\Model\PostBucketsPayload(); // \Autodesk\Forge\Client\Model\PostBucketsPayload | Body Structure
 $x_ads_region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
 try {
@@ -39,12 +39,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **post_buckets** | [**\AutodeskForge\Client\Model\PostBucketsPayload**](../Model/\AutodeskForge\Client\Model\PostBucketsPayload.md)| Body Structure |
+ **post_buckets** | [**\Autodesk\Forge\Client\Model\PostBucketsPayload**](../Model/\Autodesk\Forge\Client\Model\PostBucketsPayload.md)| Body Structure |
  **x_ads_region** | **string**| The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; | [optional] [default to US]
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Bucket**](../Model/Bucket.md)
+[**\Autodesk\Forge\Client\Model\Bucket**](../Model/Bucket.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ This endpoint will delete a bucket.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\BucketsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\BucketsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 
 try {
@@ -102,7 +102,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBucketDetails**
-> \AutodeskForge\Client\Model\Bucket getBucketDetails($bucket_key)
+> \Autodesk\Forge\Client\Model\Bucket getBucketDetails($bucket_key)
 
 
 
@@ -113,7 +113,7 @@ This endpoint will return the buckets owned by the application. This endpoint su
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\BucketsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\BucketsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 
 try {
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Bucket**](../Model/Bucket.md)
+[**\Autodesk\Forge\Client\Model\Bucket**](../Model/Bucket.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBuckets**
-> \AutodeskForge\Client\Model\Buckets getBuckets($region, $limit, $start_at)
+> \Autodesk\Forge\Client\Model\Buckets getBuckets($region, $limit, $start_at)
 
 
 
@@ -158,7 +158,7 @@ This endpoint will return the buckets owned by the application. This endpoint su
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\BucketsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\BucketsApi($authObject);
 $region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 $limit = 10; // int | Limit to the response size, Acceptable values: 1-100 Default = 10
 $start_at = "start_at_example"; // string | Key to use as an offset to continue pagination This is typically the last bucket key found in a preceding GET buckets response
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Buckets**](../Model/Buckets.md)
+[**\Autodesk\Forge\Client\Model\Buckets**](../Model/Buckets.md)
 
 ### Authorization
 

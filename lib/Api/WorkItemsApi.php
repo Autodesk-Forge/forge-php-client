@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Api;
+namespace Autodesk\Forge\Client\Api;
 
-use \AutodeskForge\Client\ApiException;
+use \Autodesk\Forge\Client\ApiException;
 
 /**
  * WorkItemsApi Class Doc Comment
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -45,9 +45,9 @@ class WorkItemsApi extends AbstractApi
      *
      * Creates a new WorkItem.
      *
-     * @param \AutodeskForge\Client\Model\WorkItem $work_item (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\WorkItemResp
+     * @param \Autodesk\Forge\Client\Model\WorkItem $work_item (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\WorkItemResp
      */
     public function createWorkItem($work_item)
     {
@@ -60,9 +60,9 @@ class WorkItemsApi extends AbstractApi
      *
      * Creates a new WorkItem.
      *
-     * @param \AutodeskForge\Client\Model\WorkItem $work_item (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\WorkItemResp, HTTP status code, HTTP response headers (array of strings)
+     * @param \Autodesk\Forge\Client\Model\WorkItem $work_item (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\WorkItemResp, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWorkItemWithHttpInfo($work_item)
     {
@@ -105,19 +105,19 @@ class WorkItemsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\WorkItemResp',
+                '\Autodesk\Forge\Client\Model\WorkItemResp',
                 '/autocad.io/us-east/v2/WorkItems'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\WorkItemResp', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\WorkItemResp', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\WorkItemResp', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\WorkItemResp', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -132,7 +132,7 @@ class WorkItemsApi extends AbstractApi
      * Removes a specific WorkItem.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteWorkItem($id)
@@ -147,7 +147,7 @@ class WorkItemsApi extends AbstractApi
      * Removes a specific WorkItem.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWorkItemWithHttpInfo($id)
@@ -213,8 +213,8 @@ class WorkItemsApi extends AbstractApi
      * Returns the details of all WorkItems.
      *
      * @param int $skip (optional)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\DesignAutomationWorkItems
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\DesignAutomationWorkItems
      */
     public function getAllWorkItems($skip = null)
     {
@@ -228,8 +228,8 @@ class WorkItemsApi extends AbstractApi
      * Returns the details of all WorkItems.
      *
      * @param int $skip (optional)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\DesignAutomationWorkItems, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\DesignAutomationWorkItems, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllWorkItemsWithHttpInfo($skip = null)
     {
@@ -267,19 +267,19 @@ class WorkItemsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\DesignAutomationWorkItems',
+                '\Autodesk\Forge\Client\Model\DesignAutomationWorkItems',
                 '/autocad.io/us-east/v2/WorkItems'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\DesignAutomationWorkItems', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\DesignAutomationWorkItems', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\DesignAutomationWorkItems', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\DesignAutomationWorkItems', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -294,8 +294,8 @@ class WorkItemsApi extends AbstractApi
      * Returns the details of a specific WorkItem.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\WorkItemResp
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\WorkItemResp
      */
     public function getWorkItem($id)
     {
@@ -309,8 +309,8 @@ class WorkItemsApi extends AbstractApi
      * Returns the details of a specific WorkItem.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\WorkItemResp, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\WorkItemResp, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWorkItemWithHttpInfo($id)
     {
@@ -356,19 +356,19 @@ class WorkItemsApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\WorkItemResp',
+                '\Autodesk\Forge\Client\Model\WorkItemResp',
                 '/autocad.io/us-east/v2/WorkItems(&#39;{id}&#39;)'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\WorkItemResp', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\WorkItemResp', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\WorkItemResp', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\WorkItemResp', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

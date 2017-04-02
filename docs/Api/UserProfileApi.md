@@ -1,4 +1,4 @@
-# AutodeskForge\Client\UserProfileApi
+# Autodesk\Forge\Client\UserProfileApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **getUserProfile**
-> \AutodeskForge\Client\Model\UserProfile getUserProfile()
+> \Autodesk\Forge\Client\Model\UserProfile getUserProfile()
 
 Returns the profile information of an authorizing end user.
 
@@ -17,7 +17,7 @@ Returns the profile information of an authorizing end user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\UserProfileApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\UserProfileApi($authObject);
 
 try {
     $result = $apiInstance->getUserProfile();
@@ -33,7 +33,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\UserProfile**](../Model/UserProfile.md)
+[**\Autodesk\Forge\Client\Model\UserProfile**](../Model/UserProfile.md)
 
 ### Authorization
 

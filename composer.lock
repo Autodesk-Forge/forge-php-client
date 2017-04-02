@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed62bc13e40eaa33ba32d419801185f8",
+    "content-hash": "d48f5c08bae6b132c3322025677a08d9",
     "packages": [
         {
-            "name": "autodesk-forge/core",
+            "name": "autodesk/core",
             "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Autodesk-Forge/php-core-sdk.git",
-                "reference": "f3ea6a284128821a8d09b110a4a3edb95b4334b6"
+                "url": "https://github.com/Autodesk-Forge/core-php-client.git",
+                "reference": "74fabb08cecd83ddf5539a660e1dbf51ee12d867"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Autodesk-Forge/php-core-sdk/zipball/f3ea6a284128821a8d09b110a4a3edb95b4334b6",
-                "reference": "f3ea6a284128821a8d09b110a4a3edb95b4334b6",
+                "url": "https://api.github.com/repos/Autodesk-Forge/core-php-client/zipball/74fabb08cecd83ddf5539a660e1dbf51ee12d867",
+                "reference": "74fabb08cecd83ddf5539a660e1dbf51ee12d867",
                 "shasum": ""
             },
             "require": {
@@ -34,8 +34,8 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "AutodeskForge\\Auth\\": "lib/Auth",
-                    "AutodeskForge\\Core\\": "lib/Core"
+                    "Autodesk\\Auth\\": "lib/Auth",
+                    "Autodesk\\Core\\": "lib/Core"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -54,7 +54,7 @@
                 "php",
                 "sdk"
             ],
-            "time": "2017-03-20T15:23:46+00:00"
+            "time": "2017-04-02T09:04:21+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -171,16 +171,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855"
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/0d6c7ca039329247e4f0f8f8f6506810e8248855",
-                "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-02-27T10:51:17+00:00"
+            "time": "2017-03-20T17:10:46+00:00"
         },
         {
             "name": "psr/http-message",

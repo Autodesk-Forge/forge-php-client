@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Folder Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,15 +54,15 @@ class Folder implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\AutodeskForge\Client\Model\JsonApiResource',
-        'included' => '\AutodeskForge\Client\Model\JsonApiResource[]',
-        'links' => '\AutodeskForge\Client\Model\JsonApiLinks',
+        'jsonapi' => '\Autodesk\Forge\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Forge\Client\Model\JsonApiResource',
+        'included' => '\Autodesk\Forge\Client\Model\JsonApiResource[]',
+        'links' => '\Autodesk\Forge\Client\Model\JsonApiLinks',
         'id' => 'string',
         'type' => 'string',
-        'attributes' => '\AutodeskForge\Client\Model\FolderAttributes',
-        'meta' => '\AutodeskForge\Client\Model\JsonApiMeta',
-        'relationships' => '\AutodeskForge\Client\Model\FolderRelationships',
+        'attributes' => '\Autodesk\Forge\Client\Model\FolderAttributes',
+        'meta' => '\Autodesk\Forge\Client\Model\JsonApiMeta',
+        'relationships' => '\Autodesk\Forge\Client\Model\FolderRelationships',
     ];
 
     /**
@@ -237,7 +237,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \AutodeskForge\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Forge\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -246,7 +246,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \AutodeskForge\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Forge\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -258,7 +258,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets data
-     * @return \AutodeskForge\Client\Model\JsonApiResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiResource
      */
     public function getData()
     {
@@ -267,7 +267,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets data
-     * @param \AutodeskForge\Client\Model\JsonApiResource $data
+     * @param \Autodesk\Forge\Client\Model\JsonApiResource $data
      * @return $this
      */
     public function setData($data)
@@ -279,7 +279,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets included
-     * @return \AutodeskForge\Client\Model\JsonApiResource[]
+     * @return \Autodesk\Forge\Client\Model\JsonApiResource[]
      */
     public function getIncluded()
     {
@@ -288,7 +288,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets included
-     * @param \AutodeskForge\Client\Model\JsonApiResource[] $included
+     * @param \Autodesk\Forge\Client\Model\JsonApiResource[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -300,7 +300,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets links
-     * @return \AutodeskForge\Client\Model\JsonApiLinks
+     * @return \Autodesk\Forge\Client\Model\JsonApiLinks
      */
     public function getLinks()
     {
@@ -309,7 +309,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets links
-     * @param \AutodeskForge\Client\Model\JsonApiLinks $links
+     * @param \Autodesk\Forge\Client\Model\JsonApiLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -367,7 +367,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \AutodeskForge\Client\Model\FolderAttributes
+     * @return \Autodesk\Forge\Client\Model\FolderAttributes
      */
     public function getAttributes()
     {
@@ -376,7 +376,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \AutodeskForge\Client\Model\FolderAttributes $attributes
+     * @param \Autodesk\Forge\Client\Model\FolderAttributes $attributes
      * @return $this
      */
     public function setAttributes($attributes)
@@ -388,7 +388,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \AutodeskForge\Client\Model\JsonApiMeta
+     * @return \Autodesk\Forge\Client\Model\JsonApiMeta
      */
     public function getMeta()
     {
@@ -397,7 +397,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \AutodeskForge\Client\Model\JsonApiMeta $meta
+     * @param \Autodesk\Forge\Client\Model\JsonApiMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -409,7 +409,7 @@ class Folder implements ArrayAccess
 
     /**
      * Gets relationships
-     * @return \AutodeskForge\Client\Model\FolderRelationships
+     * @return \Autodesk\Forge\Client\Model\FolderRelationships
      */
     public function getRelationships()
     {
@@ -418,7 +418,7 @@ class Folder implements ArrayAccess
 
     /**
      * Sets relationships
-     * @param \AutodeskForge\Client\Model\FolderRelationships $relationships
+     * @param \Autodesk\Forge\Client\Model\FolderRelationships $relationships
      * @return $this
      */
     public function setRelationships($relationships)
@@ -479,10 +479,10 @@ class Folder implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

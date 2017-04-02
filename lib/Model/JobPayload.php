@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JobPayload Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class JobPayload implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'input' => '\AutodeskForge\Client\Model\JobPayloadInput',
-        'output' => '\AutodeskForge\Client\Model\JobPayloadOutput',
+        'input' => '\Autodesk\Forge\Client\Model\JobPayloadInput',
+        'output' => '\Autodesk\Forge\Client\Model\JobPayloadOutput',
     ];
 
     /**
@@ -157,7 +157,7 @@ class JobPayload implements ArrayAccess
 
     /**
      * Gets input
-     * @return \AutodeskForge\Client\Model\JobPayloadInput
+     * @return \Autodesk\Forge\Client\Model\JobPayloadInput
      */
     public function getInput()
     {
@@ -166,7 +166,7 @@ class JobPayload implements ArrayAccess
 
     /**
      * Sets input
-     * @param \AutodeskForge\Client\Model\JobPayloadInput $input
+     * @param \Autodesk\Forge\Client\Model\JobPayloadInput $input
      * @return $this
      */
     public function setInput($input)
@@ -178,7 +178,7 @@ class JobPayload implements ArrayAccess
 
     /**
      * Gets output
-     * @return \AutodeskForge\Client\Model\JobPayloadOutput
+     * @return \Autodesk\Forge\Client\Model\JobPayloadOutput
      */
     public function getOutput()
     {
@@ -187,7 +187,7 @@ class JobPayload implements ArrayAccess
 
     /**
      * Sets output
-     * @param \AutodeskForge\Client\Model\JobPayloadOutput $output
+     * @param \Autodesk\Forge\Client\Model\JobPayloadOutput $output
      * @return $this
      */
     public function setOutput($output)
@@ -248,10 +248,10 @@ class JobPayload implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

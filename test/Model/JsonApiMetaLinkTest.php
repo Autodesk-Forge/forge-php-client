@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace AutodeskForge\Client;
+namespace Autodesk\Forge\Client;
 
 /**
  * JsonApiMetaLinkTest Class Doc Comment
@@ -36,7 +36,7 @@ namespace AutodeskForge\Client;
  */
 // * @description JsonApiMetaLink
 /**
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

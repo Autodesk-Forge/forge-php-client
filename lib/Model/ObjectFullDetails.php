@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Object Details json response
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -63,7 +63,7 @@ class ObjectFullDetails implements ArrayAccess
         'content_type' => 'string',
         'location' => 'string',
         'block_sizes' => 'int[]',
-        'deltas' => '\AutodeskForge\Client\Model\ObjectFullDetailsDeltas[]',
+        'deltas' => '\Autodesk\Forge\Client\Model\ObjectFullDetailsDeltas[]',
     ];
 
     /**
@@ -361,7 +361,7 @@ class ObjectFullDetails implements ArrayAccess
 
     /**
      * Gets deltas
-     * @return \AutodeskForge\Client\Model\ObjectFullDetailsDeltas[]
+     * @return \Autodesk\Forge\Client\Model\ObjectFullDetailsDeltas[]
      */
     public function getDeltas()
     {
@@ -370,7 +370,7 @@ class ObjectFullDetails implements ArrayAccess
 
     /**
      * Sets deltas
-     * @param \AutodeskForge\Client\Model\ObjectFullDetailsDeltas[] $deltas Patch files available for download related to this object
+     * @param \Autodesk\Forge\Client\Model\ObjectFullDetailsDeltas[] $deltas Patch files available for download related to this object
      * @return $this
      */
     public function setDeltas($deltas)
@@ -431,10 +431,10 @@ class ObjectFullDetails implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

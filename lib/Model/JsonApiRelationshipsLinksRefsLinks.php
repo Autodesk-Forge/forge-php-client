@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiRelationshipsLinksRefsLinks Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'self' => '\AutodeskForge\Client\Model\JsonApiLink',
-        'related' => '\AutodeskForge\Client\Model\JsonApiLink',
+        'self' => '\Autodesk\Forge\Client\Model\JsonApiLink',
+        'related' => '\Autodesk\Forge\Client\Model\JsonApiLink',
     ];
 
     /**
@@ -169,7 +169,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
     /**
      * Gets self
-     * @return \AutodeskForge\Client\Model\JsonApiLink
+     * @return \Autodesk\Forge\Client\Model\JsonApiLink
      */
     public function getSelf()
     {
@@ -178,7 +178,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
     /**
      * Sets self
-     * @param \AutodeskForge\Client\Model\JsonApiLink $self
+     * @param \Autodesk\Forge\Client\Model\JsonApiLink $self
      * @return $this
      */
     public function setSelf($self)
@@ -190,7 +190,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
     /**
      * Gets related
-     * @return \AutodeskForge\Client\Model\JsonApiLink
+     * @return \Autodesk\Forge\Client\Model\JsonApiLink
      */
     public function getRelated()
     {
@@ -199,7 +199,7 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
 
     /**
      * Sets related
-     * @param \AutodeskForge\Client\Model\JsonApiLink $related
+     * @param \Autodesk\Forge\Client\Model\JsonApiLink $related
      * @return $this
      */
     public function setRelated($related)
@@ -260,10 +260,10 @@ class JsonApiRelationshipsLinksRefsLinks implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

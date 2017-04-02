@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace AutodeskForge\Client;
+namespace Autodesk\Forge\Client;
 
-use \AutodeskForge\Client\Configuration;
-use \AutodeskForge\Client\ApiClient;
-use \AutodeskForge\Client\ApiException;
-use \AutodeskForge\Client\ObjectSerializer;
+use \Autodesk\Forge\Client\Configuration;
+use \Autodesk\Forge\Client\ApiClient;
+use \Autodesk\Forge\Client\ApiException;
+use \Autodesk\Forge\Client\ObjectSerializer;
 
 /**
  * HubsApiTest Class Doc Comment
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

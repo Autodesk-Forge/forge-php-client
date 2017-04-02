@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * JsonApiRelationshipsLinksExternalResource Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'meta' => '\AutodeskForge\Client\Model\JsonApiMetaLink',
-        'data' => '\AutodeskForge\Client\Model\JsonApiTypeId',
+        'meta' => '\Autodesk\Forge\Client\Model\JsonApiMetaLink',
+        'data' => '\Autodesk\Forge\Client\Model\JsonApiTypeId',
     ];
 
     /**
@@ -169,7 +169,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
     /**
      * Gets meta
-     * @return \AutodeskForge\Client\Model\JsonApiMetaLink
+     * @return \Autodesk\Forge\Client\Model\JsonApiMetaLink
      */
     public function getMeta()
     {
@@ -178,7 +178,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
     /**
      * Sets meta
-     * @param \AutodeskForge\Client\Model\JsonApiMetaLink $meta
+     * @param \Autodesk\Forge\Client\Model\JsonApiMetaLink $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -190,7 +190,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
     /**
      * Gets data
-     * @return \AutodeskForge\Client\Model\JsonApiTypeId
+     * @return \Autodesk\Forge\Client\Model\JsonApiTypeId
      */
     public function getData()
     {
@@ -199,7 +199,7 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
 
     /**
      * Sets data
-     * @param \AutodeskForge\Client\Model\JsonApiTypeId $data
+     * @param \Autodesk\Forge\Client\Model\JsonApiTypeId $data
      * @return $this
      */
     public function setData($data)
@@ -260,10 +260,10 @@ class JsonApiRelationshipsLinksExternalResource implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

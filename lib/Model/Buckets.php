@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Buckets Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class Buckets implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'items' => '\AutodeskForge\Client\Model\BucketsItems[]',
+        'items' => '\Autodesk\Forge\Client\Model\BucketsItems[]',
         'next' => 'string',
     ];
 
@@ -169,7 +169,7 @@ class Buckets implements ArrayAccess
 
     /**
      * Gets items
-     * @return \AutodeskForge\Client\Model\BucketsItems[]
+     * @return \Autodesk\Forge\Client\Model\BucketsItems[]
      */
     public function getItems()
     {
@@ -178,7 +178,7 @@ class Buckets implements ArrayAccess
 
     /**
      * Sets items
-     * @param \AutodeskForge\Client\Model\BucketsItems[] $items Array of items representing the buckets
+     * @param \Autodesk\Forge\Client\Model\BucketsItems[] $items Array of items representing the buckets
      * @return $this
      */
     public function setItems($items)
@@ -260,10 +260,10 @@ class Buckets implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ItemRelationships Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,10 +54,10 @@ class ItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'parent' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'tip' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'versions' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternal',
-        'refs' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksRefs',
+        'parent' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'tip' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'versions' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternal',
+        'refs' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksRefs',
     ];
 
     /**
@@ -191,7 +191,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets parent
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getParent()
     {
@@ -200,7 +200,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets parent
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource $parent
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource $parent
      * @return $this
      */
     public function setParent($parent)
@@ -212,7 +212,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets tip
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getTip()
     {
@@ -221,7 +221,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets tip
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource $tip
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource $tip
      * @return $this
      */
     public function setTip($tip)
@@ -233,7 +233,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets versions
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternal
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternal
      */
     public function getVersions()
     {
@@ -242,7 +242,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets versions
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternal $versions
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternal $versions
      * @return $this
      */
     public function setVersions($versions)
@@ -254,7 +254,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Gets refs
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksRefs
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksRefs
      */
     public function getRefs()
     {
@@ -263,7 +263,7 @@ class ItemRelationships implements ArrayAccess
 
     /**
      * Sets refs
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksRefs $refs
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksRefs $refs
      * @return $this
      */
     public function setRefs($refs)
@@ -324,10 +324,10 @@ class ItemRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

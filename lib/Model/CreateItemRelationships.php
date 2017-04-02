@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateItemRelationships Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class CreateItemRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'storage' => '\AutodeskForge\Client\Model\CreateItemRelationshipsStorage',
+        'storage' => '\Autodesk\Forge\Client\Model\CreateItemRelationshipsStorage',
     ];
 
     /**
@@ -152,7 +152,7 @@ class CreateItemRelationships implements ArrayAccess
 
     /**
      * Gets storage
-     * @return \AutodeskForge\Client\Model\CreateItemRelationshipsStorage
+     * @return \Autodesk\Forge\Client\Model\CreateItemRelationshipsStorage
      */
     public function getStorage()
     {
@@ -161,7 +161,7 @@ class CreateItemRelationships implements ArrayAccess
 
     /**
      * Sets storage
-     * @param \AutodeskForge\Client\Model\CreateItemRelationshipsStorage $storage
+     * @param \Autodesk\Forge\Client\Model\CreateItemRelationshipsStorage $storage
      * @return $this
      */
     public function setStorage($storage)
@@ -222,10 +222,10 @@ class CreateItemRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

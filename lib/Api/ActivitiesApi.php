@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Api;
+namespace Autodesk\Forge\Client\Api;
 
-use \AutodeskForge\Client\ApiException;
+use \Autodesk\Forge\Client\ApiException;
 
 /**
  * ActivitiesApi Class Doc Comment
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -45,9 +45,9 @@ class ActivitiesApi extends AbstractApi
      *
      * Creates a new Activity.
      *
-     * @param \AutodeskForge\Client\Model\Activity $activity (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\Activity
+     * @param \Autodesk\Forge\Client\Model\Activity $activity (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\Activity
      */
     public function createActivity($activity)
     {
@@ -60,9 +60,9 @@ class ActivitiesApi extends AbstractApi
      *
      * Creates a new Activity.
      *
-     * @param \AutodeskForge\Client\Model\Activity $activity (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
+     * @param \Autodesk\Forge\Client\Model\Activity $activity (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
      */
     public function createActivityWithHttpInfo($activity)
     {
@@ -105,19 +105,19 @@ class ActivitiesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\Activity',
+                '\Autodesk\Forge\Client\Model\Activity',
                 '/autocad.io/us-east/v2/Activities'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\Activity', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\Activity', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Activity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\Activity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -132,7 +132,7 @@ class ActivitiesApi extends AbstractApi
      * Removes a specific Activity.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteActivity($id)
@@ -147,7 +147,7 @@ class ActivitiesApi extends AbstractApi
      * Removes a specific Activity.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteActivityWithHttpInfo($id)
@@ -213,7 +213,7 @@ class ActivitiesApi extends AbstractApi
      * Removes the version history of the specified Activity.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteActivityHistory($id)
@@ -228,7 +228,7 @@ class ActivitiesApi extends AbstractApi
      * Removes the version history of the specified Activity.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteActivityHistoryWithHttpInfo($id)
@@ -294,8 +294,8 @@ class ActivitiesApi extends AbstractApi
      * Returns the details of a specific Activity.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\Activity
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\Activity
      */
     public function getActivity($id)
     {
@@ -309,8 +309,8 @@ class ActivitiesApi extends AbstractApi
      * Returns the details of a specific Activity.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\Activity, HTTP status code, HTTP response headers (array of strings)
      */
     public function getActivityWithHttpInfo($id)
     {
@@ -356,19 +356,19 @@ class ActivitiesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\Activity',
+                '\Autodesk\Forge\Client\Model\Activity',
                 '/autocad.io/us-east/v2/Activities(&#39;{id}&#39;)'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\Activity', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\Activity', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\Activity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\Activity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -383,8 +383,8 @@ class ActivitiesApi extends AbstractApi
      * Returns all old versions of a specified Activity.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\DesignAutomationActivities
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\DesignAutomationActivities
      */
     public function getActivityVersions($id)
     {
@@ -398,8 +398,8 @@ class ActivitiesApi extends AbstractApi
      * Returns all old versions of a specified Activity.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
      */
     public function getActivityVersionsWithHttpInfo($id)
     {
@@ -445,19 +445,19 @@ class ActivitiesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\DesignAutomationActivities',
+                '\Autodesk\Forge\Client\Model\DesignAutomationActivities',
                 '/autocad.io/us-east/v2/Activities(&#39;{id}&#39;)/Operations.GetVersions'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\DesignAutomationActivities', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\DesignAutomationActivities', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -471,8 +471,8 @@ class ActivitiesApi extends AbstractApi
      *
      * Returns the details of all Activities.
      *
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\DesignAutomationActivities
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\DesignAutomationActivities
      */
     public function getAllActivities()
     {
@@ -485,8 +485,8 @@ class ActivitiesApi extends AbstractApi
      *
      * Returns the details of all Activities.
      *
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\DesignAutomationActivities, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllActivitiesWithHttpInfo()
     {
@@ -520,19 +520,19 @@ class ActivitiesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\DesignAutomationActivities',
+                '\Autodesk\Forge\Client\Model\DesignAutomationActivities',
                 '/autocad.io/us-east/v2/Activities'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\DesignAutomationActivities', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\DesignAutomationActivities', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\DesignAutomationActivities', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -547,8 +547,8 @@ class ActivitiesApi extends AbstractApi
      * Updates an Activity by specifying only the changed attributes.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\ActivityOptional $activity (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\ActivityOptional $activity (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function patchActivity($id, $activity)
@@ -563,8 +563,8 @@ class ActivitiesApi extends AbstractApi
      * Updates an Activity by specifying only the changed attributes.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\ActivityOptional $activity (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\ActivityOptional $activity (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchActivityWithHttpInfo($id, $activity)
@@ -639,8 +639,8 @@ class ActivitiesApi extends AbstractApi
      * Sets the Activity to the specified version.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\ActivityVersion $activity_version (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\ActivityVersion $activity_version (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function setActivityVersion($id, $activity_version)
@@ -655,8 +655,8 @@ class ActivitiesApi extends AbstractApi
      * Sets the Activity to the specified version.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\ActivityVersion $activity_version (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\ActivityVersion $activity_version (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setActivityVersionWithHttpInfo($id, $activity_version)

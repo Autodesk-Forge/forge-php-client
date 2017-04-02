@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **resolution** | **string[]** | Available thumbnail resolution | [optional] 
 **model_guid** | **string** |  | [optional] 
 **object_ids** | **int[]** |  | [optional] 
-**messages** | [**\AutodeskForge\Client\Model\Messages**](Messages.md) |  | [optional] 
+**messages** | [**\Autodesk\Forge\Client\Model\Messages**](Messages.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,7 +24,7 @@ composer require autodesk-forge/client
 Download the files and include `autoload.php`:
 
 ```php
-require_once('/path/to/AutodeskForge/autoload.php');
+require_once('/path/to/ForgeClient/autoload.php');
 ```
 
 ## Tutorial
@@ -48,11 +48,11 @@ To get a 2-legged token run the following code. Note that you need to replace `y
 ```php
 <?php
 
-AutodeskForge\Auth\Configuration::getDefaultConfiguration()
+Autodesk\Auth\Configuration::getDefaultConfiguration()
     ->setClientId('<your-client-id>')
     ->setClientSecret('<your-client-secret>');
 
-$twoLeggedAuth = new AutodeskForge\Auth\OAuth2\TwoLeggedAuth();
+$twoLeggedAuth = new Autodesk\Auth\OAuth2\TwoLeggedAuth();
 $twoLeggedAuth->setScopes(['bucket:read']);
 
 $twoLeggedAuth->fetchToken();
@@ -77,12 +77,12 @@ Note that the redirect URL must match the callback URL you provided when you cre
 ```php
 <?php
 
-AutodeskForge\Auth\Configuration::getDefaultConfiguration()
+Autodesk\Auth\Configuration::getDefaultConfiguration()
     ->setClientId('<your-client-id>')
     ->setClientSecret('<your-client-secret>')
     ->setRedirectUrl('<your-redirect-url>');
 
-$threeLeggedAuth = new AutodeskForge\Auth\OAuth2\ThreeLeggedAuth();
+$threeLeggedAuth = new Autodesk\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScope('code:all');
 
 $authUrl = $threeLeggedAuth->createAuthUrl();
@@ -103,12 +103,12 @@ Request an access token using the authorization code you received, as shown belo
 ```php
 <?php
 
-AutodeskForge\Auth\Configuration::getDefaultConfiguration()
+Autodesk\Auth\Configuration::getDefaultConfiguration()
     ->setClientId('<your-client-id>')
     ->setClientSecret('<your-client-secret>')
     ->setRedirectUrl('<your-redirect-url>');
 
-$threeLeggedAuth = new AutodeskForge\Auth\OAuth2\ThreeLeggedAuth();
+$threeLeggedAuth = new Autodesk\Auth\OAuth2\ThreeLeggedAuth();
 $threeLeggedAuth->addScope('code:all');
 
 $threeLeggedAuth->fetchToken($_GET['code']);
@@ -132,8 +132,8 @@ Use the `TwoLeggedAuth` object or the `ThreeLeggedAuth` object to call the Forge
 <?php
 
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($threeLeggedAuth);
-$activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($threeLeggedAuth);
+$activity = new \Autodesk\Forge\Client\Model\Activity(); // \Autodesk\Forge\Client\Model\Activity
 
 $result = $apiInstance->createActivity($activity);
 ```

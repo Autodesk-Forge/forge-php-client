@@ -1,4 +1,4 @@
-# AutodeskForge\Client\AppPackagesApi
+# Autodesk\Forge\Client\AppPackagesApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **createAppPackage**
-> \AutodeskForge\Client\Model\AppPackage createAppPackage($app_package)
+> \Autodesk\Forge\Client\Model\AppPackage createAppPackage($app_package)
 
 Creates an AppPackage module.
 
@@ -27,8 +27,8 @@ Creates an AppPackage module.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
-$app_package = new \AutodeskForge\Client\Model\AppPackage(); // \AutodeskForge\Client\Model\AppPackage | 
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
+$app_package = new \Autodesk\Forge\Client\Model\AppPackage(); // \Autodesk\Forge\Client\Model\AppPackage | 
 
 try {
     $result = $apiInstance->createAppPackage($app_package);
@@ -43,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_package** | [**\AutodeskForge\Client\Model\AppPackage**](../Model/\AutodeskForge\Client\Model\AppPackage.md)|  |
+ **app_package** | [**\Autodesk\Forge\Client\Model\AppPackage**](../Model/\Autodesk\Forge\Client\Model\AppPackage.md)|  |
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\AppPackage**](../Model/AppPackage.md)
+[**\Autodesk\Forge\Client\Model\AppPackage**](../Model/AppPackage.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Removes a specific AppPackage.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -112,7 +112,7 @@ Removes the version history of the specified AppPackage.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -145,7 +145,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllAppPackages**
-> \AutodeskForge\Client\Model\DesignAutomationAppPackages getAllAppPackages()
+> \Autodesk\Forge\Client\Model\DesignAutomationAppPackages getAllAppPackages()
 
 Returns the details of all AppPackages.
 
@@ -154,7 +154,7 @@ Returns the details of all AppPackages.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 
 try {
     $result = $apiInstance->getAllAppPackages();
@@ -170,7 +170,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\DesignAutomationAppPackages**](../Model/DesignAutomationAppPackages.md)
+[**\Autodesk\Forge\Client\Model\DesignAutomationAppPackages**](../Model/DesignAutomationAppPackages.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAppPackage**
-> \AutodeskForge\Client\Model\AppPackage getAppPackage($id)
+> \Autodesk\Forge\Client\Model\AppPackage getAppPackage($id)
 
 Returns the details of a specific AppPackage.
 
@@ -193,7 +193,7 @@ Returns the details of a specific AppPackage.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\AppPackage**](../Model/AppPackage.md)
+[**\Autodesk\Forge\Client\Model\AppPackage**](../Model/AppPackage.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAppPackageVersions**
-> \AutodeskForge\Client\Model\DesignAutomationAppPackages getAppPackageVersions($id)
+> \Autodesk\Forge\Client\Model\DesignAutomationAppPackages getAppPackageVersions($id)
 
 Returns all old versions of a specified AppPackage.
 
@@ -236,7 +236,7 @@ Returns all old versions of a specified AppPackage.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\DesignAutomationAppPackages**](../Model/DesignAutomationAppPackages.md)
+[**\Autodesk\Forge\Client\Model\DesignAutomationAppPackages**](../Model/DesignAutomationAppPackages.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Requests a pre-signed URL for uploading a zip file that contains the binaries fo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 
 try {
     $apiInstance->getUploadUrl();
@@ -317,7 +317,7 @@ Requests a pre-signed URL for uploading a zip file that contains the binaries fo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 $require = true; // bool | 
 
 try {
@@ -359,9 +359,9 @@ Updates an AppPackage by specifying only the changed attributes.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
-$app_package = new \AutodeskForge\Client\Model\AppPackageOptional(); // \AutodeskForge\Client\Model\AppPackageOptional | 
+$app_package = new \Autodesk\Forge\Client\Model\AppPackageOptional(); // \Autodesk\Forge\Client\Model\AppPackageOptional | 
 
 try {
     $apiInstance->patchAppPackage($id, $app_package);
@@ -376,7 +376,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **app_package** | [**\AutodeskForge\Client\Model\AppPackageOptional**](../Model/\AutodeskForge\Client\Model\AppPackageOptional.md)|  |
+ **app_package** | [**\Autodesk\Forge\Client\Model\AppPackageOptional**](../Model/\Autodesk\Forge\Client\Model\AppPackageOptional.md)|  |
 
 ### Return type
 
@@ -403,9 +403,9 @@ Sets the AppPackage to the specified version.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
-$app_package_version = new \AutodeskForge\Client\Model\AppPackageVersion(); // \AutodeskForge\Client\Model\AppPackageVersion | 
+$app_package_version = new \Autodesk\Forge\Client\Model\AppPackageVersion(); // \Autodesk\Forge\Client\Model\AppPackageVersion | 
 
 try {
     $apiInstance->setAppPackageVersion($id, $app_package_version);
@@ -420,7 +420,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **app_package_version** | [**\AutodeskForge\Client\Model\AppPackageVersion**](../Model/\AutodeskForge\Client\Model\AppPackageVersion.md)|  |
+ **app_package_version** | [**\Autodesk\Forge\Client\Model\AppPackageVersion**](../Model/\Autodesk\Forge\Client\Model\AppPackageVersion.md)|  |
 
 ### Return type
 
@@ -447,9 +447,9 @@ Updates an AppPackage by redefining the entire Activity object.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\AppPackagesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\AppPackagesApi($authObject);
 $id = "id_example"; // string | 
-$app_package = new \AutodeskForge\Client\Model\AppPackage(); // \AutodeskForge\Client\Model\AppPackage | 
+$app_package = new \Autodesk\Forge\Client\Model\AppPackage(); // \Autodesk\Forge\Client\Model\AppPackage | 
 
 try {
     $apiInstance->updateAppPackage($id, $app_package);
@@ -464,7 +464,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **app_package** | [**\AutodeskForge\Client\Model\AppPackage**](../Model/\AutodeskForge\Client\Model\AppPackage.md)|  |
+ **app_package** | [**\Autodesk\Forge\Client\Model\AppPackage**](../Model/\Autodesk\Forge\Client\Model\AppPackage.md)|  |
 
 ### Return type
 

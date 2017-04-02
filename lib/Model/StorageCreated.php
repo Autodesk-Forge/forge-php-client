@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * StorageCreated Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,9 +54,9 @@ class StorageCreated implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\AutodeskForge\Client\Model\Storage',
-        'included' => '\AutodeskForge\Client\Model\JsonApiResource[]',
+        'jsonapi' => '\Autodesk\Forge\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Forge\Client\Model\Storage',
+        'included' => '\Autodesk\Forge\Client\Model\JsonApiResource[]',
     ];
 
     /**
@@ -168,7 +168,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \AutodeskForge\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Forge\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -177,7 +177,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \AutodeskForge\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Forge\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -189,7 +189,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Gets data
-     * @return \AutodeskForge\Client\Model\Storage
+     * @return \Autodesk\Forge\Client\Model\Storage
      */
     public function getData()
     {
@@ -198,7 +198,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Sets data
-     * @param \AutodeskForge\Client\Model\Storage $data
+     * @param \Autodesk\Forge\Client\Model\Storage $data
      * @return $this
      */
     public function setData($data)
@@ -210,7 +210,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Gets included
-     * @return \AutodeskForge\Client\Model\JsonApiResource[]
+     * @return \Autodesk\Forge\Client\Model\JsonApiResource[]
      */
     public function getIncluded()
     {
@@ -219,7 +219,7 @@ class StorageCreated implements ArrayAccess
 
     /**
      * Sets included
-     * @param \AutodeskForge\Client\Model\JsonApiResource[] $included
+     * @param \Autodesk\Forge\Client\Model\JsonApiResource[] $included
      * @return $this
      */
     public function setIncluded($included)
@@ -280,10 +280,10 @@ class StorageCreated implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

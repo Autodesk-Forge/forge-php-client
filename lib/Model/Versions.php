@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Versions Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class Versions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'jsonapi' => '\AutodeskForge\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\AutodeskForge\Client\Model\Version[]',
+        'jsonapi' => '\Autodesk\Forge\Client\Model\JsonApiVersionJsonapi',
+        'data' => '\Autodesk\Forge\Client\Model\Version[]',
     ];
 
     /**
@@ -163,7 +163,7 @@ class Versions implements ArrayAccess
 
     /**
      * Gets jsonapi
-     * @return \AutodeskForge\Client\Model\JsonApiVersionJsonapi
+     * @return \Autodesk\Forge\Client\Model\JsonApiVersionJsonapi
      */
     public function getJsonapi()
     {
@@ -172,7 +172,7 @@ class Versions implements ArrayAccess
 
     /**
      * Sets jsonapi
-     * @param \AutodeskForge\Client\Model\JsonApiVersionJsonapi $jsonapi
+     * @param \Autodesk\Forge\Client\Model\JsonApiVersionJsonapi $jsonapi
      * @return $this
      */
     public function setJsonapi($jsonapi)
@@ -184,7 +184,7 @@ class Versions implements ArrayAccess
 
     /**
      * Gets data
-     * @return \AutodeskForge\Client\Model\Version[]
+     * @return \Autodesk\Forge\Client\Model\Version[]
      */
     public function getData()
     {
@@ -193,7 +193,7 @@ class Versions implements ArrayAccess
 
     /**
      * Sets data
-     * @param \AutodeskForge\Client\Model\Version[] $data
+     * @param \Autodesk\Forge\Client\Model\Version[] $data
      * @return $this
      */
     public function setData($data)
@@ -254,10 +254,10 @@ class Versions implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

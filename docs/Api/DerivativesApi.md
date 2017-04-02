@@ -1,4 +1,4 @@
-# AutodeskForge\Client\DerivativesApi
+# Autodesk\Forge\Client\DerivativesApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **deleteManifest**
-> \AutodeskForge\Client\Model\Result deleteManifest($urn)
+> \Autodesk\Forge\Client\Model\Result deleteManifest($urn)
 
 
 
@@ -27,7 +27,7 @@ Deletes the manifest and all its translated output files (derivatives). However,
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 
 try {
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Result**](../Model/Result.md)
+[**\Autodesk\Forge\Client\Model\Result**](../Model/Result.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Downloads a selected derivative. To download the file, you need to specify the f
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $derivative_urn = "derivative_urn_example"; // string | The URL-encoded URN of the derivatives. The URN is retrieved from the GET :urn/manifest endpoint.
 $range = 56; // int | This is the standard RFC 2616 range request header. It only supports one range specifier per request: 1. Range:bytes=0-63 (returns the first 64 bytes) 2. Range:bytes=64-127 (returns the second set of 64 bytes) 3. Range:bytes=1022- (returns all the bytes from offset 1022 to the end) 4. If the range header is not specified, the whole content is returned.
@@ -109,7 +109,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFormats**
-> \AutodeskForge\Client\Model\Formats getFormats($if_modified_since, $accept_encoding)
+> \Autodesk\Forge\Client\Model\Formats getFormats($if_modified_since, $accept_encoding)
 
 
 
@@ -120,7 +120,7 @@ Returns an up-to-date list of Forge-supported translations, that you can use to 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
 $if_modified_since = new \DateTime(); // \DateTime | The supported formats are only returned if they were modified since the specified date. An invalid date returns the latest supported format list. If the supported formats have not been modified since the specified date, the endpoint returns a `NOT MODIFIED` (304) response.
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Formats**](../Model/Formats.md)
+[**\Autodesk\Forge\Client\Model\Formats**](../Model/Formats.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getManifest**
-> \AutodeskForge\Client\Model\Manifest getManifest($urn, $accept_encoding)
+> \Autodesk\Forge\Client\Model\Manifest getManifest($urn, $accept_encoding)
 
 
 
@@ -167,7 +167,7 @@ Returns information about derivatives that correspond to a specific source file,
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Manifest**](../Model/Manifest.md)
+[**\Autodesk\Forge\Client\Model\Manifest**](../Model/Manifest.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMetadata**
-> \AutodeskForge\Client\Model\Metadata getMetadata($urn, $accept_encoding)
+> \Autodesk\Forge\Client\Model\Metadata getMetadata($urn, $accept_encoding)
 
 
 
@@ -214,7 +214,7 @@ Returns a list of model view (metadata) IDs for a design model. The metadata ID 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Metadata**](../Model/Metadata.md)
+[**\Autodesk\Forge\Client\Model\Metadata**](../Model/Metadata.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getModelviewMetadata**
-> \AutodeskForge\Client\Model\Metadata getModelviewMetadata($urn, $guid, $accept_encoding)
+> \Autodesk\Forge\Client\Model\Metadata getModelviewMetadata($urn, $guid, $accept_encoding)
 
 
 
@@ -261,7 +261,7 @@ Returns an object tree, i.e., a hierarchical list of objects for a model view.  
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $guid = "guid_example"; // string | Unique model view ID. Call [GET {urn}/metadata](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-metadata-GET) to get the ID
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Metadata**](../Model/Metadata.md)
+[**\Autodesk\Forge\Client\Model\Metadata**](../Model/Metadata.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getModelviewProperties**
-> \AutodeskForge\Client\Model\Metadata getModelviewProperties($urn, $guid, $accept_encoding)
+> \Autodesk\Forge\Client\Model\Metadata getModelviewProperties($urn, $guid, $accept_encoding)
 
 
 
@@ -310,7 +310,7 @@ Returns a list of properties for each object in an object tree. Properties are r
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $guid = "guid_example"; // string | Unique model view ID. Call [GET {urn}/metadata](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-metadata-GET) to get the ID
 $accept_encoding = "accept_encoding_example"; // string | If specified with `gzip` or `*`, content will be compressed and returned in a GZIP format.
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Metadata**](../Model/Metadata.md)
+[**\Autodesk\Forge\Client\Model\Metadata**](../Model/Metadata.md)
 
 ### Authorization
 
@@ -359,7 +359,7 @@ Returns the thumbnail for the source file.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
 $urn = "urn_example"; // string | The Base64 (URL Safe) encoded design URN
 $width = 56; // int | The desired width of the thumbnail. Possible values are 100, 200 and 400.
 $height = 56; // int | The desired height of the thumbnail. Possible values are 100, 200 and 400.
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **translate**
-> \AutodeskForge\Client\Model\Job translate($job, $x_ads_force)
+> \Autodesk\Forge\Client\Model\Job translate($job, $x_ads_force)
 
 
 
@@ -408,8 +408,8 @@ Translate a source file from one format to another.  Derivatives are stored in a
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\DerivativesApi($authObject);
-$job = new \AutodeskForge\Client\Model\JobPayload(); // \AutodeskForge\Client\Model\JobPayload | 
+$apiInstance = new Autodesk\Forge\Client\Api\DerivativesApi($authObject);
+$job = new \Autodesk\Forge\Client\Model\JobPayload(); // \Autodesk\Forge\Client\Model\JobPayload | 
 $x_ads_force = false; // bool | `true`: the endpoint replaces previously translated output file types with the newly generated derivatives  `false` (default): previously created derivatives are not replaced
 
 try {
@@ -425,12 +425,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **job** | [**\AutodeskForge\Client\Model\JobPayload**](../Model/\AutodeskForge\Client\Model\JobPayload.md)|  |
+ **job** | [**\Autodesk\Forge\Client\Model\JobPayload**](../Model/\Autodesk\Forge\Client\Model\JobPayload.md)|  |
  **x_ads_force** | **bool**| &#x60;true&#x60;: the endpoint replaces previously translated output file types with the newly generated derivatives  &#x60;false&#x60; (default): previously created derivatives are not replaced | [optional] [default to false]
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Job**](../Model/Job.md)
+[**\Autodesk\Forge\Client\Model\Job**](../Model/Job.md)
 
 ### Authorization
 

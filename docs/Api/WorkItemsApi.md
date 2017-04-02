@@ -1,4 +1,4 @@
-# AutodeskForge\Client\WorkItemsApi
+# Autodesk\Forge\Client\WorkItemsApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createWorkItem**
-> \AutodeskForge\Client\Model\WorkItemResp createWorkItem($work_item)
+> \Autodesk\Forge\Client\Model\WorkItemResp createWorkItem($work_item)
 
 Creates a new WorkItem.
 
@@ -20,8 +20,8 @@ Creates a new WorkItem.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\WorkItemsApi($authObject);
-$work_item = new \AutodeskForge\Client\Model\WorkItem(); // \AutodeskForge\Client\Model\WorkItem | 
+$apiInstance = new Autodesk\Forge\Client\Api\WorkItemsApi($authObject);
+$work_item = new \Autodesk\Forge\Client\Model\WorkItem(); // \Autodesk\Forge\Client\Model\WorkItem | 
 
 try {
     $result = $apiInstance->createWorkItem($work_item);
@@ -36,11 +36,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **work_item** | [**\AutodeskForge\Client\Model\WorkItem**](../Model/\AutodeskForge\Client\Model\WorkItem.md)|  |
+ **work_item** | [**\Autodesk\Forge\Client\Model\WorkItem**](../Model/\Autodesk\Forge\Client\Model\WorkItem.md)|  |
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\WorkItemResp**](../Model/WorkItemResp.md)
+[**\Autodesk\Forge\Client\Model\WorkItemResp**](../Model/WorkItemResp.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Removes a specific WorkItem.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\WorkItemsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\WorkItemsApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -96,7 +96,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllWorkItems**
-> \AutodeskForge\Client\Model\DesignAutomationWorkItems getAllWorkItems($skip)
+> \Autodesk\Forge\Client\Model\DesignAutomationWorkItems getAllWorkItems($skip)
 
 Returns the details of all WorkItems.
 
@@ -105,7 +105,7 @@ Returns the details of all WorkItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\WorkItemsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\WorkItemsApi($authObject);
 $skip = 56; // int | 
 
 try {
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\DesignAutomationWorkItems**](../Model/DesignAutomationWorkItems.md)
+[**\Autodesk\Forge\Client\Model\DesignAutomationWorkItems**](../Model/DesignAutomationWorkItems.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWorkItem**
-> \AutodeskForge\Client\Model\WorkItemResp getWorkItem($id)
+> \Autodesk\Forge\Client\Model\WorkItemResp getWorkItem($id)
 
 Returns the details of a specific WorkItem.
 
@@ -148,7 +148,7 @@ Returns the details of a specific WorkItem.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\WorkItemsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\WorkItemsApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\WorkItemResp**](../Model/WorkItemResp.md)
+[**\Autodesk\Forge\Client\Model\WorkItemResp**](../Model/WorkItemResp.md)
 
 ### Authorization
 

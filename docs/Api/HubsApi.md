@@ -1,4 +1,4 @@
-# AutodeskForge\Client\HubsApi
+# Autodesk\Forge\Client\HubsApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getHub**
-> \AutodeskForge\Client\Model\Hub getHub($hub_id)
+> \Autodesk\Forge\Client\Model\Hub getHub($hub_id)
 
 
 
@@ -20,7 +20,7 @@ Returns data on a specific `hub_id`.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\HubsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\HubsApi($authObject);
 $hub_id = "hub_id_example"; // string | the `hub id` for the current operation
 
 try {
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Hub**](../Model/Hub.md)
+[**\Autodesk\Forge\Client\Model\Hub**](../Model/Hub.md)
 
 ### Authorization
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getHubs**
-> \AutodeskForge\Client\Model\Hubs getHubs($filter_id, $filter_extension_type)
+> \Autodesk\Forge\Client\Model\Hubs getHubs($filter_id, $filter_extension_type)
 
 
 
@@ -65,7 +65,7 @@ Returns a collection of accessible hubs for this member. A Hub represents an A36
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\HubsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\HubsApi($authObject);
 $filter_id = array("filter_id_example"); // string[] | filter by the `id` of the `ref` target
 $filter_extension_type = array("filter_extension_type_example"); // string[] | filter by the extension type
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Hubs**](../Model/Hubs.md)
+[**\Autodesk\Forge\Client\Model\Hubs**](../Model/Hubs.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# AutodeskForge\Client\EnginesApi
+# Autodesk\Forge\Client\EnginesApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getAllEngines**
-> \AutodeskForge\Client\Model\DesignAutomationEngines getAllEngines()
+> \Autodesk\Forge\Client\Model\DesignAutomationEngines getAllEngines()
 
 Returns the details of all available AutoCAD core engines.
 
@@ -18,7 +18,7 @@ Returns the details of all available AutoCAD core engines.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\EnginesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\EnginesApi($authObject);
 
 try {
     $result = $apiInstance->getAllEngines();
@@ -34,7 +34,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\DesignAutomationEngines**](../Model/DesignAutomationEngines.md)
+[**\Autodesk\Forge\Client\Model\DesignAutomationEngines**](../Model/DesignAutomationEngines.md)
 
 ### Authorization
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEngine**
-> \AutodeskForge\Client\Model\Engine getEngine($id)
+> \Autodesk\Forge\Client\Model\Engine getEngine($id)
 
 Returns the details of a specific AutoCAD core engine.
 
@@ -57,7 +57,7 @@ Returns the details of a specific AutoCAD core engine.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\EnginesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\EnginesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Engine**](../Model/Engine.md)
+[**\Autodesk\Forge\Client\Model\Engine**](../Model/Engine.md)
 
 ### Authorization
 

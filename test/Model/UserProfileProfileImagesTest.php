@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace AutodeskForge\Client;
+namespace Autodesk\Forge\Client;
 
 /**
  * UserProfileProfileImagesTest Class Doc Comment
@@ -36,7 +36,7 @@ namespace AutodeskForge\Client;
  */
 // * @description A flat JSON object of attribute-value pairs in which the attributes specify available profile image sizes in the format sizeX&lt;pixels&gt; (where &lt;pixels&gt; is an integer that represents both height and width in pixels of square profile images) and the values are URLs for downloading the images via HTTP
 /**
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

@@ -1,4 +1,4 @@
-# AutodeskForge\Client\ObjectsApi
+# Autodesk\Forge\Client\ObjectsApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **copyTo**
-> \AutodeskForge\Client\Model\ObjectDetails copyTo($bucket_key, $object_name, $new_obj_name)
+> \Autodesk\Forge\Client\Model\ObjectDetails copyTo($bucket_key, $object_name, $new_obj_name)
 
 
 
@@ -31,7 +31,7 @@ Copies an object to another object name in the same bucket.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $new_obj_name = "new_obj_name_example"; // string | URL-encoded Object key to use as the destination
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
+[**\Autodesk\Forge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSignedResource**
-> \AutodeskForge\Client\Model\PostObjectSigned createSignedResource($bucket_key, $object_name, $post_buckets_signed, $access)
+> \Autodesk\Forge\Client\Model\PostObjectSigned createSignedResource($bucket_key, $object_name, $post_buckets_signed, $access)
 
 
 
@@ -80,10 +80,10 @@ This endpoint creates a signed URL that can be used to download an object within
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
-$post_buckets_signed = new \AutodeskForge\Client\Model\PostBucketsSigned(); // \AutodeskForge\Client\Model\PostBucketsSigned | Body Structure
+$post_buckets_signed = new \Autodesk\Forge\Client\Model\PostBucketsSigned(); // \Autodesk\Forge\Client\Model\PostBucketsSigned | Body Structure
 $access = "read"; // string | Access for signed resource Acceptable values: `read`, `write`, `readwrite`. Default value: `read`
 
 try {
@@ -101,12 +101,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucket_key** | **string**| URL-encoded bucket key |
  **object_name** | **string**| URL-encoded object name |
- **post_buckets_signed** | [**\AutodeskForge\Client\Model\PostBucketsSigned**](../Model/\AutodeskForge\Client\Model\PostBucketsSigned.md)| Body Structure |
+ **post_buckets_signed** | [**\Autodesk\Forge\Client\Model\PostBucketsSigned**](../Model/\Autodesk\Forge\Client\Model\PostBucketsSigned.md)| Body Structure |
  **access** | **string**| Access for signed resource Acceptable values: &#x60;read&#x60;, &#x60;write&#x60;, &#x60;readwrite&#x60;. Default value: &#x60;read&#x60; | [optional] [default to read]
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\PostObjectSigned**](../Model/PostObjectSigned.md)
+[**\Autodesk\Forge\Client\Model\PostObjectSigned**](../Model/PostObjectSigned.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Deletes an object from the bucket.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 
@@ -177,7 +177,7 @@ Delete a signed URL. A successful call to this endpoint requires bucket owner ac
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
@@ -223,7 +223,7 @@ Download an object.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $range = "range_example"; // string | A range of bytes to download from the specified object.
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getObjectDetails**
-> \AutodeskForge\Client\Model\ObjectFullDetails getObjectDetails($bucket_key, $object_name, $if_modified_since, $with)
+> \Autodesk\Forge\Client\Model\ObjectFullDetails getObjectDetails($bucket_key, $object_name, $if_modified_since, $with)
 
 
 
@@ -278,7 +278,7 @@ Returns object details in JSON format.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $if_modified_since = new \DateTime(); // \DateTime | If the requested object has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message body.
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\ObjectFullDetails**](../Model/ObjectFullDetails.md)
+[**\Autodesk\Forge\Client\Model\ObjectFullDetails**](../Model/ObjectFullDetails.md)
 
 ### Authorization
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getObjects**
-> \AutodeskForge\Client\Model\BucketObjects getObjects($bucket_key, $limit, $begins_with, $start_at)
+> \Autodesk\Forge\Client\Model\BucketObjects getObjects($bucket_key, $limit, $begins_with, $start_at)
 
 
 
@@ -329,7 +329,7 @@ List objects in a bucket. It is only available to the bucket creator.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $limit = 10; // int | Limit to the response size, Acceptable values: 1-100 Default = 10
 $begins_with = "begins_with_example"; // string | Provides a way to filter the based on object key name
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\BucketObjects**](../Model/BucketObjects.md)
+[**\Autodesk\Forge\Client\Model\BucketObjects**](../Model/BucketObjects.md)
 
 ### Authorization
 
@@ -380,7 +380,7 @@ Download an object using a signed URL.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $range = "range_example"; // string | A range of bytes to download from the specified object.
 $if_none_match = "if_none_match_example"; // string | The value of this header is compared to the ETAG of the object. If they match, the body will not be included in the response. Only the object information will be included.
@@ -435,7 +435,7 @@ This endpoint returns status information about a resumable upload.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $session_id = "session_id_example"; // string | Unique identifier of a session of a file being uploaded
@@ -472,7 +472,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **uploadChunk**
-> \AutodeskForge\Client\Model\ObjectDetails uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition, $if_match)
+> \Autodesk\Forge\Client\Model\ObjectDetails uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition, $if_match)
 
 
 
@@ -483,7 +483,7 @@ This endpoint allows resumable uploads for large files in chunks.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $content_length = 56; // int | Indicates the size of the request body.
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
+[**\Autodesk\Forge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
 
 ### Authorization
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **uploadObject**
-> \AutodeskForge\Client\Model\ObjectDetails uploadObject($bucket_key, $object_name, $content_length, $body, $content_disposition, $if_match)
+> \Autodesk\Forge\Client\Model\ObjectDetails uploadObject($bucket_key, $object_name, $content_length, $body, $content_disposition, $if_match)
 
 
 
@@ -542,7 +542,7 @@ Upload an object. If the specified object name already exists in the bucket, the
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $content_length = 56; // int | Indicates the size of the request body.
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
+[**\Autodesk\Forge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
 
 ### Authorization
 
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **uploadSignedResource**
-> \AutodeskForge\Client\Model\ObjectDetails uploadSignedResource($id, $content_length, $body, $content_disposition, $x_ads_region, $if_match)
+> \Autodesk\Forge\Client\Model\ObjectDetails uploadSignedResource($id, $content_length, $body, $content_disposition, $x_ads_region, $if_match)
 
 
 
@@ -597,7 +597,7 @@ Overwrite a existing object using a signed URL.  Conditions to call this operati
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $content_length = 56; // int | Indicates the size of the request body.
 $body = "/path/to/file.txt"; // \SplFileObject | 
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
+[**\Autodesk\Forge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
 
 ### Authorization
 
@@ -641,7 +641,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **uploadSignedResourcesChunk**
-> \AutodeskForge\Client\Model\ObjectDetails uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region)
+> \Autodesk\Forge\Client\Model\ObjectDetails uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region)
 
 
 
@@ -652,7 +652,7 @@ Resumable upload for signed URLs.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ObjectsApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $content_range = "content_range_example"; // string | Byte range of a segment being uploaded
 $session_id = "session_id_example"; // string | Unique identifier of a session of a file being uploaded
@@ -682,7 +682,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
+[**\Autodesk\Forge\Client\Model\ObjectDetails**](../Model/ObjectDetails.md)
 
 ### Authorization
 

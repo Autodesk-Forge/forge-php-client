@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * VersionRelationships Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,11 +54,11 @@ class VersionRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'item' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'refs' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksRefs',
-        'storage' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource',
-        'derivatives' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource',
-        'thumbnails' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource',
+        'item' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'refs' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksRefs',
+        'storage' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource',
+        'derivatives' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource',
+        'thumbnails' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource',
     ];
 
     /**
@@ -184,7 +184,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Gets item
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getItem()
     {
@@ -193,7 +193,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Sets item
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource $item
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource $item
      * @return $this
      */
     public function setItem($item)
@@ -205,7 +205,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Gets refs
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksRefs
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksRefs
      */
     public function getRefs()
     {
@@ -214,7 +214,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Sets refs
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksRefs $refs
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksRefs $refs
      * @return $this
      */
     public function setRefs($refs)
@@ -226,7 +226,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Gets storage
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource
      */
     public function getStorage()
     {
@@ -235,7 +235,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Sets storage
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource $storage
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource $storage
      * @return $this
      */
     public function setStorage($storage)
@@ -247,7 +247,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Gets derivatives
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource
      */
     public function getDerivatives()
     {
@@ -256,7 +256,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Sets derivatives
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource $derivatives
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource $derivatives
      * @return $this
      */
     public function setDerivatives($derivatives)
@@ -268,7 +268,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Gets thumbnails
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource
      */
     public function getThumbnails()
     {
@@ -277,7 +277,7 @@ class VersionRelationships implements ArrayAccess
 
     /**
      * Sets thumbnails
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource $thumbnails
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource $thumbnails
      * @return $this
      */
     public function setThumbnails($thumbnails)
@@ -338,10 +338,10 @@ class VersionRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

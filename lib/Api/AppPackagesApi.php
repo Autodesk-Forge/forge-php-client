@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Api;
+namespace Autodesk\Forge\Client\Api;
 
-use \AutodeskForge\Client\ApiException;
+use \Autodesk\Forge\Client\ApiException;
 
 /**
  * AppPackagesApi Class Doc Comment
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -45,9 +45,9 @@ class AppPackagesApi extends AbstractApi
      *
      * Creates an AppPackage module.
      *
-     * @param \AutodeskForge\Client\Model\AppPackage $app_package (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\AppPackage
+     * @param \Autodesk\Forge\Client\Model\AppPackage $app_package (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\AppPackage
      */
     public function createAppPackage($app_package)
     {
@@ -60,9 +60,9 @@ class AppPackagesApi extends AbstractApi
      *
      * Creates an AppPackage module.
      *
-     * @param \AutodeskForge\Client\Model\AppPackage $app_package (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\AppPackage, HTTP status code, HTTP response headers (array of strings)
+     * @param \Autodesk\Forge\Client\Model\AppPackage $app_package (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\AppPackage, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAppPackageWithHttpInfo($app_package)
     {
@@ -105,19 +105,19 @@ class AppPackagesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\AppPackage',
+                '\Autodesk\Forge\Client\Model\AppPackage',
                 '/autocad.io/us-east/v2/AppPackages'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\AppPackage', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\AppPackage', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\AppPackage', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\AppPackage', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -132,7 +132,7 @@ class AppPackagesApi extends AbstractApi
      * Removes a specific AppPackage.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteAppPackage($id)
@@ -147,7 +147,7 @@ class AppPackagesApi extends AbstractApi
      * Removes a specific AppPackage.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAppPackageWithHttpInfo($id)
@@ -213,7 +213,7 @@ class AppPackagesApi extends AbstractApi
      * Removes the version history of the specified AppPackage.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteAppPackageHistory($id)
@@ -228,7 +228,7 @@ class AppPackagesApi extends AbstractApi
      * Removes the version history of the specified AppPackage.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAppPackageHistoryWithHttpInfo($id)
@@ -293,8 +293,8 @@ class AppPackagesApi extends AbstractApi
      *
      * Returns the details of all AppPackages.
      *
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\DesignAutomationAppPackages
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\DesignAutomationAppPackages
      */
     public function getAllAppPackages()
     {
@@ -307,8 +307,8 @@ class AppPackagesApi extends AbstractApi
      *
      * Returns the details of all AppPackages.
      *
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\DesignAutomationAppPackages, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\DesignAutomationAppPackages, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllAppPackagesWithHttpInfo()
     {
@@ -342,19 +342,19 @@ class AppPackagesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\DesignAutomationAppPackages',
+                '\Autodesk\Forge\Client\Model\DesignAutomationAppPackages',
                 '/autocad.io/us-east/v2/AppPackages'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\DesignAutomationAppPackages', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\DesignAutomationAppPackages', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\DesignAutomationAppPackages', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\DesignAutomationAppPackages', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -369,8 +369,8 @@ class AppPackagesApi extends AbstractApi
      * Returns the details of a specific AppPackage.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\AppPackage
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\AppPackage
      */
     public function getAppPackage($id)
     {
@@ -384,8 +384,8 @@ class AppPackagesApi extends AbstractApi
      * Returns the details of a specific AppPackage.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\AppPackage, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\AppPackage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAppPackageWithHttpInfo($id)
     {
@@ -431,19 +431,19 @@ class AppPackagesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\AppPackage',
+                '\Autodesk\Forge\Client\Model\AppPackage',
                 '/autocad.io/us-east/v2/AppPackages(&#39;{id}&#39;)'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\AppPackage', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\AppPackage', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\AppPackage', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\AppPackage', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -458,8 +458,8 @@ class AppPackagesApi extends AbstractApi
      * Returns all old versions of a specified AppPackage.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return \AutodeskForge\Client\Model\DesignAutomationAppPackages
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return \Autodesk\Forge\Client\Model\DesignAutomationAppPackages
      */
     public function getAppPackageVersions($id)
     {
@@ -473,8 +473,8 @@ class AppPackagesApi extends AbstractApi
      * Returns all old versions of a specified AppPackage.
      *
      * @param string $id (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
-     * @return array of \AutodeskForge\Client\Model\DesignAutomationAppPackages, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
+     * @return array of \Autodesk\Forge\Client\Model\DesignAutomationAppPackages, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAppPackageVersionsWithHttpInfo($id)
     {
@@ -520,19 +520,19 @@ class AppPackagesApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\AutodeskForge\Client\Model\DesignAutomationAppPackages',
+                '\Autodesk\Forge\Client\Model\DesignAutomationAppPackages',
                 '/autocad.io/us-east/v2/AppPackages(&#39;{id}&#39;)/Operations.GetVersions'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\AutodeskForge\Client\Model\DesignAutomationAppPackages', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\DesignAutomationAppPackages', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AutodeskForge\Client\Model\DesignAutomationAppPackages', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\DesignAutomationAppPackages', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -546,7 +546,7 @@ class AppPackagesApi extends AbstractApi
      *
      * Requests a pre-signed URL for uploading a zip file that contains the binaries for this AppPackage.
      *
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function getUploadUrl()
@@ -560,7 +560,7 @@ class AppPackagesApi extends AbstractApi
      *
      * Requests a pre-signed URL for uploading a zip file that contains the binaries for this AppPackage.
      *
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUploadUrlWithHttpInfo()
@@ -614,7 +614,7 @@ class AppPackagesApi extends AbstractApi
      * Requests a pre-signed URL for uploading a zip file that contains the binaries for this AppPackage. Unlike the GetUploadUrl method that takes no parameters, this method allows the client to request that the pre-signed URL to be issued so that the subsequent HTTP PUT operation will require Content-Type=binary/octet-stream.
      *
      * @param bool $require (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function getUploadUrlWithRequireContentType($require)
@@ -629,7 +629,7 @@ class AppPackagesApi extends AbstractApi
      * Requests a pre-signed URL for uploading a zip file that contains the binaries for this AppPackage. Unlike the GetUploadUrl method that takes no parameters, this method allows the client to request that the pre-signed URL to be issued so that the subsequent HTTP PUT operation will require Content-Type=binary/octet-stream.
      *
      * @param bool $require (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUploadUrlWithRequireContentTypeWithHttpInfo($require)
@@ -695,8 +695,8 @@ class AppPackagesApi extends AbstractApi
      * Updates an AppPackage by specifying only the changed attributes.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\AppPackageOptional $app_package (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\AppPackageOptional $app_package (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function patchAppPackage($id, $app_package)
@@ -711,8 +711,8 @@ class AppPackagesApi extends AbstractApi
      * Updates an AppPackage by specifying only the changed attributes.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\AppPackageOptional $app_package (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\AppPackageOptional $app_package (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchAppPackageWithHttpInfo($id, $app_package)
@@ -787,8 +787,8 @@ class AppPackagesApi extends AbstractApi
      * Sets the AppPackage to the specified version.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\AppPackageVersion $app_package_version (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\AppPackageVersion $app_package_version (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function setAppPackageVersion($id, $app_package_version)
@@ -803,8 +803,8 @@ class AppPackagesApi extends AbstractApi
      * Sets the AppPackage to the specified version.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\AppPackageVersion $app_package_version (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\AppPackageVersion $app_package_version (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setAppPackageVersionWithHttpInfo($id, $app_package_version)
@@ -879,8 +879,8 @@ class AppPackagesApi extends AbstractApi
      * Updates an AppPackage by redefining the entire Activity object.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\AppPackage $app_package (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\AppPackage $app_package (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateAppPackage($id, $app_package)
@@ -895,8 +895,8 @@ class AppPackagesApi extends AbstractApi
      * Updates an AppPackage by redefining the entire Activity object.
      *
      * @param string $id (required)
-     * @param \AutodeskForge\Client\Model\AppPackage $app_package (required)
-     * @throws \AutodeskForge\Client\ApiException on non-2xx response
+     * @param \Autodesk\Forge\Client\Model\AppPackage $app_package (required)
+     * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAppPackageWithHttpInfo($id, $app_package)

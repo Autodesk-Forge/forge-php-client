@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client;
+namespace Autodesk\Forge\Client;
 
-use AutodeskForge\Core\HeadersProvider;
+use Autodesk\Core\HeadersProvider;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -516,7 +516,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report = 'PHP SDK (AutodeskForge\Client) Debug Report:' . PHP_EOL;
+        $report = 'PHP SDK (Autodesk\Forge\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . phpversion() . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 0.1.0' . PHP_EOL;

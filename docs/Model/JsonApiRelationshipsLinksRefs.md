@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**\AutodeskForge\Client\Model\JsonApiRelationshipsLinksRefsLinks**](JsonApiRelationshipsLinksRefsLinks.md) |  | [optional] 
+**links** | [**\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksRefsLinks**](JsonApiRelationshipsLinksRefsLinks.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

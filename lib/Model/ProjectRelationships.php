@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ProjectRelationships Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class ProjectRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'hub' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource',
-        'root_folder' => '\AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource',
+        'hub' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource',
+        'root_folder' => '\Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource',
     ];
 
     /**
@@ -169,7 +169,7 @@ class ProjectRelationships implements ArrayAccess
 
     /**
      * Gets hub
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource
      */
     public function getHub()
     {
@@ -178,7 +178,7 @@ class ProjectRelationships implements ArrayAccess
 
     /**
      * Sets hub
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksInternalResource $hub
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksInternalResource $hub
      * @return $this
      */
     public function setHub($hub)
@@ -190,7 +190,7 @@ class ProjectRelationships implements ArrayAccess
 
     /**
      * Gets root_folder
-     * @return \AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource
+     * @return \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource
      */
     public function getRootFolder()
     {
@@ -199,7 +199,7 @@ class ProjectRelationships implements ArrayAccess
 
     /**
      * Sets root_folder
-     * @param \AutodeskForge\Client\Model\JsonApiRelationshipsLinksExternalResource $root_folder
+     * @param \Autodesk\Forge\Client\Model\JsonApiRelationshipsLinksExternalResource $root_folder
      * @return $this
      */
     public function setRootFolder($root_folder)
@@ -260,10 +260,10 @@ class ProjectRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

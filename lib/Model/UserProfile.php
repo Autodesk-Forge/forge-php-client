@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description user Profile
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -62,7 +62,7 @@ class UserProfile implements ArrayAccess
         'last_name' => 'string',
         'email_verified' => 'bool',
         '_2_fa_enabled' => 'bool',
-        'profile_images' => '\AutodeskForge\Client\Model\UserProfileProfileImages',
+        'profile_images' => '\Autodesk\Forge\Client\Model\UserProfileProfileImages',
     ];
 
     /**
@@ -335,7 +335,7 @@ class UserProfile implements ArrayAccess
 
     /**
      * Gets profile_images
-     * @return \AutodeskForge\Client\Model\UserProfileProfileImages
+     * @return \Autodesk\Forge\Client\Model\UserProfileProfileImages
      */
     public function getProfileImages()
     {
@@ -344,7 +344,7 @@ class UserProfile implements ArrayAccess
 
     /**
      * Sets profile_images
-     * @param \AutodeskForge\Client\Model\UserProfileProfileImages $profile_images
+     * @param \Autodesk\Forge\Client\Model\UserProfileProfileImages $profile_images
      * @return $this
      */
     public function setProfileImages($profile_images)
@@ -405,10 +405,10 @@ class UserProfile implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

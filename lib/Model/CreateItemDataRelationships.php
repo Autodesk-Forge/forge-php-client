@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  AutodeskForge\Client
+ * @package  Autodesk\Forge\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace AutodeskForge\Client\Model;
+namespace Autodesk\Forge\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateItemDataRelationships Class Doc Comment
  *
  * @category    Class
- * @package     AutodeskForge\Client
+ * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class CreateItemDataRelationships implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'tip' => '\AutodeskForge\Client\Model\CreateItemDataRelationshipsTip',
-        'parent' => '\AutodeskForge\Client\Model\CreateStorageDataRelationshipsTarget',
+        'tip' => '\Autodesk\Forge\Client\Model\CreateItemDataRelationshipsTip',
+        'parent' => '\Autodesk\Forge\Client\Model\CreateStorageDataRelationshipsTarget',
     ];
 
     /**
@@ -157,7 +157,7 @@ class CreateItemDataRelationships implements ArrayAccess
 
     /**
      * Gets tip
-     * @return \AutodeskForge\Client\Model\CreateItemDataRelationshipsTip
+     * @return \Autodesk\Forge\Client\Model\CreateItemDataRelationshipsTip
      */
     public function getTip()
     {
@@ -166,7 +166,7 @@ class CreateItemDataRelationships implements ArrayAccess
 
     /**
      * Sets tip
-     * @param \AutodeskForge\Client\Model\CreateItemDataRelationshipsTip $tip
+     * @param \Autodesk\Forge\Client\Model\CreateItemDataRelationshipsTip $tip
      * @return $this
      */
     public function setTip($tip)
@@ -178,7 +178,7 @@ class CreateItemDataRelationships implements ArrayAccess
 
     /**
      * Gets parent
-     * @return \AutodeskForge\Client\Model\CreateStorageDataRelationshipsTarget
+     * @return \Autodesk\Forge\Client\Model\CreateStorageDataRelationshipsTarget
      */
     public function getParent()
     {
@@ -187,7 +187,7 @@ class CreateItemDataRelationships implements ArrayAccess
 
     /**
      * Sets parent
-     * @param \AutodeskForge\Client\Model\CreateStorageDataRelationshipsTarget $parent
+     * @param \Autodesk\Forge\Client\Model\CreateStorageDataRelationshipsTarget $parent
      * @return $this
      */
     public function setParent($parent)
@@ -248,10 +248,10 @@ class CreateItemDataRelationships implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\AutodeskForge\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Autodesk\Forge\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

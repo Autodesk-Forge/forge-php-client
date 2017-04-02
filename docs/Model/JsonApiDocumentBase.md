@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**jsonapi** | [**\AutodeskForge\Client\Model\JsonApiVersionJsonapi**](JsonApiVersionJsonapi.md) |  | [optional] 
-**data** | [**\AutodeskForge\Client\Model\JsonApiResource**](JsonApiResource.md) |  | 
-**included** | [**\AutodeskForge\Client\Model\JsonApiResource[]**](JsonApiResource.md) |  | [optional] 
+**jsonapi** | [**\Autodesk\Forge\Client\Model\JsonApiVersionJsonapi**](JsonApiVersionJsonapi.md) |  | [optional] 
+**data** | [**\Autodesk\Forge\Client\Model\JsonApiResource**](JsonApiResource.md) |  | 
+**included** | [**\Autodesk\Forge\Client\Model\JsonApiResource[]**](JsonApiResource.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,4 +1,4 @@
-# AutodeskForge\Client\ActivitiesApi
+# Autodesk\Forge\Client\ActivitiesApi
 
 All URIs are relative to *https://developer.api.autodesk.com*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createActivity**
-> \AutodeskForge\Client\Model\Activity createActivity($activity)
+> \Autodesk\Forge\Client\Model\Activity createActivity($activity)
 
 Creates a new Activity.
 
@@ -24,8 +24,8 @@ Creates a new Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
-$activity = new \AutodeskForge\Client\Model\Activity(); // \AutodeskForge\Client\Model\Activity | 
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($authObject);
+$activity = new \Autodesk\Forge\Client\Model\Activity(); // \Autodesk\Forge\Client\Model\Activity | 
 
 try {
     $result = $apiInstance->createActivity($activity);
@@ -40,11 +40,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activity** | [**\AutodeskForge\Client\Model\Activity**](../Model/\AutodeskForge\Client\Model\Activity.md)|  |
+ **activity** | [**\Autodesk\Forge\Client\Model\Activity**](../Model/\Autodesk\Forge\Client\Model\Activity.md)|  |
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Activity**](../Model/Activity.md)
+[**\Autodesk\Forge\Client\Model\Activity**](../Model/Activity.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Removes a specific Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -109,7 +109,7 @@ Removes the version history of the specified Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -142,7 +142,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getActivity**
-> \AutodeskForge\Client\Model\Activity getActivity($id)
+> \Autodesk\Forge\Client\Model\Activity getActivity($id)
 
 Returns the details of a specific Activity.
 
@@ -151,7 +151,7 @@ Returns the details of a specific Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\Activity**](../Model/Activity.md)
+[**\Autodesk\Forge\Client\Model\Activity**](../Model/Activity.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getActivityVersions**
-> \AutodeskForge\Client\Model\DesignAutomationActivities getActivityVersions($id)
+> \Autodesk\Forge\Client\Model\DesignAutomationActivities getActivityVersions($id)
 
 Returns all old versions of a specified Activity.
 
@@ -194,7 +194,7 @@ Returns all old versions of a specified Activity.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
 
 try {
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
+[**\Autodesk\Forge\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllActivities**
-> \AutodeskForge\Client\Model\DesignAutomationActivities getAllActivities()
+> \Autodesk\Forge\Client\Model\DesignAutomationActivities getAllActivities()
 
 Returns the details of all Activities.
 
@@ -237,7 +237,7 @@ Returns the details of all Activities.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($authObject);
 
 try {
     $result = $apiInstance->getAllActivities();
@@ -253,7 +253,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\AutodeskForge\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
+[**\Autodesk\Forge\Client\Model\DesignAutomationActivities**](../Model/DesignAutomationActivities.md)
 
 ### Authorization
 
@@ -276,9 +276,9 @@ Updates an Activity by specifying only the changed attributes.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
-$activity = new \AutodeskForge\Client\Model\ActivityOptional(); // \AutodeskForge\Client\Model\ActivityOptional | 
+$activity = new \Autodesk\Forge\Client\Model\ActivityOptional(); // \Autodesk\Forge\Client\Model\ActivityOptional | 
 
 try {
     $apiInstance->patchActivity($id, $activity);
@@ -293,7 +293,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **activity** | [**\AutodeskForge\Client\Model\ActivityOptional**](../Model/\AutodeskForge\Client\Model\ActivityOptional.md)|  |
+ **activity** | [**\Autodesk\Forge\Client\Model\ActivityOptional**](../Model/\Autodesk\Forge\Client\Model\ActivityOptional.md)|  |
 
 ### Return type
 
@@ -320,9 +320,9 @@ Sets the Activity to the specified version.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new AutodeskForge\Client\Api\ActivitiesApi($authObject);
+$apiInstance = new Autodesk\Forge\Client\Api\ActivitiesApi($authObject);
 $id = "id_example"; // string | 
-$activity_version = new \AutodeskForge\Client\Model\ActivityVersion(); // \AutodeskForge\Client\Model\ActivityVersion | 
+$activity_version = new \Autodesk\Forge\Client\Model\ActivityVersion(); // \Autodesk\Forge\Client\Model\ActivityVersion | 
 
 try {
     $apiInstance->setActivityVersion($id, $activity_version);
@@ -337,7 +337,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **activity_version** | [**\AutodeskForge\Client\Model\ActivityVersion**](../Model/\AutodeskForge\Client\Model\ActivityVersion.md)|  |
+ **activity_version** | [**\Autodesk\Forge\Client\Model\ActivityVersion**](../Model/\Autodesk\Forge\Client\Model\ActivityVersion.md)|  |
 
 ### Return type
 
