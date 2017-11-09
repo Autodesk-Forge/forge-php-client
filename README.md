@@ -236,6 +236,10 @@ Class | Method | HTTP request | Description
 *WorkItemsApi* | [**getAllWorkItems**](docs/Api/WorkItemsApi.md#getallworkitems) | **GET** /autocad.io/us-east/v2/WorkItems | Returns the details of all WorkItems.
 *WorkItemsApi* | [**getWorkItem**](docs/Api/WorkItemsApi.md#getworkitem) | **GET** /autocad.io/us-east/v2/WorkItems(&#39;{id}&#39;) | Returns the details of a specific WorkItem.
 
+### Thumbnail
+
+![thumbnail](/php.png)
+
 
 ## Support
 
