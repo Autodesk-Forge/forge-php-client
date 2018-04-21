@@ -274,6 +274,7 @@ class ManifestChildren implements ArrayAccess
         if ($this->container['mime'] === null) {
             $invalid_properties[] = "'mime' can't be null";
         }
+
         $allowed_values = ["pending", "inprogress", "success", "failed", "timeout", "partialsuccess"];
         if (!in_array($this->container['status'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'status', must be one of 'pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess'.";
@@ -332,9 +333,9 @@ class ManifestChildren implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('resource', 'manifest', 'geometry', 'view');
+        $allowed_values = array('resource', 'manifest', 'geometry', 'view', 'folder');
         if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'resource', 'manifest', 'geometry', 'view'");
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'resource', 'manifest', 'geometry', 'view', 'folder'");
         }
         $this->container['type'] = $type;
 
@@ -357,9 +358,9 @@ class ManifestChildren implements ArrayAccess
      */
     public function setRole($role)
     {
-        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase');
+        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable');
         if ((!in_array($role, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail'");
+            throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable'");
         }
         $this->container['role'] = $role;
 
