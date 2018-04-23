@@ -66,6 +66,7 @@ class ManifestChildren implements ArrayAccess
         'resolution' => 'string[]',
         'model_guid' => 'string',
         'object_ids' => 'int[]',
+        'children' => '\Autodesk\Forge\Client\Model\ManifestChildren[]',
         'messages' => '\Autodesk\Forge\Client\Model\Messages',
     ];
 
@@ -93,6 +94,7 @@ class ManifestChildren implements ArrayAccess
         'resolution' => 'resolution',
         'model_guid' => 'modelGUID',
         'object_ids' => 'objectIds',
+        'children' => 'children',
         'messages' => 'messages',
     ];
 
@@ -113,6 +115,7 @@ class ManifestChildren implements ArrayAccess
         'resolution' => 'setResolution',
         'model_guid' => 'setModelGuid',
         'object_ids' => 'setObjectIds',
+        'children' => 'setChildren',
         'messages' => 'setMessages',
     ];
 
@@ -133,6 +136,7 @@ class ManifestChildren implements ArrayAccess
         'resolution' => 'getResolution',
         'model_guid' => 'getModelGuid',
         'object_ids' => 'getObjectIds',
+        'children' => 'getChildren',
         'messages' => 'getMessages',
     ];
 
@@ -238,6 +242,7 @@ class ManifestChildren implements ArrayAccess
         $this->container['resolution'] = isset($data['resolution']) ? $data['resolution'] : null;
         $this->container['model_guid'] = isset($data['model_guid']) ? $data['model_guid'] : null;
         $this->container['object_ids'] = isset($data['object_ids']) ? $data['object_ids'] : null;
+        $this->container['children'] = isset($data['children']) ? $data['children'] : null;
         $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
     }
 
@@ -269,6 +274,7 @@ class ManifestChildren implements ArrayAccess
         if ($this->container['mime'] === null) {
             $invalid_properties[] = "'mime' can't be null";
         }
+
         $allowed_values = ["pending", "inprogress", "success", "failed", "timeout", "partialsuccess"];
         if (!in_array($this->container['status'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'status', must be one of 'pending', 'inprogress', 'success', 'failed', 'timeout', 'partialsuccess'.";
@@ -327,9 +333,9 @@ class ManifestChildren implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('resource', 'manifest', 'geometry', 'view');
+        $allowed_values = array('resource', 'manifest', 'geometry', 'view', 'folder');
         if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'resource', 'manifest', 'geometry', 'view'");
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'resource', 'manifest', 'geometry', 'view', 'folder'");
         }
         $this->container['type'] = $type;
 
@@ -352,9 +358,9 @@ class ManifestChildren implements ArrayAccess
      */
     public function setRole($role)
     {
-        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail');
+        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable');
         if ((!in_array($role, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail'");
+            throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable'");
         }
         $this->container['role'] = $role;
 
@@ -584,6 +590,27 @@ class ManifestChildren implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
+    /**
+     * Gets children
+     * @return \Autodesk\Forge\Client\Model\ManifestChildren[]
+     */
+    public function getChildren()
+    {
+        return $this->container['children'];
+    }
+
+    /**
+     * Sets children
+     * @param \Autodesk\Forge\Client\Model\ManifestChildren[] $children
+     * @return $this
+     */
+    public function setChildren($children)
+    {
+        $this->container['children'] = $children;
+
+        return $this;
+    }
+    
     /**
      * Gets offset.
      * @param  integer $offset Offset
