@@ -9,7 +9,7 @@
     "api"
   ],
   "homepage": "https://github.com/Autodesk-Forge/forge-php-client",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Autodesk-Forge",
