@@ -159,7 +159,7 @@ class DerivativesApi extends AbstractApi
      * @param string $derivative_urn The URL-encoded URN of the derivatives. The URN is retrieved from the GET :urn/manifest endpoint. (required)
      * @param int $range This is the standard RFC 2616 range request header. It only supports one range specifier per request: 1. Range:bytes&#x3D;0-63 (returns the first 64 bytes) 2. Range:bytes&#x3D;64-127 (returns the second set of 64 bytes) 3. Range:bytes&#x3D;1022- (returns all the bytes from offset 1022 to the end) 4. If the range header is not specified, the whole content is returned. (optional)
      * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of file content, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDerivativeManifestWithHttpInfo($urn, $derivative_urn, $range = null)
     {
@@ -225,7 +225,7 @@ class DerivativesApi extends AbstractApi
                 '/modelderivative/v2/designdata/{urn}/manifest/{derivativeUrn}'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
