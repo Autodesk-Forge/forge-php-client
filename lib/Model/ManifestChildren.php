@@ -161,6 +161,7 @@ class ManifestChildren implements ArrayAccess
     const TYPE_VIEW = 'view';
     const ROLE__2D = '2d';
     const ROLE__3D = '3d';
+    const ROLE__IFC = 'ifc';
     const ROLE_GRAPHICS = 'graphics';
     const ROLE_MANIFEST = 'manifest';
     const ROLE_THUMBNAIL = 'thumbnail';
@@ -196,6 +197,7 @@ class ManifestChildren implements ArrayAccess
         return [
             self::ROLE__2D,
             self::ROLE__3D,
+            self::ROLE__IFC,
             self::ROLE_GRAPHICS,
             self::ROLE_MANIFEST,
             self::ROLE_THUMBNAIL,
@@ -266,9 +268,9 @@ class ManifestChildren implements ArrayAccess
         if ($this->container['role'] === null) {
             $invalid_properties[] = "'role' can't be null";
         }
-        $allowed_values = ["2d", "3d", "graphics", "manifest", "thumbnail"];
+        $allowed_values = ["2d", "3d", "graphics", "manifest", "thumbnail", "ifc"];
         if (!in_array($this->container['role'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail'.";
+            $invalid_properties[] = "invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail', 'ifc'.";
         }
 
         if ($this->container['mime'] === null) {
@@ -358,9 +360,9 @@ class ManifestChildren implements ArrayAccess
      */
     public function setRole($role)
     {
-        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable');
+        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable', 'ifc');
         if ((!in_array($role, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable'");
+            throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable', 'ifc'");
         }
         $this->container['role'] = $role;
 

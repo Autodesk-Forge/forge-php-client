@@ -132,6 +132,7 @@ class ManifestDerivative implements ArrayAccess
     const OUTPUT_TYPE_IGES = 'iges';
     const OUTPUT_TYPE_OBJ = 'obj';
     const OUTPUT_TYPE_SVF = 'svf';
+    const OUTPUT_TYPE_IFC = 'ifc';
     const OUTPUT_TYPE_THUMBNAIL = 'thumbnail';
     const STATUS_PENDING = 'pending';
     const STATUS_INPROGRESS = 'inprogress';
@@ -154,6 +155,7 @@ class ManifestDerivative implements ArrayAccess
             self::OUTPUT_TYPE_IGES,
             self::OUTPUT_TYPE_OBJ,
             self::OUTPUT_TYPE_SVF,
+            self::OUTPUT_TYPE_IFC,
             self::OUTPUT_TYPE_THUMBNAIL,
         ];
     }
@@ -210,9 +212,9 @@ class ManifestDerivative implements ArrayAccess
         if ($this->container['has_thumbnail'] === null) {
             $invalid_properties[] = "'has_thumbnail' can't be null";
         }
-        $allowed_values = ["stl", "step", "iges", "obj", "svf", "thumbnail"];
+        $allowed_values = ["stl", "step", "iges", "obj", "svf", "thumbnail", "ifc"];
         if (!in_array($this->container['output_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'output_type', must be one of 'stl', 'step', 'iges', 'obj', 'svf', 'thumbnail'.";
+            $invalid_properties[] = "invalid value for 'output_type', must be one of 'stl', 'step', 'iges', 'obj', 'svf', 'thumbnail', 'ifc'.";
         }
 
         if ($this->container['progress'] === null) {
@@ -247,7 +249,7 @@ class ManifestDerivative implements ArrayAccess
         if ($this->container['has_thumbnail'] === null) {
             return false;
         }
-        $allowed_values = ["stl", "step", "iges", "obj", "svf", "thumbnail"];
+        $allowed_values = ["stl", "step", "iges", "obj", "svf", "thumbnail", "ifc"];
         if (!in_array($this->container['output_type'], $allowed_values)) {
             return false;
         }
@@ -326,9 +328,9 @@ class ManifestDerivative implements ArrayAccess
      */
     public function setOutputType($output_type)
     {
-        $allowed_values = array('stl', 'step', 'iges', 'obj', 'svf', 'thumbnail');
+        $allowed_values = array('stl', 'step', 'iges', 'obj', 'svf', 'thumbnail', 'ifc');
         if (!is_null($output_type) && (!in_array($output_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'output_type', must be one of 'stl', 'step', 'iges', 'obj', 'svf', 'thumbnail'");
+            throw new \InvalidArgumentException("Invalid value for 'output_type', must be one of 'stl', 'step', 'iges', 'obj', 'svf', 'thumbnail', 'ifc'");
         }
         $this->container['output_type'] = $output_type;
 
