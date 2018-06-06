@@ -1116,7 +1116,7 @@ class ObjectsApi extends AbstractApi
      * @param int $content_length Indicates the size of the request body. (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @param \SplFileObject $body (required)
+     * @param string $body Chunk content(required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
      * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
@@ -1268,7 +1268,7 @@ class ObjectsApi extends AbstractApi
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param int $content_length Indicates the size of the request body. (required)
-     * @param \SplFileObject $body (required)
+     * @param string $body File content (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
      * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
@@ -1288,7 +1288,7 @@ class ObjectsApi extends AbstractApi
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param int $content_length Indicates the size of the request body. (required)
-     * @param \SplFileObject $body (required)
+     * @param string $body File content (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
      * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
