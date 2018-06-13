@@ -489,7 +489,7 @@ $object_name = "object_name_example"; // string | URL-encoded object name
 $content_length = 56; // int | Indicates the size of the request body.
 $content_range = "content_range_example"; // string | Byte range of a segment being uploaded
 $session_id = "session_id_example"; // string | Unique identifier of a session of a file being uploaded
-$body = "/path/to/file.txt"; // \SplFileObject | 
+$body = file_get_contents("/path/to/file.txt"); // string | The content of the file to send
 $content_disposition = "content_disposition_example"; // string | The suggested default filename when downloading this object to a file after it has been uploaded.
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
 
@@ -546,7 +546,7 @@ $apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $content_length = 56; // int | Indicates the size of the request body.
-$body = "/path/to/file.txt"; // \SplFileObject | 
+$body = file_get_contents("/path/to/file.txt"); // string | The content of the file to send
 $content_disposition = "content_disposition_example"; // string | The suggested default filename when downloading this object to a file after it has been uploaded.
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
 
@@ -600,7 +600,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $content_length = 56; // int | Indicates the size of the request body.
-$body = "/path/to/file.txt"; // \SplFileObject | 
+$body = file_get_contents("/path/to/file.txt"); // string | The content of the file to send
 $content_disposition = "content_disposition_example"; // string | The suggested default filename when downloading this object to a file after it has been uploaded.
 $x_ads_region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
@@ -656,7 +656,7 @@ $apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $content_range = "content_range_example"; // string | Byte range of a segment being uploaded
 $session_id = "session_id_example"; // string | Unique identifier of a session of a file being uploaded
-$body = "/path/to/file.txt"; // \SplFileObject | 
+$body = file_get_contents("/path/to/file.txt"); // string | The content of the file to send
 $content_disposition = "content_disposition_example"; // string | The suggested default filename when downloading this object to a file after it has been uploaded.
 $x_ads_region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
