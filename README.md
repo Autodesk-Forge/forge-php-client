@@ -238,7 +238,7 @@ Class | Method | HTTP request | Description
 
 ### Thumbnail
 
-![thumbnail](/php.png)
+![thumbnail](/thumbnail.png)
 
 
 ## Support
