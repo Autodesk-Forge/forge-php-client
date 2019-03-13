@@ -490,14 +490,18 @@ $object_name = "object_name_example"; // string | URL-encoded object name
 $content_length = 56; // int | Indicates the size of the request body.
 $content_range = "content_range_example"; // string | Byte range of a segment being uploaded
 $session_id = "session_id_example"; // string | Unique identifier of a session of a file being uploaded
-$body = "file contents or resource handle"; // either string | File contents or resource | File stream
+$body = "file contents"; // File contents
+$fileHandle = fopen('/path/to/file', 'r+'); // File resource handle
 $content_disposition = "content_disposition_example"; // string | The suggested default filename when downloading this object to a file after it has been uploaded.
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
 
 try {
-    $fileHandle = fopen('/path/to/file', 'r+');
-    $result = $apiInstance->uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $fileHandle, $content_disposition, $if_match);
-    print_r($result);
+    //Upload file contents
+    $resultUploadContent = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    print_r($resultUploadContent);
+    //Upload file as stream
+    $resultUploadFile = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $fileHandle, $content_disposition, $x_ads_region);
+    print_r($resultUploadFile);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadChunk: ', $e->getMessage(), PHP_EOL;
 }
@@ -513,7 +517,7 @@ Name | Type | Description  | Notes
  **content_length** | **int**| Indicates the size of the request body. |
  **content_range** | **string**| Byte range of a segment being uploaded |
  **session_id** | **string**| Unique identifier of a session of a file being uploaded |
- **body** | **string or resource**| File contents or its resource handle |
+ **body | fileHandle** | **string or resource**| File contents or its resource handle |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **if_match** | **string**| If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. | [optional]
 
@@ -548,14 +552,18 @@ $apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $bucket_key = "bucket_key_example"; // string | URL-encoded bucket key
 $object_name = "object_name_example"; // string | URL-encoded object name
 $content_length = 56; // int | Indicates the size of the request body.
-$body = "file contents or resource handle"; // either string or File contents or resource handle
+$body = "file contents"; // File contents
+$fileHandle = fopen('/path/to/file', 'r+'); // File resource handle
 $content_disposition = "content_disposition_example"; // string | The suggested default filename when downloading this object to a file after it has been uploaded.
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
 
 try {
-    $fileHandle = fopen('/path/to/file', 'r+');
-    $result = $apiInstance->uploadObject($bucket_key, $object_name, $content_length, $fileHandle, $content_disposition, $if_match);
-    print_r($result);
+     //Upload file contents
+    $resultUploadContent = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    print_r($resultUploadContent);
+    //Upload file as stream
+    $resultUploadFile = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $fileHandle, $content_disposition, $x_ads_region);
+    print_r($resultUploadFile);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadObject: ', $e->getMessage(), PHP_EOL;
 }
@@ -569,7 +577,7 @@ Name | Type | Description  | Notes
  **bucket_key** | **string**| URL-encoded bucket key |
  **object_name** | **string**| URL-encoded object name |
  **content_length** | **int**| Indicates the size of the request body. |
- **body** | **string or resource**| File contents or its resource handle |
+ **body | fileHandle** | **string or resource**| File contents or its resource handle |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **if_match** | **string**| If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. | [optional]
 
@@ -603,15 +611,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $content_length = 56; // int | Indicates the size of the request body.
-$body = "file contents or resource handle"; // either string or File contents or resource handle
+$body = "file contents"; // File contents
+$fileHandle = fopen('/path/to/file', 'r+'); // File resource handle
 $content_disposition = "content_disposition_example"; // string | The suggested default filename when downloading this object to a file after it has been uploaded.
 $x_ads_region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written.
 
 try {
-    $fileHandle = fopen('/path/to/file', 'r+');
-    $result = $apiInstance->uploadSignedResource($id, $content_length, $fileHandle, $content_disposition, $x_ads_region, $if_match);
-    print_r($result);
+    //Upload file contents
+    $resultUploadContent = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    print_r($resultUploadContent);
+    //Upload file as stream
+    $resultUploadFile = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $fileHandle, $content_disposition, $x_ads_region);
+    print_r($resultUploadFile);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadSignedResource: ', $e->getMessage(), PHP_EOL;
 }
@@ -624,7 +636,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Id of signed resource |
  **content_length** | **int**| Indicates the size of the request body. |
- **body** | **string or resource**| File contents or its resource handle |
+ **body | fileHandle** | **string or resource**| File contents or its resource handle |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **x_ads_region** | **string**| The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; | [optional] [default to US]
  **if_match** | **string**| If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. | [optional]
@@ -660,14 +672,19 @@ $apiInstance = new Autodesk\Forge\Client\Api\ObjectsApi($authObject);
 $id = "id_example"; // string | Id of signed resource
 $content_range = "content_range_example"; // string | Byte range of a segment being uploaded
 $session_id = "session_id_example"; // string | Unique identifier of a session of a file being uploaded
-$body = "file contents or resource handle"; // either string or File contents or resource handle
+$body = "file contents"; // File contents
+$fileHandle = fopen('/path/to/file', 'r+'); // File resource handle
 $content_disposition = "content_disposition_example"; // string | The suggested default filename when downloading this object to a file after it has been uploaded.
 $x_ads_region = "US"; // string | The region where the bucket resides Acceptable values: `US`, `EMEA` Default is `US`
 
 try {
-    $fileHandle = fopen('/path/to/file', 'r+');
-    $result = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $fileHandle, $content_disposition, $x_ads_region);
-    print_r($result);
+    //Upload file contents
+    $resultUploadContent = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    print_r($resultUploadContent);
+    //Upload file as stream
+    $resultUploadFile = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $fileHandle, $content_disposition, $x_ads_region);
+    print_r($resultUploadFile);
+    
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadSignedResourcesChunk: ', $e->getMessage(), PHP_EOL;
 }
@@ -681,7 +698,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Id of signed resource |
  **content_range** | **string**| Byte range of a segment being uploaded |
  **session_id** | **string**| Unique identifier of a session of a file being uploaded |
- **body** | **\SplFileObject**|  |
+ **body | fileHandle ** | **file contents or resource handle**|  |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **x_ads_region** | **string**| The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; | [optional] [default to US]
 
