@@ -497,10 +497,10 @@ $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 h
 
 try {
     //Upload file contents
-    $resultUploadContent = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    $resultUploadContent = $apiInstance->uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $body, $content_disposition, $if_match);
     print_r($resultUploadContent);
     //Upload file as stream
-    $resultUploadFile = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $fileHandle, $content_disposition, $x_ads_region);
+    $resultUploadFile = $apiInstance->uploadChunk($bucket_key, $object_name, $content_length, $content_range, $session_id, $fileHandle, $content_disposition, $if_match);
     print_r($resultUploadFile);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadChunk: ', $e->getMessage(), PHP_EOL;
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
  **content_length** | **int**| Indicates the size of the request body. |
  **content_range** | **string**| Byte range of a segment being uploaded |
  **session_id** | **string**| Unique identifier of a session of a file being uploaded |
- **body | fileHandle** | **string or resource**| File contents or its resource handle |
+ **body or fileHandle** | **string or resource**| File contents or its resource handle |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **if_match** | **string**| If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. | [optional]
 
@@ -559,10 +559,10 @@ $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 h
 
 try {
      //Upload file contents
-    $resultUploadContent = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    $resultUploadContent = $apiInstance->uploadObject($bucket_key, $object_name, $content_length, $body, $content_disposition, $if_match);
     print_r($resultUploadContent);
     //Upload file as stream
-    $resultUploadFile = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $fileHandle, $content_disposition, $x_ads_region);
+    $resultUploadFile = $apiInstance->uploadObject($bucket_key, $object_name, $content_length, $fileHandle, $content_disposition, $if_match);
     print_r($resultUploadFile);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadObject: ', $e->getMessage(), PHP_EOL;
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
  **bucket_key** | **string**| URL-encoded bucket key |
  **object_name** | **string**| URL-encoded object name |
  **content_length** | **int**| Indicates the size of the request body. |
- **body | fileHandle** | **string or resource**| File contents or its resource handle |
+ **body or fileHandle** | **string or resource**| File contents or its resource handle |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **if_match** | **string**| If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. | [optional]
 
@@ -619,10 +619,10 @@ $if_match = "if_match_example"; // string | If-Match header containing a SHA-1 h
 
 try {
     //Upload file contents
-    $resultUploadContent = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $body, $content_disposition, $x_ads_region);
+    $resultUploadContent = $apiInstance->uploadSignedResource($id, $content_length, $body, $content_disposition, $x_ads_region, $if_match);
     print_r($resultUploadContent);
     //Upload file as stream
-    $resultUploadFile = $apiInstance->uploadSignedResourcesChunk($id, $content_range, $session_id, $fileHandle, $content_disposition, $x_ads_region);
+    $resultUploadFile = $apiInstance->uploadSignedResource($id, $content_length, $fileHandle, $content_disposition, $x_ads_region, $if_match);
     print_r($resultUploadFile);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectsApi->uploadSignedResource: ', $e->getMessage(), PHP_EOL;
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Id of signed resource |
  **content_length** | **int**| Indicates the size of the request body. |
- **body | fileHandle** | **string or resource**| File contents or its resource handle |
+ **body or fileHandle** | **string or resource**| File contents or its resource handle |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **x_ads_region** | **string**| The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; | [optional] [default to US]
  **if_match** | **string**| If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. | [optional]
@@ -698,7 +698,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Id of signed resource |
  **content_range** | **string**| Byte range of a segment being uploaded |
  **session_id** | **string**| Unique identifier of a session of a file being uploaded |
- **body | fileHandle ** | **file contents or resource handle**|  |
+ **body or fileHandle ** | **file contents or resource handle**|  |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **x_ads_region** | **string**| The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; | [optional] [default to US]
 
