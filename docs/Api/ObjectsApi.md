@@ -698,7 +698,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Id of signed resource |
  **content_range** | **string**| Byte range of a segment being uploaded |
  **session_id** | **string**| Unique identifier of a session of a file being uploaded |
- **body or fileHandle ** | **file contents or resource handle**|  |
+ **body or fileHandle** | **string or resource handle**|  |
  **content_disposition** | **string**| The suggested default filename when downloading this object to a file after it has been uploaded. | [optional]
  **x_ads_region** | **string**| The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; | [optional] [default to US]
 
