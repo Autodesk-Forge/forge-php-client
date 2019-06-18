@@ -599,7 +599,7 @@ class AppPackagesApi extends AbstractApi
                 '/autocad.io/us-east/v2/AppPackages/Operations.GetUploadUrl'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -680,7 +680,7 @@ class AppPackagesApi extends AbstractApi
                 '/autocad.io/us-east/v2/AppPackages/Operations.GetUploadUrl(RequireContentType&#x3D;{require})'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
