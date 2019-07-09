@@ -57,6 +57,7 @@ class MetadataCollection implements ArrayAccess
     protected static $swaggerTypes = [
         'objectid' => 'int',
         'name' => 'string',
+        'externalId' => 'string',
         'properties' => 'object',
     ];
 
@@ -75,6 +76,7 @@ class MetadataCollection implements ArrayAccess
     protected static $attributeMap = [
         'objectid' => 'objectid',
         'name' => 'name',
+        'externalId' => 'externalId',
         'properties' => 'properties',
     ];
 
@@ -85,6 +87,7 @@ class MetadataCollection implements ArrayAccess
      */
     protected static $setters = [
         'objectid' => 'setObjectid',
+        'externalId' => 'setExternalId',
         'name' => 'setName',
         'properties' => 'setProperties',
     ];
@@ -97,6 +100,7 @@ class MetadataCollection implements ArrayAccess
     protected static $getters = [
         'objectid' => 'getObjectid',
         'name' => 'getName',
+        'name' => 'getExternalId',
         'properties' => 'getProperties',
     ];
 
@@ -134,6 +138,7 @@ class MetadataCollection implements ArrayAccess
         $this->container['objectid'] = isset($data['objectid']) ? $data['objectid'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['properties'] = isset($data['properties']) ? $data['properties'] : null;
+        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
     }
 
     /**
@@ -190,6 +195,27 @@ class MetadataCollection implements ArrayAccess
     public function setObjectid($objectid)
     {
         $this->container['objectid'] = $objectid;
+
+        return $this;
+    }
+
+    /**
+     * Gets externalId
+     * @return int
+     */
+    public function getExternalId()
+    {
+        return $this->container['externalId'];
+    }
+
+    /**
+     * Sets externalId
+     * @param int $objectid Unique ID for the object
+     * @return $this
+     */
+    public function setExternalId($externalId)
+    {
+        $this->container['externalId'] = $externalId;
 
         return $this;
     }
