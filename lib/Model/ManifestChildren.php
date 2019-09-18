@@ -360,9 +360,9 @@ class ManifestChildren implements ArrayAccess
      */
     public function setRole($role)
     {
-        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable', 'ifc');
+        $allowed_values = array('2d', '3d', 'graphics', 'manifest', 'thumbnail', 'Autodesk.CloudPlatform.PropertyDatabase', 'viewable', 'ifc', 'Autodesk.AEC.ModelData');
         if ((!in_array($role, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail','Autodesk.CloudPlatform.PropertyDatabase','viewable', 'ifc'");
+            throw new \InvalidArgumentException("Invalid value for 'role', must be one of '2d', '3d', 'graphics', 'manifest', 'thumbnail', 'Autodesk.CloudPlatform.PropertyDatabase', 'viewable', 'ifc', 'Autodesk.AEC.ModelData'");
         }
         $this->container['role'] = $role;
 
