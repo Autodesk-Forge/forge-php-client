@@ -1,6 +1,5 @@
 {
   "name": "autodesk/forge-client",
-  "version": "1.0",
   "description": "",
   "keywords": [
     "swagger",
@@ -9,7 +8,7 @@
     "api"
   ],
   "homepage": "https://github.com/Autodesk-Forge/forge-php-client",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Autodesk-Forge",

@@ -148,7 +148,7 @@ class ApiClient
         if ($this->config->getCurlConnectTimeout() != 0) {
             curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $this->config->getCurlConnectTimeout());
         }
-        
+
         // return the result on success, rather than just true
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -182,6 +182,11 @@ class ApiClient
 
         if ($method === self::$POST) {
             curl_setopt($curl, CURLOPT_POST, true);
+            if(is_resource($postData)) {
+              curl_setopt($curl, CURLOPT_INFILE, $postData);
+              curl_setopt($curl, CURLOPT_INFILESIZE, $headerParams['Content-Length']);
+              curl_setopt($curl, CURLOPT_UPLOAD, 1);
+            } else
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method === self::$HEAD) {
             curl_setopt($curl, CURLOPT_NOBODY, true);
@@ -190,9 +195,19 @@ class ApiClient
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method === self::$PATCH) {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PATCH");
+            if(is_resource($postData)) {
+              curl_setopt($curl, CURLOPT_INFILE, $postData);
+              curl_setopt($curl, CURLOPT_INFILESIZE, $headerParams['Content-Length']);
+              curl_setopt($curl, CURLOPT_UPLOAD, 1);
+            } else
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method === self::$PUT) {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+            if(is_resource($postData)) {
+              curl_setopt($curl, CURLOPT_INFILE, $postData);
+              curl_setopt($curl, CURLOPT_INFILESIZE, $headerParams['Content-Length']);
+              curl_setopt($curl, CURLOPT_UPLOAD, 1);
+            } else
             curl_setopt( $curl, CURLOPT_POSTFIELDS, file_get_contents( $postData ) );
         } elseif ($method === self::$DELETE) {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");

@@ -56,6 +56,7 @@ class MetadataMetadata implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'name' => 'string',
+        'role' => 'string',
         'guid' => 'string',
     ];
 
@@ -73,6 +74,7 @@ class MetadataMetadata implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'role' => 'role',
         'guid' => 'guid',
     ];
 
@@ -83,6 +85,7 @@ class MetadataMetadata implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
+        'role' => 'setRole',
         'guid' => 'setGuid',
     ];
 
@@ -93,6 +96,7 @@ class MetadataMetadata implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
+        'role' => 'setRole',
         'guid' => 'getGuid',
     ];
 
@@ -128,6 +132,7 @@ class MetadataMetadata implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['role'] = isset($data['role']) ? $data['role'] : null;
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
     }
 
@@ -185,6 +190,27 @@ class MetadataMetadata implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+        /**
+     * Gets role
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->container['role'];
+    }
+
+    /**
+     * Sets role
+     * @param string $name Name of the model view
+     * @return $this
+     */
+    public function setRole($role)
+    {
+        $this->container['role'] = $role;
 
         return $this;
     }

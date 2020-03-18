@@ -121,6 +121,7 @@ class JobPayloadItem implements ArrayAccess
     const TYPE_STEP = 'step';
     const TYPE_IGES = 'iges';
     const TYPE_OBJ = 'obj';
+    const TYPE_IFC = 'ifc';    
     const VIEWS__2D = '2d';
     const VIEWS__3D = '3d';
     
@@ -139,6 +140,8 @@ class JobPayloadItem implements ArrayAccess
             self::TYPE_STEP,
             self::TYPE_IGES,
             self::TYPE_OBJ,
+            self::TYPE_IFC,
+            
         ];
     }
     
@@ -184,9 +187,9 @@ class JobPayloadItem implements ArrayAccess
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
+        $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj", "ifc"];
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'.";
+            $invalid_properties[] = "invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj', 'ifc'.";
         }
 
         return $invalid_properties;
@@ -204,7 +207,7 @@ class JobPayloadItem implements ArrayAccess
         if ($this->container['type'] === null) {
             return false;
         }
-        $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj"];
+        $allowed_values = ["svf", "thumbnail", "stl", "step", "iges", "obj", "ifc"];
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
@@ -223,14 +226,14 @@ class JobPayloadItem implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type The requested output types. Possible values include `svf`, `thumbnai`, `stl`, `step`, `iges`, or `obj`. For a list of supported types, call the [GET formats](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/formats-GET) endpoint.
+     * @param string $type The requested output types. Possible values include `svf`, `thumbnai`, `stl`, `step`, `iges`, 'ifc', or `obj`. For a list of supported types, call the [GET formats](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/formats-GET) endpoint.
      * @return $this
      */
     public function setType($type)
     {
-        $allowed_values = array('svf', 'thumbnail', 'stl', 'step', 'iges', 'obj');
+        $allowed_values = array('svf', 'thumbnail', 'stl', 'step', 'iges', 'obj', 'ifc');
         if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj'");
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'svf', 'thumbnail', 'stl', 'step', 'iges', 'obj','ifc' ");
         }
         $this->container['type'] = $type;
 
