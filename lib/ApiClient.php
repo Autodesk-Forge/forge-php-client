@@ -193,7 +193,7 @@ class ApiClient
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method === self::$PUT) {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, file_get_contents($postData));
         } elseif ($method === self::$DELETE) {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
