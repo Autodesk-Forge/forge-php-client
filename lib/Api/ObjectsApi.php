@@ -43,7 +43,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation copyTo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -60,7 +60,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation copyToWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -125,7 +125,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -164,7 +164,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation createSignedResource
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -182,7 +182,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation createSignedResourceWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -288,7 +288,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation deleteObject
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -304,7 +304,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation deleteObjectWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -356,7 +356,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -387,7 +387,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation deleteSignedResource
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
@@ -403,7 +403,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation deleteSignedResourceWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $region The region where the bucket resides Acceptable values: &#x60;US&#x60;, &#x60;EMEA&#x60; Default is &#x60;US&#x60; (optional, default to US)
@@ -443,7 +443,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -474,7 +474,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObject
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -494,7 +494,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjectWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -570,7 +570,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -609,7 +609,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjectDetails
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -627,7 +627,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjectDetailsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -689,7 +689,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -728,7 +728,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjects
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
@@ -746,7 +746,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getObjectsWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param int $limit Limit to the response size, Acceptable values: 1-100 Default &#x3D; 10 (optional, default to 10)
@@ -800,7 +800,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -839,7 +839,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getSignedResource
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $range A range of bytes to download from the specified object. (optional)
@@ -859,7 +859,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getSignedResourceWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $range A range of bytes to download from the specified object. (optional)
@@ -923,7 +923,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -966,7 +966,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getStatusBySessionId
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -983,7 +983,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation getStatusBySessionIdWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1048,7 +1048,7 @@ class ObjectsApi extends AbstractApi
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1087,14 +1087,14 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadChunk
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
      * @param int $content_length Indicates the size of the request body. (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @param \SplFileObject $body (required)
+     * @param string $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
      * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
@@ -1109,7 +1109,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadChunkWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1263,7 +1263,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadObject
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1283,7 +1283,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadObjectWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $bucket_key URL-encoded bucket key (required)
      * @param string $object_name URL-encoded object name (required)
@@ -1407,7 +1407,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadSignedResource
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param int $content_length Indicates the size of the request body. (required)
@@ -1427,7 +1427,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadSignedResourceWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param int $content_length Indicates the size of the request body. (required)
@@ -1539,7 +1539,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadSignedResourcesChunk
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
@@ -1559,7 +1559,7 @@ class ObjectsApi extends AbstractApi
     /**
      * Operation uploadSignedResourcesChunkWithHttpInfo
      *
-     * 
+     *
      *
      * @param string $id Id of signed resource (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
