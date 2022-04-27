@@ -238,8 +238,12 @@ class ApiClient
         $response_info = curl_getinfo($curl);
 
         // debug HTTP response body
-        if ($this->config->getDebug()) {
-            error_log("[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($http_body, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
+        if ($this->config->isLogging() || $this->config->getDebug()) {
+            error_log(
+                "[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($http_body, true).PHP_EOL."~END~".PHP_EOL,
+                3,
+                $this->config->getDebugFile()
+            );
         }
 
         // Handle the response
