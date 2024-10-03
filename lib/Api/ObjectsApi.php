@@ -1094,7 +1094,7 @@ class ObjectsApi extends AbstractApi
      * @param int $content_length Indicates the size of the request body. (required)
      * @param string $content_range Byte range of a segment being uploaded (required)
      * @param string $session_id Unique identifier of a session of a file being uploaded (required)
-     * @param string $body File content (required)
+     * @param string $body (required)
      * @param string $content_disposition The suggested default filename when downloading this object to a file after it has been uploaded. (optional)
      * @param string $if_match If-Match header containing a SHA-1 hash of the bytes in the request body can be sent by the calling service or client application with the request. If present, OSS will use the value of If-Match header to verify that a SHA-1 calculated for the uploaded bytes server side matches what was sent in the header. If not, the request is failed with a status 412 Precondition Failed and the data is not written. (optional)
      * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
@@ -1144,7 +1144,7 @@ class ObjectsApi extends AbstractApi
         if ($content_range === null) {
             throw new \InvalidArgumentException('Missing the required parameter $content_range when calling uploadChunk');
         }
-        if (!preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
+        if (!preg_match("/^bytes \d+-\d+\/\d+$/", $content_range)) {
             throw new \InvalidArgumentException("invalid value for \"content_range\" when calling ObjectsApi.uploadChunk, must conform to the pattern /^bytes [0-9]+\\-[0-9]+/[0-9]+$/.");
         }
 

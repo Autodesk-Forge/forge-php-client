@@ -86,6 +86,19 @@ class Configuration
      */
     protected $debug = false;
 
+    protected bool $logging = false;
+
+    public function isLogging(): bool
+    {
+        return $this->logging;
+    }
+
+    public function setLogging(bool $logging): self
+    {
+        $this->logging = $logging;
+        return $this;
+    }
+
     /**
      * Debug file location (log to STDOUT by default)
      *
