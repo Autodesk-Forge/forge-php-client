@@ -1144,8 +1144,8 @@ class ObjectsApi extends AbstractApi
         if ($content_range === null) {
             throw new \InvalidArgumentException('Missing the required parameter $content_range when calling uploadChunk');
         }
-        if (!preg_match("/^bytes [0-9]+\\-[0-9]+/[0-9]+$/", $content_range)) {
-            throw new \InvalidArgumentException("invalid value for \"content_range\" when calling ObjectsApi.uploadChunk, must conform to the pattern /^bytes [0-9]+\\-[0-9]+/[0-9]+$/.");
+        if (!preg_match("/^bytes [0-9]+\-[0-9]+\/+[0-9]+$/", $content_range)) {
+            throw new \InvalidArgumentException("invalid value for \"content_range\" when calling ObjectsApi.uploadChunk, must conform to the pattern /^bytes [0-9]+\-[0-9]+\/+[0-9]+$/.");
         }
 
         // verify the required parameter 'session_id' is set
