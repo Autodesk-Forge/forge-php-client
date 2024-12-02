@@ -56,6 +56,7 @@ class JobPayload implements ArrayAccess
     protected static $swaggerTypes = [
         'input' => '\Autodesk\Forge\Client\Model\JobPayloadInput',
         'output' => '\Autodesk\Forge\Client\Model\JobPayloadOutput',
+        'misc' => '\Autodesk\Forge\Client\Model\JobPayloadMisc',
     ];
 
     /**
@@ -73,6 +74,7 @@ class JobPayload implements ArrayAccess
     protected static $attributeMap = [
         'input' => 'input',
         'output' => 'output',
+        'misc' => 'misc',
     ];
 
 
@@ -83,6 +85,7 @@ class JobPayload implements ArrayAccess
     protected static $setters = [
         'input' => 'setInput',
         'output' => 'setOutput',
+        'misc' => 'setMisc',
     ];
 
 
@@ -93,6 +96,7 @@ class JobPayload implements ArrayAccess
     protected static $getters = [
         'input' => 'getInput',
         'output' => 'getOutput',
+        'misc' => 'getMisc',
     ];
 
     public static function attributeMap()
@@ -128,6 +132,7 @@ class JobPayload implements ArrayAccess
     {
         $this->container['input'] = isset($data['input']) ? $data['input'] : null;
         $this->container['output'] = isset($data['output']) ? $data['output'] : null;
+        $this->container['misc'] = isset($data['misc']) ? $data['misc'] : null;
     }
 
     /**
@@ -193,6 +198,27 @@ class JobPayload implements ArrayAccess
     public function setOutput($output)
     {
         $this->container['output'] = $output;
+
+        return $this;
+    }
+
+    /**
+     * Gets misc
+     * @return \Autodesk\Forge\Client\Model\JobPayloadMisc
+     */
+    public function getMisc()
+    {
+        return $this->container['misc'];
+    }
+
+    /**
+     * Sets misc
+     * @param \Autodesk\Forge\Client\Model\JobPayloadMisc $Misc
+     * @return $this
+     */
+    public function setMisc($misc)
+    {
+        $this->container['misc'] = $misc;
 
         return $this;
     }
