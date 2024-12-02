@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postFolder**
-> postFolder($body)
+> postFolder($project_id, $body)
 
 
 
@@ -290,7 +290,7 @@ $apiInstance = new Autodesk\Forge\Client\Api\FoldersApi($authObject);
 $body = new \Autodesk\Forge\Client\Model\CreateFolder(); // \Autodesk\Forge\Client\Model\CreateFolder | describe the folder to be created
 
 try {
-    $apiInstance->postFolder($body);
+    $apiInstance->postFolder($project_id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->postFolder: ', $e->getMessage(), PHP_EOL;
 }
@@ -301,6 +301,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_id** | **string**| the &#x60;project id&#x60; |
  **body** | [**\Autodesk\Forge\Client\Model\CreateFolder**](../Model/\Autodesk\Forge\Client\Model\CreateFolder.md)| describe the folder to be created |
 
 ### Return type

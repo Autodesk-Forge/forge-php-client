@@ -732,9 +732,9 @@ class FoldersApi extends AbstractApi
      * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return void
      */
-    public function postFolder($body)
+    public function postFolder($project_id, $body)
     {
-        list($response) = $this->postFolderWithHttpInfo($body);
+        list($response) = $this->postFolderWithHttpInfo($project_id, $body);
         return $response;
     }
 
@@ -747,8 +747,12 @@ class FoldersApi extends AbstractApi
      * @throws \Autodesk\Forge\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postFolderWithHttpInfo($body)
+    public function postFolderWithHttpInfo($project_id, $body)
     {
+        // verify the required parameter 'project_id' is set
+        if ($project_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $project_id when calling postFolder');
+        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling postFolder');
@@ -764,6 +768,15 @@ class FoldersApi extends AbstractApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/vnd.api+json']);
+
+        // path params
+        if ($project_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "project_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($project_id),
+                $resourcePath
+            );
+        }
 
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
